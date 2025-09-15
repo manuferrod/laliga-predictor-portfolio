@@ -1,0 +1,46 @@
+name: Build outputs (predictions & evaluation)
+
+on:
+  schedule:
+    # Viernes 09:00 Europa/Madrid ≈ 07:00 UTC (ajusta si quieres otra hora)
+    - cron: '0 7 * * FRI'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install papermill==2.6.0 jupyter
+
+      # Ejecuta el notebook de predicción. (lo crearemos en el paso 3.2)
+      - name: Run prediction notebook
+        run: |
+          papermill notebooks/predict_next.ipynb notebooks/predict_next.out.ipynb -p MODEL_VERSION xgb-${{ github.run_id }}
+
+      # Ejecuta el notebook de evaluación (agregados).
+      - name: Run evaluation notebook
+        run: |
+          papermill notebooks/build_eval_artifacts.ipynb notebooks/build_eval_artifacts.out.ipynb
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs/*.json outputs/*.csv || true
+          git commit -m "Auto-update outputs [skip ci]" || echo "No changes to commit"
+          git push
