@@ -1,0 +1,41 @@
+[
+  {
+    "date": "2025-09-19",
+    "season": "2025_26",
+    "match_id": "2025-09-19-VAL-RMA",
+    "home_team": "Valencia",
+    "away_team": "Real Madrid",
+    "p_home": 0.23,
+    "p_draw": 0.24,
+    "p_away": 0.53,
+    "predicted_result": "A",
+    "model_version": "xgb-2025.09.10",
+    "as_of": "2025-09-15T10:00:00+02:00"
+  },
+  {
+    "date": "2025-09-20",
+    "season": "2025_26",
+    "match_id": "2025-09-20-FCB-SEV",
+    "home_team": "Barcelona",
+    "away_team": "Sevilla",
+    "p_home": 0.68,
+    "p_draw": 0.2,
+    "p_away": 0.12,
+    "predicted_result": "H",
+    "model_version": "xgb-2025.09.10",
+    "as_of": "2025-09-15T10:00:00+02:00"
+  },
+  {
+    "date": "2025-09-20",
+    "season": "2025_26",
+    "match_id": "2025-09-20-ATH-GRA",
+    "home_team": "Athletic Club",
+    "away_team": "Granada",
+    "p_home": 0.55,
+    "p_draw": 0.27,
+    "p_away": 0.18,
+    "predicted_result": "H",
+    "model_version": "xgb-2025.09.10",
+    "as_of": "2025-09-15T10:00:00+02:00"
+  }
+]
