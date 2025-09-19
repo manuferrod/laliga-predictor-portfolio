@@ -1,0 +1,381 @@
+match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,model_txt,bet365_txt
+1,2016-08-19,0.95,0.95,0.95,0.95,la coruna,eibar,Home,Home,Home
+2,2016-08-19,-0.05,-0.05,-1.0,-1.0,malaga,osasuna,Draw,Home,Home
+3,2016-08-20,0.03,0.03,0.08,0.08,barcelona,betis,Home,Home,Home
+4,2016-08-20,2.23,-0.97,2.2,-1.0,granada,villarreal,Draw,Draw,Home
+5,2016-08-20,2.9,-0.3,0.67,0.67,sevilla,espanol,Home,Home,Home
+6,2016-08-21,1.9,-1.3,-1.0,-1.0,ath madrid,alaves,Draw,Home,Home
+7,2016-08-21,2.65,-0.55,0.75,0.75,sociedad,real madrid,Away,Away,Away
+8,2016-08-21,1.65,-1.55,-1.0,-1.0,sp gijon,ath bilbao,Home,Away,Away
+9,2016-08-22,0.65,-2.55,-1.0,-1.0,celta,leganes,Away,Home,Home
+10,2016-08-22,-0.35,-3.55,-1.0,-1.0,valencia,las palmas,Away,Home,Home
+11,2016-08-26,-1.35,-4.55,-1.0,-1.0,espanol,malaga,Draw,Home,Home
+12,2016-08-26,-2.35,-5.55,-1.0,-1.0,betis,la coruna,Draw,Home,Home
+13,2016-08-27,-3.35,-3.85,-1.0,1.7,eibar,valencia,Home,Away,Home
+14,2016-08-27,-4.35,-4.85,-1.0,-1.0,leganes,ath madrid,Draw,Away,Away
+15,2016-08-27,-2.85,-3.35,1.5,1.5,osasuna,sociedad,Away,Away,Away
+16,2016-08-27,-2.67,-3.17,0.18,0.18,real madrid,celta,Home,Home,Home
+17,2016-08-28,-3.67,-4.17,-1.0,-1.0,alaves,sp gijon,Draw,Home,Home
+18,2016-08-28,-3.17,-3.67,0.5,0.5,ath bilbao,barcelona,Away,Away,Away
+19,2016-08-28,-2.26,-2.76,0.91,0.91,las palmas,granada,Home,Home,Home
+20,2016-08-28,0.14,-3.76,2.4,-1.0,villarreal,sevilla,Draw,Draw,Home
+21,2016-09-09,2.54,-4.76,2.4,-1.0,sociedad,espanol,Draw,Draw,Home
+22,2016-09-10,1.54,-5.76,-1.0,-1.0,malaga,villarreal,Away,Home,Home
+23,2016-09-10,2.04,-5.26,0.5,0.5,sevilla,las palmas,Home,Home,Home
+24,2016-09-10,2.77,-4.53,0.73,0.73,celta,ath madrid,Away,Away,Away
+25,2016-09-10,2.81,-4.49,0.04,0.04,real madrid,osasuna,Home,Home,Home
+26,2016-09-10,1.81,-5.49,-1.0,-1.0,barcelona,alaves,Away,Home,Home
+27,2016-09-11,0.81,-6.49,-1.0,-1.0,granada,eibar,Away,Home,Home
+28,2016-09-11,1.96,-5.34,1.15,1.15,la coruna,ath bilbao,Away,Away,Away
+29,2016-09-11,0.96,-4.09,-1.0,1.25,sp gijon,leganes,Home,Away,Home
+30,2016-09-11,-0.04,-5.09,-1.0,-1.0,valencia,betis,Away,Home,Home
+31,2016-09-16,-1.04,-6.09,-1.0,-1.0,betis,granada,Draw,Home,Home
+32,2016-09-17,0.26,-4.79,1.3,1.3,las palmas,malaga,Home,Home,Home
+33,2016-09-17,0.44,-4.61,0.18,0.18,leganes,barcelona,Away,Away,Away
+34,2016-09-17,-0.56,-5.61,-1.0,-1.0,eibar,sevilla,Draw,Away,Away
+35,2016-09-17,-0.38,-5.43,0.18,0.18,ath madrid,sp gijon,Home,Home,Home
+36,2016-09-18,-0.02,-5.07,0.36,0.36,espanol,real madrid,Away,Away,Away
+37,2016-09-18,0.83,-4.22,0.85,0.85,ath bilbao,valencia,Home,Home,Home
+38,2016-09-18,1.68,-3.37,0.85,0.85,villarreal,sociedad,Home,Home,Home
+39,2016-09-18,3.78,-4.37,2.1,-1.0,osasuna,celta,Draw,Draw,Away
+40,2016-09-19,2.78,-5.37,-1.0,-1.0,alaves,la coruna,Draw,Home,Home
+41,2016-09-20,3.63,-4.52,0.85,0.85,malaga,eibar,Home,Home,Home
+42,2016-09-20,4.08,-4.07,0.45,0.45,sevilla,betis,Home,Home,Home
+43,2016-09-21,4.93,-3.22,0.85,0.85,granada,ath bilbao,Away,Away,Away
+44,2016-09-21,3.93,-4.22,-1.0,-1.0,barcelona,ath madrid,Draw,Home,Home
+45,2016-09-21,4.5,-3.65,0.57,0.57,celta,sp gijon,Home,Home,Home
+46,2016-09-21,5.5,-2.65,1.0,1.0,sociedad,las palmas,Home,Home,Home
+47,2016-09-21,4.5,-3.65,-1.0,-1.0,real madrid,villarreal,Draw,Home,Home
+48,2016-09-22,3.5,-2.05,-1.0,1.6,osasuna,espanol,Away,Draw,Away
+49,2016-09-22,4.07,-1.48,0.57,0.57,valencia,alaves,Home,Home,Home
+50,2016-09-22,3.07,-2.48,-1.0,-1.0,la coruna,leganes,Away,Home,Home
+51,2016-09-23,4.67,-0.88,1.6,1.6,betis,malaga,Home,Home,Home
+52,2016-09-24,5.72,0.17,1.05,1.05,ath bilbao,sevilla,Home,Home,Home
+53,2016-09-24,7.17,1.62,1.45,1.45,eibar,sociedad,Home,Home,Home
+54,2016-09-24,6.17,0.62,-1.0,-1.0,las palmas,real madrid,Draw,Away,Away
+55,2016-09-24,6.39,0.84,0.22,0.22,sp gijon,barcelona,Away,Away,Away
+56,2016-09-25,6.79,1.24,0.4,0.4,villarreal,osasuna,Home,Home,Home
+57,2016-09-25,8.39,2.84,1.6,1.6,leganes,valencia,Away,Away,Away
+58,2016-09-25,8.61,3.06,0.22,0.22,ath madrid,la coruna,Home,Home,Home
+59,2016-09-25,7.61,2.06,-1.0,-1.0,espanol,celta,Away,Home,Home
+60,2016-09-26,8.71,3.16,1.1,1.1,alaves,granada,Home,Home,Home
+61,2016-09-30,9.51,3.96,0.8,0.8,sociedad,betis,Home,Home,Home
+62,2016-10-01,8.51,2.96,-1.0,-1.0,granada,leganes,Away,Home,Home
+63,2016-10-01,9.46,3.91,0.95,0.95,la coruna,sp gijon,Home,Home,Home
+64,2016-10-01,11.66,2.91,2.2,-1.0,osasuna,las palmas,Draw,Draw,Home
+65,2016-10-01,12.1,3.35,0.44,0.44,sevilla,alaves,Home,Home,Home
+66,2016-10-02,11.1,2.35,-1.0,-1.0,celta,barcelona,Home,Away,Away
+67,2016-10-02,10.1,1.35,-1.0,-1.0,real madrid,eibar,Draw,Home,Home
+68,2016-10-02,10.95,2.2,0.85,0.85,valencia,ath madrid,Away,Away,Away
+69,2016-10-02,13.05,1.2,2.1,-1.0,espanol,villarreal,Draw,Draw,Away
+70,2016-10-02,14.5,2.65,1.45,1.45,malaga,ath bilbao,Home,Home,Home
+71,2016-10-14,13.5,1.65,-1.0,-1.0,las palmas,espanol,Draw,Home,Home
+72,2016-10-15,13.63,1.78,0.13,0.13,ath madrid,granada,Home,Home,Home
+73,2016-10-15,13.73,1.88,0.1,0.1,barcelona,la coruna,Home,Home,Home
+74,2016-10-15,14.09,2.24,0.36,0.36,betis,real madrid,Away,Away,Away
+75,2016-10-15,15.34,3.49,1.25,1.25,leganes,sevilla,Away,Away,Away
+76,2016-10-16,16.44,4.59,1.1,1.1,sp gijon,valencia,Away,Away,Away
+77,2016-10-16,17.29,5.44,0.85,0.85,villarreal,celta,Home,Home,Home
+78,2016-10-16,16.29,4.44,-1.0,-1.0,alaves,malaga,Draw,Home,Home
+79,2016-10-16,17.12,5.27,0.83,0.83,ath bilbao,sociedad,Home,Home,Home
+80,2016-10-17,16.12,4.27,-1.0,-1.0,eibar,osasuna,Away,Home,Home
+81,2016-10-21,15.12,3.27,-1.0,-1.0,osasuna,betis,Away,Draw,Home
+82,2016-10-22,14.12,2.27,-1.0,-1.0,granada,sp gijon,Draw,Home,Home
+83,2016-10-22,13.12,1.27,-1.0,-1.0,espanol,eibar,Draw,Home,Home
+84,2016-10-22,13.52,1.67,0.4,0.4,valencia,barcelona,Away,Away,Away
+85,2016-10-22,14.19,2.34,0.67,0.67,sociedad,alaves,Home,Home,Home
+86,2016-10-23,13.19,1.34,-1.0,-1.0,sevilla,ath madrid,Home,Away,Away
+87,2016-10-23,13.89,2.04,0.7,0.7,celta,la coruna,Home,Home,Home
+88,2016-10-23,14.74,2.89,0.85,0.85,malaga,leganes,Home,Home,Home
+89,2016-10-23,14.94,3.09,0.2,0.2,real madrid,ath bilbao,Home,Home,Home
+90,2016-10-23,15.61,3.76,0.67,0.67,villarreal,las palmas,Home,Home,Home
+91,2016-10-28,14.61,2.76,-1.0,-1.0,leganes,sociedad,Away,Home,Home
+92,2016-10-29,14.66,2.81,0.05,0.05,barcelona,granada,Home,Home,Home
+93,2016-10-29,13.66,1.81,-1.0,-1.0,sp gijon,sevilla,Draw,Away,Away
+94,2016-10-29,13.88,2.03,0.22,0.22,alaves,real madrid,Away,Away,Away
+95,2016-10-29,14.1,2.25,0.22,0.22,ath madrid,malaga,Home,Home,Home
+96,2016-10-30,13.1,1.25,-1.0,-1.0,betis,espanol,Away,Home,Home
+97,2016-10-30,12.1,0.25,-1.0,-1.0,ath bilbao,osasuna,Draw,Home,Home
+98,2016-10-30,11.1,-0.75,-1.0,-1.0,las palmas,celta,Draw,Home,Home
+99,2016-10-30,10.1,-1.75,-1.0,-1.0,eibar,villarreal,Home,Away,Away
+100,2016-10-31,9.1,-2.75,-1.0,-1.0,la coruna,valencia,Draw,Away,Away
+101,2016-11-04,9.83,-2.02,0.73,0.73,malaga,sp gijon,Home,Home,Home
+102,2016-11-05,8.83,-3.02,-1.0,-1.0,osasuna,alaves,Away,Draw,Home
+103,2016-11-05,7.83,-4.02,-1.0,-1.0,sociedad,ath madrid,Home,Away,Away
+104,2016-11-05,10.03,-5.02,2.2,-1.0,granada,la coruna,Draw,Draw,Home
+105,2016-11-05,10.94,-4.11,0.91,0.91,las palmas,eibar,Home,Home,Home
+106,2016-11-06,12.19,-2.86,1.25,1.25,celta,valencia,Home,Home,Home
+107,2016-11-06,14.39,-3.86,2.2,-1.0,espanol,ath bilbao,Draw,Draw,Away
+108,2016-11-06,14.46,-3.79,0.07,0.07,real madrid,leganes,Home,Home,Home
+109,2016-11-06,15.08,-3.17,0.62,0.62,sevilla,barcelona,Away,Away,Away
+110,2016-11-06,15.58,-2.67,0.5,0.5,villarreal,betis,Home,Home,Home
+111,2016-11-18,16.93,-1.32,1.35,1.35,betis,las palmas,Home,Home,Home
+112,2016-11-19,18.83,-2.32,1.9,-1.0,ath madrid,real madrid,Away,Away,Home
+113,2016-11-19,17.83,-3.32,-1.0,-1.0,barcelona,malaga,Draw,Home,Home
+114,2016-11-19,19.21,-1.94,1.38,1.38,eibar,celta,Home,Home,Home
+115,2016-11-19,20.41,-0.74,1.2,1.2,la coruna,sevilla,Away,Away,Away
+116,2016-11-20,19.41,-1.74,-1.0,-1.0,valencia,granada,Draw,Home,Home
+117,2016-11-20,20.61,-0.54,1.2,1.2,sp gijon,sociedad,Away,Away,Away
+118,2016-11-20,21.76,0.61,1.15,1.15,ath bilbao,villarreal,Home,Home,Home
+119,2016-11-20,20.76,-0.39,-1.0,-1.0,alaves,espanol,Away,Draw,Home
+120,2016-11-21,21.61,0.46,0.85,0.85,leganes,osasuna,Home,Home,Home
+121,2016-11-25,22.56,1.41,0.95,0.95,eibar,betis,Home,Home,Home
+122,2016-11-26,23.41,2.26,0.85,0.85,espanol,leganes,Home,Home,Home
+123,2016-11-26,24.41,3.26,1.0,1.0,malaga,la coruna,Home,Home,Home
+124,2016-11-26,24.47,3.32,0.06,0.06,real madrid,sp gijon,Home,Home,Home
+125,2016-11-26,25.2,4.05,0.73,0.73,sevilla,valencia,Home,Home,Home
+126,2016-11-27,24.2,3.05,-1.0,-1.0,sociedad,barcelona,Draw,Away,Away
+127,2016-11-27,23.2,2.05,-1.0,-1.0,villarreal,alaves,Away,Home,Home
+128,2016-11-27,23.73,2.58,0.53,0.53,celta,granada,Home,Home,Home
+129,2016-11-27,24.03,2.88,0.3,0.3,osasuna,ath madrid,Away,Away,Away
+130,2016-11-28,25.53,4.38,1.5,1.5,las palmas,ath bilbao,Home,Home,Home
+131,2016-12-03,24.53,3.38,-1.0,-1.0,barcelona,real madrid,Draw,Home,Home
+132,2016-12-03,23.53,2.38,-1.0,-1.0,ath madrid,espanol,Draw,Home,Home
+133,2016-12-03,22.53,1.38,-1.0,-1.0,leganes,villarreal,Draw,Away,Away
+134,2016-12-03,21.53,0.38,-1.0,-1.0,granada,sevilla,Home,Away,Away
+135,2016-12-04,20.53,-0.62,-1.0,-1.0,betis,celta,Draw,Home,Home
+136,2016-12-04,21.38,0.23,0.85,0.85,ath bilbao,eibar,Home,Home,Home
+137,2016-12-04,20.38,1.23,-1.0,1.0,sp gijon,osasuna,Home,Draw,Home
+138,2016-12-04,22.58,0.23,2.2,-1.0,alaves,las palmas,Draw,Draw,Home
+139,2016-12-04,21.58,-0.77,-1.0,-1.0,valencia,malaga,Draw,Home,Home
+140,2016-12-05,20.58,-1.77,-1.0,-1.0,la coruna,sociedad,Home,Away,Away
+141,2016-12-09,19.58,-2.77,-1.0,-1.0,malaga,granada,Draw,Home,Home
+142,2016-12-10,18.58,-3.77,-1.0,-1.0,las palmas,leganes,Draw,Home,Home
+143,2016-12-10,18.76,-3.59,0.18,0.18,osasuna,barcelona,Away,Away,Away
+144,2016-12-10,18.93,-3.42,0.17,0.17,real madrid,la coruna,Home,Home,Home
+145,2016-12-10,19.84,-2.51,0.91,0.91,sociedad,valencia,Home,Home,Home
+146,2016-12-11,18.84,-3.51,-1.0,-1.0,betis,ath bilbao,Home,Away,Away
+147,2016-12-11,20.47,-1.88,1.63,1.63,celta,sevilla,Away,Away,Away
+148,2016-12-11,19.47,-2.88,-1.0,-1.0,eibar,alaves,Draw,Home,Home
+149,2016-12-11,20.2,-2.15,0.73,0.73,espanol,sp gijon,Home,Home,Home
+150,2016-12-12,19.2,-3.15,-1.0,-1.0,villarreal,ath madrid,Home,Away,Away
+151,2016-12-16,20.5,-1.85,1.3,1.3,alaves,betis,Home,Home,Home
+152,2016-12-17,21.0,-1.35,0.5,0.5,sevilla,malaga,Home,Home,Home
+153,2016-12-17,22.2,-0.15,1.2,1.2,sp gijon,villarreal,Away,Away,Away
+154,2016-12-17,23.2,0.85,1.0,1.0,granada,sociedad,Away,Away,Away
+155,2016-12-17,23.49,1.14,0.29,0.29,ath madrid,las palmas,Home,Home,Home
+156,2016-12-18,23.59,1.24,0.1,0.1,barcelona,espanol,Home,Home,Home
+157,2016-12-18,24.16,1.81,0.57,0.57,la coruna,osasuna,Home,Home,Home
+158,2016-12-18,23.16,0.81,-1.0,-1.0,leganes,eibar,Draw,Home,Home
+159,2016-12-19,23.99,1.64,0.83,0.83,ath bilbao,celta,Home,Home,Home
+160,2017-01-06,22.99,0.64,-1.0,-1.0,espanol,la coruna,Draw,Home,Home
+161,2017-01-07,23.72,1.37,0.73,0.73,eibar,ath madrid,Away,Away,Away
+162,2017-01-07,24.39,2.04,0.67,0.67,las palmas,sp gijon,Home,Home,Home
+163,2017-01-07,24.46,2.11,0.07,0.07,real madrid,granada,Home,Home,Home
+164,2017-01-07,23.46,1.11,-1.0,-1.0,sociedad,sevilla,Away,Home,Home
+165,2017-01-08,24.31,1.96,0.85,0.85,celta,malaga,Home,Home,Home
+166,2017-01-08,23.31,0.96,-1.0,-1.0,villarreal,barcelona,Draw,Away,Away
+167,2017-01-08,24.41,2.06,1.1,1.1,betis,leganes,Home,Home,Home
+168,2017-01-08,23.41,1.06,-1.0,-1.0,ath bilbao,alaves,Draw,Home,Home
+169,2017-01-09,22.41,0.06,-1.0,-1.0,osasuna,valencia,Draw,Away,Away
+170,2017-01-14,22.61,0.26,0.2,0.2,ath madrid,betis,Home,Home,Home
+171,2017-01-14,22.71,0.36,0.1,0.1,barcelona,las palmas,Home,Home,Home
+172,2017-01-14,21.71,-0.64,-1.0,-1.0,la coruna,villarreal,Draw,Away,Home
+173,2017-01-14,20.71,-1.64,-1.0,-1.0,leganes,ath bilbao,Draw,Away,Away
+174,2017-01-15,19.71,-2.64,-1.0,-1.0,granada,osasuna,Draw,Home,Home
+175,2017-01-15,21.31,-1.04,1.6,1.6,sp gijon,eibar,Away,Away,Away
+176,2017-01-15,22.01,-0.34,0.7,0.7,celta,alaves,Home,Home,Home
+177,2017-01-15,22.92,0.57,0.91,0.91,valencia,espanol,Home,Home,Home
+178,2017-01-15,21.92,-0.43,-1.0,-1.0,sevilla,real madrid,Home,Away,Away
+179,2017-01-16,20.92,-1.43,-1.0,-1.0,malaga,sociedad,Away,Home,Home
+180,2017-01-20,19.92,-2.43,-1.0,-1.0,las palmas,la coruna,Draw,Home,Home
+181,2017-01-21,20.49,-1.86,0.57,0.57,espanol,granada,Home,Home,Home
+182,2017-01-21,19.49,-2.86,-1.0,-1.0,alaves,leganes,Draw,Home,Home
+183,2017-01-21,18.49,-3.86,-1.0,-1.0,villarreal,valencia,Away,Home,Home
+184,2017-01-21,18.62,-3.73,0.13,0.13,real madrid,malaga,Home,Home,Home
+185,2017-01-22,18.91,-3.44,0.29,0.29,eibar,barcelona,Away,Away,Away
+186,2017-01-22,19.44,-2.91,0.53,0.53,osasuna,sevilla,Away,Away,Away
+187,2017-01-22,18.44,-3.91,-1.0,-1.0,ath bilbao,ath madrid,Draw,Away,Away
+188,2017-01-22,17.44,-4.91,-1.0,-1.0,betis,sp gijon,Draw,Home,Home
+189,2017-01-22,18.39,-3.96,0.95,0.95,sociedad,celta,Home,Home,Home
+190,2017-01-27,17.39,-4.96,-1.0,-1.0,osasuna,malaga,Draw,Away,Away
+191,2017-01-28,16.39,-5.96,-1.0,-1.0,alaves,ath madrid,Draw,Away,Away
+192,2017-01-28,17.49,-4.86,1.1,1.1,eibar,la coruna,Home,Home,Home
+193,2017-01-28,16.49,-5.86,-1.0,-1.0,leganes,celta,Away,Home,Home
+194,2017-01-28,16.85,-5.5,0.36,0.36,villarreal,granada,Home,Home,Home
+195,2017-01-29,17.21,-5.14,0.36,0.36,ath bilbao,sp gijon,Home,Home,Home
+196,2017-01-29,16.21,-6.14,-1.0,-1.0,betis,barcelona,Draw,Away,Away
+197,2017-01-29,15.21,-7.14,-1.0,-1.0,espanol,sevilla,Home,Away,Away
+198,2017-01-29,15.46,-6.89,0.25,0.25,real madrid,sociedad,Home,Home,Home
+199,2017-01-30,14.46,-5.39,-1.0,1.5,las palmas,valencia,Home,Draw,Home
+200,2017-02-04,13.46,-6.39,-1.0,-1.0,valencia,eibar,Away,Home,Home
+201,2017-02-04,12.46,-7.39,-1.0,-1.0,malaga,espanol,Away,Home,Home
+202,2017-02-04,12.75,-7.1,0.29,0.29,ath madrid,leganes,Home,Home,Home
+203,2017-02-04,12.97,-6.88,0.22,0.22,barcelona,ath bilbao,Home,Home,Home
+204,2017-02-05,11.97,-7.88,-1.0,-1.0,sevilla,villarreal,Draw,Home,Home
+205,2017-02-05,12.27,-7.58,0.3,0.3,sociedad,osasuna,Home,Home,Home
+206,2017-02-05,11.27,-8.58,-1.0,-1.0,sp gijon,alaves,Away,Home,Home
+207,2017-02-06,10.27,-9.58,-1.0,-1.0,granada,las palmas,Home,Draw,Away
+208,2017-02-10,11.9,-7.95,1.63,1.63,espanol,sociedad,Away,Away,Away
+209,2017-02-11,12.2,-7.65,0.3,0.3,alaves,barcelona,Away,Away,Away
+210,2017-02-11,12.87,-6.98,0.67,0.67,ath bilbao,la coruna,Home,Home,Home
+211,2017-02-11,11.87,-7.98,-1.0,-1.0,betis,valencia,Draw,Away,Home
+212,2017-02-11,12.09,-7.76,0.22,0.22,osasuna,real madrid,Away,Away,Away
+213,2017-02-12,11.09,-8.76,-1.0,-1.0,leganes,sp gijon,Away,Home,Home
+214,2017-02-12,10.09,-9.76,-1.0,-1.0,villarreal,malaga,Draw,Home,Home
+215,2017-02-12,9.09,-8.66,-1.0,1.1,las palmas,sevilla,Away,Home,Away
+216,2017-02-12,9.49,-8.26,0.4,0.4,ath madrid,celta,Home,Home,Home
+217,2017-02-13,10.04,-7.71,0.55,0.55,eibar,granada,Home,Home,Home
+218,2017-02-17,9.04,-8.71,-1.0,-1.0,granada,betis,Home,Away,Away
+219,2017-02-18,8.04,-9.71,-1.0,-1.0,la coruna,alaves,Away,Home,Home
+220,2017-02-18,8.18,-9.57,0.14,0.14,real madrid,espanol,Home,Home,Home
+221,2017-02-18,8.63,-9.12,0.45,0.45,sevilla,eibar,Home,Home,Home
+222,2017-02-18,9.13,-8.62,0.5,0.5,sp gijon,ath madrid,Away,Away,Away
+223,2017-02-19,8.13,-9.62,-1.0,-1.0,sociedad,villarreal,Away,Home,Home
+224,2017-02-19,9.43,-8.32,1.3,1.3,valencia,ath bilbao,Home,Home,Home
+225,2017-02-19,10.0,-7.75,0.57,0.57,celta,osasuna,Home,Home,Home
+226,2017-02-19,10.07,-7.68,0.07,0.07,barcelona,leganes,Home,Home,Home
+227,2017-02-20,11.02,-6.73,0.95,0.95,malaga,las palmas,Home,Home,Home
+228,2017-02-22,10.02,-7.73,-1.0,-1.0,valencia,real madrid,Home,Away,Away
+229,2017-02-24,9.02,-8.73,-1.0,-1.0,las palmas,sociedad,Away,Home,Home
+230,2017-02-25,8.02,-7.1,-1.0,1.63,alaves,valencia,Home,Draw,Home
+231,2017-02-25,9.07,-6.05,1.05,1.05,betis,sevilla,Away,Away,Away
+232,2017-02-25,10.12,-5.0,1.05,1.05,eibar,malaga,Home,Home,Home
+233,2017-02-25,11.52,-3.6,1.4,1.4,leganes,la coruna,Home,Home,Home
+234,2017-02-26,12.19,-2.93,0.67,0.67,villarreal,real madrid,Away,Away,Away
+235,2017-02-26,12.86,-2.26,0.67,0.67,espanol,osasuna,Home,Home,Home
+236,2017-02-26,11.86,-3.26,-1.0,-1.0,sp gijon,celta,Draw,Home,Away
+237,2017-02-26,13.24,-1.88,1.38,1.38,ath madrid,barcelona,Away,Away,Away
+238,2017-02-26,13.68,-1.44,0.44,0.44,ath bilbao,granada,Home,Home,Home
+239,2017-02-28,12.68,-2.44,-1.0,-1.0,malaga,betis,Away,Home,Home
+240,2017-02-28,11.68,-3.44,-1.0,-1.0,sociedad,eibar,Draw,Home,Home
+241,2017-02-28,12.43,-2.69,0.75,0.75,valencia,leganes,Home,Home,Home
+242,2017-03-01,12.48,-2.64,0.05,0.05,barcelona,sp gijon,Home,Home,Home
+243,2017-03-01,11.48,-3.64,-1.0,-1.0,celta,espanol,Draw,Home,Home
+244,2017-03-01,13.11,-2.01,1.63,1.63,granada,alaves,Home,Home,Home
+245,2017-03-01,14.16,-0.96,1.05,1.05,osasuna,villarreal,Away,Away,Away
+246,2017-03-01,13.16,-1.96,-1.0,-1.0,real madrid,las palmas,Draw,Home,Home
+247,2017-03-02,12.16,-2.96,-1.0,-1.0,la coruna,ath madrid,Draw,Away,Away
+248,2017-03-02,12.83,-2.29,0.67,0.67,sevilla,ath bilbao,Home,Home,Home
+249,2017-03-03,11.83,-3.29,-1.0,-1.0,betis,sociedad,Away,Home,Home
+250,2017-03-04,12.5,-2.62,0.67,0.67,eibar,real madrid,Away,Away,Away
+251,2017-03-04,12.63,-2.49,0.13,0.13,barcelona,celta,Home,Home,Home
+252,2017-03-04,13.36,-1.76,0.73,0.73,villarreal,espanol,Home,Home,Home
+253,2017-03-04,14.16,-0.96,0.8,0.8,leganes,granada,Home,Home,Home
+254,2017-03-05,14.91,-0.21,0.75,0.75,ath bilbao,malaga,Home,Home,Home
+255,2017-03-05,15.35,0.23,0.44,0.44,ath madrid,valencia,Home,Home,Home
+256,2017-03-05,15.92,0.8,0.57,0.57,las palmas,osasuna,Home,Home,Home
+257,2017-03-05,14.92,-0.2,-1.0,-1.0,sp gijon,la coruna,Away,Draw,Home
+258,2017-03-06,13.92,-1.2,-1.0,-1.0,alaves,sevilla,Draw,Away,Away
+259,2017-03-08,12.92,-2.2,-1.0,-1.0,la coruna,betis,Draw,Home,Home
+260,2017-03-10,11.92,-1.0,-1.0,1.2,espanol,las palmas,Home,Draw,Home
+261,2017-03-11,10.92,-2.0,-1.0,-1.0,valencia,sp gijon,Draw,Home,Home
+262,2017-03-11,9.92,-3.0,-1.0,-1.0,sevilla,leganes,Draw,Home,Home
+263,2017-03-11,10.42,-2.5,0.5,0.5,granada,ath madrid,Away,Away,Away
+264,2017-03-11,9.42,-3.5,-1.0,-1.0,malaga,alaves,Away,Home,Home
+265,2017-03-12,11.17,-1.75,1.75,1.75,celta,villarreal,Away,Away,Away
+266,2017-03-12,10.17,-2.75,-1.0,-1.0,la coruna,barcelona,Home,Away,Away
+267,2017-03-12,10.3,-2.62,0.13,0.13,real madrid,betis,Home,Home,Home
+268,2017-03-12,9.3,-3.62,-1.0,-1.0,sociedad,ath bilbao,Away,Home,Home
+269,2017-03-13,8.3,-4.62,-1.0,-1.0,osasuna,eibar,Draw,Away,Away
+270,2017-03-17,9.85,-3.07,1.55,1.55,las palmas,villarreal,Home,Home,Home
+271,2017-03-18,8.85,-4.07,-1.0,-1.0,eibar,espanol,Draw,Home,Home
+272,2017-03-18,10.4,-2.52,1.55,1.55,alaves,sociedad,Home,Home,Home
+273,2017-03-18,11.07,-1.85,0.67,0.67,ath bilbao,real madrid,Away,Away,Away
+274,2017-03-18,11.51,-1.41,0.44,0.44,betis,osasuna,Home,Home,Home
+275,2017-03-19,12.18,-0.74,0.67,0.67,ath madrid,sevilla,Home,Home,Home
+276,2017-03-19,11.18,-1.74,-1.0,-1.0,leganes,malaga,Draw,Home,Home
+277,2017-03-19,10.18,-2.74,-1.0,-1.0,la coruna,celta,Away,Home,Home
+278,2017-03-19,10.31,-2.61,0.13,0.13,barcelona,valencia,Home,Home,Home
+279,2017-03-19,11.31,-1.61,1.0,1.0,sp gijon,granada,Home,Home,Home
+280,2017-03-31,12.61,-0.31,1.3,1.3,espanol,betis,Home,Home,Home
+281,2017-04-01,11.61,-1.31,-1.0,-1.0,villarreal,eibar,Away,Home,Home
+282,2017-04-01,12.18,-0.74,0.57,0.57,osasuna,ath bilbao,Away,Away,Away
+283,2017-04-01,12.93,0.01,0.75,0.75,malaga,ath madrid,Away,Away,Away
+284,2017-04-01,11.93,-0.99,-1.0,-1.0,sociedad,leganes,Draw,Home,Home
+285,2017-04-02,12.78,-0.14,0.85,0.85,valencia,la coruna,Home,Home,Home
+286,2017-04-02,11.78,-1.14,-1.0,-1.0,sevilla,sp gijon,Draw,Home,Home
+287,2017-04-02,11.98,-0.94,0.2,0.2,granada,barcelona,Away,Away,Away
+288,2017-04-02,12.09,-0.83,0.11,0.11,real madrid,alaves,Home,Home,Home
+289,2017-04-03,13.04,0.12,0.95,0.95,celta,las palmas,Home,Home,Home
+290,2017-04-04,14.74,1.82,1.7,1.7,betis,villarreal,Away,Away,Away
+291,2017-04-04,15.24,2.32,0.5,0.5,ath bilbao,espanol,Home,Home,Home
+292,2017-04-04,15.6,2.68,0.36,0.36,ath madrid,sociedad,Home,Home,Home
+293,2017-04-05,15.82,2.9,0.22,0.22,barcelona,sevilla,Home,Home,Home
+294,2017-04-05,14.82,1.9,-1.0,-1.0,alaves,osasuna,Away,Home,Home
+295,2017-04-05,13.82,0.9,-1.0,-1.0,la coruna,granada,Draw,Home,Home
+296,2017-04-05,15.42,2.5,1.6,1.6,sp gijon,malaga,Away,Away,Away
+297,2017-04-05,15.75,2.83,0.33,0.33,leganes,real madrid,Away,Away,Away
+298,2017-04-06,16.6,3.68,0.85,0.85,eibar,las palmas,Home,Home,Home
+299,2017-04-06,17.6,4.68,1.0,1.0,valencia,celta,Home,Home,Home
+300,2017-04-07,18.75,5.83,1.15,1.15,villarreal,ath bilbao,Home,Home,Home
+301,2017-04-08,19.85,6.93,1.1,1.1,espanol,alaves,Home,Home,Home
+302,2017-04-08,18.85,5.93,-1.0,-1.0,malaga,barcelona,Home,Away,Away
+303,2017-04-08,17.85,4.93,-1.0,-1.0,real madrid,ath madrid,Draw,Home,Home
+304,2017-04-08,18.35,5.43,0.5,0.5,sevilla,la coruna,Home,Home,Home
+305,2017-04-09,19.45,6.53,1.1,1.1,granada,valencia,Away,Away,Away
+306,2017-04-09,18.45,5.53,-1.0,-1.0,celta,eibar,Away,Home,Home
+307,2017-04-09,17.45,4.53,-1.0,-1.0,osasuna,leganes,Home,Away,Away
+308,2017-04-09,18.55,5.63,1.1,1.1,las palmas,betis,Home,Home,Home
+309,2017-04-10,18.99,6.07,0.44,0.44,sociedad,sp gijon,Home,Home,Home
+310,2017-04-14,19.43,6.51,0.44,0.44,ath bilbao,las palmas,Home,Home,Home
+311,2017-04-15,20.68,7.76,1.25,1.25,la coruna,malaga,Home,Home,Home
+312,2017-04-15,21.08,8.16,0.4,0.4,sp gijon,real madrid,Away,Away,Away
+313,2017-04-15,21.25,8.33,0.17,0.17,barcelona,sociedad,Home,Home,Home
+314,2017-04-15,21.39,8.47,0.14,0.14,ath madrid,osasuna,Home,Home,Home
+315,2017-04-16,23.09,7.47,1.7,-1.0,betis,eibar,Home,Home,Away
+316,2017-04-16,24.54,8.92,1.45,1.45,granada,celta,Away,Away,Away
+317,2017-04-16,23.54,7.92,-1.0,-1.0,leganes,espanol,Away,Home,Home
+318,2017-04-16,22.54,6.92,-1.0,-1.0,valencia,sevilla,Draw,Away,Home
+319,2017-04-17,21.54,5.92,-1.0,-1.0,alaves,villarreal,Home,Draw,Away
+320,2017-04-21,21.71,6.09,0.17,0.17,sevilla,granada,Home,Home,Home
+321,2017-04-22,22.38,6.76,0.67,0.67,villarreal,leganes,Home,Home,Home
+322,2017-04-22,21.38,5.76,-1.0,-1.0,osasuna,sp gijon,Draw,Home,Home
+323,2017-04-22,22.58,6.96,1.2,1.2,malaga,valencia,Home,Home,Home
+324,2017-04-22,23.33,7.71,0.75,0.75,espanol,ath madrid,Away,Away,Away
+325,2017-04-23,22.33,6.71,-1.0,-1.0,las palmas,alaves,Draw,Home,Home
+326,2017-04-23,21.33,5.71,-1.0,-1.0,celta,betis,Away,Home,Home
+327,2017-04-23,21.9,6.28,0.57,0.57,sociedad,la coruna,Home,Home,Home
+328,2017-04-23,20.9,5.28,-1.0,-1.0,real madrid,barcelona,Away,Home,Home
+329,2017-04-24,22.65,4.28,1.75,-1.0,eibar,ath bilbao,Away,Away,Home
+330,2017-04-25,23.6,5.23,0.95,0.95,granada,malaga,Away,Away,Away
+331,2017-04-25,22.6,4.23,-1.0,-1.0,sp gijon,espanol,Draw,Home,Home
+332,2017-04-25,21.6,3.23,-1.0,-1.0,ath madrid,villarreal,Away,Home,Home
+333,2017-04-26,22.33,3.96,0.73,0.73,leganes,las palmas,Home,Home,Home
+334,2017-04-26,21.33,2.96,-1.0,-1.0,valencia,sociedad,Away,Home,Home
+335,2017-04-26,21.35,2.98,0.02,0.02,barcelona,osasuna,Home,Home,Home
+336,2017-04-26,21.75,3.38,0.4,0.4,la coruna,real madrid,Away,Away,Away
+337,2017-04-27,22.15,3.78,0.4,0.4,ath bilbao,betis,Home,Home,Home
+338,2017-04-27,22.48,4.11,0.33,0.33,sevilla,celta,Home,Home,Home
+339,2017-04-27,21.48,3.11,-1.0,-1.0,alaves,eibar,Draw,Home,Away
+340,2017-04-28,21.88,3.51,0.4,0.4,villarreal,sp gijon,Home,Home,Home
+341,2017-04-29,22.61,4.24,0.73,0.73,las palmas,ath madrid,Away,Away,Away
+342,2017-04-29,22.79,4.42,0.18,0.18,espanol,barcelona,Away,Away,Away
+343,2017-04-29,22.96,4.59,0.17,0.17,sociedad,granada,Home,Home,Home
+344,2017-04-29,23.13,4.76,0.17,0.17,real madrid,valencia,Home,Home,Home
+345,2017-04-30,24.23,5.86,1.1,1.1,eibar,leganes,Home,Home,Home
+346,2017-04-30,23.23,4.86,-1.0,-1.0,osasuna,la coruna,Draw,Away,Away
+347,2017-04-30,22.23,3.86,-1.0,-1.0,betis,alaves,Away,Home,Home
+348,2017-04-30,23.03,4.66,0.8,0.8,celta,ath bilbao,Away,Away,Away
+349,2017-05-01,22.03,3.66,-1.0,-1.0,malaga,sevilla,Home,Away,Away
+350,2017-05-05,21.03,2.66,-1.0,-1.0,sevilla,sociedad,Draw,Home,Home
+351,2017-05-06,21.33,2.96,0.3,0.3,ath madrid,eibar,Home,Home,Home
+352,2017-05-06,21.47,3.1,0.14,0.14,barcelona,villarreal,Home,Home,Home
+353,2017-05-06,21.6,3.23,0.13,0.13,granada,real madrid,Away,Away,Away
+354,2017-05-06,22.1,3.73,0.5,0.5,sp gijon,las palmas,Home,Home,Home
+355,2017-05-07,21.1,2.73,-1.0,-1.0,alaves,ath bilbao,Home,Away,Away
+356,2017-05-07,20.1,1.73,-1.0,-1.0,la coruna,espanol,Away,Home,Home
+357,2017-05-07,20.5,2.13,0.4,0.4,malaga,celta,Home,Home,Home
+358,2017-05-07,20.72,2.35,0.22,0.22,valencia,osasuna,Home,Home,Home
+359,2017-05-08,21.37,3.0,0.65,0.65,leganes,betis,Home,Home,Home
+360,2017-05-13,23.37,2.0,2.0,-1.0,espanol,valencia,Away,Away,Home
+361,2017-05-13,24.17,2.8,0.8,0.8,osasuna,granada,Home,Home,Home
+362,2017-05-14,23.17,1.8,-1.0,-1.0,eibar,sp gijon,Away,Home,Home
+363,2017-05-14,22.17,0.8,-1.0,-1.0,betis,ath madrid,Draw,Away,Away
+364,2017-05-14,21.17,-0.2,-1.0,-1.0,ath bilbao,leganes,Draw,Home,Home
+365,2017-05-14,21.97,0.6,0.8,0.8,alaves,celta,Home,Home,Home
+366,2017-05-14,20.97,-0.4,-1.0,-1.0,sociedad,malaga,Draw,Home,Home
+367,2017-05-14,19.97,-1.4,-1.0,-1.0,villarreal,la coruna,Draw,Home,Home
+368,2017-05-14,20.05,-1.32,0.08,0.08,las palmas,barcelona,Away,Away,Away
+369,2017-05-14,20.22,-1.15,0.17,0.17,real madrid,sevilla,Home,Home,Home
+370,2017-05-17,20.42,-0.95,0.2,0.2,celta,real madrid,Away,Away,Away
+371,2017-05-19,21.15,-0.22,0.73,0.73,granada,espanol,Away,Away,Away
+372,2017-05-20,20.15,-1.22,-1.0,-1.0,sp gijon,betis,Draw,Home,Home
+373,2017-05-20,20.29,-1.08,0.14,0.14,sevilla,osasuna,Home,Home,Home
+374,2017-05-20,19.29,-2.08,-1.0,-1.0,leganes,alaves,Draw,Home,Home
+375,2017-05-20,20.02,-1.35,0.73,0.73,la coruna,las palmas,Home,Home,Home
+376,2017-05-21,19.02,-2.35,-1.0,-1.0,celta,sociedad,Draw,Away,Away
+377,2017-05-21,19.24,-2.13,0.22,0.22,malaga,real madrid,Away,Away,Away
+378,2017-05-21,20.24,-1.13,1.0,1.0,ath madrid,ath bilbao,Home,Home,Home
+379,2017-05-21,20.29,-1.08,0.05,0.05,barcelona,eibar,Home,Home,Home
+380,2017-05-21,21.59,0.22,1.3,1.3,valencia,villarreal,Away,Away,Away

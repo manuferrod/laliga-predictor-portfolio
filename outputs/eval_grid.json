@@ -1,0 +1,344 @@
+[
+  {
+    "train_until": 2006,
+    "test_season": 2007,
+    "metrics_train": {
+      "accuracy": 0.6105263157894737,
+      "log_loss": 0.8529715015512205,
+      "brier": 0.5126050979185603,
+      "n_train": 380
+    },
+    "metrics_test": {
+      "accuracy": 0.4131578947368421,
+      "log_loss": 1.2357788018071163,
+      "brier": 0.7108253532823111,
+      "n_test": 380,
+      "season_min": 2007,
+      "season_max": 2007
+    }
+  },
+  {
+    "train_until": 2007,
+    "test_season": 2008,
+    "metrics_train": {
+      "accuracy": 0.5552631578947368,
+      "log_loss": 0.9232099028816899,
+      "brier": 0.5525509324329174,
+      "n_train": 760
+    },
+    "metrics_test": {
+      "accuracy": 0.4789473684210526,
+      "log_loss": 1.0902924033829708,
+      "brier": 0.6481976863657881,
+      "n_test": 380,
+      "season_min": 2008,
+      "season_max": 2008
+    }
+  },
+  {
+    "train_until": 2008,
+    "test_season": 2009,
+    "metrics_train": {
+      "accuracy": 0.5491228070175439,
+      "log_loss": 0.9354323737003613,
+      "brier": 0.5585766915416096,
+      "n_train": 1140
+    },
+    "metrics_test": {
+      "accuracy": 0.55,
+      "log_loss": 0.969389177295256,
+      "brier": 0.5716061373746929,
+      "n_test": 380,
+      "season_min": 2009,
+      "season_max": 2009
+    }
+  },
+  {
+    "train_until": 2009,
+    "test_season": 2010,
+    "metrics_train": {
+      "accuracy": 0.5473684210526316,
+      "log_loss": 0.9281050599048366,
+      "brier": 0.5541952556364464,
+      "n_train": 1520
+    },
+    "metrics_test": {
+      "accuracy": 0.5815789473684211,
+      "log_loss": 0.9613777147331831,
+      "brier": 0.5600725878605084,
+      "n_test": 380,
+      "season_min": 2010,
+      "season_max": 2010
+    }
+  },
+  {
+    "train_until": 2010,
+    "test_season": 2011,
+    "metrics_train": {
+      "accuracy": 0.5657894736842105,
+      "log_loss": 0.9259413530737373,
+      "brier": 0.5504252842389131,
+      "n_train": 1900
+    },
+    "metrics_test": {
+      "accuracy": 0.5552631578947368,
+      "log_loss": 0.9626927361922272,
+      "brier": 0.5700421398423358,
+      "n_test": 380,
+      "season_min": 2011,
+      "season_max": 2011
+    }
+  },
+  {
+    "train_until": 2011,
+    "test_season": 2012,
+    "metrics_train": {
+      "accuracy": 0.5614035087719298,
+      "log_loss": 0.9260253669981706,
+      "brier": 0.5509174991694796,
+      "n_train": 2280
+    },
+    "metrics_test": {
+      "accuracy": 0.5342105263157895,
+      "log_loss": 0.9837610784586179,
+      "brier": 0.5754646771774361,
+      "n_test": 380,
+      "season_min": 2012,
+      "season_max": 2012
+    }
+  },
+  {
+    "train_until": 2012,
+    "test_season": 2013,
+    "metrics_train": {
+      "accuracy": 0.5616541353383459,
+      "log_loss": 0.930651791058408,
+      "brier": 0.5528769289719954,
+      "n_train": 2660
+    },
+    "metrics_test": {
+      "accuracy": 0.5157894736842106,
+      "log_loss": 0.9789921899499369,
+      "brier": 0.5776351740840047,
+      "n_test": 380,
+      "season_min": 2013,
+      "season_max": 2013
+    }
+  },
+  {
+    "train_until": 2013,
+    "test_season": 2014,
+    "metrics_train": {
+      "accuracy": 0.5539473684210526,
+      "log_loss": 0.9332126369410085,
+      "brier": 0.5540683809872752,
+      "n_train": 3040
+    },
+    "metrics_test": {
+      "accuracy": 0.5526315789473685,
+      "log_loss": 0.9547365367146812,
+      "brier": 0.558160813697774,
+      "n_test": 380,
+      "season_min": 2014,
+      "season_max": 2014
+    }
+  },
+  {
+    "train_until": 2014,
+    "test_season": 2015,
+    "metrics_train": {
+      "accuracy": 0.5584795321637427,
+      "log_loss": 0.9307926530679872,
+      "brier": 0.5519840926115098,
+      "n_train": 3420
+    },
+    "metrics_test": {
+      "accuracy": 0.5394736842105263,
+      "log_loss": 0.9550131554865926,
+      "brier": 0.5667034611844219,
+      "n_test": 380,
+      "season_min": 2015,
+      "season_max": 2015
+    }
+  },
+  {
+    "train_until": 2015,
+    "test_season": 2016,
+    "metrics_train": {
+      "accuracy": 0.5592105263157895,
+      "log_loss": 0.9301650065581943,
+      "brier": 0.5515367865625297,
+      "n_train": 3800
+    },
+    "metrics_test": {
+      "accuracy": 0.5473684210526316,
+      "log_loss": 0.9416078724708906,
+      "brier": 0.5571429004830827,
+      "n_test": 380,
+      "season_min": 2016,
+      "season_max": 2016
+    }
+  },
+  {
+    "train_until": 2016,
+    "test_season": 2017,
+    "metrics_train": {
+      "accuracy": 0.560287081339713,
+      "log_loss": 0.928423065200916,
+      "brier": 0.5501825512580892,
+      "n_train": 4180
+    },
+    "metrics_test": {
+      "accuracy": 0.5447368421052632,
+      "log_loss": 0.9748070688006484,
+      "brier": 0.5772136527618866,
+      "n_test": 380,
+      "season_min": 2017,
+      "season_max": 2017
+    }
+  },
+  {
+    "train_until": 2017,
+    "test_season": 2018,
+    "metrics_train": {
+      "accuracy": 0.5583333333333333,
+      "log_loss": 0.9308633479349231,
+      "brier": 0.551566898158561,
+      "n_train": 4560
+    },
+    "metrics_test": {
+      "accuracy": 0.49473684210526314,
+      "log_loss": 1.0430436527222318,
+      "brier": 0.6230177006279514,
+      "n_test": 380,
+      "season_min": 2018,
+      "season_max": 2018
+    }
+  },
+  {
+    "train_until": 2018,
+    "test_season": 2019,
+    "metrics_train": {
+      "accuracy": 0.5538461538461539,
+      "log_loss": 0.9379067812945628,
+      "brier": 0.5562161638853764,
+      "n_train": 4940
+    },
+    "metrics_test": {
+      "accuracy": 0.47368421052631576,
+      "log_loss": 1.0050068167451771,
+      "brier": 0.6008429905731066,
+      "n_test": 380,
+      "season_min": 2019,
+      "season_max": 2019
+    }
+  },
+  {
+    "train_until": 2019,
+    "test_season": 2020,
+    "metrics_train": {
+      "accuracy": 0.5515037593984963,
+      "log_loss": 0.9415574209760027,
+      "brier": 0.5586831042638591,
+      "n_train": 5320
+    },
+    "metrics_test": {
+      "accuracy": 0.5236842105263158,
+      "log_loss": 1.000671560752277,
+      "brier": 0.5941650895420585,
+      "n_test": 380,
+      "season_min": 2020,
+      "season_max": 2020
+    }
+  },
+  {
+    "train_until": 2020,
+    "test_season": 2021,
+    "metrics_train": {
+      "accuracy": 0.5492982456140351,
+      "log_loss": 0.9447901612575184,
+      "brier": 0.5605850035167729,
+      "n_train": 5700
+    },
+    "metrics_test": {
+      "accuracy": 0.5105263157894737,
+      "log_loss": 1.0040307359776308,
+      "brier": 0.599547604047388,
+      "n_test": 380,
+      "season_min": 2021,
+      "season_max": 2021
+    }
+  },
+  {
+    "train_until": 2021,
+    "test_season": 2022,
+    "metrics_train": {
+      "accuracy": 0.5491776315789474,
+      "log_loss": 0.9476468202496819,
+      "brier": 0.5623093566137487,
+      "n_train": 6080
+    },
+    "metrics_test": {
+      "accuracy": 0.5421052631578948,
+      "log_loss": 0.9829618308683383,
+      "brier": 0.5851148182115604,
+      "n_test": 380,
+      "season_min": 2022,
+      "season_max": 2022
+    }
+  },
+  {
+    "train_until": 2022,
+    "test_season": 2023,
+    "metrics_train": {
+      "accuracy": 0.5498452012383901,
+      "log_loss": 0.9492284153583881,
+      "brier": 0.5632888298669393,
+      "n_train": 6460
+    },
+    "metrics_test": {
+      "accuracy": 0.5473684210526316,
+      "log_loss": 0.9489298920407643,
+      "brier": 0.5648907351774347,
+      "n_test": 380,
+      "season_min": 2023,
+      "season_max": 2023
+    }
+  },
+  {
+    "train_until": 2023,
+    "test_season": 2024,
+    "metrics_train": {
+      "accuracy": 0.5489766081871345,
+      "log_loss": 0.9487394010473583,
+      "brier": 0.5629520762618124,
+      "n_train": 6840
+    },
+    "metrics_test": {
+      "accuracy": 0.5736842105263158,
+      "log_loss": 0.9558871503008343,
+      "brier": 0.5646711701242632,
+      "n_test": 380,
+      "season_min": 2024,
+      "season_max": 2024
+    }
+  },
+  {
+    "train_until": 2024,
+    "test_season": 2025,
+    "metrics_train": {
+      "accuracy": 0.5505540166204986,
+      "log_loss": 0.9486674568232478,
+      "brier": 0.5628076108908712,
+      "n_train": 7220
+    },
+    "metrics_test": {
+      "accuracy": 0.43902439024390244,
+      "log_loss": 1.0075545818524778,
+      "brier": 0.6086376770008194,
+      "n_test": 41,
+      "season_min": 2025,
+      "season_max": 2025
+    }
+  }
+]

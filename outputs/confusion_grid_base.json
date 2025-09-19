@@ -1,0 +1,534 @@
+[
+  {
+    "model": "base",
+    "train_until": 2006,
+    "test_season": 2007,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        31,
+        26,
+        54
+      ],
+      [
+        27,
+        21,
+        39
+      ],
+      [
+        43,
+        34,
+        105
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2007,
+    "test_season": 2008,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        42,
+        16,
+        55
+      ],
+      [
+        28,
+        9,
+        46
+      ],
+      [
+        30,
+        23,
+        131
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2008,
+    "test_season": 2009,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        47,
+        10,
+        34
+      ],
+      [
+        22,
+        11,
+        62
+      ],
+      [
+        32,
+        11,
+        151
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2009,
+    "test_season": 2010,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        41,
+        5,
+        58
+      ],
+      [
+        10,
+        4,
+        65
+      ],
+      [
+        16,
+        5,
+        176
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2010,
+    "test_season": 2011,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        40,
+        4,
+        54
+      ],
+      [
+        16,
+        4,
+        74
+      ],
+      [
+        16,
+        5,
+        167
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2011,
+    "test_season": 2012,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        38,
+        4,
+        65
+      ],
+      [
+        23,
+        1,
+        60
+      ],
+      [
+        21,
+        4,
+        164
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2012,
+    "test_season": 2013,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        38,
+        5,
+        72
+      ],
+      [
+        20,
+        4,
+        62
+      ],
+      [
+        18,
+        7,
+        154
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2013,
+    "test_season": 2014,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        60,
+        5,
+        53
+      ],
+      [
+        27,
+        1,
+        63
+      ],
+      [
+        17,
+        5,
+        149
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2014,
+    "test_season": 2015,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        57,
+        17,
+        31
+      ],
+      [
+        35,
+        13,
+        44
+      ],
+      [
+        30,
+        18,
+        135
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2015,
+    "test_season": 2016,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        62,
+        9,
+        39
+      ],
+      [
+        28,
+        10,
+        51
+      ],
+      [
+        24,
+        21,
+        136
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2016,
+    "test_season": 2017,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        56,
+        8,
+        51
+      ],
+      [
+        21,
+        5,
+        60
+      ],
+      [
+        27,
+        6,
+        146
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2017,
+    "test_season": 2018,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        47,
+        4,
+        51
+      ],
+      [
+        39,
+        7,
+        64
+      ],
+      [
+        27,
+        7,
+        134
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2018,
+    "test_season": 2019,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        51,
+        12,
+        38
+      ],
+      [
+        39,
+        4,
+        62
+      ],
+      [
+        42,
+        7,
+        125
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2019,
+    "test_season": 2020,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        66,
+        9,
+        38
+      ],
+      [
+        35,
+        13,
+        61
+      ],
+      [
+        28,
+        10,
+        120
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2020,
+    "test_season": 2021,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        59,
+        2,
+        43
+      ],
+      [
+        40,
+        8,
+        63
+      ],
+      [
+        31,
+        7,
+        127
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2021,
+    "test_season": 2022,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        61,
+        3,
+        45
+      ],
+      [
+        22,
+        4,
+        63
+      ],
+      [
+        38,
+        3,
+        141
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2022,
+    "test_season": 2023,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        57,
+        1,
+        48
+      ],
+      [
+        31,
+        3,
+        73
+      ],
+      [
+        17,
+        2,
+        148
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2023,
+    "test_season": 2024,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        61,
+        5,
+        48
+      ],
+      [
+        29,
+        10,
+        58
+      ],
+      [
+        19,
+        3,
+        147
+      ]
+    ],
+    "n_test": 380
+  },
+  {
+    "model": "base",
+    "train_until": 2024,
+    "test_season": 2025,
+    "labels": [
+      "A",
+      "D",
+      "H"
+    ],
+    "matrix": [
+      [
+        4,
+        3,
+        3
+      ],
+      [
+        6,
+        1,
+        5
+      ],
+      [
+        3,
+        3,
+        13
+      ]
+    ],
+    "n_test": 41
+  }
+]
