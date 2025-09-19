@@ -120,3 +120,49 @@ def load_roi(model: str) -> pd.DataFrame:
 def load_matchlog(model: str, season: int) -> pd.DataFrame:
     p = BASE / f"matchlogs_{model}" / f"matchlog_{season}.csv"
     return load_csv(str(p.relative_to(BASE))) if p.exists() else pd.DataFrame()
+
+@st.cache_data
+def load_cumprofit(season: int) -> pd.DataFrame:
+    """
+    Carga la curva de beneficio acumulado de outputs/cumprofit_curves/cumprofit_<SEASON>.json|csv
+    y normaliza columnas:
+      - x: eje (índice de partido)
+      - Series: 'Model (BASE)', 'Model (SMOTE)', 'Bet365' si existen
+    Devuelve un DataFrame con al menos ['x', ...series...].
+    """
+    p_json = BASE / "cumprofit_curves" / f"cumprofit_{season}.json"
+    p_csv  = BASE / "cumprofit_curves" / f"cumprofit_{season}.csv"
+
+    if p_json.exists():
+        df = pd.read_json(p_json, orient="records")
+    elif p_csv.exists():
+        df = pd.read_csv(p_csv)
+    else:
+        return pd.DataFrame()  # no hay datos para esa temporada
+
+    df = _norm_cols(df)
+
+    # Detecta columna de eje X
+    for c in ["x", "match_idx", "step", "round", "i", "index", "n", "Match"]:
+        if c in df.columns:
+            if c != "x":
+                df = df.rename(columns={c: "x"})
+            break
+    else:
+        df.insert(0, "x", range(1, len(df) + 1))
+
+    # Renombra series a etiquetas estándar
+    rename = {}
+    for c in df.columns:
+        lc = c.lower()
+        if "bet365" in lc or "benchmark" in lc:
+            rename[c] = "Bet365"
+        elif "smote" in lc:
+            rename[c] = "Model (SMOTE)"
+        elif ("base" in lc) or ("model" in lc):
+            rename[c] = "Model (BASE)"
+    if rename:
+        df = df.rename(columns=rename)
+
+    keep = ["x"] + [c for c in ["Model (BASE)", "Model (SMOTE)", "Bet365"] if c in df.columns]
+    return df[keep]
