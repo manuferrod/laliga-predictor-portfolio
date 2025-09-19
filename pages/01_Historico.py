@@ -1,39 +1,26 @@
-
-import pandas as pd
 import streamlit as st
+import pandas as pd
+import plotly.express as px
+from scripts.io import seasons, load_cumprofit
 
-st.set_page_config(layout="wide")
-st.title("Histórico y métricas (agregadas por temporada)")
+st.set_page_config(page_title="Curvas", page_icon="📈")
+st.header("Curvas de beneficio acumulado")
 
-@st.cache_data
-def load_metrics(path: str) -> pd.DataFrame:
-    df = pd.read_csv(path)
-    return df
-
-try:
-    metrics = load_metrics("outputs/historical_metrics.csv")
-except FileNotFoundError:
-    st.error("No se encontró outputs/historical_metrics.csv")
+seas = seasons()
+if not seas:
+    st.warning("No hay temporadas en outputs todavía.")
     st.stop()
 
-c1, c2 = st.columns([1,3])
-with c1:
-    season = st.selectbox("Temporada", sorted(metrics["season"].unique()))
-    row = metrics.loc[metrics["season"] == season].iloc[0]
-    st.metric("Accuracy (test)", f"{row['acc']:.2%}")
-    st.metric("Log loss (test)", f"{row['logloss']:.2f}")
-    st.metric("ROI simulado", f"{row['roi']:+.1%}")
-    st.metric("Cobertura", f"{row['coverage']:.0%}")
-    st.caption(f"N partidos: {int(row['n_games'])}")
-    st.caption(f"Actualizado: {row['updated_at']}")
-with c2:
-    st.subheader("Comparativa por temporada")
-    # Pequeña tabla ordenada por temporada
-    st.dataframe(
-        metrics.sort_values("season")[["season","acc","logloss","roi","n_games"]]
-        .rename(columns={"season":"Temporada","acc":"Accuracy","logloss":"Log loss","roi":"ROI","n_games":"Partidos"}),
-        use_container_width=True, hide_index=True
-    )
+sel = st.selectbox("Temporada", seas, index=len(seas)-1)
 
-st.divider()
-st.caption("Estas métricas son agregadas; no se publican datos partido a partido para proteger la propiedad intelectual.")
+df = load_cumprofit(sel)
+if df.empty:
+    st.error(f"No encontré curvas para la temporada {sel}.")
+    st.stop()
+
+long = df.melt(id_vars="x", var_name="Serie", value_name="Beneficio")
+fig = px.line(long, x="x", y="Beneficio", color="Serie", markers=False, title=f"Beneficio acumulado — Temporada {sel}")
+fig.update_layout(legend_title_text="")
+st.plotly_chart(fig, use_container_width=True)
+
+st.caption("Nota: la serie *Bet365* es el benchmark con stake 1 por apuesta; el modelo usa el mismo stake y selección por EV.")
