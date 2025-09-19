@@ -261,3 +261,32 @@ def load_cumprofit(season: int) -> pd.DataFrame:
 def load_matchlog(model: str, season: int) -> pd.DataFrame:
     p = BASE / f"matchlogs_{model}" / f"matchlog_{season}.csv"
     return load_csv(str(p.relative_to(BASE))) if p.exists() else pd.DataFrame()
+
+# --- helpers Home ---
+@st.cache_data
+def current_season() -> int | None:
+    ss = seasons()
+    return max(ss) if ss else None
+
+def _coerce_date_col(df: pd.DataFrame) -> pd.Series:
+    for cand in ["Date", "date", "Fecha", "fecha"]:
+        if cand in df.columns:
+            return pd.to_datetime(df[cand], errors="coerce")
+    return pd.to_datetime(pd.Series([None]*len(df)))
+
+def _ensure_week_col(df: pd.DataFrame) -> pd.DataFrame:
+    """Intenta detectar columna de jornada; si no, crea ISO week."""
+    df = df.copy()
+    # jornadas típicas
+    for c in df.columns:
+        lc = str(c).lower()
+        if lc in {"matchweek","week","round","jornada","gw","mw"}:
+            if c != "Week":
+                df.rename(columns={c: "Week"}, inplace=True)
+            return df
+    # si no existe, calculamos con ISO week de la fecha
+    d = _coerce_date_col(df)
+    if "Week" not in df.columns:
+        df["Week"] = d.dt.isocalendar().week.astype("Int64")
+    return df
+
