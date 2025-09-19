@@ -129,84 +129,98 @@ def _rename_series(name: str) -> str:
 
 def _cumprofit_from_any_json(obj) -> pd.DataFrame:
     """
-    Acepta varios formatos típicos:
-      - lista de dicts -> DataFrame directo
-      - dict con arrays por serie -> columnas por serie
-      - dict con 'series': [{name, data|y|values, x?}, ...]
-      - dict con 'records'/'rows'/'items'
-    Devuelve DataFrame (posiblemente sólo con 'x' si no reconoce series).
+    Soporta varios formatos. Caso específico de tu JSON:
+    dict con clave 'series' = lista de dicts con claves:
+      i (x), m (modelo), b (bet365).
     """
+    import pandas as pd
+
+    # --- CASO TU JSON: {'series': [ {i, m, b, ...}, ... ] } ---
+    if isinstance(obj, dict) and isinstance(obj.get("series"), list) and obj["series"] and isinstance(obj["series"][0], dict):
+        df = pd.DataFrame(obj["series"])
+        # normaliza columnas y renombra a estándar
+        df.columns = [str(c).strip() for c in df.columns]
+        rename = {}
+        if "i" in df.columns: rename["i"] = "x"
+        if "m" in df.columns: rename["m"] = "Model (BASE)"
+        if "b" in df.columns: rename["b"] = "Bet365"
+        # Por si en algún año hay SMOTE:
+        if "sm" in df.columns: rename["sm"] = "Model (SMOTE)"
+        if rename:
+            df = df.rename(columns=rename)
+        # mantener solo lo relevante para la curva
+        keep = [c for c in ["x","Model (BASE)","Model (SMOTE)","Bet365"] if c in df.columns]
+        if not keep:
+            return pd.DataFrame()
+        return df[keep]
+
+    # --- Otros formatos tolerados (por si cambian) ---
     if isinstance(obj, list):
-        if not obj:
+        if len(obj) == 0:
             return pd.DataFrame()
         if isinstance(obj[0], dict):
             return pd.DataFrame(obj)
-        # lista plana -> serie única
         return pd.DataFrame({"x": range(1, len(obj) + 1), "Model (BASE)": obj})
 
     if isinstance(obj, dict):
-        # Caso Highcharts / ECharts: {"series":[{"name":..., "data":[...] , "x": [...]}, ...]}
+        # {"series":[{"name":..., "data":[...]} , ...]}
         if isinstance(obj.get("series"), list):
             cols, x_ref = {}, None
             for s in obj["series"]:
-                if not isinstance(s, dict):
-                    continue
-                name = _rename_series(s.get("name"))
-                data = None
-                for k in ("data", "y", "values"):
-                    if isinstance(s.get(k), list):
-                        data = s[k]
-                        break
-                if data is None:
-                    continue
+                if not isinstance(s, dict): continue
+                name = str(s.get("name") or "").lower()
+                data = s.get("data") or s.get("y") or s.get("values")
+                if isinstance(data, list):
+                    if "smote" in name:
+                        cols["Model (SMOTE)"] = data
+                    elif "bet365" in name or "benchmark" in name:
+                        cols["Bet365"] = data
+                    else:
+                        cols["Model (BASE)"] = data
                 if isinstance(s.get("x"), list) and x_ref is None:
                     x_ref = s["x"]
-                cols[name] = data
             if cols:
                 n = max(len(v) for v in cols.values())
                 for k in list(cols.keys()):
                     if len(cols[k]) < n:
-                        cols[k] = cols[k] + [None] * (n - len(cols[k]))
+                        cols[k] = cols[k] + [None]*(n-len(cols[k]))
                 df = pd.DataFrame(cols)
-                if x_ref is not None and len(x_ref) == n:
-                    df.insert(0, "x", x_ref)
-                else:
-                    df.insert(0, "x", range(1, n + 1))
+                df.insert(0, "x", x_ref if (x_ref and len(x_ref)==n) else list(range(1, n+1)))
                 return df
 
-        # Dict con arrays por serie: {"base":[...], "smote":[...], "bet365":[...]}
+        # dict con arrays por serie: {"base":[...], "bet365":[...]}
         cols = {}
         for k, v in obj.items():
             if isinstance(v, list):
-                cols[_rename_series(k)] = v
-            elif isinstance(v, dict):
-                for kk in ("y", "values", "data"):
-                    if isinstance(v.get(kk), list):
-                        cols[_rename_series(k)] = v[kk]
-                        break
+                lk = k.lower()
+                if "smote" in lk: cols["Model (SMOTE)"] = v
+                elif "bet365" in lk or "benchmark" in lk: cols["Bet365"] = v
+                else: cols["Model (BASE)"] = v
         if cols:
             n = max(len(v) for v in cols.values())
             for k in list(cols.keys()):
                 if len(cols[k]) < n:
-                    cols[k] = cols[k] + [None] * (n - len(cols[k]))
+                    cols[k] = cols[k] + [None]*(n-len(cols[k]))
             df = pd.DataFrame(cols)
-            df.insert(0, "x", range(1, n + 1))
+            df.insert(0, "x", range(1, n+1))
             return df
 
-        # Dict con 'records'/'rows'/'items'
-        for key in ("records", "rows", "items"):
+        for key in ("records","rows","items"):
             if isinstance(obj.get(key), list):
                 return pd.DataFrame(obj[key])
 
     return pd.DataFrame()
 
+
 @st.cache_data
 def load_cumprofit(season: int) -> pd.DataFrame:
     """
-    Carga y normaliza la curva de beneficio acumulado:
-      - intenta JSON (formato flexible), si no hay usa CSV
-      - normaliza eje 'x'
-      - renombra series a: 'Model (BASE)', 'Model (SMOTE)', 'Bet365'
+    Lee outputs/cumprofit_curves/cumprofit_<season>.json|csv y devuelve
+    DataFrame con columnas:
+      - x
+      - Model (BASE) [opt]
+      - Model (SMOTE) [opt]
+      - Bet365       [opt]
     """
     import json
     p_json = BASE / "cumprofit_curves" / f"cumprofit_{season}.json"
@@ -215,10 +229,10 @@ def load_cumprofit(season: int) -> pd.DataFrame:
     df = pd.DataFrame()
     if p_json.exists():
         try:
-            df = pd.read_json(p_json, orient="records")
-        except Exception:
             obj = json.loads(p_json.read_text(encoding="utf-8"))
             df = _cumprofit_from_any_json(obj)
+        except Exception:
+            df = pd.DataFrame()
 
     if (df is None or df.empty) and p_csv.exists():
         df = pd.read_csv(p_csv)
@@ -226,30 +240,22 @@ def load_cumprofit(season: int) -> pd.DataFrame:
     if df is None or df.empty:
         return pd.DataFrame()
 
-    df = _norm_cols(df)
-
-    # Eje X
-    for c in ["x", "match_idx", "step", "round", "i", "index", "n", "Match"]:
-        if c in df.columns:
-            if c != "x":
+    # Normaliza eje X
+    df.columns = [str(c).strip() for c in df.columns]
+    if "x" not in df.columns:
+        for c in ["match_idx","step","round","i","index","n","Match"]:
+            if c in df.columns:
                 df = df.rename(columns={c: "x"})
-            break
-    else:
-        df.insert(0, "x", range(1, len(df) + 1))
+                break
+        else:
+            df.insert(0, "x", range(1, len(df)+1))
 
-    # Renombrar posibles series
-    rename = {c: _rename_series(c) for c in df.columns if c != "x"}
-    df = df.rename(columns=rename)
-
-    # Si no hay ninguna de las etiquetas estándar, deja todas menos 'x'
-    series_cols = [c for c in df.columns if c != "x"]
-    if not series_cols:
-        return pd.DataFrame()
-
-    # Orden sugerido
-    order = ["Model (BASE)", "Model (SMOTE)", "Bet365"]
-    ordered = ["x"] + [c for c in order if c in df.columns] + [c for c in series_cols if c not in order]
-    return df[ordered]
+    # Orden final y filtrado
+    order = ["x","Model (BASE)","Model (SMOTE)","Bet365"]
+    keep = [c for c in order if c in df.columns]
+    if len(keep) == 1:  # sólo 'x'
+        return pd.DataFrame()  # sin series
+    return df[keep]
 
 @st.cache_data
 def load_matchlog(model: str, season: int) -> pd.DataFrame:
