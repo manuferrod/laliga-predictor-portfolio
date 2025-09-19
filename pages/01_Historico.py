@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import plotly.express as px
 from scripts.io import seasons, load_cumprofit
 
@@ -12,14 +11,12 @@ if not seas:
     st.stop()
 
 sel = st.selectbox("Temporada", seas, index=len(seas)-1)
-
 df = load_cumprofit(sel)
 if df.empty:
     st.error(f"No encontré curvas para la temporada {sel}.")
     st.stop()
 
-long = df.melt(id_vars="x", var_name="Serie", value_name="Beneficio")
-fig = px.line(long, x="x", y="Beneficio", color="Serie", markers=False, title=f"Beneficio acumulado — Temporada {sel}")
+fig = px.line(df.melt("x", var_name="Serie", value_name="Beneficio"), x="x", y="Beneficio", color="Serie")
 fig.update_layout(legend_title_text="")
 st.plotly_chart(fig, use_container_width=True)
 
