@@ -35,6 +35,17 @@ sel = st.selectbox("Temporada", seas, index=len(seas)-1)
 
 # 2) cargar curva
 df = io.load_cumprofit(sel)
+
+series_cols = [c for c in df.columns if c != "x"]
+if not series_cols:
+    st.warning(
+        "No encontré series para graficar en "
+        f"`outputs/cumprofit_curves/cumprofit_{sel}.json|csv`. "
+        "Asegúrate de que el archivo contiene columnas/series (por ejemplo 'base', 'smote', 'bet365')."
+    )
+    st.dataframe(df.head())
+    st.stop()
+
 if df is None or df.empty:
     st.info(f"No encontré curvas para la temporada {sel}.")
     st.stop()
