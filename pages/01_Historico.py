@@ -1,6 +1,31 @@
+# --- robust import of scripts/io.py even when running inside pages/ ---
+import sys, importlib.util
+from pathlib import Path
 import streamlit as st
-import plotly.express as px
-from scripts.io import seasons, load_cumprofit
+
+ROOT = Path(__file__).resolve().parents[1]
+SCRIPTS_DIR = ROOT / "scripts"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+try:
+    import scripts.io as io_mod   # preferido
+except Exception as e:
+    # fallback: carga directa por ruta (cuando el import normal falla)
+    spec = importlib.util.spec_from_file_location("io", SCRIPTS_DIR / "io.py")
+    io_mod = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(io_mod)  # type: ignore[attr-defined]
+    except Exception as e2:
+        st.stop()  # corta limpio con mensaje claro
+        raise RuntimeError(f"No pude importar scripts/io.py: {e} | fallback: {e2}")
+
+# usa io_mod.<función> en el resto del archivo:
+seasons = io_mod.seasons
+load_cumprofit = io_mod.load_cumprofit
+
+seas = seasons()
+df = load_cumprofit(sel)
 
 st.set_page_config(page_title="Curvas", page_icon="📈")
 st.header("Curvas de beneficio acumulado")
