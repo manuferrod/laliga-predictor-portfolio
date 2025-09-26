@@ -1,22 +1,22 @@
 match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,model_txt,bet365_txt
 1,2025-08-15,-1.0,-1.0,-1.0,-1.0,girona,vallecano,Away,Draw,Home
-2,2025-08-15,-0.6,-0.6,0.4,0.4,villarreal,oviedo,Home,Home,Home
+2,2025-08-15,-0.6,-0.6,0.4,0.4,villarreal,real oviedo,Home,Home,Home
 3,2025-08-16,-0.2,-0.2,0.4,0.4,mallorca,barcelona,Away,Away,Away
 4,2025-08-16,-1.2,0.95,-1.0,1.15,alaves,levante,Home,Away,Home
 5,2025-08-16,0.7,-0.05,1.9,-1.0,valencia,sociedad,Draw,Draw,Home
-6,2025-08-17,1.27,0.52,0.57,0.57,ath bilbao,sevilla,Home,Home,Home
-7,2025-08-17,0.27,-0.48,-1.0,-1.0,espanol,ath madrid,Home,Away,Away
-8,2025-08-17,-0.73,-1.48,-1.0,-1.0,celta,getafe,Away,Home,Home
+6,2025-08-17,-0.3,-1.05,-1.0,-1.0,celta,getafe,Away,Home,Home
+7,2025-08-17,0.27,-0.48,0.57,0.57,ath bilbao,sevilla,Home,Home,Home
+8,2025-08-17,-0.73,-1.48,-1.0,-1.0,espanol,ath madrid,Home,Away,Away
 9,2025-08-18,-1.73,-2.48,-1.0,-1.0,elche,betis,Draw,Away,Away
 10,2025-08-19,-1.51,-2.26,0.22,0.22,real madrid,osasuna,Home,Home,Home
 11,2025-08-22,-0.6,-1.35,0.91,0.91,betis,alaves,Home,Home,Home
-12,2025-08-23,-0.35,-1.1,0.25,0.25,levante,barcelona,Away,Away,Away
-13,2025-08-23,-1.35,-2.1,-1.0,-1.0,mallorca,celta,Draw,Away,Away
-14,2025-08-23,-2.35,-3.1,-1.0,-1.0,ath madrid,elche,Draw,Home,Home
+12,2025-08-23,-1.6,-2.35,-1.0,-1.0,mallorca,celta,Draw,Away,Away
+13,2025-08-23,-2.6,-3.35,-1.0,-1.0,ath madrid,elche,Draw,Home,Home
+14,2025-08-23,-2.35,-3.1,0.25,0.25,levante,barcelona,Away,Away,Away
 15,2025-08-24,-3.35,-1.7,-1.0,1.4,osasuna,valencia,Home,Draw,Home
 16,2025-08-24,-4.35,-2.7,-1.0,-1.0,sociedad,espanol,Draw,Home,Home
 17,2025-08-24,-3.82,-2.17,0.53,0.53,villarreal,girona,Home,Home,Home
-18,2025-08-24,-3.52,-1.87,0.3,0.3,oviedo,real madrid,Away,Away,Away
+18,2025-08-24,-3.52,-1.87,0.3,0.3,real oviedo,real madrid,Away,Away,Away
 19,2025-08-25,-2.82,-1.17,0.7,0.7,ath bilbao,vallecano,Home,Home,Home
 20,2025-08-25,-3.82,-2.17,-1.0,-1.0,sevilla,getafe,Away,Home,Home
 21,2025-08-27,-4.82,-3.17,-1.0,-1.0,celta,betis,Draw,Home,Home
@@ -24,38 +24,38 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 23,2025-08-29,-4.52,-0.72,1.3,1.3,valencia,getafe,Home,Home,Home
 24,2025-08-30,-4.34,-0.54,0.18,0.18,real madrid,mallorca,Home,Home,Home
 25,2025-08-30,-5.34,-1.54,-1.0,-1.0,alaves,ath madrid,Draw,Away,Away
-26,2025-08-30,-6.34,-2.54,-1.0,-1.0,oviedo,sociedad,Home,Away,Away
+26,2025-08-30,-6.34,-2.54,-1.0,-1.0,real oviedo,sociedad,Home,Away,Away
 27,2025-08-30,-7.34,-3.54,-1.0,-1.0,girona,sevilla,Away,Draw,Home
 28,2025-08-31,-8.34,-4.54,-1.0,-1.0,vallecano,barcelona,Draw,Away,Away
 29,2025-08-31,-6.96,-3.16,1.38,1.38,espanol,osasuna,Home,Home,Home
 30,2025-08-31,-7.96,-4.16,-1.0,-1.0,celta,villarreal,Draw,Away,Away
 31,2025-08-31,-8.96,-2.61,-1.0,1.55,betis,ath bilbao,Away,Draw,Away
 32,2025-09-12,-9.96,-3.61,-1.0,-1.0,sevilla,elche,Draw,Home,Home
-33,2025-09-13,-10.96,-4.61,-1.0,-1.0,ath bilbao,alaves,Away,Home,Home
-34,2025-09-13,-10.16,-3.81,0.8,0.8,ath madrid,villarreal,Home,Home,Home
-35,2025-09-13,-9.21,-2.86,0.95,0.95,getafe,oviedo,Home,Home,Home
-36,2025-09-13,-8.61,-2.26,0.6,0.6,sociedad,real madrid,Away,Away,Away
+33,2025-09-13,-9.01,-2.66,0.95,0.95,getafe,real oviedo,Home,Home,Home
+34,2025-09-13,-8.41,-2.06,0.6,0.6,sociedad,real madrid,Away,Away,Away
+35,2025-09-13,-9.41,-3.06,-1.0,-1.0,ath bilbao,alaves,Away,Home,Home
+36,2025-09-13,-8.61,-2.26,0.8,0.8,ath madrid,villarreal,Home,Home,Home
 37,2025-09-14,-9.61,-3.26,-1.0,-1.0,celta,girona,Draw,Home,Home
 38,2025-09-14,-10.61,-4.26,-1.0,-1.0,levante,betis,Draw,Away,Away
 39,2025-09-14,-11.61,-2.71,-1.0,1.55,osasuna,vallecano,Home,Draw,Home
 40,2025-09-14,-11.39,-2.49,0.22,0.22,barcelona,valencia,Home,Home,Home
 41,2025-09-15,-12.39,-1.39,-1.0,1.1,espanol,mallorca,Home,Draw,Home
 42,2025-09-19,-11.48,-0.48,0.91,0.91,betis,sociedad,Home,Home,Home
-43,2025-09-20,-12.48,-1.48,-1.0,-1.0,girona,levante,Away,Home,Home
-44,2025-09-20,-13.48,-2.48,-1.0,-1.0,alaves,sevilla,Away,Draw,Home
-45,2025-09-20,-13.28,-2.28,0.2,0.2,real madrid,espanol,Home,Home,Home
-46,2025-09-20,-14.28,-3.28,-1.0,-1.0,valencia,ath bilbao,Home,Draw,Away
-47,2025-09-20,-13.73,-2.73,0.55,0.55,villarreal,osasuna,Home,Home,Home
+43,2025-09-20,-10.93,0.07,0.55,0.55,villarreal,osasuna,Home,Home,Home
+44,2025-09-20,-11.93,-0.93,-1.0,-1.0,girona,levante,Away,Home,Home
+45,2025-09-20,-12.93,-1.93,-1.0,-1.0,valencia,ath bilbao,Home,Draw,Away
+46,2025-09-20,-13.93,-2.93,-1.0,-1.0,alaves,sevilla,Away,Draw,Home
+47,2025-09-20,-13.73,-2.73,0.2,0.2,real madrid,espanol,Home,Home,Home
 48,2025-09-21,-14.73,-3.73,-1.0,-1.0,vallecano,celta,Draw,Home,Home
 49,2025-09-21,-15.73,-4.73,-1.0,-1.0,mallorca,ath madrid,Draw,Away,Away
-50,2025-09-21,-14.82,-3.82,0.91,0.91,elche,oviedo,Home,Home,Home
+50,2025-09-21,-14.82,-3.82,0.91,0.91,elche,real oviedo,Home,Home,Home
 51,2025-09-21,-14.6,-3.6,0.22,0.22,barcelona,getafe,Home,Home,Home
-52,2025-09-23,-15.6,-4.6,-1.0,-1.0,ath bilbao,girona,Draw,Home,Home
+52,2025-09-23,-15.6,-4.6,-1.0,-1.0,espanol,valencia,Draw,Home,Home
 53,2025-09-23,-15.27,-4.27,0.33,0.33,levante,real madrid,Away,Away,Away
-54,2025-09-23,-13.97,-2.97,1.3,1.3,sevilla,villarreal,Away,Away,Away
-55,2025-09-23,-14.97,-3.97,-1.0,-1.0,espanol,valencia,Draw,Home,Home
+54,2025-09-23,-16.27,-5.27,-1.0,-1.0,ath bilbao,girona,Draw,Home,Home
+55,2025-09-23,-14.97,-3.97,1.3,1.3,sevilla,villarreal,Away,Away,Away
 56,2025-09-24,-15.97,-4.97,-1.0,-1.0,getafe,alaves,Draw,Home,Home
 57,2025-09-24,-15.47,-4.47,0.5,0.5,ath madrid,vallecano,Home,Home,Home
 58,2025-09-24,-14.67,-3.67,0.8,0.8,sociedad,mallorca,Home,Home,Home
 59,2025-09-25,-15.67,-4.67,-1.0,-1.0,osasuna,elche,Draw,Home,Home
-60,2025-09-25,-15.42,-4.42,0.25,0.25,oviedo,barcelona,Away,Away,Away
+60,2025-09-25,-15.42,-4.42,0.25,0.25,real oviedo,barcelona,Away,Away,Away

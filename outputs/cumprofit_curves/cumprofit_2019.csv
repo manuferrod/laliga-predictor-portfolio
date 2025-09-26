@@ -1,9 +1,9 @@
 match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,model_txt,bet365_txt
 1,2019-08-16,-1.0,-1.0,-1.0,-1.0,ath bilbao,barcelona,Home,Away,Away
-2,2019-08-17,-2.0,-2.0,-1.0,-1.0,leganes,osasuna,Away,Draw,Home
-3,2019-08-17,-3.0,-3.0,-1.0,-1.0,mallorca,eibar,Home,Away,Away
-4,2019-08-17,-2.35,-2.35,0.65,0.65,celta,real madrid,Away,Away,Away
-5,2019-08-17,-3.35,-3.35,-1.0,-1.0,villarreal,granada,Draw,Home,Home
+2,2019-08-17,-0.35,-0.35,0.65,0.65,celta,real madrid,Away,Away,Away
+3,2019-08-17,-1.35,-1.35,-1.0,-1.0,mallorca,eibar,Home,Away,Away
+4,2019-08-17,-2.35,-2.35,-1.0,-1.0,villarreal,granada,Draw,Home,Home
+5,2019-08-17,-3.35,-3.35,-1.0,-1.0,leganes,osasuna,Away,Draw,Home
 6,2019-08-17,-4.35,-4.35,-1.0,-1.0,valencia,sociedad,Draw,Home,Home
 7,2019-08-18,-3.2,-3.2,1.15,1.15,alaves,levante,Home,Home,Home
 8,2019-08-18,-1.9,-1.9,1.3,1.3,espanol,sevilla,Away,Away,Away
@@ -34,24 +34,24 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 33,2019-09-14,-1.59,-5.24,-1.0,-1.0,leganes,villarreal,Away,Draw,Home
 34,2019-09-14,-2.59,-6.24,-1.0,-1.0,sociedad,ath madrid,Home,Away,Away
 35,2019-09-14,-2.15,-5.8,0.44,0.44,barcelona,valencia,Home,Home,Home
-36,2019-09-15,-1.15,-4.8,1.0,1.0,alaves,sevilla,Away,Away,Away
-37,2019-09-15,-2.15,-5.8,-1.0,-1.0,valladolid,osasuna,Draw,Home,Home
-38,2019-09-15,-3.15,-6.8,-1.0,-1.0,eibar,espanol,Away,Home,Home
-39,2019-09-15,-4.15,-7.8,-1.0,-1.0,celta,granada,Away,Home,Home
-40,2019-09-15,-5.15,-8.8,-1.0,-1.0,betis,getafe,Draw,Home,Home
+36,2019-09-15,-3.15,-6.8,-1.0,-1.0,betis,getafe,Draw,Home,Home
+37,2019-09-15,-4.15,-7.8,-1.0,-1.0,valladolid,osasuna,Draw,Home,Home
+38,2019-09-15,-5.15,-8.8,-1.0,-1.0,eibar,espanol,Away,Home,Home
+39,2019-09-15,-4.15,-7.8,1.0,1.0,alaves,sevilla,Away,Away,Away
+40,2019-09-15,-5.15,-8.8,-1.0,-1.0,celta,granada,Away,Home,Home
 41,2019-09-20,-6.15,-9.8,-1.0,-1.0,osasuna,betis,Draw,Home,Home
 42,2019-09-21,-5.54,-9.19,0.61,0.61,villarreal,valladolid,Home,Home,Home
 43,2019-09-21,-3.14,-10.19,2.4,-1.0,levante,eibar,Draw,Draw,Home
 44,2019-09-21,-4.14,-11.19,-1.0,-1.0,ath madrid,celta,Draw,Home,Home
 45,2019-09-21,-5.14,-12.19,-1.0,-1.0,granada,barcelona,Home,Away,Away
-46,2019-09-22,-6.14,-13.19,-1.0,-1.0,valencia,leganes,Draw,Home,Home
-47,2019-09-22,-5.53,-12.58,0.61,0.61,ath bilbao,alaves,Home,Home,Home
-48,2019-09-22,-4.68,-11.73,0.85,0.85,getafe,mallorca,Home,Home,Home
-49,2019-09-22,-3.23,-10.28,1.45,1.45,sevilla,real madrid,Away,Away,Away
-50,2019-09-22,-4.23,-8.83,-1.0,1.45,espanol,sociedad,Away,Draw,Away
-51,2019-09-24,-3.93,-8.53,0.3,0.3,barcelona,villarreal,Home,Home,Home
-52,2019-09-24,-4.93,-9.53,-1.0,-1.0,valladolid,granada,Draw,Home,Home
-53,2019-09-24,-3.98,-8.58,0.95,0.95,betis,levante,Home,Home,Home
+46,2019-09-22,-3.69,-10.74,1.45,1.45,sevilla,real madrid,Away,Away,Away
+47,2019-09-22,-3.08,-10.13,0.61,0.61,ath bilbao,alaves,Home,Home,Home
+48,2019-09-22,-2.23,-9.28,0.85,0.85,getafe,mallorca,Home,Home,Home
+49,2019-09-22,-3.23,-7.83,-1.0,1.45,espanol,sociedad,Away,Draw,Away
+50,2019-09-22,-4.23,-8.83,-1.0,-1.0,valencia,leganes,Draw,Home,Home
+51,2019-09-24,-3.28,-7.88,0.95,0.95,betis,levante,Home,Home,Home
+52,2019-09-24,-2.98,-7.58,0.3,0.3,barcelona,villarreal,Home,Home,Home
+53,2019-09-24,-3.98,-8.58,-1.0,-1.0,valladolid,granada,Draw,Home,Home
 54,2019-09-25,-1.98,-9.58,2.0,-1.0,leganes,ath bilbao,Draw,Draw,Away
 55,2019-09-25,-1.37,-8.97,0.61,0.61,mallorca,ath madrid,Away,Away,Away
 56,2019-09-25,-2.37,-9.97,-1.0,-1.0,valencia,getafe,Draw,Home,Home
@@ -60,15 +60,15 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 59,2019-09-26,-2.57,-10.17,-1.0,-1.0,eibar,sevilla,Home,Away,Away
 60,2019-09-26,-3.57,-11.17,-1.0,-1.0,celta,espanol,Draw,Home,Home
 61,2019-09-27,-2.74,-10.34,0.83,0.83,villarreal,betis,Home,Home,Home
-62,2019-09-28,-1.34,-8.94,1.4,1.4,granada,leganes,Home,Home,Home
-63,2019-09-28,-2.34,-9.94,-1.0,-1.0,ath bilbao,valencia,Away,Home,Home
-64,2019-09-28,-1.49,-9.09,0.85,0.85,getafe,barcelona,Away,Away,Away
+62,2019-09-28,-3.74,-11.34,-1.0,-1.0,ath bilbao,valencia,Away,Home,Home
+63,2019-09-28,-2.89,-10.49,0.85,0.85,getafe,barcelona,Away,Away,Away
+64,2019-09-28,-1.49,-9.09,1.4,1.4,granada,leganes,Home,Home,Home
 65,2019-09-28,0.81,-10.09,2.3,-1.0,ath madrid,real madrid,Draw,Draw,Home
-66,2019-09-29,2.01,-8.89,1.2,1.2,alaves,mallorca,Home,Home,Home
-67,2019-09-29,3.26,-7.64,1.25,1.25,eibar,celta,Home,Home,Home
-68,2019-09-29,4.11,-6.79,0.85,0.85,sevilla,sociedad,Home,Home,Home
-69,2019-09-29,3.11,-7.79,-1.0,-1.0,espanol,valladolid,Away,Home,Home
-70,2019-09-29,2.11,-8.79,-1.0,-1.0,levante,osasuna,Draw,Home,Home
+66,2019-09-29,-0.19,-11.09,-1.0,-1.0,levante,osasuna,Draw,Home,Home
+67,2019-09-29,1.01,-9.89,1.2,1.2,alaves,mallorca,Home,Home,Home
+68,2019-09-29,1.86,-9.04,0.85,0.85,sevilla,sociedad,Home,Home,Home
+69,2019-09-29,0.86,-10.04,-1.0,-1.0,espanol,valladolid,Away,Home,Home
+70,2019-09-29,2.11,-8.79,1.25,1.25,eibar,celta,Home,Home,Home
 71,2019-10-04,1.11,-9.79,-1.0,-1.0,betis,eibar,Draw,Home,Home
 72,2019-10-05,0.11,-10.79,-1.0,-1.0,leganes,levante,Away,Home,Home
 73,2019-10-05,0.39,-10.51,0.28,0.28,real madrid,granada,Home,Home,Home
@@ -80,10 +80,10 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 79,2019-10-06,-0.16,-11.06,1.45,1.45,mallorca,espanol,Home,Home,Home
 80,2019-10-06,-1.16,-9.36,-1.0,1.7,celta,ath bilbao,Home,Draw,Home
 81,2019-10-18,0.24,-7.96,1.4,1.4,granada,osasuna,Home,Home,Home
-82,2019-10-19,-0.76,-8.96,-1.0,-1.0,ath madrid,valencia,Draw,Home,Home
-83,2019-10-19,-0.26,-8.46,0.5,0.5,eibar,barcelona,Away,Away,Away
-84,2019-10-19,-1.26,-9.46,-1.0,-1.0,mallorca,real madrid,Home,Away,Away
-85,2019-10-19,-0.41,-8.61,0.85,0.85,getafe,leganes,Home,Home,Home
+82,2019-10-19,0.74,-7.46,0.5,0.5,eibar,barcelona,Away,Away,Away
+83,2019-10-19,-0.26,-8.46,-1.0,-1.0,ath madrid,valencia,Draw,Home,Home
+84,2019-10-19,0.59,-7.61,0.85,0.85,getafe,leganes,Home,Home,Home
+85,2019-10-19,-0.41,-8.61,-1.0,-1.0,mallorca,real madrid,Home,Away,Away
 86,2019-10-20,-1.41,-9.61,-1.0,-1.0,alaves,celta,Home,Away,Away
 87,2019-10-20,-0.66,-8.86,0.75,0.75,sociedad,betis,Home,Home,Home
 88,2019-10-20,-1.66,-7.49,-1.0,1.37,espanol,villarreal,Away,Draw,Away
@@ -93,11 +93,11 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 92,2019-10-26,-0.43,-6.26,1.4,1.4,valladolid,eibar,Home,Home,Home
 93,2019-10-26,0.27,-5.56,0.7,0.7,ath madrid,ath bilbao,Home,Home,Home
 94,2019-10-26,1.07,-4.76,0.8,0.8,leganes,mallorca,Home,Home,Home
-95,2019-10-27,0.07,-3.31,-1.0,1.45,granada,betis,Home,Away,Home
-96,2019-10-27,0.79,-2.59,0.72,0.72,sevilla,getafe,Home,Home,Home
-97,2019-10-27,-0.21,-1.14,-1.0,1.45,celta,sociedad,Away,Draw,Away
-98,2019-10-27,-1.21,-2.14,-1.0,-1.0,osasuna,valencia,Home,Draw,Away
-99,2019-10-27,-2.21,-3.14,-1.0,-1.0,levante,espanol,Away,Home,Home
+95,2019-10-27,0.07,-3.31,-1.0,1.45,celta,sociedad,Away,Draw,Away
+96,2019-10-27,-0.93,-1.86,-1.0,1.45,granada,betis,Home,Away,Home
+97,2019-10-27,-1.93,-2.86,-1.0,-1.0,levante,espanol,Away,Home,Home
+98,2019-10-27,-1.21,-2.14,0.72,0.72,sevilla,getafe,Home,Home,Home
+99,2019-10-27,-2.21,-3.14,-1.0,-1.0,osasuna,valencia,Home,Draw,Away
 100,2019-10-29,-3.21,-4.14,-1.0,-1.0,alaves,ath madrid,Draw,Away,Away
 101,2019-10-29,-3.09,-4.02,0.12,0.12,barcelona,valladolid,Home,Home,Home
 102,2019-10-30,-2.84,-3.77,0.25,0.25,real madrid,leganes,Home,Home,Home
@@ -108,7 +108,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 107,2019-10-31,-1.32,-4.87,1.62,-1.0,eibar,villarreal,Home,Home,Away
 108,2019-10-31,-2.32,-5.87,-1.0,-1.0,mallorca,osasuna,Draw,Home,Home
 109,2019-10-31,-1.42,-4.97,0.9,0.9,getafe,granada,Home,Home,Home
-110,2019-11-02,-2.42,-3.35,-1.0,1.62,espanol,valencia,Away,Draw,Away
+110,2019-11-02,-2.42,-3.35,-1.0,1.62,espanol,valencia,Away,Home,Away
 111,2019-11-02,-3.42,-4.35,-1.0,-1.0,levante,barcelona,Home,Away,Away
 112,2019-11-02,-1.22,-5.35,2.2,-1.0,sevilla,ath madrid,Draw,Draw,Home
 113,2019-11-02,-2.22,-6.35,-1.0,-1.0,real madrid,betis,Draw,Home,Home
@@ -123,11 +123,11 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 122,2019-11-09,-0.66,-4.79,0.61,0.61,valencia,granada,Home,Home,Home
 123,2019-11-09,-0.06,-4.19,0.6,0.6,eibar,real madrid,Away,Away,Away
 124,2019-11-09,0.14,-3.99,0.2,0.2,barcelona,celta,Home,Home,Home
-125,2019-11-10,1.24,-2.89,1.1,1.1,betis,sevilla,Away,Away,Away
-126,2019-11-10,1.69,-2.44,0.45,0.45,ath madrid,espanol,Home,Home,Home
-127,2019-11-10,2.35,-1.78,0.66,0.66,ath bilbao,levante,Home,Home,Home
-128,2019-11-10,1.35,-2.78,-1.0,-1.0,getafe,osasuna,Draw,Home,Home
-129,2019-11-10,0.35,-3.78,-1.0,-1.0,mallorca,villarreal,Home,Away,Away
+125,2019-11-10,-0.86,-4.99,-1.0,-1.0,mallorca,villarreal,Home,Away,Away
+126,2019-11-10,-0.41,-4.54,0.45,0.45,ath madrid,espanol,Home,Home,Home
+127,2019-11-10,0.69,-3.44,1.1,1.1,betis,sevilla,Away,Away,Away
+128,2019-11-10,-0.31,-4.44,-1.0,-1.0,getafe,osasuna,Draw,Home,Home
+129,2019-11-10,0.35,-3.78,0.66,0.66,ath bilbao,levante,Home,Home,Home
 130,2019-11-22,1.1,-3.03,0.75,0.75,levante,mallorca,Home,Home,Home
 131,2019-11-23,1.46,-2.67,0.36,0.36,real madrid,sociedad,Home,Home,Home
 132,2019-11-23,1.9,-2.23,0.44,0.44,leganes,barcelona,Away,Away,Away
@@ -153,21 +153,21 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 152,2019-12-07,0.04,-1.49,1.15,1.15,levante,valencia,Away,Away,Away
 153,2019-12-07,0.24,-1.29,0.2,0.2,real madrid,espanol,Home,Home,Home
 154,2019-12-07,-0.76,-0.09,-1.0,1.2,granada,alaves,Home,Draw,Home
-155,2019-12-08,-1.76,-1.09,-1.0,-1.0,eibar,getafe,Away,Home,Home
-156,2019-12-08,-0.46,0.21,1.3,1.3,betis,ath bilbao,Home,Home,Home
-157,2019-12-08,-1.46,-0.79,-1.0,-1.0,osasuna,sevilla,Draw,Away,Away
-158,2019-12-08,-2.46,-1.79,-1.0,-1.0,valladolid,sociedad,Draw,Away,Away
-159,2019-12-08,-1.09,-0.42,1.37,1.37,leganes,celta,Home,Home,Home
+155,2019-12-08,0.61,1.28,1.37,1.37,leganes,celta,Home,Home,Home
+156,2019-12-08,-0.39,0.28,-1.0,-1.0,osasuna,sevilla,Draw,Away,Away
+157,2019-12-08,0.91,1.58,1.3,1.3,betis,ath bilbao,Home,Home,Home
+158,2019-12-08,-0.09,0.58,-1.0,-1.0,valladolid,sociedad,Draw,Away,Away
+159,2019-12-08,-1.09,-0.42,-1.0,-1.0,eibar,getafe,Away,Home,Home
 160,2019-12-13,0.91,-1.42,2.0,-1.0,alaves,leganes,Draw,Draw,Home
 161,2019-12-14,1.31,-1.02,0.4,0.4,ath madrid,osasuna,Home,Home,Home
 162,2019-12-14,0.31,-2.02,-1.0,-1.0,ath bilbao,eibar,Draw,Home,Home
 163,2019-12-14,-0.69,-3.02,-1.0,-1.0,sociedad,barcelona,Draw,Away,Away
 164,2019-12-14,-1.69,-4.02,-1.0,-1.0,granada,levante,Away,Home,Home
-165,2019-12-15,-2.69,-5.02,-1.0,-1.0,sevilla,villarreal,Away,Home,Home
-166,2019-12-15,-3.69,-6.02,-1.0,-1.0,valencia,real madrid,Draw,Away,Away
-167,2019-12-15,-3.03,-5.36,0.66,0.66,getafe,valladolid,Home,Home,Home
-168,2019-12-15,-4.03,-6.36,-1.0,-1.0,celta,mallorca,Draw,Home,Home
-169,2019-12-15,-5.03,-7.36,-1.0,-1.0,espanol,betis,Draw,Home,Home
+165,2019-12-15,-1.03,-3.36,0.66,0.66,getafe,valladolid,Home,Home,Home
+166,2019-12-15,-2.03,-4.36,-1.0,-1.0,celta,mallorca,Draw,Home,Home
+167,2019-12-15,-3.03,-5.36,-1.0,-1.0,espanol,betis,Draw,Home,Home
+168,2019-12-15,-4.03,-6.36,-1.0,-1.0,sevilla,villarreal,Away,Home,Home
+169,2019-12-15,-5.03,-7.36,-1.0,-1.0,valencia,real madrid,Draw,Away,Away
 170,2019-12-18,-6.03,-8.36,-1.0,-1.0,barcelona,real madrid,Draw,Home,Home
 171,2019-12-20,-4.93,-7.26,1.1,1.1,eibar,granada,Home,Home,Home
 172,2019-12-21,-5.93,-8.26,-1.0,-1.0,valladolid,valencia,Draw,Away,Away
@@ -177,205 +177,205 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 176,2019-12-22,-2.85,-5.18,1.1,1.1,leganes,espanol,Home,Home,Home
 177,2019-12-22,-1.35,-3.68,1.5,1.5,osasuna,sociedad,Away,Away,Away
 178,2019-12-22,-0.25,-2.58,1.1,1.1,betis,ath madrid,Away,Away,Away
-179,2019-12-22,1.37,-3.58,1.62,-1.0,levante,celta,Home,Home,Away
-180,2019-12-22,0.37,-4.58,-1.0,-1.0,real madrid,ath bilbao,Draw,Home,Home
-181,2020-01-03,2.24,-5.58,1.87,-1.0,valladolid,leganes,Draw,Draw,Home
-182,2020-01-03,1.24,-6.58,-1.0,-1.0,sevilla,ath bilbao,Draw,Home,Home
-183,2020-01-04,2.09,-5.73,0.85,0.85,getafe,real madrid,Away,Away,Away
-184,2020-01-04,1.09,-6.73,-1.0,-1.0,espanol,barcelona,Draw,Away,Away
-185,2020-01-04,1.34,-6.48,0.25,0.25,ath madrid,levante,Home,Home,Home
-186,2020-01-04,1.95,-5.87,0.61,0.61,valencia,eibar,Home,Home,Home
-187,2020-01-05,0.95,-6.87,-1.0,-1.0,celta,osasuna,Draw,Home,Home
-188,2020-01-05,-0.05,-7.87,-1.0,-1.0,alaves,betis,Draw,Away,Home
-189,2020-01-05,-1.05,-8.87,-1.0,-1.0,sociedad,villarreal,Away,Home,Home
-190,2020-01-05,-0.1,-7.92,0.95,0.95,granada,mallorca,Home,Home,Home
-191,2020-01-17,-1.1,-6.22,-1.0,1.7,leganes,getafe,Away,Home,Away
-192,2020-01-18,-2.1,-7.22,-1.0,-1.0,levante,alaves,Away,Draw,Home
-193,2020-01-18,-1.5,-6.62,0.6,0.6,real madrid,sevilla,Home,Home,Home
-194,2020-01-18,-2.5,-7.62,-1.0,-1.0,osasuna,valladolid,Draw,Home,Home
-195,2020-01-18,-3.5,-8.62,-1.0,-1.0,eibar,ath madrid,Home,Away,Away
-196,2020-01-19,-4.5,-9.62,-1.0,-1.0,mallorca,valencia,Home,Away,Away
-197,2020-01-19,-3.0,-8.12,1.5,1.5,betis,sociedad,Home,Home,Home
-198,2020-01-19,-4.0,-9.12,-1.0,-1.0,villarreal,espanol,Away,Home,Home
-199,2020-01-19,-5.0,-10.12,-1.0,-1.0,ath bilbao,celta,Draw,Home,Home
-200,2020-01-19,-4.84,-9.96,0.16,0.16,barcelona,granada,Home,Home,Home
-201,2020-01-24,-4.18,-9.3,0.66,0.66,osasuna,levante,Home,Home,Home
-202,2020-01-25,-5.18,-10.3,-1.0,-1.0,espanol,ath bilbao,Draw,Home,Home
-203,2020-01-25,-6.18,-11.3,-1.0,-1.0,valencia,barcelona,Home,Away,Away
-204,2020-01-25,-4.63,-9.75,1.55,1.55,alaves,villarreal,Away,Away,Away
-205,2020-01-25,-4.27,-9.39,0.36,0.36,sevilla,granada,Home,Home,Home
-206,2020-01-26,-5.27,-10.39,-1.0,-1.0,ath madrid,leganes,Draw,Home,Home
-207,2020-01-26,-6.27,-11.39,-1.0,-1.0,celta,eibar,Draw,Home,Home
-208,2020-01-26,-5.22,-10.34,1.05,1.05,getafe,betis,Home,Home,Home
-209,2020-01-26,-4.77,-9.89,0.45,0.45,sociedad,mallorca,Home,Home,Home
-210,2020-01-26,-4.33,-9.45,0.44,0.44,valladolid,real madrid,Away,Away,Away
-211,2020-02-01,-5.33,-10.45,-1.0,-1.0,mallorca,valladolid,Away,Home,Home
-212,2020-02-01,-4.53,-9.65,0.8,0.8,valencia,celta,Home,Home,Home
-213,2020-02-01,-5.53,-7.95,-1.0,1.7,granada,espanol,Home,Away,Home
-214,2020-02-01,-4.73,-7.15,0.8,0.8,real madrid,ath madrid,Home,Home,Home
-215,2020-02-02,-5.73,-8.15,-1.0,-1.0,eibar,betis,Draw,Away,Home
-216,2020-02-02,-6.73,-9.15,-1.0,-1.0,ath bilbao,getafe,Away,Draw,Home
-217,2020-02-02,-4.83,-10.15,1.9,-1.0,leganes,sociedad,Home,Home,Away
-218,2020-02-02,-4.69,-10.01,0.14,0.14,barcelona,levante,Home,Home,Home
-219,2020-02-02,-5.69,-11.01,-1.0,-1.0,sevilla,alaves,Draw,Home,Home
-220,2020-02-02,-4.94,-10.26,0.75,0.75,villarreal,osasuna,Home,Home,Home
-221,2020-02-07,-3.69,-9.01,1.25,1.25,alaves,eibar,Home,Home,Home
-222,2020-02-08,-4.69,-10.01,-1.0,-1.0,valladolid,villarreal,Draw,Away,Away
-223,2020-02-08,-4.29,-9.61,0.4,0.4,ath madrid,granada,Home,Home,Home
-224,2020-02-08,-5.29,-8.11,-1.0,1.5,levante,leganes,Home,Away,Home
-225,2020-02-08,-4.29,-7.11,1.0,1.0,getafe,valencia,Home,Home,Home
-226,2020-02-09,-3.68,-6.5,0.61,0.61,espanol,mallorca,Home,Home,Home
-227,2020-02-09,-2.63,-5.45,1.05,1.05,sociedad,ath bilbao,Home,Home,Home
-228,2020-02-09,-2.1,-4.92,0.53,0.53,osasuna,real madrid,Away,Away,Away
-229,2020-02-09,-3.1,-5.92,-1.0,-1.0,celta,sevilla,Home,Away,Away
-230,2020-02-09,-2.25,-5.07,0.85,0.85,betis,barcelona,Away,Away,Away
-231,2020-02-14,-3.25,-6.07,-1.0,-1.0,valencia,ath madrid,Draw,Away,Away
-232,2020-02-15,-1.85,-4.67,1.4,1.4,mallorca,alaves,Home,Home,Home
-233,2020-02-15,-1.45,-4.27,0.4,0.4,barcelona,getafe,Home,Home,Home
-234,2020-02-15,-0.95,-3.77,0.5,0.5,villarreal,levante,Home,Home,Home
-235,2020-02-15,-1.95,-2.37,-1.0,1.4,granada,valladolid,Home,Draw,Home
-236,2020-02-16,-2.95,-3.37,-1.0,-1.0,real madrid,celta,Draw,Home,Home
-237,2020-02-16,-3.95,-4.37,-1.0,-1.0,ath bilbao,osasuna,Away,Home,Home
-238,2020-02-16,-4.95,-5.37,-1.0,-1.0,leganes,betis,Draw,Home,Home
-239,2020-02-16,-5.95,-6.37,-1.0,-1.0,sevilla,espanol,Draw,Home,Home
-240,2020-02-21,-6.95,-7.37,-1.0,-1.0,betis,mallorca,Draw,Home,Home
-241,2020-02-22,-6.3,-6.72,0.65,0.65,sociedad,valencia,Home,Home,Home
-242,2020-02-22,-5.5,-5.92,0.8,0.8,celta,leganes,Home,Home,Home
-243,2020-02-22,-5.3,-5.72,0.2,0.2,barcelona,eibar,Home,Home,Home
-244,2020-02-22,-6.3,-6.72,-1.0,-1.0,levante,real madrid,Home,Away,Away
-245,2020-02-23,-7.3,-7.72,-1.0,-1.0,getafe,sevilla,Away,Home,Home
-246,2020-02-23,-5.68,-6.1,1.62,1.62,valladolid,espanol,Home,Home,Home
-247,2020-02-23,-6.68,-7.1,-1.0,-1.0,osasuna,granada,Away,Home,Home
-248,2020-02-23,-6.03,-6.45,0.65,0.65,ath madrid,villarreal,Home,Home,Home
-249,2020-02-23,-7.03,-7.45,-1.0,-1.0,alaves,ath bilbao,Home,Away,Away
-250,2020-02-28,-6.5,-6.92,0.53,0.53,sociedad,valladolid,Home,Home,Home
-251,2020-02-29,-5.5,-5.92,1.0,1.0,eibar,levante,Home,Home,Home
-252,2020-02-29,-4.35,-4.77,1.15,1.15,valencia,betis,Home,Home,Home
-253,2020-02-29,-5.35,-5.77,-1.0,-1.0,leganes,alaves,Draw,Home,Home
-254,2020-02-29,-3.35,-6.77,2.0,-1.0,granada,celta,Draw,Draw,Away
-255,2020-03-01,-2.9,-6.32,0.45,0.45,sevilla,osasuna,Home,Home,Home
-256,2020-03-01,-1.6,-5.02,1.3,1.3,ath bilbao,villarreal,Home,Home,Home
-257,2020-03-01,-2.6,-6.02,-1.0,-1.0,espanol,ath madrid,Draw,Away,Away
-258,2020-03-01,-1.35,-4.77,1.25,1.25,mallorca,getafe,Away,Away,Away
-259,2020-03-01,-2.35,-3.57,-1.0,1.2,real madrid,barcelona,Home,Draw,Home
-260,2020-03-06,-0.1,-4.57,2.25,-1.0,alaves,valencia,Draw,Draw,Home
-261,2020-03-07,-1.1,-5.57,-1.0,-1.0,getafe,celta,Draw,Home,Home
-262,2020-03-07,-0.77,-5.24,0.33,0.33,barcelona,sociedad,Home,Home,Home
-263,2020-03-07,-1.77,-6.24,-1.0,-1.0,eibar,mallorca,Away,Home,Home
-264,2020-03-07,-2.77,-7.24,-1.0,-1.0,ath madrid,sevilla,Draw,Home,Home
-265,2020-03-08,-3.77,-5.84,-1.0,1.4,osasuna,espanol,Home,Away,Home
-266,2020-03-08,-2.02,-4.09,1.75,1.75,valladolid,ath bilbao,Away,Away,Away
-267,2020-03-08,-3.02,-5.09,-1.0,-1.0,levante,granada,Draw,Home,Home
-268,2020-03-08,-4.02,-6.09,-1.0,-1.0,villarreal,leganes,Away,Home,Home
-269,2020-03-08,-5.02,-7.09,-1.0,-1.0,betis,real madrid,Home,Away,Away
-270,2020-03-10,-3.82,-5.89,1.2,1.2,eibar,sociedad,Away,Away,Away
-271,2020-06-11,-3.02,-5.09,0.8,0.8,sevilla,betis,Home,Home,Home
-272,2020-06-12,-4.02,-6.09,-1.0,-1.0,valencia,levante,Draw,Home,Home
-273,2020-06-12,-5.02,-7.09,-1.0,-1.0,granada,getafe,Home,Away,Away
-274,2020-06-13,-6.02,-8.09,-1.0,-1.0,celta,villarreal,Away,Home,Home
-275,2020-06-13,-4.97,-7.04,1.05,1.05,espanol,alaves,Home,Home,Home
-276,2020-06-13,-4.69,-6.76,0.28,0.28,mallorca,barcelona,Away,Away,Away
-277,2020-06-13,-5.69,-7.76,-1.0,-1.0,leganes,valladolid,Away,Home,Home
-278,2020-06-14,-6.69,-8.76,-1.0,-1.0,ath bilbao,ath madrid,Draw,Away,Away
-279,2020-06-14,-6.47,-8.54,0.22,0.22,real madrid,eibar,Home,Home,Home
-280,2020-06-14,-7.47,-9.54,-1.0,-1.0,sociedad,osasuna,Draw,Home,Home
-281,2020-06-15,-8.47,-10.54,-1.0,-1.0,betis,granada,Draw,Home,Home
-282,2020-06-15,-9.47,-11.54,-1.0,-1.0,levante,sevilla,Draw,Away,Away
-283,2020-06-16,-9.31,-11.38,0.16,0.16,barcelona,leganes,Home,Home,Home
-284,2020-06-16,-8.78,-10.85,0.53,0.53,villarreal,mallorca,Home,Home,Home
-285,2020-06-16,-9.78,-11.85,-1.0,-1.0,getafe,espanol,Draw,Home,Home
-286,2020-06-17,-10.78,-12.85,-1.0,-1.0,eibar,ath bilbao,Draw,Away,Away
-287,2020-06-17,-11.78,-13.85,-1.0,-1.0,valladolid,celta,Draw,Away,Away
-288,2020-06-17,-10.98,-13.05,0.8,0.8,osasuna,ath madrid,Away,Away,Away
-289,2020-06-18,-11.98,-14.05,-1.0,-1.0,alaves,sociedad,Home,Away,Away
-290,2020-06-18,-11.62,-13.69,0.36,0.36,real madrid,valencia,Home,Home,Home
-291,2020-06-19,-10.22,-12.29,1.4,1.4,granada,villarreal,Away,Away,Away
-292,2020-06-19,-11.22,-13.29,-1.0,-1.0,mallorca,leganes,Draw,Away,Home
-293,2020-06-19,-12.22,-14.29,-1.0,-1.0,sevilla,barcelona,Draw,Away,Away
-294,2020-06-20,-11.86,-13.93,0.36,0.36,ath madrid,valladolid,Home,Home,Home
-295,2020-06-20,-12.86,-14.93,-1.0,-1.0,getafe,eibar,Draw,Home,Home
-296,2020-06-20,-11.76,-13.83,1.1,1.1,ath bilbao,betis,Home,Home,Home
-297,2020-06-20,-12.76,-14.83,-1.0,-1.0,espanol,levante,Away,Home,Home
-298,2020-06-21,-11.86,-13.93,0.9,0.9,celta,alaves,Home,Home,Home
-299,2020-06-21,-10.96,-13.03,0.9,0.9,valencia,osasuna,Home,Home,Home
-300,2020-06-21,-10.21,-12.28,0.75,0.75,sociedad,real madrid,Away,Away,Away
-301,2020-06-22,-11.21,-13.28,-1.0,-1.0,villarreal,sevilla,Draw,Home,Home
-302,2020-06-22,-12.21,-14.28,-1.0,-1.0,leganes,granada,Draw,Home,Home
-303,2020-06-23,-11.91,-13.98,0.3,0.3,barcelona,ath bilbao,Home,Home,Home
-304,2020-06-23,-11.26,-13.33,0.65,0.65,levante,ath madrid,Away,Away,Away
-305,2020-06-23,-12.26,-14.33,-1.0,-1.0,valladolid,getafe,Draw,Away,Away
-306,2020-06-24,-13.26,-15.33,-1.0,-1.0,sociedad,celta,Away,Home,Home
-307,2020-06-24,-13.14,-15.21,0.12,0.12,real madrid,mallorca,Home,Home,Home
-308,2020-06-24,-11.24,-16.21,1.9,-1.0,alaves,osasuna,Away,Away,Home
-309,2020-06-25,-12.24,-17.21,-1.0,-1.0,eibar,valencia,Home,Draw,Away
-310,2020-06-25,-11.09,-16.06,1.15,1.15,betis,espanol,Home,Home,Home
-311,2020-06-26,-12.09,-17.06,-1.0,-1.0,sevilla,valladolid,Draw,Home,Home
-312,2020-06-27,-11.59,-16.56,0.5,0.5,ath bilbao,mallorca,Home,Home,Home
-313,2020-06-27,-12.59,-17.56,-1.0,-1.0,celta,barcelona,Draw,Away,Away
-314,2020-06-27,-11.34,-16.31,1.25,1.25,osasuna,leganes,Home,Home,Home
-315,2020-06-27,-11.01,-15.98,0.33,0.33,ath madrid,alaves,Home,Home,Home
-316,2020-06-28,-12.01,-16.98,-1.0,-1.0,granada,eibar,Away,Draw,Home
-317,2020-06-28,-13.01,-17.98,-1.0,-1.0,levante,betis,Home,Away,Away
-318,2020-06-28,-14.01,-16.73,-1.0,1.25,villarreal,valencia,Home,Draw,Home
-319,2020-06-28,-13.57,-16.29,0.44,0.44,espanol,real madrid,Away,Away,Away
-320,2020-06-29,-14.57,-14.79,-1.0,1.5,getafe,sociedad,Home,Away,Home
-321,2020-06-30,-15.57,-15.79,-1.0,-1.0,mallorca,celta,Home,Away,Away
-322,2020-06-30,-14.62,-14.84,0.95,0.95,leganes,sevilla,Away,Away,Away
-323,2020-06-30,-15.62,-15.84,-1.0,-1.0,barcelona,ath madrid,Draw,Home,Home
-324,2020-07-01,-16.62,-16.84,-1.0,-1.0,alaves,granada,Away,Home,Home
-325,2020-07-01,-17.62,-17.84,-1.0,-1.0,valencia,ath bilbao,Away,Draw,Home
-326,2020-07-01,-16.22,-16.44,1.4,1.4,betis,villarreal,Away,Away,Away
-327,2020-07-01,-17.22,-17.44,-1.0,-1.0,valladolid,levante,Draw,Home,Home
-328,2020-07-02,-16.86,-17.08,0.36,0.36,real madrid,getafe,Home,Home,Home
-329,2020-07-02,-16.01,-16.23,0.85,0.85,sociedad,espanol,Home,Home,Home
-330,2020-07-02,-17.01,-17.23,-1.0,-1.0,eibar,osasuna,Away,Home,Home
-331,2020-07-03,-16.73,-16.95,0.28,0.28,ath madrid,mallorca,Home,Home,Home
-332,2020-07-04,-17.73,-17.95,-1.0,-1.0,granada,valencia,Draw,Away,Away
-333,2020-07-04,-18.73,-18.95,-1.0,-1.0,celta,betis,Draw,Home,Home
-334,2020-07-04,-19.73,-17.33,-1.0,1.62,valladolid,alaves,Home,Draw,Home
-335,2020-07-05,-19.03,-16.63,0.7,0.7,ath bilbao,real madrid,Away,Away,Away
-336,2020-07-05,-20.03,-17.63,-1.0,-1.0,espanol,leganes,Away,Home,Home
-337,2020-07-05,-21.03,-18.63,-1.0,-1.0,osasuna,getafe,Draw,Away,Away
-338,2020-07-05,-20.31,-17.91,0.72,0.72,villarreal,barcelona,Away,Away,Away
-339,2020-07-06,-21.31,-18.91,-1.0,-1.0,levante,sociedad,Draw,Away,Away
-340,2020-07-06,-20.87,-18.47,0.44,0.44,sevilla,eibar,Home,Home,Home
-341,2020-07-07,-21.87,-19.47,-1.0,-1.0,celta,ath madrid,Draw,Away,Away
-342,2020-07-07,-20.87,-18.47,1.0,1.0,valencia,valladolid,Home,Home,Home
-343,2020-07-08,-20.73,-18.33,0.14,0.14,barcelona,espanol,Home,Home,Home
-344,2020-07-08,-21.73,-19.33,-1.0,-1.0,getafe,villarreal,Away,Home,Home
-345,2020-07-08,-20.68,-18.28,1.05,1.05,betis,osasuna,Home,Home,Home
-346,2020-07-09,-21.68,-19.28,-1.0,-1.0,eibar,leganes,Draw,Home,Home
-347,2020-07-09,-20.63,-18.23,1.05,1.05,mallorca,levante,Home,Home,Home
-348,2020-07-09,-19.18,-16.78,1.45,1.45,ath bilbao,sevilla,Away,Away,Away
-349,2020-07-10,-18.98,-16.58,0.2,0.2,real madrid,alaves,Home,Home,Home
-350,2020-07-10,-19.98,-17.58,-1.0,-1.0,sociedad,granada,Away,Home,Home
-351,2020-07-11,-19.68,-17.28,0.3,0.3,valladolid,barcelona,Away,Away,Away
-352,2020-07-11,-20.68,-18.28,-1.0,-1.0,osasuna,celta,Home,Away,Away
-353,2020-07-11,-20.18,-17.78,0.5,0.5,ath madrid,betis,Home,Home,Home
-354,2020-07-12,-19.78,-17.38,0.4,0.4,sevilla,mallorca,Home,Home,Home
-355,2020-07-12,-20.78,-18.38,-1.0,-1.0,leganes,valencia,Home,Away,Away
-356,2020-07-12,-19.53,-17.13,1.25,1.25,espanol,eibar,Away,Away,Away
-357,2020-07-12,-18.43,-16.03,1.1,1.1,levante,ath bilbao,Away,Away,Away
-358,2020-07-13,-19.43,-17.03,-1.0,-1.0,alaves,getafe,Draw,Away,Away
-359,2020-07-13,-20.43,-18.03,-1.0,-1.0,villarreal,sociedad,Away,Home,Home
-360,2020-07-13,-19.98,-17.58,0.45,0.45,granada,real madrid,Away,Away,Away
-361,2020-07-16,-20.98,-18.58,-1.0,-1.0,mallorca,granada,Away,Home,Home
-362,2020-07-16,-21.98,-19.58,-1.0,-1.0,celta,levante,Away,Home,Home
-363,2020-07-16,-19.88,-20.58,2.1,-1.0,betis,alaves,Away,Away,Home
-364,2020-07-16,-20.88,-21.58,-1.0,-1.0,ath bilbao,leganes,Away,Home,Home
-365,2020-07-16,-19.78,-20.48,1.1,1.1,eibar,valladolid,Home,Home,Home
-366,2020-07-16,-20.78,-21.48,-1.0,-1.0,barcelona,osasuna,Away,Home,Home
-367,2020-07-16,-21.78,-22.48,-1.0,-1.0,sociedad,sevilla,Draw,Home,Home
-368,2020-07-16,-21.33,-22.03,0.45,0.45,real madrid,villarreal,Home,Home,Home
-369,2020-07-16,-20.08,-20.78,1.25,1.25,getafe,ath madrid,Away,Away,Away
-370,2020-07-16,-19.55,-20.25,0.53,0.53,valencia,espanol,Home,Home,Home
-371,2020-07-19,-20.55,-21.25,-1.0,-1.0,valladolid,betis,Home,Away,Away
-372,2020-07-19,-21.55,-22.25,-1.0,-1.0,ath madrid,sociedad,Draw,Home,Home
-373,2020-07-19,-20.55,-21.25,1.0,1.0,granada,ath bilbao,Home,Home,Home
-374,2020-07-19,-20.02,-20.72,0.53,0.53,villarreal,eibar,Home,Home,Home
-375,2020-07-19,-21.02,-21.72,-1.0,-1.0,osasuna,mallorca,Draw,Home,Home
-376,2020-07-19,-20.49,-21.19,0.53,0.53,alaves,barcelona,Away,Away,Away
-377,2020-07-19,-19.59,-20.29,0.9,0.9,sevilla,valencia,Home,Home,Home
-378,2020-07-19,-20.59,-21.29,-1.0,-1.0,leganes,real madrid,Draw,Home,Away
-379,2020-07-19,-21.59,-22.29,-1.0,-1.0,espanol,celta,Draw,Away,Away
-380,2020-07-19,-22.59,-23.29,-1.0,-1.0,levante,getafe,Home,Away,Away
+179,2019-12-22,-1.25,-3.58,-1.0,-1.0,levante,celta,Home,Away,Away
+180,2019-12-22,-2.25,-4.58,-1.0,-1.0,real madrid,ath bilbao,Draw,Home,Home
+181,2020-01-03,-0.38,-5.58,1.87,-1.0,valladolid,leganes,Draw,Draw,Home
+182,2020-01-03,-1.38,-6.58,-1.0,-1.0,sevilla,ath bilbao,Draw,Home,Home
+183,2020-01-04,-1.13,-6.33,0.25,0.25,ath madrid,levante,Home,Home,Home
+184,2020-01-04,-2.13,-7.33,-1.0,-1.0,espanol,barcelona,Draw,Away,Away
+185,2020-01-04,-1.52,-6.72,0.61,0.61,valencia,eibar,Home,Home,Home
+186,2020-01-04,-0.67,-5.87,0.85,0.85,getafe,real madrid,Away,Away,Away
+187,2020-01-05,-1.67,-6.87,-1.0,-1.0,alaves,betis,Draw,Away,Home
+188,2020-01-05,-2.67,-7.87,-1.0,-1.0,celta,osasuna,Draw,Home,Home
+189,2020-01-05,-1.72,-6.92,0.95,0.95,granada,mallorca,Home,Home,Home
+190,2020-01-05,-2.72,-7.92,-1.0,-1.0,sociedad,villarreal,Away,Home,Home
+191,2020-01-17,-3.72,-6.22,-1.0,1.7,leganes,getafe,Away,Home,Away
+192,2020-01-18,-4.72,-7.22,-1.0,-1.0,levante,alaves,Away,Draw,Home
+193,2020-01-18,-4.12,-6.62,0.6,0.6,real madrid,sevilla,Home,Home,Home
+194,2020-01-18,-5.12,-7.62,-1.0,-1.0,osasuna,valladolid,Draw,Home,Home
+195,2020-01-18,-6.12,-8.62,-1.0,-1.0,eibar,ath madrid,Home,Away,Away
+196,2020-01-19,-7.12,-9.62,-1.0,-1.0,mallorca,valencia,Home,Away,Away
+197,2020-01-19,-5.62,-8.12,1.5,1.5,betis,sociedad,Home,Home,Home
+198,2020-01-19,-6.62,-9.12,-1.0,-1.0,villarreal,espanol,Away,Home,Home
+199,2020-01-19,-7.62,-10.12,-1.0,-1.0,ath bilbao,celta,Draw,Home,Home
+200,2020-01-19,-7.46,-9.96,0.16,0.16,barcelona,granada,Home,Home,Home
+201,2020-01-24,-6.8,-9.3,0.66,0.66,osasuna,levante,Home,Home,Home
+202,2020-01-25,-7.8,-10.3,-1.0,-1.0,espanol,ath bilbao,Draw,Home,Home
+203,2020-01-25,-8.8,-11.3,-1.0,-1.0,valencia,barcelona,Home,Away,Away
+204,2020-01-25,-7.25,-9.75,1.55,1.55,alaves,villarreal,Away,Away,Away
+205,2020-01-25,-6.89,-9.39,0.36,0.36,sevilla,granada,Home,Home,Home
+206,2020-01-26,-7.89,-10.39,-1.0,-1.0,ath madrid,leganes,Draw,Home,Home
+207,2020-01-26,-8.89,-11.39,-1.0,-1.0,celta,eibar,Draw,Home,Home
+208,2020-01-26,-7.84,-10.34,1.05,1.05,getafe,betis,Home,Home,Home
+209,2020-01-26,-7.39,-9.89,0.45,0.45,sociedad,mallorca,Home,Home,Home
+210,2020-01-26,-6.95,-9.45,0.44,0.44,valladolid,real madrid,Away,Away,Away
+211,2020-02-01,-7.95,-10.45,-1.0,-1.0,mallorca,valladolid,Away,Home,Home
+212,2020-02-01,-7.15,-9.65,0.8,0.8,valencia,celta,Home,Home,Home
+213,2020-02-01,-8.15,-7.95,-1.0,1.7,granada,espanol,Home,Away,Home
+214,2020-02-01,-7.35,-7.15,0.8,0.8,real madrid,ath madrid,Home,Home,Home
+215,2020-02-02,-8.35,-8.15,-1.0,-1.0,eibar,betis,Draw,Away,Home
+216,2020-02-02,-9.35,-9.15,-1.0,-1.0,ath bilbao,getafe,Away,Draw,Home
+217,2020-02-02,-7.45,-10.15,1.9,-1.0,leganes,sociedad,Home,Home,Away
+218,2020-02-02,-7.31,-10.01,0.14,0.14,barcelona,levante,Home,Home,Home
+219,2020-02-02,-8.31,-11.01,-1.0,-1.0,sevilla,alaves,Draw,Home,Home
+220,2020-02-02,-7.56,-10.26,0.75,0.75,villarreal,osasuna,Home,Home,Home
+221,2020-02-07,-6.31,-9.01,1.25,1.25,alaves,eibar,Home,Home,Home
+222,2020-02-08,-7.31,-10.01,-1.0,-1.0,valladolid,villarreal,Draw,Away,Away
+223,2020-02-08,-6.91,-9.61,0.4,0.4,ath madrid,granada,Home,Home,Home
+224,2020-02-08,-7.91,-8.11,-1.0,1.5,levante,leganes,Home,Draw,Home
+225,2020-02-08,-6.91,-7.11,1.0,1.0,getafe,valencia,Home,Home,Home
+226,2020-02-09,-6.3,-6.5,0.61,0.61,espanol,mallorca,Home,Home,Home
+227,2020-02-09,-5.25,-5.45,1.05,1.05,sociedad,ath bilbao,Home,Home,Home
+228,2020-02-09,-4.72,-4.92,0.53,0.53,osasuna,real madrid,Away,Away,Away
+229,2020-02-09,-5.72,-5.92,-1.0,-1.0,celta,sevilla,Home,Away,Away
+230,2020-02-09,-4.87,-5.07,0.85,0.85,betis,barcelona,Away,Away,Away
+231,2020-02-14,-5.87,-6.07,-1.0,-1.0,valencia,ath madrid,Draw,Away,Away
+232,2020-02-15,-4.47,-4.67,1.4,1.4,mallorca,alaves,Home,Home,Home
+233,2020-02-15,-4.07,-4.27,0.4,0.4,barcelona,getafe,Home,Home,Home
+234,2020-02-15,-3.57,-3.77,0.5,0.5,villarreal,levante,Home,Home,Home
+235,2020-02-15,-4.57,-2.37,-1.0,1.4,granada,valladolid,Home,Draw,Home
+236,2020-02-16,-5.57,-3.37,-1.0,-1.0,real madrid,celta,Draw,Home,Home
+237,2020-02-16,-6.57,-4.37,-1.0,-1.0,ath bilbao,osasuna,Away,Home,Home
+238,2020-02-16,-7.57,-5.37,-1.0,-1.0,leganes,betis,Draw,Home,Home
+239,2020-02-16,-8.57,-6.37,-1.0,-1.0,sevilla,espanol,Draw,Home,Home
+240,2020-02-21,-9.57,-7.37,-1.0,-1.0,betis,mallorca,Draw,Home,Home
+241,2020-02-22,-8.92,-6.72,0.65,0.65,sociedad,valencia,Home,Home,Home
+242,2020-02-22,-8.12,-5.92,0.8,0.8,celta,leganes,Home,Home,Home
+243,2020-02-22,-7.92,-5.72,0.2,0.2,barcelona,eibar,Home,Home,Home
+244,2020-02-22,-8.92,-6.72,-1.0,-1.0,levante,real madrid,Home,Away,Away
+245,2020-02-23,-9.92,-7.72,-1.0,-1.0,osasuna,granada,Away,Home,Home
+246,2020-02-23,-8.3,-6.1,1.62,1.62,valladolid,espanol,Home,Home,Home
+247,2020-02-23,-9.3,-7.1,-1.0,-1.0,getafe,sevilla,Away,Home,Home
+248,2020-02-23,-10.3,-8.1,-1.0,-1.0,alaves,ath bilbao,Home,Away,Away
+249,2020-02-23,-9.65,-7.45,0.65,0.65,ath madrid,villarreal,Home,Home,Home
+250,2020-02-28,-9.12,-6.92,0.53,0.53,sociedad,valladolid,Home,Home,Home
+251,2020-02-29,-8.12,-5.92,1.0,1.0,eibar,levante,Home,Home,Home
+252,2020-02-29,-6.97,-4.77,1.15,1.15,valencia,betis,Home,Home,Home
+253,2020-02-29,-7.97,-5.77,-1.0,-1.0,leganes,alaves,Draw,Home,Home
+254,2020-02-29,-8.97,-6.77,-1.0,-1.0,granada,celta,Draw,Away,Away
+255,2020-03-01,-8.52,-6.32,0.45,0.45,sevilla,osasuna,Home,Home,Home
+256,2020-03-01,-7.22,-5.02,1.3,1.3,ath bilbao,villarreal,Home,Home,Home
+257,2020-03-01,-8.22,-6.02,-1.0,-1.0,espanol,ath madrid,Draw,Away,Away
+258,2020-03-01,-6.97,-4.77,1.25,1.25,mallorca,getafe,Away,Away,Away
+259,2020-03-01,-7.97,-3.57,-1.0,1.2,real madrid,barcelona,Home,Draw,Home
+260,2020-03-06,-5.72,-4.57,2.25,-1.0,alaves,valencia,Draw,Draw,Home
+261,2020-03-07,-6.72,-5.57,-1.0,-1.0,getafe,celta,Draw,Home,Home
+262,2020-03-07,-6.39,-5.24,0.33,0.33,barcelona,sociedad,Home,Home,Home
+263,2020-03-07,-7.39,-6.24,-1.0,-1.0,eibar,mallorca,Away,Home,Home
+264,2020-03-07,-8.39,-7.24,-1.0,-1.0,ath madrid,sevilla,Draw,Home,Home
+265,2020-03-08,-9.39,-5.84,-1.0,1.4,osasuna,espanol,Home,Away,Home
+266,2020-03-08,-7.64,-4.09,1.75,1.75,valladolid,ath bilbao,Away,Away,Away
+267,2020-03-08,-8.64,-5.09,-1.0,-1.0,levante,granada,Draw,Home,Home
+268,2020-03-08,-9.64,-6.09,-1.0,-1.0,villarreal,leganes,Away,Home,Home
+269,2020-03-08,-10.64,-7.09,-1.0,-1.0,betis,real madrid,Home,Away,Away
+270,2020-03-10,-9.44,-5.89,1.2,1.2,eibar,sociedad,Away,Away,Away
+271,2020-06-11,-8.64,-5.09,0.8,0.8,sevilla,betis,Home,Home,Home
+272,2020-06-12,-9.64,-6.09,-1.0,-1.0,valencia,levante,Draw,Home,Home
+273,2020-06-12,-10.64,-7.09,-1.0,-1.0,granada,getafe,Home,Away,Away
+274,2020-06-13,-9.59,-6.04,1.05,1.05,espanol,alaves,Home,Home,Home
+275,2020-06-13,-10.59,-7.04,-1.0,-1.0,celta,villarreal,Away,Home,Home
+276,2020-06-13,-11.59,-8.04,-1.0,-1.0,leganes,valladolid,Away,Home,Home
+277,2020-06-13,-11.31,-7.76,0.28,0.28,mallorca,barcelona,Away,Away,Away
+278,2020-06-14,-12.31,-8.76,-1.0,-1.0,ath bilbao,ath madrid,Draw,Away,Away
+279,2020-06-14,-12.09,-8.54,0.22,0.22,real madrid,eibar,Home,Home,Home
+280,2020-06-14,-13.09,-9.54,-1.0,-1.0,sociedad,osasuna,Draw,Home,Home
+281,2020-06-15,-14.09,-10.54,-1.0,-1.0,betis,granada,Draw,Home,Home
+282,2020-06-15,-15.09,-11.54,-1.0,-1.0,levante,sevilla,Draw,Away,Away
+283,2020-06-16,-14.93,-11.38,0.16,0.16,barcelona,leganes,Home,Home,Home
+284,2020-06-16,-14.4,-10.85,0.53,0.53,villarreal,mallorca,Home,Home,Home
+285,2020-06-16,-15.4,-11.85,-1.0,-1.0,getafe,espanol,Draw,Home,Home
+286,2020-06-17,-16.4,-12.85,-1.0,-1.0,eibar,ath bilbao,Draw,Away,Away
+287,2020-06-17,-17.4,-13.85,-1.0,-1.0,valladolid,celta,Draw,Away,Away
+288,2020-06-17,-16.6,-13.05,0.8,0.8,osasuna,ath madrid,Away,Away,Away
+289,2020-06-18,-17.6,-14.05,-1.0,-1.0,alaves,sociedad,Home,Away,Away
+290,2020-06-18,-17.24,-13.69,0.36,0.36,real madrid,valencia,Home,Home,Home
+291,2020-06-19,-15.84,-12.29,1.4,1.4,granada,villarreal,Away,Away,Away
+292,2020-06-19,-16.84,-13.29,-1.0,-1.0,mallorca,leganes,Draw,Away,Home
+293,2020-06-19,-17.84,-14.29,-1.0,-1.0,sevilla,barcelona,Draw,Away,Away
+294,2020-06-20,-17.48,-13.93,0.36,0.36,ath madrid,valladolid,Home,Home,Home
+295,2020-06-20,-18.48,-14.93,-1.0,-1.0,getafe,eibar,Draw,Home,Home
+296,2020-06-20,-17.38,-13.83,1.1,1.1,ath bilbao,betis,Home,Home,Home
+297,2020-06-20,-18.38,-14.83,-1.0,-1.0,espanol,levante,Away,Home,Home
+298,2020-06-21,-17.48,-13.93,0.9,0.9,celta,alaves,Home,Home,Home
+299,2020-06-21,-16.58,-13.03,0.9,0.9,valencia,osasuna,Home,Home,Home
+300,2020-06-21,-15.83,-12.28,0.75,0.75,sociedad,real madrid,Away,Away,Away
+301,2020-06-22,-16.83,-13.28,-1.0,-1.0,villarreal,sevilla,Draw,Home,Home
+302,2020-06-22,-17.83,-14.28,-1.0,-1.0,leganes,granada,Draw,Home,Home
+303,2020-06-23,-17.18,-13.63,0.65,0.65,levante,ath madrid,Away,Away,Away
+304,2020-06-23,-18.18,-14.63,-1.0,-1.0,valladolid,getafe,Draw,Away,Away
+305,2020-06-23,-17.88,-14.33,0.3,0.3,barcelona,ath bilbao,Home,Home,Home
+306,2020-06-24,-18.88,-15.33,-1.0,-1.0,sociedad,celta,Away,Home,Home
+307,2020-06-24,-18.76,-15.21,0.12,0.12,real madrid,mallorca,Home,Home,Home
+308,2020-06-24,-16.86,-16.21,1.9,-1.0,alaves,osasuna,Away,Away,Home
+309,2020-06-25,-17.86,-17.21,-1.0,-1.0,eibar,valencia,Home,Draw,Away
+310,2020-06-25,-16.71,-16.06,1.15,1.15,betis,espanol,Home,Home,Home
+311,2020-06-26,-17.71,-17.06,-1.0,-1.0,sevilla,valladolid,Draw,Home,Home
+312,2020-06-27,-17.21,-16.56,0.5,0.5,ath bilbao,mallorca,Home,Home,Home
+313,2020-06-27,-18.21,-17.56,-1.0,-1.0,celta,barcelona,Draw,Away,Away
+314,2020-06-27,-16.96,-16.31,1.25,1.25,osasuna,leganes,Home,Home,Home
+315,2020-06-27,-16.63,-15.98,0.33,0.33,ath madrid,alaves,Home,Home,Home
+316,2020-06-28,-17.63,-16.98,-1.0,-1.0,granada,eibar,Away,Draw,Home
+317,2020-06-28,-18.63,-17.98,-1.0,-1.0,levante,betis,Home,Away,Away
+318,2020-06-28,-19.63,-16.73,-1.0,1.25,villarreal,valencia,Home,Draw,Home
+319,2020-06-28,-19.19,-16.29,0.44,0.44,espanol,real madrid,Away,Away,Away
+320,2020-06-29,-17.69,-14.79,1.5,1.5,getafe,sociedad,Home,Home,Home
+321,2020-06-30,-18.69,-15.79,-1.0,-1.0,mallorca,celta,Home,Away,Away
+322,2020-06-30,-17.74,-14.84,0.95,0.95,leganes,sevilla,Away,Away,Away
+323,2020-06-30,-18.74,-15.84,-1.0,-1.0,barcelona,ath madrid,Draw,Home,Home
+324,2020-07-01,-19.74,-16.84,-1.0,-1.0,alaves,granada,Away,Home,Home
+325,2020-07-01,-20.74,-17.84,-1.0,-1.0,valencia,ath bilbao,Away,Draw,Home
+326,2020-07-01,-19.34,-16.44,1.4,1.4,betis,villarreal,Away,Away,Away
+327,2020-07-01,-20.34,-17.44,-1.0,-1.0,valladolid,levante,Draw,Home,Home
+328,2020-07-02,-19.98,-17.08,0.36,0.36,real madrid,getafe,Home,Home,Home
+329,2020-07-02,-19.13,-16.23,0.85,0.85,sociedad,espanol,Home,Home,Home
+330,2020-07-02,-20.13,-17.23,-1.0,-1.0,eibar,osasuna,Away,Home,Home
+331,2020-07-03,-19.85,-16.95,0.28,0.28,ath madrid,mallorca,Home,Home,Home
+332,2020-07-04,-20.85,-17.95,-1.0,-1.0,granada,valencia,Draw,Away,Away
+333,2020-07-04,-21.85,-18.95,-1.0,-1.0,celta,betis,Draw,Home,Home
+334,2020-07-04,-22.85,-17.33,-1.0,1.62,valladolid,alaves,Home,Draw,Home
+335,2020-07-05,-22.15,-16.63,0.7,0.7,ath bilbao,real madrid,Away,Away,Away
+336,2020-07-05,-23.15,-17.63,-1.0,-1.0,espanol,leganes,Away,Home,Home
+337,2020-07-05,-24.15,-18.63,-1.0,-1.0,osasuna,getafe,Draw,Away,Away
+338,2020-07-05,-23.43,-17.91,0.72,0.72,villarreal,barcelona,Away,Away,Away
+339,2020-07-06,-24.43,-18.91,-1.0,-1.0,levante,sociedad,Draw,Away,Away
+340,2020-07-06,-23.99,-18.47,0.44,0.44,sevilla,eibar,Home,Home,Home
+341,2020-07-07,-24.99,-19.47,-1.0,-1.0,celta,ath madrid,Draw,Away,Away
+342,2020-07-07,-23.99,-18.47,1.0,1.0,valencia,valladolid,Home,Home,Home
+343,2020-07-08,-23.85,-18.33,0.14,0.14,barcelona,espanol,Home,Home,Home
+344,2020-07-08,-24.85,-19.33,-1.0,-1.0,getafe,villarreal,Away,Home,Home
+345,2020-07-08,-23.8,-18.28,1.05,1.05,betis,osasuna,Home,Home,Home
+346,2020-07-09,-24.8,-19.28,-1.0,-1.0,eibar,leganes,Draw,Home,Home
+347,2020-07-09,-23.75,-18.23,1.05,1.05,mallorca,levante,Home,Home,Home
+348,2020-07-09,-22.3,-16.78,1.45,1.45,ath bilbao,sevilla,Away,Away,Away
+349,2020-07-10,-22.1,-16.58,0.2,0.2,real madrid,alaves,Home,Home,Home
+350,2020-07-10,-23.1,-17.58,-1.0,-1.0,sociedad,granada,Away,Home,Home
+351,2020-07-11,-22.8,-17.28,0.3,0.3,valladolid,barcelona,Away,Away,Away
+352,2020-07-11,-23.8,-18.28,-1.0,-1.0,osasuna,celta,Home,Away,Away
+353,2020-07-11,-23.3,-17.78,0.5,0.5,ath madrid,betis,Home,Home,Home
+354,2020-07-12,-22.9,-17.38,0.4,0.4,sevilla,mallorca,Home,Home,Home
+355,2020-07-12,-23.9,-18.38,-1.0,-1.0,leganes,valencia,Home,Away,Away
+356,2020-07-12,-24.9,-17.13,-1.0,1.25,espanol,eibar,Away,Home,Away
+357,2020-07-12,-23.8,-16.03,1.1,1.1,levante,ath bilbao,Away,Away,Away
+358,2020-07-13,-24.8,-17.03,-1.0,-1.0,alaves,getafe,Draw,Away,Away
+359,2020-07-13,-25.8,-18.03,-1.0,-1.0,villarreal,sociedad,Away,Home,Home
+360,2020-07-13,-25.35,-17.58,0.45,0.45,granada,real madrid,Away,Away,Away
+361,2020-07-16,-26.35,-18.58,-1.0,-1.0,mallorca,granada,Away,Home,Home
+362,2020-07-16,-27.35,-19.58,-1.0,-1.0,celta,levante,Away,Home,Home
+363,2020-07-16,-25.25,-20.58,2.1,-1.0,betis,alaves,Away,Away,Home
+364,2020-07-16,-26.25,-21.58,-1.0,-1.0,ath bilbao,leganes,Away,Home,Home
+365,2020-07-16,-25.15,-20.48,1.1,1.1,eibar,valladolid,Home,Home,Home
+366,2020-07-16,-26.15,-21.48,-1.0,-1.0,barcelona,osasuna,Away,Home,Home
+367,2020-07-16,-27.15,-22.48,-1.0,-1.0,sociedad,sevilla,Draw,Home,Home
+368,2020-07-16,-26.7,-22.03,0.45,0.45,real madrid,villarreal,Home,Home,Home
+369,2020-07-16,-25.45,-20.78,1.25,1.25,getafe,ath madrid,Away,Away,Away
+370,2020-07-16,-24.92,-20.25,0.53,0.53,valencia,espanol,Home,Home,Home
+371,2020-07-19,-25.92,-21.25,-1.0,-1.0,leganes,real madrid,Draw,Home,Away
+372,2020-07-19,-24.92,-20.25,1.0,1.0,granada,ath bilbao,Home,Home,Home
+373,2020-07-19,-25.92,-21.25,-1.0,-1.0,levante,getafe,Home,Away,Away
+374,2020-07-19,-26.92,-22.25,-1.0,-1.0,espanol,celta,Draw,Away,Away
+375,2020-07-19,-27.92,-23.25,-1.0,-1.0,osasuna,mallorca,Draw,Home,Home
+376,2020-07-19,-27.39,-22.72,0.53,0.53,villarreal,eibar,Home,Home,Home
+377,2020-07-19,-28.39,-23.72,-1.0,-1.0,valladolid,betis,Home,Away,Away
+378,2020-07-19,-27.86,-23.19,0.53,0.53,alaves,barcelona,Away,Away,Away
+379,2020-07-19,-28.86,-24.19,-1.0,-1.0,ath madrid,sociedad,Draw,Home,Home
+380,2020-07-19,-27.96,-23.29,0.9,0.9,sevilla,valencia,Home,Home,Home
