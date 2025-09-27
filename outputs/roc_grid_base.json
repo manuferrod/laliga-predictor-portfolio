@@ -986,7 +986,9 @@
     "overall": {
       "auc_macro": 0.5720241734015238,
       "auc_weighted": 0.5791857121743874,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -1964,7 +1966,9 @@
     "overall": {
       "auc_macro": 0.5848030698195209,
       "auc_weighted": 0.5976776651081797,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -2868,7 +2872,9 @@
     "overall": {
       "auc_macro": 0.6718864516956303,
       "auc_weighted": 0.6784887453328217,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -3746,7 +3752,9 @@
     "overall": {
       "auc_macro": 0.6412200830550604,
       "auc_weighted": 0.6573994851580541,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -4710,7 +4718,9 @@
     "overall": {
       "auc_macro": 0.6652002709064829,
       "auc_weighted": 0.6710444560222346,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -5668,7 +5678,9 @@
     "overall": {
       "auc_macro": 0.6472488167203431,
       "auc_weighted": 0.6693005704045246,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -6572,7 +6584,9 @@
     "overall": {
       "auc_macro": 0.6847176901498315,
       "auc_weighted": 0.6959213780518805,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -7414,7 +7428,9 @@
     "overall": {
       "auc_macro": 0.6964526905442411,
       "auc_weighted": 0.7161089363055559,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -8314,7 +8330,9 @@
     "overall": {
       "auc_macro": 0.6750099195382117,
       "auc_weighted": 0.6929771082788883,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -9216,7 +9234,9 @@
     "overall": {
       "auc_macro": 0.6898920663425244,
       "auc_weighted": 0.7054198455552212,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -10156,7 +10176,9 @@
     "overall": {
       "auc_macro": 0.653313770519144,
       "auc_weighted": 0.6747046625494824,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -11118,7 +11140,9 @@
     "overall": {
       "auc_macro": 0.6328305862500182,
       "auc_weighted": 0.6384650710414786,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -12048,7 +12072,9 @@
     "overall": {
       "auc_macro": 0.6455551450438372,
       "auc_weighted": 0.6537938399605864,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -13002,7 +13028,9 @@
     "overall": {
       "auc_macro": 0.6707090870999378,
       "auc_weighted": 0.676699129087124,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -13962,7 +13990,9 @@
     "overall": {
       "auc_macro": 0.6624290868921866,
       "auc_weighted": 0.6689063705851434,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -14896,7 +14926,9 @@
     "overall": {
       "auc_macro": 0.6421450988901554,
       "auc_weighted": 0.6532614665292314,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -15798,7 +15830,9 @@
     "overall": {
       "auc_macro": 0.7016063458464772,
       "auc_weighted": 0.7135584798327679,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -16736,7 +16770,9 @@
     "overall": {
       "auc_macro": 0.696607728677899,
       "auc_weighted": 0.7084749803523649,
-      "n_test": 380
+      "n_test": 380,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -16918,7 +16954,9 @@
     "overall": {
       "auc_macro": 0.6685163807386031,
       "auc_weighted": 0.673018278018278,
-      "n_test": 60
+      "n_test": 60,
+      "wk_min": 0,
+      "wk_max": 0
     }
   }
 ]

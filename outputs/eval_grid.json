@@ -14,7 +14,9 @@
       "brier": 0.7084656252008952,
       "n_test": 380,
       "season_min": 2007,
-      "season_max": 2007
+      "season_max": 2007,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -32,7 +34,9 @@
       "brier": 0.6514989943768685,
       "n_test": 380,
       "season_min": 2008,
-      "season_max": 2008
+      "season_max": 2008,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -50,7 +54,9 @@
       "brier": 0.5740858195095201,
       "n_test": 380,
       "season_min": 2009,
-      "season_max": 2009
+      "season_max": 2009,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -68,7 +74,9 @@
       "brier": 0.5611135510199815,
       "n_test": 380,
       "season_min": 2010,
-      "season_max": 2010
+      "season_max": 2010,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -86,7 +94,9 @@
       "brier": 0.5701049654532278,
       "n_test": 380,
       "season_min": 2011,
-      "season_max": 2011
+      "season_max": 2011,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -104,7 +114,9 @@
       "brier": 0.575366933346608,
       "n_test": 380,
       "season_min": 2012,
-      "season_max": 2012
+      "season_max": 2012,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -122,7 +134,9 @@
       "brier": 0.5785756937491771,
       "n_test": 380,
       "season_min": 2013,
-      "season_max": 2013
+      "season_max": 2013,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -140,7 +154,9 @@
       "brier": 0.5569564174057072,
       "n_test": 380,
       "season_min": 2014,
-      "season_max": 2014
+      "season_max": 2014,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -158,7 +174,9 @@
       "brier": 0.5682335489347498,
       "n_test": 380,
       "season_min": 2015,
-      "season_max": 2015
+      "season_max": 2015,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -176,7 +194,9 @@
       "brier": 0.556508343398564,
       "n_test": 380,
       "season_min": 2016,
-      "season_max": 2016
+      "season_max": 2016,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -194,7 +214,9 @@
       "brier": 0.5764469328440623,
       "n_test": 380,
       "season_min": 2017,
-      "season_max": 2017
+      "season_max": 2017,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -212,7 +234,9 @@
       "brier": 0.6233595431910849,
       "n_test": 380,
       "season_min": 2018,
-      "season_max": 2018
+      "season_max": 2018,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -230,7 +254,9 @@
       "brier": 0.5999908353497463,
       "n_test": 380,
       "season_min": 2019,
-      "season_max": 2019
+      "season_max": 2019,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -248,7 +274,9 @@
       "brier": 0.5965087681904885,
       "n_test": 380,
       "season_min": 2020,
-      "season_max": 2020
+      "season_max": 2020,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -266,7 +294,9 @@
       "brier": 0.5982915769259726,
       "n_test": 380,
       "season_min": 2021,
-      "season_max": 2021
+      "season_max": 2021,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -284,7 +314,9 @@
       "brier": 0.5860039974299538,
       "n_test": 380,
       "season_min": 2022,
-      "season_max": 2022
+      "season_max": 2022,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -302,7 +334,9 @@
       "brier": 0.5659577935046816,
       "n_test": 380,
       "season_min": 2023,
-      "season_max": 2023
+      "season_max": 2023,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -320,7 +354,9 @@
       "brier": 0.5651867198417204,
       "n_test": 380,
       "season_min": 2024,
-      "season_max": 2024
+      "season_max": 2024,
+      "wk_min": 0,
+      "wk_max": 0
     }
   },
   {
@@ -338,7 +374,9 @@
       "brier": 0.5751243493140177,
       "n_test": 60,
       "season_min": 2025,
-      "season_max": 2025
+      "season_max": 2025,
+      "wk_min": 0,
+      "wk_max": 0
     }
   }
 ]
