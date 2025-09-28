@@ -1,0 +1,381 @@
+match_num,date,jornada,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,model_txt,bet365_txt
+1,2008-08-30,1,-1.0,1.0,-1.0,1.0,espanol,valladolid,Home,Draw,Home
+2,2008-08-30,1,-2.0,1.7,-1.0,0.7,valencia,mallorca,Home,Away,Home
+3,2008-08-31,1,-3.0,0.7,-1.0,-1.0,numancia,barcelona,Home,Draw,Away
+4,2008-08-31,1,-4.0,-0.3,-1.0,-1.0,osasuna,villarreal,Draw,Away,Away
+5,2008-08-31,1,-5.0,-1.3,-1.0,-1.0,santander,sevilla,Draw,Away,Away
+6,2008-08-31,1,-6.0,0.32,-1.0,1.62,sp gijon,getafe,Away,Draw,Away
+7,2008-08-31,1,-7.0,-0.68,-1.0,-1.0,ath bilbao,almeria,Away,Draw,Home
+8,2008-08-31,1,-8.0,-0.24,-1.0,0.44,ath madrid,malaga,Home,Draw,Home
+9,2008-08-31,1,-9.0,-1.24,-1.0,-1.0,betis,recreativo,Away,Draw,Home
+10,2008-08-31,1,-10.0,-2.24,-1.0,-1.0,la coruna,real madrid,Home,Away,Away
+11,2008-09-13,2,-11.0,-3.24,-1.0,-1.0,barcelona,santander,Draw,Home,Home
+12,2008-09-13,2,-12.0,-4.24,-1.0,-1.0,valladolid,ath madrid,Home,Draw,Away
+13,2008-09-14,2,-11.0,-3.24,1.0,1.0,villarreal,la coruna,Home,Home,Home
+14,2008-09-14,2,-10.67,-2.91,0.33,0.33,sevilla,sp gijon,Home,Home,Home
+15,2008-09-14,2,-8.57,-3.91,2.1,-1.0,recreativo,espanol,Away,Away,Home
+16,2008-09-14,2,-8.32,-3.66,0.25,0.25,real madrid,numancia,Home,Home,Home
+17,2008-09-14,2,-9.32,-4.66,-1.0,-1.0,almeria,valencia,Draw,Away,Away
+18,2008-09-14,2,-7.07,-5.66,2.25,-1.0,malaga,ath bilbao,Draw,Draw,Home
+19,2008-09-14,2,-4.77,-6.66,2.3,-1.0,getafe,betis,Draw,Draw,Home
+20,2008-09-14,2,-5.77,-7.66,-1.0,-1.0,mallorca,osasuna,Draw,Home,Home
+21,2008-09-20,3,-5.27,-7.16,0.5,0.5,ath madrid,recreativo,Home,Home,Home
+22,2008-09-20,3,-6.27,-8.16,-1.0,-1.0,espanol,getafe,Draw,Away,Home
+23,2008-09-21,3,-5.17,-7.06,1.1,1.1,santander,real madrid,Away,Away,Away
+24,2008-09-21,3,-6.17,-6.06,-1.0,1.0,ath bilbao,valladolid,Home,Draw,Home
+25,2008-09-21,3,-4.87,-4.76,1.3,1.3,numancia,villarreal,Away,Away,Away
+26,2008-09-21,3,-5.87,-5.76,-1.0,-1.0,betis,sevilla,Draw,Away,Away
+27,2008-09-21,3,-6.87,-5.14,-1.0,0.62,valencia,osasuna,Home,Draw,Home
+28,2008-09-21,3,-7.87,-4.64,-1.0,0.5,sp gijon,barcelona,Away,Draw,Away
+29,2008-09-21,3,-8.87,-3.81,-1.0,0.83,almeria,malaga,Home,Draw,Home
+30,2008-09-21,3,-9.87,-4.81,-1.0,-1.0,la coruna,mallorca,Draw,Away,Home
+31,2008-09-24,4,-9.67,-4.61,0.2,0.2,barcelona,betis,Home,Home,Home
+32,2008-09-24,4,-10.67,-3.21,-1.0,1.4,getafe,ath madrid,Away,Home,Away
+33,2008-09-24,4,-8.42,-4.21,2.25,-1.0,osasuna,la coruna,Draw,Draw,Home
+34,2008-09-24,4,-8.25,-4.04,0.17,0.17,real madrid,sp gijon,Home,Home,Home
+35,2008-09-24,4,-7.63,-3.42,0.62,0.62,sevilla,espanol,Home,Home,Home
+36,2008-09-24,4,-7.06,-2.85,0.57,0.57,villarreal,santander,Home,Home,Home
+37,2008-09-25,4,-8.06,-1.75,-1.0,1.1,valladolid,almeria,Home,Draw,Home
+38,2008-09-25,4,-5.81,-2.75,2.25,-1.0,recreativo,ath bilbao,Draw,Draw,Home
+39,2008-09-25,4,-4.81,-1.75,1.0,1.0,malaga,valencia,Away,Away,Away
+40,2008-09-25,4,-5.81,-0.9,-1.0,0.85,mallorca,numancia,Home,Draw,Home
+41,2008-09-27,5,-5.01,-0.1,0.8,0.8,betis,real madrid,Away,Away,Away
+42,2008-09-27,5,-4.21,0.7,0.8,0.8,espanol,barcelona,Away,Away,Away
+43,2008-09-27,5,-3.59,1.32,0.62,0.62,sp gijon,villarreal,Away,Away,Away
+44,2008-09-28,5,-4.59,0.32,-1.0,-1.0,ath bilbao,getafe,Away,Draw,Home
+45,2008-09-28,5,-3.92,0.99,0.67,0.67,valencia,la coruna,Home,Home,Home
+46,2008-09-28,5,-4.92,-0.01,-1.0,-1.0,santander,mallorca,Away,Home,Home
+47,2008-09-28,5,-5.92,0.79,-1.0,0.8,almeria,recreativo,Home,Draw,Home
+48,2008-09-28,5,-6.92,-0.21,-1.0,-1.0,numancia,osasuna,Draw,Away,Home
+49,2008-09-28,5,-7.92,1.29,-1.0,1.5,malaga,valladolid,Home,Away,Home
+50,2008-09-28,5,-8.92,0.29,-1.0,-1.0,ath madrid,sevilla,Away,Home,Home
+51,2008-10-04,6,-8.3,0.91,0.62,0.62,barcelona,ath madrid,Home,Home,Home
+52,2008-10-04,6,-7.73,1.48,0.57,0.57,villarreal,betis,Home,Home,Home
+53,2008-10-05,6,-8.73,0.48,-1.0,-1.0,recreativo,malaga,Away,Draw,Home
+54,2008-10-05,6,-8.29,0.92,0.44,0.44,sevilla,ath bilbao,Home,Home,Home
+55,2008-10-05,6,-9.29,-0.08,-1.0,-1.0,real madrid,espanol,Draw,Home,Home
+56,2008-10-05,6,-10.29,1.12,-1.0,1.2,valladolid,valencia,Away,Draw,Away
+57,2008-10-05,6,-9.56,1.85,0.73,0.73,la coruna,numancia,Home,Home,Home
+58,2008-10-05,6,-10.56,0.85,-1.0,-1.0,getafe,almeria,Draw,Home,Home
+59,2008-10-05,6,-11.56,-0.15,-1.0,-1.0,mallorca,sp gijon,Away,Home,Home
+60,2008-10-05,6,-12.56,-1.15,-1.0,-1.0,osasuna,santander,Away,Draw,Home
+61,2008-10-18,7,-11.16,0.25,1.4,1.4,ath madrid,real madrid,Away,Away,Away
+62,2008-10-18,7,-12.16,-0.75,-1.0,-1.0,espanol,villarreal,Draw,Away,Away
+63,2008-10-19,7,-11.83,-0.42,0.33,0.33,valencia,numancia,Home,Home,Home
+64,2008-10-19,7,-10.23,1.18,1.6,1.6,almeria,sevilla,Away,Away,Away
+65,2008-10-19,7,-9.7,1.71,0.53,0.53,ath bilbao,barcelona,Away,Away,Away
+66,2008-10-19,7,-10.7,2.71,-1.0,1.0,betis,mallorca,Home,Draw,Home
+67,2008-10-19,7,-11.7,4.21,-1.0,1.5,malaga,getafe,Home,Away,Home
+68,2008-10-19,7,-12.7,3.21,-1.0,-1.0,santander,la coruna,Draw,Home,Home
+69,2008-10-19,7,-13.7,2.21,-1.0,-1.0,sp gijon,osasuna,Home,Away,Away
+70,2008-10-19,7,-11.3,1.21,2.4,-1.0,valladolid,recreativo,Draw,Draw,Home
+71,2008-10-25,8,-12.3,0.21,-1.0,-1.0,osasuna,betis,Away,Draw,Home
+72,2008-10-25,8,-12.08,0.43,0.22,0.22,barcelona,almeria,Home,Home,Home
+73,2008-10-26,8,-11.17,1.34,0.91,0.91,getafe,valladolid,Home,Home,Home
+74,2008-10-26,8,-12.17,0.34,-1.0,-1.0,la coruna,sp gijon,Away,Home,Home
+75,2008-10-26,8,-13.17,1.72,-1.0,1.38,mallorca,espanol,Home,Draw,Home
+76,2008-10-26,8,-14.17,3.22,-1.0,1.5,numancia,santander,Home,Away,Home
+77,2008-10-26,8,-13.92,3.47,0.25,0.25,real madrid,ath bilbao,Home,Home,Home
+78,2008-10-26,8,-14.92,2.47,-1.0,-1.0,recreativo,valencia,Draw,Away,Away
+79,2008-10-26,8,-15.92,1.47,-1.0,-1.0,sevilla,malaga,Away,Home,Home
+80,2008-10-26,8,-16.92,0.47,-1.0,-1.0,villarreal,ath madrid,Draw,Home,Home
+81,2008-11-01,9,-16.39,1.0,0.53,0.53,ath madrid,mallorca,Home,Home,Home
+82,2008-11-01,9,-17.39,-0.0,-1.0,-1.0,valencia,santander,Away,Home,Home
+83,2008-11-01,9,-16.19,1.2,1.2,1.2,ath bilbao,villarreal,Away,Away,Away
+84,2008-11-01,9,-15.83,1.56,0.36,0.36,malaga,barcelona,Away,Away,Away
+85,2008-11-02,9,-14.73,2.66,1.1,1.1,sp gijon,numancia,Home,Home,Home
+86,2008-11-02,9,-15.73,1.66,-1.0,-1.0,almeria,real madrid,Draw,Away,Away
+87,2008-11-02,9,-16.73,0.66,-1.0,-1.0,betis,la coruna,Away,Home,Home
+88,2008-11-02,9,-15.73,1.66,1.0,1.0,espanol,osasuna,Home,Home,Home
+89,2008-11-02,9,-13.48,0.66,2.25,-1.0,recreativo,getafe,Draw,Draw,Home
+90,2008-11-02,9,-14.48,-0.34,-1.0,-1.0,valladolid,sevilla,Home,Draw,Away
+91,2008-11-08,10,-14.26,-0.12,0.22,0.22,real madrid,malaga,Home,Home,Home
+92,2008-11-08,10,-14.09,0.05,0.17,0.17,barcelona,valladolid,Home,Home,Home
+93,2008-11-09,10,-13.73,0.41,0.36,0.36,sevilla,recreativo,Home,Home,Home
+94,2008-11-09,10,-12.73,1.41,1.0,1.0,santander,sp gijon,Home,Home,Home
+95,2008-11-09,10,-12.2,1.94,0.53,0.53,villarreal,almeria,Home,Home,Home
+96,2008-11-09,10,-9.9,0.94,2.3,-1.0,osasuna,ath madrid,Draw,Draw,Away
+97,2008-11-09,10,-10.9,2.34,-1.0,1.4,getafe,valencia,Away,Home,Away
+98,2008-11-09,10,-8.6,1.34,2.3,-1.0,mallorca,ath bilbao,Draw,Draw,Home
+99,2008-11-09,10,-6.85,0.34,1.75,-1.0,numancia,betis,Away,Away,Home
+100,2008-11-09,10,-5.7,1.49,1.15,1.15,la coruna,espanol,Home,Home,Home
+101,2008-11-15,11,-6.7,0.49,-1.0,-1.0,valencia,sp gijon,Away,Home,Home
+102,2008-11-15,11,-7.7,-0.51,-1.0,-1.0,valladolid,real madrid,Home,Away,Away
+103,2008-11-16,11,-6.3,0.89,1.4,1.4,getafe,sevilla,Away,Away,Away
+104,2008-11-16,11,-7.3,1.89,-1.0,1.0,almeria,mallorca,Home,Draw,Home
+105,2008-11-16,11,-6.2,2.99,1.1,1.1,ath bilbao,osasuna,Home,Home,Home
+106,2008-11-16,11,-7.2,3.61,-1.0,0.62,ath madrid,la coruna,Home,Away,Home
+107,2008-11-16,11,-6.29,4.52,0.91,0.91,betis,santander,Home,Home,Home
+108,2008-11-16,11,-7.29,3.52,-1.0,-1.0,espanol,numancia,Away,Home,Home
+109,2008-11-16,11,-8.29,2.52,-1.0,-1.0,malaga,villarreal,Draw,Away,Away
+110,2008-11-16,11,-9.29,2.85,-1.0,0.33,recreativo,barcelona,Away,Draw,Away
+111,2008-11-22,12,-8.99,3.15,0.3,0.3,real madrid,recreativo,Home,Home,Home
+112,2008-11-22,12,-9.99,2.15,-1.0,-1.0,sevilla,valencia,Draw,Home,Home
+113,2008-11-22,12,-10.99,1.15,-1.0,-1.0,villarreal,valladolid,Away,Draw,Home
+114,2008-11-23,12,-11.99,0.15,-1.0,-1.0,sp gijon,betis,Away,Home,Home
+115,2008-11-23,12,-12.99,-0.85,-1.0,-1.0,numancia,ath madrid,Draw,Away,Away
+116,2008-11-23,12,-10.59,-1.85,2.4,-1.0,mallorca,malaga,Draw,Draw,Home
+117,2008-11-23,12,-9.49,-0.75,1.1,1.1,santander,espanol,Home,Home,Home
+118,2008-11-23,12,-10.49,0.25,-1.0,1.0,la coruna,ath bilbao,Home,Away,Home
+119,2008-11-23,12,-11.49,-0.75,-1.0,-1.0,barcelona,getafe,Draw,Home,Home
+120,2008-11-23,12,-12.49,0.5,-1.0,1.25,osasuna,almeria,Home,Draw,Home
+121,2008-11-29,13,-13.49,-0.5,-1.0,-1.0,getafe,real madrid,Home,Away,Away
+122,2008-11-29,13,-12.39,0.6,1.1,1.1,sevilla,barcelona,Away,Away,Away
+123,2008-11-30,13,-13.39,1.6,-1.0,1.0,valladolid,mallorca,Home,Away,Home
+124,2008-11-30,13,-14.39,2.7,-1.0,1.1,recreativo,villarreal,Away,Draw,Away
+125,2008-11-30,13,-15.39,3.9,-1.0,1.2,malaga,osasuna,Home,Away,Home
+126,2008-11-30,13,-14.59,4.7,0.8,0.8,valencia,betis,Home,Home,Home
+127,2008-11-30,13,-14.02,5.27,0.57,0.57,ath madrid,santander,Home,Home,Home
+128,2008-11-30,13,-13.17,6.12,0.85,0.85,ath bilbao,numancia,Home,Home,Home
+129,2008-11-30,13,-10.67,5.12,2.5,-1.0,almeria,la coruna,Away,Away,Home
+130,2008-11-30,13,-11.67,4.12,-1.0,-1.0,espanol,sp gijon,Away,Home,Home
+131,2008-12-06,14,-11.14,4.65,0.53,0.53,barcelona,valencia,Home,Home,Home
+132,2008-12-06,14,-12.14,5.85,-1.0,1.2,sp gijon,ath madrid,Away,Home,Away
+133,2008-12-06,14,-13.14,4.85,-1.0,-1.0,villarreal,getafe,Draw,Home,Home
+134,2008-12-07,14,-14.14,3.85,-1.0,-1.0,santander,ath bilbao,Draw,Away,Home
+135,2008-12-07,14,-11.54,2.85,2.6,-1.0,betis,espanol,Draw,Draw,Home
+136,2008-12-07,14,-12.54,3.76,-1.0,0.91,la coruna,malaga,Home,Draw,Home
+137,2008-12-07,14,-13.54,2.76,-1.0,-1.0,mallorca,recreativo,Away,Home,Home
+138,2008-12-07,14,-14.54,4.16,-1.0,1.4,numancia,almeria,Home,Away,Home
+139,2008-12-07,14,-12.14,3.16,2.4,-1.0,osasuna,valladolid,Draw,Draw,Home
+140,2008-12-07,14,-13.14,2.16,-1.0,-1.0,real madrid,sevilla,Away,Home,Home
+141,2008-12-13,15,-12.61,2.69,0.53,0.53,valencia,espanol,Home,Home,Home
+142,2008-12-13,15,-12.04,3.26,0.57,0.57,barcelona,real madrid,Home,Home,Home
+143,2008-12-14,15,-13.04,4.56,-1.0,1.3,recreativo,osasuna,Home,Draw,Home
+144,2008-12-14,15,-12.09,5.51,0.95,0.95,malaga,numancia,Home,Home,Home
+145,2008-12-14,15,-13.09,4.51,-1.0,-1.0,almeria,santander,Draw,Away,Home
+146,2008-12-14,15,-12.24,5.36,0.85,0.85,getafe,mallorca,Home,Home,Home
+147,2008-12-14,15,-13.24,6.41,-1.0,1.05,sevilla,villarreal,Home,Away,Home
+148,2008-12-14,15,-14.24,7.51,-1.0,1.1,valladolid,la coruna,Home,Away,Home
+149,2008-12-14,15,-13.62,8.13,0.62,0.62,ath madrid,betis,Home,Home,Home
+150,2008-12-14,15,-14.62,9.13,-1.0,1.0,ath bilbao,sp gijon,Home,Draw,Home
+151,2008-12-20,16,-13.52,10.23,1.1,1.1,espanol,ath madrid,Away,Away,Away
+152,2008-12-20,16,-14.52,11.13,-1.0,0.9,real madrid,valencia,Home,Draw,Home
+153,2008-12-21,16,-15.52,11.93,-1.0,0.8,villarreal,barcelona,Away,Draw,Away
+154,2008-12-21,16,-16.52,13.23,-1.0,1.3,sp gijon,almeria,Home,Away,Home
+155,2008-12-21,16,-14.12,12.23,2.4,-1.0,santander,malaga,Draw,Draw,Home
+156,2008-12-21,16,-15.12,13.63,-1.0,1.4,osasuna,getafe,Home,Draw,Home
+157,2008-12-21,16,-14.4,14.35,0.72,0.72,la coruna,recreativo,Home,Home,Home
+158,2008-12-21,16,-15.4,13.35,-1.0,-1.0,mallorca,sevilla,Draw,Away,Away
+159,2008-12-21,16,-12.8,12.35,2.6,-1.0,betis,ath bilbao,Away,Away,Home
+160,2008-12-21,16,-13.8,13.85,-1.0,1.5,numancia,valladolid,Home,Draw,Home
+161,2009-01-03,17,-13.62,14.03,0.18,0.18,barcelona,mallorca,Home,Home,Home
+162,2009-01-03,17,-14.62,15.13,-1.0,1.1,valencia,ath madrid,Home,Draw,Home
+163,2009-01-04,17,-15.62,14.13,-1.0,-1.0,ath bilbao,espanol,Draw,Home,Home
+164,2009-01-04,17,-16.62,13.13,-1.0,-1.0,valladolid,santander,Away,Home,Home
+165,2009-01-04,17,-14.12,12.13,2.5,-1.0,getafe,la coruna,Away,Away,Home
+166,2009-01-04,17,-15.12,13.5,-1.0,1.37,almeria,betis,Home,Draw,Home
+167,2009-01-04,17,-14.37,14.25,0.75,0.75,real madrid,villarreal,Home,Home,Home
+168,2009-01-04,17,-15.37,15.35,-1.0,1.1,recreativo,numancia,Home,Draw,Home
+169,2009-01-04,17,-14.42,16.3,0.95,0.95,malaga,sp gijon,Home,Home,Home
+170,2009-01-04,17,-15.42,15.3,-1.0,-1.0,sevilla,osasuna,Draw,Home,Home
+171,2009-01-10,18,-13.72,17.0,1.7,1.7,la coruna,sevilla,Away,Away,Away
+172,2009-01-10,18,-14.72,16.0,-1.0,-1.0,valencia,villarreal,Draw,Home,Home
+173,2009-01-11,18,-15.72,17.38,-1.0,1.38,sp gijon,valladolid,Home,Away,Home
+174,2009-01-11,18,-16.72,16.38,-1.0,-1.0,santander,recreativo,Draw,Home,Home
+175,2009-01-11,18,-16.32,16.78,0.4,0.4,osasuna,barcelona,Away,Away,Away
+176,2009-01-11,18,-17.32,18.28,-1.0,1.5,numancia,getafe,Home,Away,Home
+177,2009-01-11,18,-16.57,19.03,0.75,0.75,mallorca,real madrid,Away,Away,Away
+178,2009-01-11,18,-17.57,18.03,-1.0,-1.0,betis,malaga,Away,Draw,Home
+179,2009-01-11,18,-12.57,17.03,5.0,-1.0,ath madrid,ath bilbao,Away,Away,Home
+180,2009-01-11,18,-13.57,16.03,-1.0,-1.0,espanol,almeria,Draw,Home,Home
+181,2009-01-17,19,-13.32,16.28,0.25,0.25,barcelona,la coruna,Home,Home,Home
+182,2009-01-17,19,-12.99,16.61,0.33,0.33,sevilla,numancia,Home,Home,Home
+183,2009-01-18,19,-13.99,17.86,-1.0,1.25,recreativo,sp gijon,Home,Draw,Home
+184,2009-01-18,19,-11.49,16.86,2.5,-1.0,valladolid,betis,Away,Away,Home
+185,2009-01-18,19,-11.24,17.11,0.25,0.25,real madrid,osasuna,Home,Home,Home
+186,2009-01-18,19,-10.8,17.55,0.44,0.44,villarreal,mallorca,Home,Home,Home
+187,2009-01-18,19,-11.8,16.55,-1.0,-1.0,getafe,santander,Away,Home,Home
+188,2009-01-18,19,-9.4,15.55,2.4,-1.0,almeria,ath madrid,Draw,Draw,Away
+189,2009-01-18,19,-8.4,16.55,1.0,1.0,malaga,espanol,Home,Home,Home
+190,2009-01-18,19,-6.4,15.55,2.0,-1.0,ath bilbao,valencia,Home,Home,Away
+191,2009-01-24,20,-6.26,15.69,0.14,0.14,barcelona,numancia,Home,Home,Home
+192,2009-01-24,20,-7.26,14.69,-1.0,-1.0,villarreal,osasuna,Draw,Home,Home
+193,2009-01-25,20,-4.86,13.69,2.4,-1.0,valladolid,espanol,Draw,Draw,Home
+194,2009-01-25,20,-5.86,15.09,-1.0,1.4,almeria,ath bilbao,Home,Away,Home
+195,2009-01-25,20,-4.96,15.99,0.9,0.9,getafe,sp gijon,Home,Home,Home
+196,2009-01-25,20,-5.96,14.99,-1.0,-1.0,malaga,ath madrid,Draw,Home,Away
+197,2009-01-25,20,-6.96,13.99,-1.0,-1.0,mallorca,valencia,Home,Away,Away
+198,2009-01-25,20,-6.56,14.39,0.4,0.4,real madrid,la coruna,Home,Home,Home
+199,2009-01-25,20,-7.56,15.89,-1.0,1.5,recreativo,betis,Home,Draw,Home
+200,2009-01-25,20,-8.56,14.89,-1.0,-1.0,sevilla,santander,Away,Home,Home
+201,2009-01-31,21,-9.56,15.89,-1.0,1.0,ath bilbao,malaga,Home,Draw,Home
+202,2009-01-31,21,-8.99,16.46,0.57,0.57,numancia,real madrid,Away,Away,Away
+203,2009-02-01,21,-8.38,17.07,0.61,0.61,valencia,almeria,Home,Home,Home
+204,2009-02-01,21,-9.38,16.07,-1.0,-1.0,sp gijon,sevilla,Home,Away,Away
+205,2009-02-01,21,-10.38,15.07,-1.0,-1.0,betis,getafe,Draw,Away,Home
+206,2009-02-01,21,-11.38,14.07,-1.0,-1.0,espanol,recreativo,Draw,Home,Home
+207,2009-02-01,21,-12.38,15.57,-1.0,1.5,la coruna,villarreal,Home,Away,Home
+208,2009-02-01,21,-13.38,16.57,-1.0,1.0,osasuna,mallorca,Home,Away,Home
+209,2009-02-01,21,-14.38,15.57,-1.0,-1.0,ath madrid,valladolid,Away,Home,Home
+210,2009-02-01,21,-13.88,16.07,0.5,0.5,santander,barcelona,Away,Away,Away
+211,2009-02-07,22,-14.88,15.07,-1.0,-1.0,sevilla,betis,Away,Home,Home
+212,2009-02-07,22,-14.48,15.47,0.4,0.4,real madrid,santander,Home,Home,Home
+213,2009-02-08,22,-13.98,15.97,0.5,0.5,villarreal,numancia,Home,Home,Home
+214,2009-02-08,22,-14.98,14.97,-1.0,-1.0,getafe,espanol,Draw,Home,Home
+215,2009-02-08,22,-13.93,16.02,1.05,1.05,malaga,almeria,Home,Home,Home
+216,2009-02-08,22,-13.77,16.18,0.16,0.16,barcelona,sp gijon,Home,Home,Home
+217,2009-02-08,22,-11.47,15.18,2.3,-1.0,mallorca,la coruna,Draw,Draw,Home
+218,2009-02-08,22,-12.47,16.55,-1.0,1.37,recreativo,ath madrid,Away,Draw,Away
+219,2009-02-08,22,-13.47,15.55,-1.0,-1.0,osasuna,valencia,Home,Draw,Away
+220,2009-02-08,22,-14.47,16.65,-1.0,1.1,valladolid,ath bilbao,Home,Away,Home
+221,2009-02-14,23,-11.87,15.65,2.6,-1.0,valencia,malaga,Draw,Draw,Home
+222,2009-02-14,23,-12.87,14.65,-1.0,-1.0,betis,barcelona,Draw,Away,Away
+223,2009-02-14,23,-13.87,13.65,-1.0,-1.0,la coruna,osasuna,Draw,Away,Home
+224,2009-02-15,23,-14.87,12.65,-1.0,-1.0,ath madrid,getafe,Draw,Away,Home
+225,2009-02-15,23,-12.47,11.65,2.4,-1.0,ath bilbao,recreativo,Draw,Draw,Home
+226,2009-02-15,23,-13.47,12.85,-1.0,1.2,almeria,valladolid,Home,Draw,Home
+227,2009-02-15,23,-14.47,11.85,-1.0,-1.0,santander,villarreal,Draw,Away,Home
+228,2009-02-15,23,-12.37,10.85,2.1,-1.0,numancia,mallorca,Away,Away,Home
+229,2009-02-15,23,-11.07,12.15,1.3,1.3,espanol,sevilla,Away,Away,Away
+230,2009-02-15,23,-10.45,12.77,0.62,0.62,sp gijon,real madrid,Away,Away,Away
+231,2009-02-21,24,-11.45,11.77,-1.0,-1.0,barcelona,espanol,Away,Home,Home
+232,2009-02-21,24,-11.01,12.21,0.44,0.44,real madrid,betis,Home,Home,Home
+233,2009-02-21,24,-12.01,13.21,-1.0,1.0,sevilla,ath madrid,Home,Draw,Home
+234,2009-02-21,24,-11.44,13.78,0.57,0.57,villarreal,sp gijon,Home,Home,Home
+235,2009-02-22,24,-9.19,12.78,2.25,-1.0,la coruna,valencia,Draw,Draw,Home
+236,2009-02-22,24,-10.19,11.78,-1.0,-1.0,valladolid,malaga,Away,Draw,Home
+237,2009-02-22,24,-11.19,10.78,-1.0,-1.0,recreativo,almeria,Draw,Away,Home
+238,2009-02-22,24,-12.19,9.78,-1.0,-1.0,getafe,ath bilbao,Draw,Away,Home
+239,2009-02-22,24,-10.69,11.28,1.5,1.5,mallorca,santander,Home,Home,Home
+240,2009-02-22,24,-11.69,12.0,-1.0,0.72,osasuna,numancia,Home,Away,Home
+241,2009-02-28,25,-10.09,13.6,1.6,1.6,ath bilbao,sevilla,Away,Away,Away
+242,2009-02-28,25,-9.29,14.4,0.8,0.8,espanol,real madrid,Away,Away,Away
+243,2009-03-01,25,-7.19,13.4,2.1,-1.0,sp gijon,mallorca,Away,Away,Home
+244,2009-03-01,25,-4.99,12.4,2.2,-1.0,santander,osasuna,Draw,Draw,Home
+245,2009-03-01,25,-3.37,14.02,1.62,1.62,numancia,la coruna,Away,Away,Away
+246,2009-03-01,25,-4.37,13.02,-1.0,-1.0,valencia,valladolid,Away,Draw,Home
+247,2009-03-01,25,-5.37,12.02,-1.0,-1.0,betis,villarreal,Draw,Away,Home
+248,2009-03-01,25,-6.37,11.02,-1.0,-1.0,ath madrid,barcelona,Home,Away,Away
+249,2009-03-01,25,-7.37,12.22,-1.0,1.2,almeria,getafe,Home,Away,Home
+250,2009-03-01,25,-8.37,11.22,-1.0,-1.0,malaga,recreativo,Away,Home,Home
+251,2009-03-07,26,-8.09,11.5,0.28,0.28,barcelona,ath bilbao,Home,Home,Home
+252,2009-03-07,26,-9.09,10.5,-1.0,-1.0,real madrid,ath madrid,Draw,Home,Home
+253,2009-03-07,26,-8.29,11.3,0.8,0.8,villarreal,espanol,Home,Home,Home
+254,2009-03-08,26,-7.57,12.02,0.72,0.72,sevilla,almeria,Home,Home,Home
+255,2009-03-08,26,-8.57,11.02,-1.0,-1.0,getafe,malaga,Away,Draw,Home
+256,2009-03-08,26,-9.57,12.22,-1.0,1.2,la coruna,santander,Home,Away,Home
+257,2009-03-08,26,-10.57,11.22,-1.0,-1.0,mallorca,betis,Draw,Away,Home
+258,2009-03-08,26,-11.57,10.22,-1.0,-1.0,numancia,valencia,Home,Away,Away
+259,2009-03-08,26,-12.57,9.22,-1.0,-1.0,osasuna,sp gijon,Away,Draw,Home
+260,2009-03-08,26,-10.47,8.22,2.1,-1.0,recreativo,valladolid,Away,Away,Home
+261,2009-03-14,27,-11.47,7.22,-1.0,-1.0,valencia,recreativo,Draw,Home,Home
+262,2009-03-14,27,-10.47,8.22,1.0,1.0,ath bilbao,real madrid,Away,Away,Away
+263,2009-03-15,27,-11.47,9.27,-1.0,1.05,ath madrid,villarreal,Home,Away,Home
+264,2009-03-15,27,-12.47,9.87,-1.0,0.6,almeria,barcelona,Away,Draw,Away
+265,2009-03-15,27,-13.47,8.87,-1.0,-1.0,espanol,mallorca,Draw,Away,Home
+266,2009-03-15,27,-11.17,7.87,2.3,-1.0,betis,osasuna,Draw,Draw,Home
+267,2009-03-15,27,-12.17,8.92,-1.0,1.05,valladolid,getafe,Home,Away,Home
+268,2009-03-15,27,-10.55,10.54,1.62,1.62,sp gijon,la coruna,Home,Home,Home
+269,2009-03-15,27,-9.75,11.34,0.8,0.8,santander,numancia,Home,Home,Home
+270,2009-03-15,27,-10.75,10.34,-1.0,-1.0,malaga,sevilla,Draw,Away,Away
+271,2009-03-21,28,-10.09,11.0,0.66,0.66,sevilla,valladolid,Home,Home,Home
+272,2009-03-21,28,-9.37,11.72,0.72,0.72,villarreal,ath bilbao,Home,Home,Home
+273,2009-03-22,28,-7.47,10.72,1.9,-1.0,santander,valencia,Away,Away,Home
+274,2009-03-22,28,-7.17,11.02,0.3,0.3,real madrid,almeria,Home,Home,Home
+275,2009-03-22,28,-8.17,12.17,-1.0,1.15,osasuna,espanol,Home,Away,Home
+276,2009-03-22,28,-9.17,13.52,-1.0,1.35,numancia,sp gijon,Home,Away,Home
+277,2009-03-22,28,-10.17,13.74,-1.0,0.22,barcelona,malaga,Home,Draw,Home
+278,2009-03-22,28,-11.17,12.74,-1.0,-1.0,la coruna,betis,Draw,Away,Home
+279,2009-03-22,28,-12.17,13.74,-1.0,1.0,getafe,recreativo,Home,Draw,Home
+280,2009-03-22,28,-13.17,12.74,-1.0,-1.0,mallorca,ath madrid,Home,Away,Away
+281,2009-04-04,29,-12.45,13.46,0.72,0.72,malaga,real madrid,Away,Away,Away
+282,2009-04-04,29,-11.45,14.46,1.0,1.0,recreativo,sevilla,Away,Away,Away
+283,2009-04-04,29,-10.92,14.99,0.53,0.53,valladolid,barcelona,Away,Away,Away
+284,2009-04-04,29,-11.92,13.99,-1.0,-1.0,betis,numancia,Draw,Home,Home
+285,2009-04-04,29,-12.92,15.39,-1.0,1.4,almeria,villarreal,Home,Away,Home
+286,2009-04-04,29,-13.92,16.39,-1.0,1.0,ath bilbao,mallorca,Home,Away,Home
+287,2009-04-05,29,-14.92,15.39,-1.0,-1.0,ath madrid,osasuna,Away,Home,Home
+288,2009-04-05,29,-13.52,16.79,1.4,1.4,espanol,la coruna,Home,Home,Home
+289,2009-04-05,29,-14.52,18.41,-1.0,1.62,sp gijon,santander,Away,Home,Away
+290,2009-04-05,29,-15.52,19.26,-1.0,0.85,valencia,getafe,Home,Away,Home
+291,2009-04-11,30,-15.38,19.4,0.14,0.14,barcelona,recreativo,Home,Home,Home
+292,2009-04-11,30,-16.38,18.4,-1.0,-1.0,villarreal,malaga,Away,Draw,Home
+293,2009-04-12,30,-16.09,18.69,0.29,0.29,real madrid,valladolid,Home,Home,Home
+294,2009-04-12,30,-17.09,17.69,-1.0,-1.0,sevilla,getafe,Away,Home,Home
+295,2009-04-12,30,-18.09,18.79,-1.0,1.1,sp gijon,valencia,Away,Draw,Away
+296,2009-04-12,30,-15.34,17.79,2.75,-1.0,santander,betis,Away,Away,Home
+297,2009-04-12,30,-16.34,18.89,-1.0,1.1,mallorca,almeria,Home,Away,Home
+298,2009-04-12,30,-17.34,17.89,-1.0,-1.0,numancia,espanol,Draw,Away,Home
+299,2009-04-12,30,-15.59,16.89,1.75,-1.0,la coruna,ath madrid,Away,Away,Home
+300,2009-04-12,30,-14.49,17.99,1.1,1.1,osasuna,ath bilbao,Home,Home,Home
+301,2009-04-18,31,-15.49,16.99,-1.0,-1.0,ath bilbao,la coruna,Away,Home,Home
+302,2009-04-18,31,-15.16,17.32,0.33,0.33,ath madrid,numancia,Home,Home,Home
+303,2009-04-18,31,-14.72,17.76,0.44,0.44,getafe,barcelona,Away,Away,Away
+304,2009-04-18,31,-15.72,16.76,-1.0,-1.0,malaga,mallorca,Draw,Home,Home
+305,2009-04-18,31,-15.15,17.33,0.57,0.57,recreativo,real madrid,Away,Away,Away
+306,2009-04-19,31,-16.15,16.33,-1.0,-1.0,valladolid,villarreal,Draw,Away,Home
+307,2009-04-19,31,-17.15,17.43,-1.0,1.1,valencia,sevilla,Home,Away,Home
+308,2009-04-19,31,-16.0,18.58,1.15,1.15,espanol,santander,Home,Home,Home
+309,2009-04-19,31,-17.0,19.83,-1.0,1.25,almeria,osasuna,Home,Draw,Home
+310,2009-04-19,31,-16.33,20.5,0.67,0.67,betis,sp gijon,Home,Home,Home
+311,2009-04-21,32,-14.73,22.1,1.6,1.6,numancia,ath bilbao,Away,Away,Away
+312,2009-04-21,32,-14.48,22.35,0.25,0.25,real madrid,getafe,Home,Home,Home
+313,2009-04-22,32,-14.12,22.71,0.36,0.36,barcelona,sevilla,Home,Home,Home
+314,2009-04-22,32,-12.72,24.11,1.4,1.4,betis,valencia,Away,Away,Away
+315,2009-04-22,32,-13.72,25.11,-1.0,1.0,la coruna,almeria,Home,Away,Home
+316,2009-04-22,32,-14.72,24.11,-1.0,-1.0,osasuna,malaga,Away,Draw,Home
+317,2009-04-23,32,-14.07,24.76,0.65,0.65,villarreal,recreativo,Home,Home,Home
+318,2009-04-23,32,-12.47,26.36,1.6,1.6,sp gijon,espanol,Away,Away,Away
+319,2009-04-23,32,-13.47,27.41,-1.0,1.05,mallorca,valladolid,Home,Away,Home
+320,2009-04-23,32,-14.47,26.41,-1.0,-1.0,santander,ath madrid,Home,Draw,Away
+321,2009-04-25,33,-13.81,27.07,0.66,0.66,almeria,numancia,Home,Home,Home
+322,2009-04-25,33,-14.81,26.07,-1.0,-1.0,malaga,la coruna,Draw,Home,Home
+323,2009-04-25,33,-15.81,25.07,-1.0,-1.0,valencia,barcelona,Draw,Away,Away
+324,2009-04-26,33,-14.71,26.17,1.1,1.1,ath bilbao,santander,Home,Home,Home
+325,2009-04-26,33,-12.71,25.17,2.0,-1.0,recreativo,mallorca,Away,Away,Home
+326,2009-04-26,33,-10.41,24.17,2.3,-1.0,valladolid,osasuna,Draw,Draw,Home
+327,2009-04-26,33,-9.21,25.37,1.2,1.2,espanol,betis,Home,Home,Home
+328,2009-04-26,33,-7.41,24.37,1.8,-1.0,getafe,villarreal,Away,Away,Home
+329,2009-04-26,33,-5.81,25.97,1.6,1.6,sevilla,real madrid,Away,Away,Away
+330,2009-04-26,33,-5.41,26.37,0.4,0.4,ath madrid,sp gijon,Home,Home,Home
+331,2009-05-02,34,-3.54,25.37,1.87,-1.0,villarreal,sevilla,Away,Away,Home
+332,2009-05-02,34,-4.54,24.37,-1.0,-1.0,real madrid,barcelona,Away,Home,Home
+333,2009-05-02,34,-5.54,23.37,-1.0,-1.0,numancia,malaga,Home,Away,Away
+334,2009-05-03,34,-6.54,24.74,-1.0,1.37,betis,ath madrid,Away,Draw,Away
+335,2009-05-03,34,-4.67,23.74,1.87,-1.0,espanol,valencia,Home,Home,Away
+336,2009-05-03,34,-5.67,24.49,-1.0,0.75,la coruna,valladolid,Home,Away,Home
+337,2009-05-03,34,-6.67,25.59,-1.0,1.1,mallorca,getafe,Home,Away,Home
+338,2009-05-03,34,-2.92,24.59,3.75,-1.0,osasuna,recreativo,Away,Away,Home
+339,2009-05-03,34,-0.72,23.59,2.2,-1.0,santander,almeria,Away,Away,Home
+340,2009-05-03,34,-1.72,22.59,-1.0,-1.0,sp gijon,ath bilbao,Draw,Away,Away
+341,2009-05-09,35,0.28,21.59,2.0,-1.0,ath bilbao,betis,Home,Home,Away
+342,2009-05-09,35,0.81,22.12,0.53,0.53,sevilla,mallorca,Home,Home,Home
+343,2009-05-09,35,-0.19,23.42,-1.0,1.3,valencia,real madrid,Home,Away,Home
+344,2009-05-10,35,2.41,22.42,2.6,-1.0,valladolid,numancia,Draw,Draw,Home
+345,2009-05-10,35,1.41,21.42,-1.0,-1.0,recreativo,la coruna,Away,Home,Home
+346,2009-05-10,35,2.51,22.52,1.1,1.1,malaga,santander,Home,Home,Home
+347,2009-05-10,35,3.24,23.25,0.73,0.73,ath madrid,espanol,Home,Home,Home
+348,2009-05-10,35,2.24,22.25,-1.0,-1.0,barcelona,villarreal,Draw,Home,Home
+349,2009-05-10,35,3.24,23.25,1.0,1.0,almeria,sp gijon,Home,Home,Home
+350,2009-05-10,35,2.24,24.35,-1.0,1.1,getafe,osasuna,Home,Away,Home
+351,2009-05-16,36,1.24,25.6,-1.0,1.25,villarreal,real madrid,Home,Away,Home
+352,2009-05-16,36,0.24,24.6,-1.0,-1.0,la coruna,getafe,Draw,Away,Home
+353,2009-05-16,36,-0.76,23.6,-1.0,-1.0,osasuna,sevilla,Draw,Away,Away
+354,2009-05-17,36,-1.76,25.0,-1.0,1.4,sp gijon,malaga,Home,Draw,Home
+355,2009-05-17,36,-2.76,25.6,-1.0,0.6,betis,almeria,Home,Away,Home
+356,2009-05-17,36,-3.76,26.98,-1.0,1.38,numancia,recreativo,Home,Away,Home
+357,2009-05-17,36,-4.76,27.78,-1.0,0.8,santander,valladolid,Home,Away,Home
+358,2009-05-17,36,-5.76,28.4,-1.0,0.62,espanol,ath bilbao,Home,Away,Home
+359,2009-05-17,36,-4.56,29.6,1.2,1.2,ath madrid,valencia,Home,Home,Home
+360,2009-05-17,36,-5.56,28.6,-1.0,-1.0,mallorca,barcelona,Home,Away,Away
+361,2009-05-23,37,-4.31,29.85,1.25,1.25,villarreal,valencia,Home,Home,Home
+362,2009-05-23,37,-2.31,28.85,2.0,-1.0,valladolid,sp gijon,Away,Away,Home
+363,2009-05-23,37,-3.31,27.85,-1.0,-1.0,recreativo,santander,Away,Home,Home
+364,2009-05-23,37,-4.31,26.85,-1.0,-1.0,malaga,betis,Draw,Away,Home
+365,2009-05-23,37,-3.64,27.52,0.67,0.67,sevilla,la coruna,Home,Home,Home
+366,2009-05-23,37,-4.64,26.52,-1.0,-1.0,barcelona,osasuna,Away,Home,Home
+367,2009-05-23,37,-5.64,27.35,-1.0,0.83,ath bilbao,ath madrid,Away,Home,Away
+368,2009-05-23,37,-4.14,28.85,1.5,1.5,almeria,espanol,Away,Away,Away
+369,2009-05-23,37,-3.47,29.52,0.67,0.67,getafe,numancia,Home,Home,Home
+370,2009-05-24,37,-4.47,28.52,-1.0,-1.0,real madrid,mallorca,Away,Draw,Home
+371,2009-05-30,38,-4.22,28.77,0.25,0.25,ath madrid,almeria,Home,Home,Home
+372,2009-05-30,38,-5.22,27.77,-1.0,-1.0,la coruna,barcelona,Draw,Away,Home
+373,2009-05-30,38,-4.07,28.92,1.15,1.15,mallorca,villarreal,Away,Away,Away
+374,2009-05-30,38,-5.07,29.28,-1.0,0.36,valencia,ath bilbao,Home,Away,Home
+375,2009-05-31,38,-6.07,29.98,-1.0,0.7,osasuna,real madrid,Home,Away,Home
+376,2009-05-31,38,-5.24,30.81,0.83,0.83,numancia,sevilla,Away,Away,Away
+377,2009-05-31,38,-6.24,29.81,-1.0,-1.0,santander,getafe,Draw,Away,Away
+378,2009-05-31,38,-7.24,28.81,-1.0,-1.0,betis,valladolid,Draw,Away,Home
+379,2009-05-31,38,-6.33,29.72,0.91,0.91,espanol,malaga,Home,Home,Home
+380,2009-05-31,38,-7.33,30.05,-1.0,0.33,sp gijon,recreativo,Home,Away,Home

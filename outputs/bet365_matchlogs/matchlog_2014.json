@@ -2,6 +2,7 @@
   {
     "Date":"2014-08-23",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"espanol",
     "B365H":2.55,
@@ -21,6 +22,7 @@
   {
     "Date":"2014-08-23",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"la coruna",
     "B365H":1.95,
@@ -40,6 +42,7 @@
   {
     "Date":"2014-08-23",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"ath bilbao",
     "B365H":2.8,
@@ -59,6 +62,7 @@
   {
     "Date":"2014-08-23",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"valencia",
     "B365H":2.05,
@@ -78,6 +82,7 @@
   {
     "Date":"2014-08-24",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"elche",
     "B365H":1.1,
@@ -97,6 +102,7 @@
   {
     "Date":"2014-08-24",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"getafe",
     "B365H":1.91,
@@ -116,6 +122,7 @@
   {
     "Date":"2014-08-24",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"sociedad",
     "B365H":3.25,
@@ -135,6 +142,7 @@
   {
     "Date":"2014-08-24",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"villarreal",
     "B365H":3.4,
@@ -154,6 +162,7 @@
   {
     "Date":"2014-08-25",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"cordoba",
     "B365H":1.06,
@@ -173,6 +182,7 @@
   {
     "Date":"2014-08-25",
     "Season":2014,
+    "jornada":1,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"ath madrid",
     "B365H":7.0,
@@ -192,6 +202,7 @@
   {
     "Date":"2014-08-29",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"almeria",
     "B365H":2.0,
@@ -211,6 +222,7 @@
   {
     "Date":"2014-08-29",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"malaga",
     "B365H":1.55,
@@ -230,6 +242,7 @@
   {
     "Date":"2014-08-30",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"levante",
     "B365H":1.33,
@@ -249,6 +262,7 @@
   {
     "Date":"2014-08-30",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"eibar",
     "B365H":1.22,
@@ -268,6 +282,7 @@
   {
     "Date":"2014-08-30",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"celta",
     "B365H":3.3,
@@ -287,6 +302,7 @@
   {
     "Date":"2014-08-30",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"sevilla",
     "B365H":2.5,
@@ -306,6 +322,7 @@
   {
     "Date":"2014-08-31",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"vallecano",
     "B365H":2.25,
@@ -325,6 +342,7 @@
   {
     "Date":"2014-08-31",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"real madrid",
     "B365H":7.5,
@@ -344,6 +362,7 @@
   {
     "Date":"2014-08-31",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"granada",
     "B365H":2.2,
@@ -363,6 +382,7 @@
   {
     "Date":"2014-08-31",
     "Season":2014,
+    "jornada":2,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"barcelona",
     "B365H":5.0,
@@ -382,6 +402,7 @@
   {
     "Date":"2014-09-12",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"cordoba",
     "B365H":2.05,
@@ -401,6 +422,7 @@
   {
     "Date":"2014-09-13",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"ath bilbao",
     "B365H":1.3,
@@ -420,6 +442,7 @@
   {
     "Date":"2014-09-13",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"sociedad",
     "B365H":2.2,
@@ -439,6 +462,7 @@
   {
     "Date":"2014-09-13",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"levante",
     "B365H":1.62,
@@ -458,6 +482,7 @@
   {
     "Date":"2014-09-13",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"ath madrid",
     "B365H":1.67,
@@ -477,6 +502,7 @@
   {
     "Date":"2014-09-14",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"villarreal",
     "B365H":3.5,
@@ -496,6 +522,7 @@
   {
     "Date":"2014-09-14",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"getafe",
     "B365H":1.44,
@@ -515,6 +542,7 @@
   {
     "Date":"2014-09-14",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"espanol",
     "B365H":1.62,
@@ -534,6 +562,7 @@
   {
     "Date":"2014-09-14",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"elche",
     "B365H":1.73,
@@ -553,6 +582,7 @@
   {
     "Date":"2014-09-15",
     "Season":2014,
+    "jornada":3,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"la coruna",
     "B365H":2.1,
@@ -572,6 +602,7 @@
   {
     "Date":"2014-09-19",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"eibar",
     "B365H":2.15,
@@ -591,6 +622,7 @@
   {
     "Date":"2014-09-20",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"granada",
     "B365H":1.44,
@@ -610,6 +642,7 @@
   {
     "Date":"2014-09-20",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"celta",
     "B365H":1.44,
@@ -629,6 +662,7 @@
   {
     "Date":"2014-09-20",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"malaga",
     "B365H":2.0,
@@ -648,6 +682,7 @@
   {
     "Date":"2014-09-20",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"real madrid",
     "B365H":9.5,
@@ -667,6 +702,7 @@
   {
     "Date":"2014-09-21",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"sevilla",
     "B365H":3.8,
@@ -686,6 +722,7 @@
   {
     "Date":"2014-09-21",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"barcelona",
     "B365H":15.0,
@@ -705,6 +742,7 @@
   {
     "Date":"2014-09-21",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"almeria",
     "B365H":1.44,
@@ -724,6 +762,7 @@
   {
     "Date":"2014-09-21",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"vallecano",
     "B365H":1.53,
@@ -743,6 +782,7 @@
   {
     "Date":"2014-09-22",
     "Season":2014,
+    "jornada":4,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"valencia",
     "B365H":3.6,
@@ -762,6 +802,7 @@
   {
     "Date":"2014-09-23",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"la coruna",
     "B365H":1.57,
@@ -781,6 +822,7 @@
   {
     "Date":"2014-09-23",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"elche",
     "B365H":1.08,
@@ -800,6 +842,7 @@
   {
     "Date":"2014-09-24",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"ath madrid",
     "B365H":6.0,
@@ -819,6 +862,7 @@
   {
     "Date":"2014-09-24",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"levante",
     "B365H":1.5,
@@ -838,6 +882,7 @@
   {
     "Date":"2014-09-24",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"sociedad",
     "B365H":1.8,
@@ -857,6 +902,7 @@
   {
     "Date":"2014-09-24",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"barcelona",
     "B365H":9.0,
@@ -876,6 +922,7 @@
   {
     "Date":"2014-09-24",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"villarreal",
     "B365H":3.4,
@@ -895,6 +942,7 @@
   {
     "Date":"2014-09-24",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"ath bilbao",
     "B365H":3.1,
@@ -914,6 +962,7 @@
   {
     "Date":"2014-09-25",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"getafe",
     "B365H":1.67,
@@ -933,6 +982,7 @@
   {
     "Date":"2014-09-25",
     "Season":2014,
+    "jornada":5,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"cordoba",
     "B365H":1.33,
@@ -952,6 +1002,7 @@
   {
     "Date":"2014-09-26",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"celta",
     "B365H":2.8,
@@ -971,6 +1022,7 @@
   {
     "Date":"2014-09-27",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"real madrid",
     "B365H":5.25,
@@ -990,6 +1042,7 @@
   {
     "Date":"2014-09-27",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"sevilla",
     "B365H":1.67,
@@ -1009,6 +1062,7 @@
   {
     "Date":"2014-09-27",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"eibar",
     "B365H":1.53,
@@ -1028,6 +1082,7 @@
   {
     "Date":"2014-09-27",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"vallecano",
     "B365H":3.0,
@@ -1047,6 +1102,7 @@
   {
     "Date":"2014-09-27",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"granada",
     "B365H":1.13,
@@ -1066,6 +1122,7 @@
   {
     "Date":"2014-09-28",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"espanol",
     "B365H":2.7,
@@ -1085,6 +1142,7 @@
   {
     "Date":"2014-09-28",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"malaga",
     "B365H":3.0,
@@ -1104,6 +1162,7 @@
   {
     "Date":"2014-09-28",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"almeria",
     "B365H":2.05,
@@ -1123,6 +1182,7 @@
   {
     "Date":"2014-09-28",
     "Season":2014,
+    "jornada":6,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"valencia",
     "B365H":2.63,
@@ -1142,6 +1202,7 @@
   {
     "Date":"2014-10-03",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"cordoba",
     "B365H":1.95,
@@ -1161,6 +1222,7 @@
   {
     "Date":"2014-10-04",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"elche",
     "B365H":2.15,
@@ -1180,6 +1242,7 @@
   {
     "Date":"2014-10-04",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"levante",
     "B365H":1.8,
@@ -1199,6 +1262,7 @@
   {
     "Date":"2014-10-04",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"granada",
     "B365H":1.8,
@@ -1218,6 +1282,7 @@
   {
     "Date":"2014-10-04",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"ath madrid",
     "B365H":2.75,
@@ -1237,6 +1302,7 @@
   {
     "Date":"2014-10-04",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"barcelona",
     "B365H":9.0,
@@ -1256,6 +1322,7 @@
   {
     "Date":"2014-10-05",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"villarreal",
     "B365H":2.38,
@@ -1275,6 +1342,7 @@
   {
     "Date":"2014-10-05",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"sociedad",
     "B365H":2.5,
@@ -1294,6 +1362,7 @@
   {
     "Date":"2014-10-05",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"ath bilbao",
     "B365H":1.2,
@@ -1313,6 +1382,7 @@
   {
     "Date":"2014-10-05",
     "Season":2014,
+    "jornada":7,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"la coruna",
     "B365H":1.4,
@@ -1332,6 +1402,7 @@
   {
     "Date":"2014-10-17",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"vallecano",
     "B365H":2.2,
@@ -1351,6 +1422,7 @@
   {
     "Date":"2014-10-18",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"celta",
     "B365H":1.91,
@@ -1370,6 +1442,7 @@
   {
     "Date":"2014-10-18",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"eibar",
     "B365H":1.1,
@@ -1389,6 +1462,7 @@
   {
     "Date":"2014-10-18",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"malaga",
     "B365H":3.25,
@@ -1408,6 +1482,7 @@
   {
     "Date":"2014-10-18",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"real madrid",
     "B365H":13.0,
@@ -1427,6 +1502,7 @@
   {
     "Date":"2014-10-19",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"espanol",
     "B365H":1.33,
@@ -1446,6 +1522,7 @@
   {
     "Date":"2014-10-19",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"sevilla",
     "B365H":3.6,
@@ -1465,6 +1542,7 @@
   {
     "Date":"2014-10-19",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"valencia",
     "B365H":4.5,
@@ -1484,6 +1562,7 @@
   {
     "Date":"2014-10-19",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"almeria",
     "B365H":1.33,
@@ -1503,6 +1582,7 @@
   {
     "Date":"2014-10-20",
     "Season":2014,
+    "jornada":8,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"getafe",
     "B365H":1.53,
@@ -1522,6 +1602,7 @@
   {
     "Date":"2014-10-24",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"levante",
     "B365H":1.44,
@@ -1541,6 +1622,7 @@
   {
     "Date":"2014-10-25",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"ath bilbao",
     "B365H":3.3,
@@ -1560,6 +1642,7 @@
   {
     "Date":"2014-10-25",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"sociedad",
     "B365H":3.4,
@@ -1579,6 +1662,7 @@
   {
     "Date":"2014-10-25",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"granada",
     "B365H":2.1,
@@ -1598,6 +1682,7 @@
   {
     "Date":"2014-10-25",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"barcelona",
     "B365H":2.38,
@@ -1617,6 +1702,7 @@
   {
     "Date":"2014-10-25",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"elche",
     "B365H":1.36,
@@ -1636,6 +1722,7 @@
   {
     "Date":"2014-10-26",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"la coruna",
     "B365H":1.91,
@@ -1655,6 +1742,7 @@
   {
     "Date":"2014-10-26",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"ath madrid",
     "B365H":7.0,
@@ -1674,6 +1762,7 @@
   {
     "Date":"2014-10-26",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"vallecano",
     "B365H":1.83,
@@ -1693,6 +1782,7 @@
   {
     "Date":"2014-10-26",
     "Season":2014,
+    "jornada":9,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"villarreal",
     "B365H":2.0,
@@ -1712,6 +1802,7 @@
   {
     "Date":"2014-10-31",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"getafe",
     "B365H":2.2,
@@ -1731,6 +1822,7 @@
   {
     "Date":"2014-11-01",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"cordoba",
     "B365H":1.18,
@@ -1750,6 +1842,7 @@
   {
     "Date":"2014-11-01",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"celta",
     "B365H":1.13,
@@ -1769,6 +1862,7 @@
   {
     "Date":"2014-11-01",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"real madrid",
     "B365H":12.0,
@@ -1788,6 +1882,7 @@
   {
     "Date":"2014-11-01",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"malaga",
     "B365H":2.2,
@@ -1807,6 +1902,7 @@
   {
     "Date":"2014-11-02",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"sevilla",
     "B365H":2.4,
@@ -1826,6 +1922,7 @@
   {
     "Date":"2014-11-02",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"espanol",
     "B365H":2.63,
@@ -1845,6 +1942,7 @@
   {
     "Date":"2014-11-02",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"almeria",
     "B365H":2.4,
@@ -1864,6 +1962,7 @@
   {
     "Date":"2014-11-02",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"valencia",
     "B365H":2.1,
@@ -1883,6 +1982,7 @@
   {
     "Date":"2014-11-03",
     "Season":2014,
+    "jornada":10,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"eibar",
     "B365H":2.05,
@@ -1902,6 +2002,7 @@
   {
     "Date":"2014-11-07",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"la coruna",
     "B365H":2.25,
@@ -1921,6 +2022,7 @@
   {
     "Date":"2014-11-08",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"granada",
     "B365H":1.57,
@@ -1940,6 +2042,7 @@
   {
     "Date":"2014-11-08",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"elche",
     "B365H":2.0,
@@ -1959,6 +2062,7 @@
   {
     "Date":"2014-11-08",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"eibar",
     "B365H":1.57,
@@ -1978,6 +2082,7 @@
   {
     "Date":"2014-11-08",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"vallecano",
     "B365H":1.05,
@@ -1997,6 +2102,7 @@
   {
     "Date":"2014-11-08",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"barcelona",
     "B365H":17.0,
@@ -2016,6 +2122,7 @@
   {
     "Date":"2014-11-09",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"villarreal",
     "B365H":3.1,
@@ -2035,6 +2142,7 @@
   {
     "Date":"2014-11-09",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"levante",
     "B365H":1.25,
@@ -2054,6 +2162,7 @@
   {
     "Date":"2014-11-09",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"ath madrid",
     "B365H":4.33,
@@ -2073,6 +2182,7 @@
   {
     "Date":"2014-11-09",
     "Season":2014,
+    "jornada":11,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"ath bilbao",
     "B365H":1.62,
@@ -2092,6 +2202,7 @@
   {
     "Date":"2014-11-21",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"espanol",
     "B365H":1.8,
@@ -2111,6 +2222,7 @@
   {
     "Date":"2014-11-22",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"malaga",
     "B365H":1.44,
@@ -2130,6 +2242,7 @@
   {
     "Date":"2014-11-22",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"sevilla",
     "B365H":1.2,
@@ -2149,6 +2262,7 @@
   {
     "Date":"2014-11-22",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"real madrid",
     "B365H":15.0,
@@ -2168,6 +2282,7 @@
   {
     "Date":"2014-11-22",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"sociedad",
     "B365H":3.4,
@@ -2187,6 +2302,7 @@
   {
     "Date":"2014-11-23",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"cordoba",
     "B365H":2.0,
@@ -2206,6 +2322,7 @@
   {
     "Date":"2014-11-23",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"valencia",
     "B365H":5.0,
@@ -2225,6 +2342,7 @@
   {
     "Date":"2014-11-23",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"celta",
     "B365H":2.7,
@@ -2244,6 +2362,7 @@
   {
     "Date":"2014-11-23",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"getafe",
     "B365H":1.44,
@@ -2263,6 +2382,7 @@
   {
     "Date":"2014-11-24",
     "Season":2014,
+    "jornada":12,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"almeria",
     "B365H":2.0,
@@ -2282,6 +2402,7 @@
   {
     "Date":"2014-11-28",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"elche",
     "B365H":1.7,
@@ -2301,6 +2422,7 @@
   {
     "Date":"2014-11-29",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"eibar",
     "B365H":1.62,
@@ -2320,6 +2442,7 @@
   {
     "Date":"2014-11-29",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"levante",
     "B365H":1.67,
@@ -2339,6 +2462,7 @@
   {
     "Date":"2014-11-29",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"ath bilbao",
     "B365H":2.88,
@@ -2358,6 +2482,7 @@
   {
     "Date":"2014-11-29",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"real madrid",
     "B365H":10.0,
@@ -2377,6 +2502,7 @@
   {
     "Date":"2014-11-30",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"la coruna",
     "B365H":1.18,
@@ -2396,6 +2522,7 @@
   {
     "Date":"2014-11-30",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"villarreal",
     "B365H":4.33,
@@ -2415,6 +2542,7 @@
   {
     "Date":"2014-11-30",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"granada",
     "B365H":1.44,
@@ -2434,6 +2562,7 @@
   {
     "Date":"2014-11-30",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"barcelona",
     "B365H":6.0,
@@ -2453,6 +2582,7 @@
   {
     "Date":"2014-12-01",
     "Season":2014,
+    "jornada":13,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"vallecano",
     "B365H":2.38,
@@ -2472,6 +2602,7 @@
   {
     "Date":"2014-12-06",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"cordoba",
     "B365H":1.4,
@@ -2491,6 +2622,7 @@
   {
     "Date":"2014-12-06",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"ath madrid",
     "B365H":7.0,
@@ -2510,6 +2642,7 @@
   {
     "Date":"2014-12-06",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"malaga",
     "B365H":3.6,
@@ -2529,6 +2662,7 @@
   {
     "Date":"2014-12-06",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"celta",
     "B365H":1.09,
@@ -2548,6 +2682,7 @@
   {
     "Date":"2014-12-07",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"espanol",
     "B365H":1.09,
@@ -2567,6 +2702,7 @@
   {
     "Date":"2014-12-07",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"valencia",
     "B365H":3.9,
@@ -2586,6 +2722,7 @@
   {
     "Date":"2014-12-07",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"sevilla",
     "B365H":3.3,
@@ -2605,6 +2742,7 @@
   {
     "Date":"2014-12-07",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"sociedad",
     "B365H":1.67,
@@ -2624,6 +2762,7 @@
   {
     "Date":"2014-12-08",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"almeria",
     "B365H":2.05,
@@ -2643,6 +2782,7 @@
   {
     "Date":"2014-12-08",
     "Season":2014,
+    "jornada":14,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"getafe",
     "B365H":2.6,
@@ -2662,6 +2802,7 @@
   {
     "Date":"2014-12-12",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"real madrid",
     "B365H":17.0,
@@ -2681,6 +2822,7 @@
   {
     "Date":"2014-12-13",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"levante",
     "B365H":2.2,
@@ -2700,6 +2842,7 @@
   {
     "Date":"2014-12-13",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"barcelona",
     "B365H":13.0,
@@ -2719,6 +2862,7 @@
   {
     "Date":"2014-12-13",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"celta",
     "B365H":2.1,
@@ -2738,6 +2882,7 @@
   {
     "Date":"2014-12-13",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"vallecano",
     "B365H":1.5,
@@ -2757,6 +2902,7 @@
   {
     "Date":"2014-12-14",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"villarreal",
     "B365H":1.62,
@@ -2776,6 +2922,7 @@
   {
     "Date":"2014-12-14",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"granada",
     "B365H":1.7,
@@ -2795,6 +2942,7 @@
   {
     "Date":"2014-12-14",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"eibar",
     "B365H":1.4,
@@ -2814,6 +2962,7 @@
   {
     "Date":"2014-12-14",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"ath bilbao",
     "B365H":2.5,
@@ -2833,6 +2982,7 @@
   {
     "Date":"2014-12-15",
     "Season":2014,
+    "jornada":15,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"elche",
     "B365H":2.25,
@@ -2852,6 +3002,7 @@
   {
     "Date":"2014-12-19",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"almeria",
     "B365H":1.44,
@@ -2871,6 +3022,7 @@
   {
     "Date":"2014-12-20",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"cordoba",
     "B365H":1.06,
@@ -2890,6 +3042,7 @@
   {
     "Date":"2014-12-20",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"valencia",
     "B365H":3.8,
@@ -2909,6 +3062,7 @@
   {
     "Date":"2014-12-20",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"sociedad",
     "B365H":3.0,
@@ -2928,6 +3082,7 @@
   {
     "Date":"2014-12-20",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"espanol",
     "B365H":2.3,
@@ -2947,6 +3102,7 @@
   {
     "Date":"2014-12-21",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"ath madrid",
     "B365H":3.6,
@@ -2966,6 +3122,7 @@
   {
     "Date":"2014-12-21",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"malaga",
     "B365H":3.1,
@@ -2985,6 +3142,7 @@
   {
     "Date":"2014-12-21",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"getafe",
     "B365H":2.38,
@@ -3004,6 +3162,7 @@
   {
     "Date":"2014-12-21",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"la coruna",
     "B365H":1.33,
@@ -3023,6 +3182,7 @@
   {
     "Date":"2015-01-03",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"levante",
     "B365H":1.2,
@@ -3042,6 +3202,7 @@
   {
     "Date":"2015-01-03",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"villarreal",
     "B365H":5.0,
@@ -3061,6 +3222,7 @@
   {
     "Date":"2015-01-03",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"ath bilbao",
     "B365H":3.2,
@@ -3080,6 +3242,7 @@
   {
     "Date":"2015-01-03",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"almeria",
     "B365H":1.53,
@@ -3099,6 +3262,7 @@
   {
     "Date":"2015-01-03",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"celta",
     "B365H":1.67,
@@ -3118,6 +3282,7 @@
   {
     "Date":"2015-01-04",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"eibar",
     "B365H":1.85,
@@ -3137,6 +3302,7 @@
   {
     "Date":"2015-01-04",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"vallecano",
     "B365H":2.25,
@@ -3156,6 +3322,7 @@
   {
     "Date":"2015-01-04",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"barcelona",
     "B365H":9.0,
@@ -3175,6 +3342,7 @@
   {
     "Date":"2015-01-04",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"real madrid",
     "B365H":5.5,
@@ -3194,6 +3362,7 @@
   {
     "Date":"2015-01-05",
     "Season":2014,
+    "jornada":17,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"granada",
     "B365H":2.6,
@@ -3213,6 +3382,7 @@
   {
     "Date":"2015-01-09",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"la coruna",
     "B365H":2.1,
@@ -3232,6 +3402,7 @@
   {
     "Date":"2015-01-10",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"valencia",
     "B365H":2.7,
@@ -3251,6 +3422,7 @@
   {
     "Date":"2015-01-10",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"getafe",
     "B365H":2.3,
@@ -3270,6 +3442,7 @@
   {
     "Date":"2015-01-10",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"villarreal",
     "B365H":3.0,
@@ -3289,6 +3462,7 @@
   {
     "Date":"2015-01-10",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"espanol",
     "B365H":1.08,
@@ -3308,6 +3482,7 @@
   {
     "Date":"2015-01-11",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"sevilla",
     "B365H":4.75,
@@ -3327,6 +3502,7 @@
   {
     "Date":"2015-01-11",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"elche",
     "B365H":1.53,
@@ -3346,6 +3522,7 @@
   {
     "Date":"2015-01-11",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"ath madrid",
     "B365H":1.57,
@@ -3365,6 +3542,7 @@
   {
     "Date":"2015-01-11",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"sociedad",
     "B365H":2.8,
@@ -3384,6 +3562,7 @@
   {
     "Date":"2015-01-12",
     "Season":2014,
+    "jornada":18,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"cordoba",
     "B365H":1.67,
@@ -3403,6 +3582,7 @@
   {
     "Date":"2015-01-16",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"eibar",
     "B365H":2.6,
@@ -3422,6 +3602,7 @@
   {
     "Date":"2015-01-17",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"celta",
     "B365H":2.7,
@@ -3441,6 +3622,7 @@
   {
     "Date":"2015-01-17",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"vallecano",
     "B365H":1.91,
@@ -3460,6 +3642,7 @@
   {
     "Date":"2015-01-17",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"almeria",
     "B365H":1.33,
@@ -3479,6 +3662,7 @@
   {
     "Date":"2015-01-17",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"ath bilbao",
     "B365H":1.67,
@@ -3498,6 +3682,7 @@
   {
     "Date":"2015-01-18",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"granada",
     "B365H":1.18,
@@ -3517,6 +3702,7 @@
   {
     "Date":"2015-01-18",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"levante",
     "B365H":2.2,
@@ -3536,6 +3722,7 @@
   {
     "Date":"2015-01-18",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"real madrid",
     "B365H":13.0,
@@ -3555,6 +3742,7 @@
   {
     "Date":"2015-01-18",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"barcelona",
     "B365H":15.0,
@@ -3574,6 +3762,7 @@
   {
     "Date":"2015-01-18",
     "Season":2014,
+    "jornada":19,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"malaga",
     "B365H":1.73,
@@ -3593,6 +3782,7 @@
   {
     "Date":"2015-01-24",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"real madrid",
     "B365H":21.0,
@@ -3612,6 +3802,7 @@
   {
     "Date":"2015-01-24",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"barcelona",
     "B365H":19.0,
@@ -3631,6 +3822,7 @@
   {
     "Date":"2015-01-24",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"eibar",
     "B365H":1.75,
@@ -3650,6 +3842,7 @@
   {
     "Date":"2015-01-24",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"levante",
     "B365H":1.29,
@@ -3669,6 +3862,7 @@
   {
     "Date":"2015-01-24",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"vallecano",
     "B365H":1.25,
@@ -3688,6 +3882,7 @@
   {
     "Date":"2015-01-25",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"malaga",
     "B365H":2.05,
@@ -3707,6 +3902,7 @@
   {
     "Date":"2015-01-25",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"almeria",
     "B365H":1.7,
@@ -3726,6 +3922,7 @@
   {
     "Date":"2015-01-25",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"granada",
     "B365H":2.2,
@@ -3745,6 +3942,7 @@
   {
     "Date":"2015-01-25",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"sevilla",
     "B365H":2.2,
@@ -3764,6 +3962,7 @@
   {
     "Date":"2015-01-26",
     "Season":2014,
+    "jornada":20,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"celta",
     "B365H":2.88,
@@ -3783,6 +3982,7 @@
   {
     "Date":"2015-01-30",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"la coruna",
     "B365H":1.75,
@@ -3802,6 +4002,7 @@
   {
     "Date":"2015-01-31",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"cordoba",
     "B365H":1.44,
@@ -3821,6 +4022,7 @@
   {
     "Date":"2015-01-31",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"ath madrid",
     "B365H":6.5,
@@ -3840,6 +4042,7 @@
   {
     "Date":"2015-01-31",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"elche",
     "B365H":1.95,
@@ -3859,6 +4062,7 @@
   {
     "Date":"2015-01-31",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"sociedad",
     "B365H":1.18,
@@ -3878,6 +4082,7 @@
   {
     "Date":"2015-02-01",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"getafe",
     "B365H":2.38,
@@ -3897,6 +4102,7 @@
   {
     "Date":"2015-02-01",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"villarreal",
     "B365H":1.2,
@@ -3916,6 +4122,7 @@
   {
     "Date":"2015-02-01",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"ath bilbao",
     "B365H":3.3,
@@ -3935,6 +4142,7 @@
   {
     "Date":"2015-02-01",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"espanol",
     "B365H":1.62,
@@ -3954,6 +4162,7 @@
   {
     "Date":"2015-02-02",
     "Season":2014,
+    "jornada":21,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"valencia",
     "B365H":2.63,
@@ -3973,6 +4182,7 @@
   {
     "Date":"2015-02-04",
     "Season":2014,
+    "jornada":16,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"sevilla",
     "B365H":1.29,
@@ -3992,6 +4202,7 @@
   {
     "Date":"2015-02-06",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"eibar",
     "B365H":2.15,
@@ -4011,6 +4222,7 @@
   {
     "Date":"2015-02-07",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"real madrid",
     "B365H":2.88,
@@ -4030,6 +4242,7 @@
   {
     "Date":"2015-02-07",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"malaga",
     "B365H":3.4,
@@ -4049,6 +4262,7 @@
   {
     "Date":"2015-02-07",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"celta",
     "B365H":2.5,
@@ -4068,6 +4282,7 @@
   {
     "Date":"2015-02-07",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"granada",
     "B365H":1.3,
@@ -4087,6 +4302,7 @@
   {
     "Date":"2015-02-08",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"barcelona",
     "B365H":9.0,
@@ -4106,6 +4322,7 @@
   {
     "Date":"2015-02-08",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"almeria",
     "B365H":2.25,
@@ -4125,6 +4342,7 @@
   {
     "Date":"2015-02-08",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"valencia",
     "B365H":2.8,
@@ -4144,6 +4362,7 @@
   {
     "Date":"2015-02-08",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"sevilla",
     "B365H":3.8,
@@ -4163,6 +4382,7 @@
   {
     "Date":"2015-02-09",
     "Season":2014,
+    "jornada":22,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"vallecano",
     "B365H":2.6,
@@ -4182,6 +4402,7 @@
   {
     "Date":"2015-02-13",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"sociedad",
     "B365H":2.45,
@@ -4201,6 +4422,7 @@
   {
     "Date":"2015-02-14",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"ath bilbao",
     "B365H":2.9,
@@ -4220,6 +4442,7 @@
   {
     "Date":"2015-02-14",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"espanol",
     "B365H":2.1,
@@ -4239,6 +4462,7 @@
   {
     "Date":"2015-02-14",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"la coruna",
     "B365H":1.08,
@@ -4258,6 +4482,7 @@
   {
     "Date":"2015-02-14",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"cordoba",
     "B365H":1.36,
@@ -4277,6 +4502,7 @@
   {
     "Date":"2015-02-15",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"levante",
     "B365H":1.05,
@@ -4296,6 +4522,7 @@
   {
     "Date":"2015-02-15",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"ath madrid",
     "B365H":3.8,
@@ -4315,6 +4542,7 @@
   {
     "Date":"2015-02-15",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"getafe",
     "B365H":1.44,
@@ -4334,6 +4562,7 @@
   {
     "Date":"2015-02-15",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"villarreal",
     "B365H":3.3,
@@ -4353,6 +4582,7 @@
   {
     "Date":"2015-02-16",
     "Season":2014,
+    "jornada":23,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"elche",
     "B365H":2.15,
@@ -4372,6 +4602,7 @@
   {
     "Date":"2015-02-20",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"espanol",
     "B365H":2.4,
@@ -4391,6 +4622,7 @@
   {
     "Date":"2015-02-21",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"almeria",
     "B365H":1.2,
@@ -4410,6 +4642,7 @@
   {
     "Date":"2015-02-21",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"malaga",
     "B365H":1.11,
@@ -4429,6 +4662,7 @@
   {
     "Date":"2015-02-21",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"valencia",
     "B365H":4.33,
@@ -4448,6 +4682,7 @@
   {
     "Date":"2015-02-21",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"celta",
     "B365H":3.3,
@@ -4467,6 +4702,7 @@
   {
     "Date":"2015-02-22",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"vallecano",
     "B365H":1.91,
@@ -4486,6 +4722,7 @@
   {
     "Date":"2015-02-22",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"real madrid",
     "B365H":17.0,
@@ -4505,6 +4742,7 @@
   {
     "Date":"2015-02-22",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"sevilla",
     "B365H":2.9,
@@ -4524,6 +4762,7 @@
   {
     "Date":"2015-02-22",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"eibar",
     "B365H":1.36,
@@ -4543,6 +4782,7 @@
   {
     "Date":"2015-02-23",
     "Season":2014,
+    "jornada":24,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"granada",
     "B365H":2.3,
@@ -4562,6 +4802,7 @@
   {
     "Date":"2015-02-27",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"cordoba",
     "B365H":1.57,
@@ -4581,6 +4822,7 @@
   {
     "Date":"2015-02-28",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"la coruna",
     "B365H":2.25,
@@ -4600,6 +4842,7 @@
   {
     "Date":"2015-02-28",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"barcelona",
     "B365H":17.0,
@@ -4619,6 +4862,7 @@
   {
     "Date":"2015-02-28",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"getafe",
     "B365H":1.75,
@@ -4638,6 +4882,7 @@
   {
     "Date":"2015-02-28",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"levante",
     "B365H":1.67,
@@ -4657,6 +4902,7 @@
   {
     "Date":"2015-03-01",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"ath bilbao",
     "B365H":3.25,
@@ -4676,6 +4922,7 @@
   {
     "Date":"2015-03-01",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"villarreal",
     "B365H":1.2,
@@ -4695,6 +4942,7 @@
   {
     "Date":"2015-03-01",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"ath madrid",
     "B365H":3.0,
@@ -4714,6 +4962,7 @@
   {
     "Date":"2015-03-01",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"sociedad",
     "B365H":1.57,
@@ -4733,6 +4982,7 @@
   {
     "Date":"2015-03-02",
     "Season":2014,
+    "jornada":25,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"elche",
     "B365H":1.5,
@@ -4752,6 +5002,7 @@
   {
     "Date":"2015-03-06",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"eibar",
     "B365H":2.05,
@@ -4771,6 +5022,7 @@
   {
     "Date":"2015-03-07",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"real madrid",
     "B365H":7.0,
@@ -4790,6 +5042,7 @@
   {
     "Date":"2015-03-07",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"almeria",
     "B365H":2.05,
@@ -4809,6 +5062,7 @@
   {
     "Date":"2015-03-07",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"malaga",
     "B365H":2.9,
@@ -4828,6 +5082,7 @@
   {
     "Date":"2015-03-07",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"sevilla",
     "B365H":3.8,
@@ -4847,6 +5102,7 @@
   {
     "Date":"2015-03-08",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"valencia",
     "B365H":1.62,
@@ -4866,6 +5122,7 @@
   {
     "Date":"2015-03-08",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"vallecano",
     "B365H":1.05,
@@ -4885,6 +5142,7 @@
   {
     "Date":"2015-03-08",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"espanol",
     "B365H":2.2,
@@ -4904,6 +5162,7 @@
   {
     "Date":"2015-03-08",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"celta",
     "B365H":1.95,
@@ -4923,6 +5182,7 @@
   {
     "Date":"2015-03-09",
     "Season":2014,
+    "jornada":26,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"getafe",
     "B365H":2.4,
@@ -4942,6 +5202,7 @@
   {
     "Date":"2015-03-13",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"la coruna",
     "B365H":1.44,
@@ -4961,6 +5222,7 @@
   {
     "Date":"2015-03-14",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"ath bilbao",
     "B365H":2.1,
@@ -4980,6 +5242,7 @@
   {
     "Date":"2015-03-14",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"barcelona",
     "B365H":19.0,
@@ -4999,6 +5262,7 @@
   {
     "Date":"2015-03-14",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"ath madrid",
     "B365H":3.8,
@@ -5018,6 +5282,7 @@
   {
     "Date":"2015-03-14",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"granada",
     "B365H":2.0,
@@ -5037,6 +5302,7 @@
   {
     "Date":"2015-03-15",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"villarreal",
     "B365H":4.0,
@@ -5056,6 +5322,7 @@
   {
     "Date":"2015-03-15",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"cordoba",
     "B365H":1.57,
@@ -5075,6 +5342,7 @@
   {
     "Date":"2015-03-15",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"levante",
     "B365H":1.06,
@@ -5094,6 +5362,7 @@
   {
     "Date":"2015-03-15",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"elche",
     "B365H":1.4,
@@ -5113,6 +5382,7 @@
   {
     "Date":"2015-03-16",
     "Season":2014,
+    "jornada":27,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"sociedad",
     "B365H":2.3,
@@ -5132,6 +5402,7 @@
   {
     "Date":"2015-03-20",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"valencia",
     "B365H":3.8,
@@ -5151,6 +5422,7 @@
   {
     "Date":"2015-03-21",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"celta",
     "B365H":3.3,
@@ -5170,6 +5442,7 @@
   {
     "Date":"2015-03-21",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"almeria",
     "B365H":1.5,
@@ -5189,6 +5462,7 @@
   {
     "Date":"2015-03-21",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"malaga",
     "B365H":2.5,
@@ -5208,6 +5482,7 @@
   {
     "Date":"2015-03-21",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"eibar",
     "B365H":1.95,
@@ -5227,6 +5502,7 @@
   {
     "Date":"2015-03-21",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"getafe",
     "B365H":1.33,
@@ -5246,6 +5522,7 @@
   {
     "Date":"2015-03-22",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"real madrid",
     "B365H":1.67,
@@ -5265,6 +5542,7 @@
   {
     "Date":"2015-03-22",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"espanol",
     "B365H":2.6,
@@ -5284,6 +5562,7 @@
   {
     "Date":"2015-03-22",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"cordoba",
     "B365H":1.62,
@@ -5303,6 +5582,7 @@
   {
     "Date":"2015-03-22",
     "Season":2014,
+    "jornada":28,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"sevilla",
     "B365H":2.05,
@@ -5322,6 +5602,7 @@
   {
     "Date":"2015-04-03",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"vallecano",
     "B365H":2.5,
@@ -5341,6 +5622,7 @@
   {
     "Date":"2015-04-04",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"sociedad",
     "B365H":1.95,
@@ -5360,6 +5642,7 @@
   {
     "Date":"2015-04-04",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"levante",
     "B365H":2.1,
@@ -5379,6 +5662,7 @@
   {
     "Date":"2015-04-04",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"ath madrid",
     "B365H":9.5,
@@ -5398,6 +5682,7 @@
   {
     "Date":"2015-04-04",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"ath bilbao",
     "B365H":1.75,
@@ -5417,6 +5702,7 @@
   {
     "Date":"2015-04-05",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"barcelona",
     "B365H":7.5,
@@ -5436,6 +5722,7 @@
   {
     "Date":"2015-04-05",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"la coruna",
     "B365H":2.25,
@@ -5455,6 +5742,7 @@
   {
     "Date":"2015-04-05",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"granada",
     "B365H":1.08,
@@ -5474,6 +5762,7 @@
   {
     "Date":"2015-04-05",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"villarreal",
     "B365H":2.05,
@@ -5493,6 +5782,7 @@
   {
     "Date":"2015-04-06",
     "Season":2014,
+    "jornada":29,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"elche",
     "B365H":1.67,
@@ -5512,6 +5802,7 @@
   {
     "Date":"2015-04-07",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"sociedad",
     "B365H":1.3,
@@ -5531,6 +5822,7 @@
   {
     "Date":"2015-04-07",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"malaga",
     "B365H":3.25,
@@ -5550,6 +5842,7 @@
   {
     "Date":"2015-04-07",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"sevilla",
     "B365H":4.5,
@@ -5569,6 +5862,7 @@
   {
     "Date":"2015-04-08",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"almeria",
     "B365H":1.05,
@@ -5588,6 +5882,7 @@
   {
     "Date":"2015-04-08",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"celta",
     "B365H":3.5,
@@ -5607,6 +5902,7 @@
   {
     "Date":"2015-04-08",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"cordoba",
     "B365H":1.75,
@@ -5626,6 +5922,7 @@
   {
     "Date":"2015-04-08",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"real madrid",
     "B365H":13.0,
@@ -5645,6 +5942,7 @@
   {
     "Date":"2015-04-09",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"getafe",
     "B365H":2.3,
@@ -5664,6 +5962,7 @@
   {
     "Date":"2015-04-09",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"espanol",
     "B365H":1.55,
@@ -5683,6 +5982,7 @@
   {
     "Date":"2015-04-09",
     "Season":2014,
+    "jornada":30,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"valencia",
     "B365H":2.4,
@@ -5702,6 +6002,7 @@
   {
     "Date":"2015-04-11",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"granada",
     "B365H":2.4,
@@ -5721,6 +6022,7 @@
   {
     "Date":"2015-04-11",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"vallecano",
     "B365H":1.73,
@@ -5740,6 +6042,7 @@
   {
     "Date":"2015-04-11",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"ath madrid",
     "B365H":3.8,
@@ -5759,6 +6062,7 @@
   {
     "Date":"2015-04-11",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"eibar",
     "B365H":1.06,
@@ -5778,6 +6082,7 @@
   {
     "Date":"2015-04-11",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"barcelona",
     "B365H":5.0,
@@ -5797,6 +6102,7 @@
   {
     "Date":"2015-04-12",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"elche",
     "B365H":2.3,
@@ -5816,6 +6122,7 @@
   {
     "Date":"2015-04-12",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"ath bilbao",
     "B365H":2.5,
@@ -5835,6 +6142,7 @@
   {
     "Date":"2015-04-12",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"villarreal",
     "B365H":3.6,
@@ -5854,6 +6162,7 @@
   {
     "Date":"2015-04-12",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"la coruna",
     "B365H":1.8,
@@ -5873,6 +6182,7 @@
   {
     "Date":"2015-04-13",
     "Season":2014,
+    "jornada":31,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"levante",
     "B365H":1.33,
@@ -5892,6 +6202,7 @@
   {
     "Date":"2015-04-17",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"espanol",
     "B365H":2.88,
@@ -5911,6 +6222,7 @@
   {
     "Date":"2015-04-18",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"getafe",
     "B365H":1.67,
@@ -5930,6 +6242,7 @@
   {
     "Date":"2015-04-18",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"valencia",
     "B365H":1.22,
@@ -5949,6 +6262,7 @@
   {
     "Date":"2015-04-18",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"ath madrid",
     "B365H":4.5,
@@ -5968,6 +6282,7 @@
   {
     "Date":"2015-04-18",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"malaga",
     "B365H":1.14,
@@ -5987,6 +6302,7 @@
   {
     "Date":"2015-04-19",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"celta",
     "B365H":3.4,
@@ -6006,6 +6322,7 @@
   {
     "Date":"2015-04-19",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"sevilla",
     "B365H":4.33,
@@ -6025,6 +6342,7 @@
   {
     "Date":"2015-04-19",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"almeria",
     "B365H":1.8,
@@ -6044,6 +6362,7 @@
   {
     "Date":"2015-04-19",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"cordoba",
     "B365H":1.3,
@@ -6063,6 +6382,7 @@
   {
     "Date":"2015-04-20",
     "Season":2014,
+    "jornada":32,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"sociedad",
     "B365H":2.6,
@@ -6082,6 +6402,7 @@
   {
     "Date":"2015-04-24",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"ath bilbao",
     "B365H":4.2,
@@ -6101,6 +6422,7 @@
   {
     "Date":"2015-04-25",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"elche",
     "B365H":1.18,
@@ -6120,6 +6442,7 @@
   {
     "Date":"2015-04-25",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"barcelona",
     "B365H":12.0,
@@ -6139,6 +6462,7 @@
   {
     "Date":"2015-04-25",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"levante",
     "B365H":2.2,
@@ -6158,6 +6482,7 @@
   {
     "Date":"2015-04-25",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"villarreal",
     "B365H":2.9,
@@ -6177,6 +6502,7 @@
   {
     "Date":"2015-04-26",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"eibar",
     "B365H":2.2,
@@ -6196,6 +6522,7 @@
   {
     "Date":"2015-04-26",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"real madrid",
     "B365H":5.5,
@@ -6215,6 +6542,7 @@
   {
     "Date":"2015-04-26",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"la coruna",
     "B365H":1.73,
@@ -6234,6 +6562,7 @@
   {
     "Date":"2015-04-26",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"vallecano",
     "B365H":1.36,
@@ -6253,6 +6582,7 @@
   {
     "Date":"2015-04-27",
     "Season":2014,
+    "jornada":33,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"granada",
     "B365H":1.33,
@@ -6272,6 +6602,7 @@
   {
     "Date":"2015-04-28",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"sociedad",
     "B365H":1.67,
@@ -6291,6 +6622,7 @@
   {
     "Date":"2015-04-28",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"getafe",
     "B365H":1.04,
@@ -6310,6 +6642,7 @@
   {
     "Date":"2015-04-28",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"cordoba",
     "B365H":1.85,
@@ -6329,6 +6662,7 @@
   {
     "Date":"2015-04-29",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"malaga",
     "B365H":1.73,
@@ -6348,6 +6682,7 @@
   {
     "Date":"2015-04-29",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"sevilla",
     "B365H":6.0,
@@ -6367,6 +6702,7 @@
   {
     "Date":"2015-04-29",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"la coruna",
     "B365H":2.25,
@@ -6386,6 +6722,7 @@
   {
     "Date":"2015-04-29",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"almeria",
     "B365H":1.06,
@@ -6405,6 +6742,7 @@
   {
     "Date":"2015-04-29",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"ath madrid",
     "B365H":3.4,
@@ -6424,6 +6762,7 @@
   {
     "Date":"2015-04-30",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"espanol",
     "B365H":2.5,
@@ -6443,6 +6782,7 @@
   {
     "Date":"2015-04-30",
     "Season":2014,
+    "jornada":34,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"valencia",
     "B365H":4.0,
@@ -6462,6 +6802,7 @@
   {
     "Date":"2015-05-01",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"levante",
     "B365H":1.85,
@@ -6481,6 +6822,7 @@
   {
     "Date":"2015-05-02",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"ath bilbao",
     "B365H":1.4,
@@ -6500,6 +6842,7 @@
   {
     "Date":"2015-05-02",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"barcelona",
     "B365H":26.0,
@@ -6519,6 +6862,7 @@
   {
     "Date":"2015-05-02",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"villarreal",
     "B365H":3.6,
@@ -6538,6 +6882,7 @@
   {
     "Date":"2015-05-02",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"real madrid",
     "B365H":3.5,
@@ -6557,6 +6902,7 @@
   {
     "Date":"2015-05-03",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"vallecano",
     "B365H":1.73,
@@ -6576,6 +6922,7 @@
   {
     "Date":"2015-05-03",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"granada",
     "B365H":2.05,
@@ -6595,6 +6942,7 @@
   {
     "Date":"2015-05-03",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"elche",
     "B365H":1.62,
@@ -6614,6 +6962,7 @@
   {
     "Date":"2015-05-03",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"eibar",
     "B365H":1.22,
@@ -6633,6 +6982,7 @@
   {
     "Date":"2015-05-04",
     "Season":2014,
+    "jornada":35,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"celta",
     "B365H":3.75,
@@ -6652,6 +7002,7 @@
   {
     "Date":"2015-05-08",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"espanol",
     "B365H":2.8,
@@ -6671,6 +7022,7 @@
   {
     "Date":"2015-05-09",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"cordoba",
     "B365H":1.44,
@@ -6690,6 +7042,7 @@
   {
     "Date":"2015-05-09",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"la coruna",
     "B365H":1.57,
@@ -6709,6 +7062,7 @@
   {
     "Date":"2015-05-09",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"sociedad",
     "B365H":1.05,
@@ -6728,6 +7082,7 @@
   {
     "Date":"2015-05-09",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"valencia",
     "B365H":1.4,
@@ -6747,6 +7102,7 @@
   {
     "Date":"2015-05-10",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"malaga",
     "B365H":2.63,
@@ -6766,6 +7122,7 @@
   {
     "Date":"2015-05-10",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"sevilla",
     "B365H":2.75,
@@ -6785,6 +7142,7 @@
   {
     "Date":"2015-05-10",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"ath madrid",
     "B365H":7.5,
@@ -6804,6 +7162,7 @@
   {
     "Date":"2015-05-10",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"elche",
     "B365H":1.36,
@@ -6823,6 +7182,7 @@
   {
     "Date":"2015-05-11",
     "Season":2014,
+    "jornada":36,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"getafe",
     "B365H":1.95,
@@ -6842,6 +7202,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"cordoba",
     "AwayTeam_norm":"vallecano",
     "B365H":4.33,
@@ -6861,6 +7222,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"elche",
     "AwayTeam_norm":"ath bilbao",
     "B365H":3.5,
@@ -6880,6 +7242,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"ath madrid",
     "AwayTeam_norm":"barcelona",
     "B365H":4.75,
@@ -6899,6 +7262,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"espanol",
     "AwayTeam_norm":"real madrid",
     "B365H":6.5,
@@ -6918,6 +7282,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"getafe",
     "AwayTeam_norm":"eibar",
     "B365H":2.2,
@@ -6937,6 +7302,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"la coruna",
     "AwayTeam_norm":"levante",
     "B365H":1.75,
@@ -6956,6 +7322,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"valencia",
     "AwayTeam_norm":"celta",
     "B365H":1.62,
@@ -6975,6 +7342,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"sevilla",
     "AwayTeam_norm":"almeria",
     "B365H":1.25,
@@ -6994,6 +7362,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"sociedad",
     "AwayTeam_norm":"granada",
     "B365H":2.15,
@@ -7013,6 +7382,7 @@
   {
     "Date":"2015-05-17",
     "Season":2014,
+    "jornada":37,
     "HomeTeam_norm":"villarreal",
     "AwayTeam_norm":"malaga",
     "B365H":1.85,
@@ -7032,6 +7402,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"ath bilbao",
     "AwayTeam_norm":"villarreal",
     "B365H":1.67,
@@ -7051,6 +7422,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"eibar",
     "AwayTeam_norm":"cordoba",
     "B365H":1.33,
@@ -7070,6 +7442,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"barcelona",
     "AwayTeam_norm":"la coruna",
     "B365H":1.25,
@@ -7089,6 +7462,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"celta",
     "AwayTeam_norm":"espanol",
     "B365H":1.7,
@@ -7108,6 +7482,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"almeria",
     "AwayTeam_norm":"valencia",
     "B365H":4.75,
@@ -7127,6 +7502,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"vallecano",
     "AwayTeam_norm":"sociedad",
     "B365H":1.85,
@@ -7146,6 +7522,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"levante",
     "AwayTeam_norm":"elche",
     "B365H":1.95,
@@ -7165,6 +7542,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"malaga",
     "AwayTeam_norm":"sevilla",
     "B365H":3.3,
@@ -7184,6 +7562,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"granada",
     "AwayTeam_norm":"ath madrid",
     "B365H":4.33,
@@ -7203,6 +7582,7 @@
   {
     "Date":"2015-05-23",
     "Season":2014,
+    "jornada":38,
     "HomeTeam_norm":"real madrid",
     "AwayTeam_norm":"getafe",
     "B365H":1.13,
