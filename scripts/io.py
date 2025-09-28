@@ -1,6 +1,7 @@
 # scripts/io.py
 from __future__ import annotations
 
+import numpy as np
 from pathlib import Path
 import json
 import pandas as pd
@@ -28,6 +29,27 @@ def _norm_cols(df: pd.DataFrame) -> pd.DataFrame:
 
 def has_outputs() -> bool:
     return BASE.exists() and any(BASE.iterdir())
+
+def _to_season_int(season) -> int:
+    """
+    Convierte 'season' a int de forma robusta:
+    - admite int, numpy.int, float, '2025', '2025.0', etc.
+    - si no puede, intenta extraer un año (19xx|20xx) del string.
+    """
+    if season is None:
+        raise ValueError("Temporada vacía")
+    if isinstance(season, (int, np.integer)):
+        return int(season)
+    s = str(season).strip()
+    try:
+        # maneja '2025', '2025.0', 2025.0
+        return int(float(s))
+    except Exception:
+        import re
+        m = re.search(r"(19|20)\d{2}", s)
+        if m:
+            return int(m.group(0))
+        raise ValueError(f"Temporada no válida: {season!r}")
 
 # -------------------------
 # Lectura básica (fail-soft)
@@ -223,9 +245,19 @@ def load_roc_grid(tag: str = "base") -> dict:
     return load_json(f"roc_grid_{tag}.json")
 
 @st.cache_data
-def load_matchlog(season: int, tag: str = "base") -> pd.DataFrame:
-    folder = {"base": "matchlogs_base", "smote": "matchlogs_smote"}.get(tag, tag)
-    return load_csv(f"{folder}/matchlog_{int(season)}.csv")
+def load_matchlog(model: str, season: int) -> pd.DataFrame:
+    folder = f"matchlogs_{model}"
+    try:
+        s = _to_season_int(season)
+    except Exception:
+        # si no se puede interpretar, devolvemos vacío (Home lo maneja bonito)
+        return pd.DataFrame()
+    rel = f"{folder}/matchlog_{s}.csv"
+    p = BASE / rel
+    if not p.exists():
+        # devolvemos DF vacío para que Home muestre el aviso “No hay matchlog…”
+        return pd.DataFrame()
+    return load_csv(rel)
 
 # -------------------------
 # Baseline Bet365
