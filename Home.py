@@ -1,4 +1,4 @@
-# Home.py — LaLiga 1X2 · 25/26 (solo temporada actual, sin métricas ni columnas de "value")
+# Home.py — LaLiga 1X2 · 25/26 (solo temporada actual, sin "value")
 from __future__ import annotations
 
 import sys, importlib.util
@@ -92,7 +92,7 @@ with tab_public:
         st.warning(f"No hay matchlogs de {model.upper()} para {cur_season}.")
     else:
         df = _ensure_week_col(df)
-        # (No mostramos Date_dt; solo normalizamos si luego quisieras usar Date_dt internamente)
+        # mantenemos Date_dt solo si lo necesitas para ordenar internamente; no se mostrará
         df["Date_dt"] = _coerce_date_col(df)
 
         # Partidos disputados (según columna de resultado)
@@ -131,17 +131,28 @@ with tab_public:
                 if roi_col:
                     roi_model_temp = float(pd.to_numeric(row[roi_col], errors="coerce").iloc[0])
 
-        # KPIs (sin métricas de value)
+        # KPIs — con "Beneficio acumulado" en la derecha, bajo ROI
         k1, k2, k3, k4, k5 = st.columns(5)
+        # Col 1: Partidos disputados + aciertos Y/X (con accuracy)
         k1.metric("Partidos disputados", f"{n_played}")
-        if not np.isnan(hit_rate):        k2.metric("Acierto", f"{hit_rate:.1%}")
-        if not np.isnan(n_hits):          k3.metric("# aciertos", f"{int(n_hits)}")
-        if not np.isnan(roi_por_partido): k4.metric("ROI por partido", f"{roi_por_partido:.1%}")
-        if roi_model_temp is not None:    k5.metric("ROI", f"{roi_model_temp:.2%}")
-
-        c1 = st.columns(1)[0]
-        if not np.isnan(cum_profit):
-            c1.metric("Beneficio acumulado", f"{cum_profit:,.2f}")
+        with k1:
+            if not np.isnan(hit_rate) and not np.isnan(n_hits):
+                st.caption(f"Aciertos: **{int(n_hits)}/{n_played}** ({hit_rate:.1%})")
+        # Col 2: Accuracy independiente (opcional)
+        if not np.isnan(hit_rate):
+            k2.metric("Acierto", f"{hit_rate:.1%}")
+        # Col 3: # aciertos (métrica separada si lo quieres a la vista)
+        if not np.isnan(n_hits):
+            k3.metric("# aciertos", f"{int(n_hits)}")
+        # Col 4: ROI por partido
+        if not np.isnan(roi_por_partido):
+            k4.metric("ROI por partido", f"{roi_por_partido:.1%}")
+        # Col 5: ROI (agregado) y debajo Beneficio acumulado
+        if roi_model_temp is not None:
+            k5.metric("ROI", f"{roi_model_temp:.2%}")
+        with k5:
+            if not np.isnan(cum_profit):
+                st.caption(f"Beneficio acumulado: **{cum_profit:,.2f}**")
 
     st.divider()
 
@@ -155,7 +166,7 @@ with tab_public:
     cols_show = [c for c in [
         "Date","Week","jornada",
         "HomeTeam_norm","AwayTeam_norm",
-        "Pred",  # mantenemos la predicción del modelo
+        "Pred",
         "B365H","B365D","B365A",
         "Correct","net_profit"
     ] if c in dfj.columns]
@@ -240,7 +251,6 @@ with tab_private:
             st.info("No hay predicciones para la próxima jornada todavía.")
         else:
             dfp = _ensure_week_col(dfp)
-            # columnas visibles (sin value_*, sin Partido_con_valor)
             cols = [c for c in [
                 "Date","Week","jornada",
                 "HomeTeam_norm","AwayTeam_norm",
