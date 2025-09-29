@@ -120,22 +120,15 @@ def _euros(x: float) -> str:
     return f"{sign}{abs(x):,.2f} €".replace(",", "X").replace(".", ",").replace("X", ".")
 
 def _load_metrics_by_season_for_model(model: str) -> pd.DataFrame:
-    """
-    Carga metrics_by_season para el modelo:
-      - base  -> outputs/metrics_by_season.csv
-      - smote -> outputs/metrics_by_season_smote.csv
-    Usa load_csv si existe; si no, lee directamente del path.
-    """
+    """Carga outputs/metrics_by_season*.csv según modelo."""
     fname = "metrics_by_season.csv" if model == "base" else "metrics_by_season_smote.csv"
     df = pd.DataFrame()
-    # via scripts.io.load_csv si está disponible
     if callable(load_csv):
         try:
             df = load_csv(fname)
         except Exception:
             df = pd.DataFrame()
     if df.empty:
-        # lectura directa defensiva
         path = Path("outputs") / fname
         if path.exists():
             try:
@@ -172,13 +165,11 @@ with tab_public:
             season_col = "test_season" if "test_season" in metrics_df.columns else None
             acc_col = "acc_test" if "acc_test" in metrics_df.columns else None
             if season_col and acc_col:
-                # comparar de forma numericamente robusta
                 row = metrics_df[pd.to_numeric(metrics_df[season_col], errors="coerce") == pd.to_numeric(cur_season)]
                 if not row.empty:
                     acc_pct = float(pd.to_numeric(row[acc_col], errors="coerce").iloc[0])
 
         # Fallback para Y/X (desde matchlogs jugados)
-        corr_all = pd.Series(dtype="float")
         if "Correct" in df.columns:
             corr_all = pd.to_numeric(df["Correct"], errors="coerce")
         else:
@@ -216,39 +207,25 @@ with tab_public:
         # Col 1: Partidos disputados
         k1.metric("Partidos disputados", f"{n_played}")
 
-        # Col 2: Acierto (acc_test) + (Y/X) pequeño
-        with k2:
-            st.caption("Acierto")
-            if not np.isnan(acc_pct):
-                st.markdown(
-                    f"""
-                    <div style="display:flex;align-items:baseline;gap:.5rem;">
-                        <div style="font-size:2rem;font-weight:600;">{acc_pct:.1%}</div>
-                        <div style="font-size:.95rem;color:var(--text-color);">({int(n_hits)}/{n_played})</div>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
+        # Col 2: Acierto (mismo estilo que otros KPIs) + línea pequeña "Y/X" debajo, sin paréntesis
+        if not np.isnan(acc_pct):
+            k2.metric("Acierto", f"{acc_pct:.1%}")
+        else:
+            # Fallback si no hay acc_test
+            hit_rate_fb = float(corr_played.mean()) if n_played > 0 else float("nan")
+            if not np.isnan(hit_rate_fb):
+                k2.metric("Acierto", f"{hit_rate_fb:.1%}")
             else:
-                # si faltara metrics_by_season, usamos el fallback de matchlogs
-                # (evita que se quede vacío)
-                hit_rate_fb = float(corr_played.mean()) if n_played > 0 else float("nan")
-                if n_played > 0 and not np.isnan(hit_rate_fb):
-                    st.markdown(
-                        f"""
-                        <div style="display:flex;align-items:baseline;gap:.5rem;">
-                            <div style="font-size:2rem;font-weight:600;">{hit_rate_fb:.1%}</div>
-                            <div style="font-size:.95rem;color:var(--text-color);">({int(n_hits)}/{n_played})</div>
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
-                else:
-                    st.markdown("<div style='font-size:1.25rem;color:var(--text-color);'>—</div>", unsafe_allow_html=True)
+                k2.metric("Acierto", "—")
+        with k2:
+            if n_played > 0:
+                st.caption(f"{int(n_hits)}/{n_played}")
 
         # Col 3: ROI (agregado) + Beneficio €
         if roi_model_temp is not None:
             k3.metric("ROI", f"{roi_model_temp:.2%}")
+        else:
+            k3.metric("ROI", "—")
         with k3:
             if not np.isnan(beneficio):
                 st.markdown(
@@ -257,9 +234,11 @@ with tab_public:
                     unsafe_allow_html=True
                 )
 
-        # Col 4: ROI por partido (al lado de ROI, a la derecha)
+        # Col 4: ROI por partido (a la derecha de ROI)
         if not np.isnan(roi_por_partido):
             k4.metric("ROI por partido", f"{roi_por_partido:.1%}")
+        else:
+            k4.metric("ROI por partido", "—")
 
     st.divider()
 
