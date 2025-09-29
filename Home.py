@@ -1,4 +1,4 @@
-# Home.py — LaLiga 1X2 · 25/26 (solo temporada actual, sin "value", con Stake y Acierto Y/X)
+# Home.py — LaLiga 1X2 · 25/26 (temporada actual, KPIs con acc_test, ROI/ROI por partido juntos, STAKE select)
 from __future__ import annotations
 
 import sys, importlib.util
@@ -82,10 +82,11 @@ with colf2:
     )
 
 with colf3:
-    stake = st.slider(
-        "Stake (€ por apuesta)",
-        min_value=1, max_value=10, value=1, step=1,
-        help="Multiplica el beneficio (sum(net_profit)·stake). El ROI no cambia con el stake."
+    stake = st.selectbox(
+        "STAKE",
+        options=list(range(1, 11)),
+        index=0,
+        help="€ por apuesta. Solo afecta al Beneficio (ROI no cambia)."
     )
 
 # Tabs: pública (datos presentes) y privada (próxima jornada)
@@ -118,6 +119,31 @@ def _euros(x: float) -> str:
     sign = "-" if x < 0 else ""
     return f"{sign}{abs(x):,.2f} €".replace(",", "X").replace(".", ",").replace("X", ".")
 
+def _load_metrics_by_season_for_model(model: str) -> pd.DataFrame:
+    """
+    Carga metrics_by_season para el modelo:
+      - base  -> outputs/metrics_by_season.csv
+      - smote -> outputs/metrics_by_season_smote.csv
+    Usa load_csv si existe; si no, lee directamente del path.
+    """
+    fname = "metrics_by_season.csv" if model == "base" else "metrics_by_season_smote.csv"
+    df = pd.DataFrame()
+    # via scripts.io.load_csv si está disponible
+    if callable(load_csv):
+        try:
+            df = load_csv(fname)
+        except Exception:
+            df = pd.DataFrame()
+    if df.empty:
+        # lectura directa defensiva
+        path = Path("outputs") / fname
+        if path.exists():
+            try:
+                df = pd.read_csv(path)
+            except Exception:
+                df = pd.DataFrame()
+    return df
+
 # =============== TAB PÚBLICA ===============
 with tab_public:
     st.caption(f"Temporada: **{cur_season}** · Modelo: **{model.upper()}**")
@@ -139,17 +165,26 @@ with tab_public:
             played_mask = df[res_col].astype(str).str.upper().isin(["H", "D", "A"])
         n_played = int(played_mask.sum())
 
-        # Accuracy (Correct o inferido) — SOLO partidos jugados
+        # Acierto → de metrics_by_season (acc_test) para la temporada actual
+        acc_pct = float("nan")
+        metrics_df = _load_metrics_by_season_for_model(model)
+        if not metrics_df.empty:
+            season_col = "test_season" if "test_season" in metrics_df.columns else None
+            acc_col = "acc_test" if "acc_test" in metrics_df.columns else None
+            if season_col and acc_col:
+                # comparar de forma numericamente robusta
+                row = metrics_df[pd.to_numeric(metrics_df[season_col], errors="coerce") == pd.to_numeric(cur_season)]
+                if not row.empty:
+                    acc_pct = float(pd.to_numeric(row[acc_col], errors="coerce").iloc[0])
+
+        # Fallback para Y/X (desde matchlogs jugados)
+        corr_all = pd.Series(dtype="float")
         if "Correct" in df.columns:
             corr_all = pd.to_numeric(df["Correct"], errors="coerce")
         else:
             corr_all = _infer_correct_from_pred(df)
         corr_played = corr_all[played_mask]
-        if n_played > 0:
-            hit_rate = float(corr_played.mean())
-            n_hits = int(corr_played.sum())
-        else:
-            hit_rate, n_hits = float("nan"), float("nan")
+        n_hits = int(corr_played.sum()) if n_played > 0 and corr_played.notna().any() else 0
 
         # ROI por partido (media de net_profit sobre partidos jugados)
         roi_por_partido = float("nan")
@@ -162,9 +197,9 @@ with tab_public:
         # ROI (agregado de temporada desde roi_by_season_{model})
         roi_model_temp = None
         roi_by_season = load_roi_by_season(model)
-        season_col = next((c for c in ["Season","test_season","season"] if c in (roi_by_season.columns if not roi_by_season.empty else [])), None)
-        if season_col:
-            row = roi_by_season[pd.to_numeric(roi_by_season[season_col], errors="coerce") == pd.to_numeric(cur_season)]
+        season_col_r = next((c for c in ["Season","test_season","season"] if c in (roi_by_season.columns if not roi_by_season.empty else [])), None)
+        if season_col_r:
+            row = roi_by_season[pd.to_numeric(roi_by_season[season_col_r], errors="coerce") == pd.to_numeric(cur_season)]
             if not row.empty:
                 roi_col = "roi" if "roi" in row.columns else next((c for c in row.columns if str(c).lower().startswith("roi")), None)
                 if roi_col:
@@ -175,41 +210,46 @@ with tab_public:
         if not np.isnan(beneficio_base):
             beneficio = beneficio_base * float(stake)
 
-        # KPIs — ROI a la derecha y debajo Beneficio €
-        k1, k2, k3, k4, k5 = st.columns(5)
+        # KPIs — orden: Partidos, Acierto, ROI, ROI por partido; Beneficio € bajo ROI
+        k1, k2, k3, k4 = st.columns(4)
 
         # Col 1: Partidos disputados
         k1.metric("Partidos disputados", f"{n_played}")
 
-        # Col 2: Acierto (% grande + (Y/X) pequeño)
+        # Col 2: Acierto (acc_test) + (Y/X) pequeño
         with k2:
             st.caption("Acierto")
-            if n_played > 0 and not np.isnan(hit_rate):
+            if not np.isnan(acc_pct):
                 st.markdown(
                     f"""
                     <div style="display:flex;align-items:baseline;gap:.5rem;">
-                        <div style="font-size:2rem;font-weight:600;">{hit_rate:.1%}</div>
+                        <div style="font-size:2rem;font-weight:600;">{acc_pct:.1%}</div>
                         <div style="font-size:.95rem;color:var(--text-color);">({int(n_hits)}/{n_played})</div>
                     </div>
                     """,
                     unsafe_allow_html=True
                 )
             else:
-                st.markdown(
-                    "<div style='font-size:1.25rem;color:var(--text-color);'>—</div>",
-                    unsafe_allow_html=True
-                )
+                # si faltara metrics_by_season, usamos el fallback de matchlogs
+                # (evita que se quede vacío)
+                hit_rate_fb = float(corr_played.mean()) if n_played > 0 else float("nan")
+                if n_played > 0 and not np.isnan(hit_rate_fb):
+                    st.markdown(
+                        f"""
+                        <div style="display:flex;align-items:baseline;gap:.5rem;">
+                            <div style="font-size:2rem;font-weight:600;">{hit_rate_fb:.1%}</div>
+                            <div style="font-size:.95rem;color:var(--text-color);">({int(n_hits)}/{n_played})</div>
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
+                else:
+                    st.markdown("<div style='font-size:1.25rem;color:var(--text-color);'>—</div>", unsafe_allow_html=True)
 
-        # Col 3: ROI por partido
-        if not np.isnan(roi_por_partido):
-            k3.metric("ROI por partido", f"{roi_por_partido:.1%}")
-
-        # Col 4: (espacio libre para futuras métricas)
-
-        # Col 5: ROI (agregado) y debajo Beneficio €
+        # Col 3: ROI (agregado) + Beneficio €
         if roi_model_temp is not None:
-            k5.metric("ROI", f"{roi_model_temp:.2%}")
-        with k5:
+            k3.metric("ROI", f"{roi_model_temp:.2%}")
+        with k3:
             if not np.isnan(beneficio):
                 st.markdown(
                     f"<div style='margin-top:0.25rem;font-size:1.05rem;color:var(--text-color);'>"
@@ -217,9 +257,13 @@ with tab_public:
                     unsafe_allow_html=True
                 )
 
+        # Col 4: ROI por partido (al lado de ROI, a la derecha)
+        if not np.isnan(roi_por_partido):
+            k4.metric("ROI por partido", f"{roi_por_partido:.1%}")
+
     st.divider()
 
-    # 2) Tabla por jornada (SIN columnas de value ni Date_dt)
+    # 2) Tabla por jornada (simple, sin Date_dt ni value)
     st.subheader("Partidos — jornada seleccionada")
     dfj = df.copy()
     if not dfj.empty and jornada is not None:
