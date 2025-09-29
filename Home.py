@@ -82,65 +82,64 @@ with colf2:
 # Tabs: pública (datos presentes) y privada (próxima jornada)
 tab_public, tab_private = st.tabs(["📊 Temporada actual", "🔒 Zona privada (próxima jornada)"])
 
-# Utilidades para detección de 'value' al vuelo
+# ============ Detección de 'value' (EV > 2%) ============
+VALUE_EV_THRESHOLD = 0.02  # 2%
+
 def _compute_value_columns(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Asegura columnas: value_ev, value_pick, Partido_con_valor (bool)
-    Si ya existe 'use_value', usa eso para 'Partido_con_valor'.
-    Si no, intenta calcular EV con p_H/p_D/p_A y cuotas B365.
+    Asegura columnas: value_ev, value_pick, Partido_con_valor (bool).
+    - Si existe 'use_value': lo usa para Partido_con_valor.
+    - Si no, calcula EV_i = p_i * O_i - 1 para H/D/A y toma el máximo.
+    - Marca Partido_con_valor = (value_ev > 0.02).
     """
     if df.empty:
         return df
-
     df = df.copy()
 
     # Si ya existe 'use_value', úsalo directamente
     if "use_value" in df.columns:
-        if "Partido_con_valor" not in df.columns:
-            df["Partido_con_valor"] = df["use_value"].fillna(False).astype(bool)
+        df["Partido_con_valor"] = df["use_value"].fillna(False).astype(bool)
+        # Si no vienen value_ev/value_pick, intenta inferirlos de probabilidades + cuotas
+        if "value_ev" not in df.columns or "value_pick" not in df.columns:
+            pH = next((c for c in ["p_H","proba_H","prob_H","proba_home","pHome"] if c in df.columns), None)
+            pD = next((c for c in ["p_D","proba_D","prob_D","proba_draw","pDraw"] if c in df.columns), None)
+            pA = next((c for c in ["p_A","proba_A","prob_A","proba_away","pAway"] if c in df.columns), None)
+            if all([pH,pD,pA]) and all(c in df.columns for c in ["B365H","B365D","B365A"]):
+                evH = pd.to_numeric(df[pH], errors="coerce")*pd.to_numeric(df["B365H"], errors="coerce") - 1
+                evD = pd.to_numeric(df[pD], errors="coerce")*pd.to_numeric(df["B365D"], errors="coerce") - 1
+                evA = pd.to_numeric(df[pA], errors="coerce")*pd.to_numeric(df["B365A"], errors="coerce") - 1
+                mat = np.vstack([evA.fillna(-np.inf), evD.fillna(-np.inf), evH.fillna(-np.inf)])
+                arg = np.argmax(mat, axis=0)
+                best_ev = np.take_along_axis(mat, arg[np.newaxis,:], axis=0).ravel()
+                if "value_ev" not in df.columns:
+                    df["value_ev"] = best_ev
+                if "value_pick" not in df.columns:
+                    df["value_pick"] = np.where(arg==2,"H", np.where(arg==1,"D","A"))
         return df
 
-    # Si no hay value_ev/value_pick, intentamos calcular
-    have_ev = "value_ev" in df.columns
-    have_pick = "value_pick" in df.columns
-
-    # Buscar columnas de probas
+    # No hay 'use_value': calculamos EV y aplicamos umbral 2%
     pH = next((c for c in ["p_H","proba_H","prob_H","proba_home","pHome"] if c in df.columns), None)
     pD = next((c for c in ["p_D","proba_D","prob_D","proba_draw","pDraw"] if c in df.columns), None)
     pA = next((c for c in ["p_A","proba_A","prob_A","proba_away","pAway"] if c in df.columns), None)
 
     if all([pH,pD,pA]) and all(c in df.columns for c in ["B365H","B365D","B365A"]):
-        # calcula EV para cada signo
-        evH = pd.to_numeric(df[pH], errors="coerce") * pd.to_numeric(df["B365H"], errors="coerce") - 1
-        evD = pd.to_numeric(df[pD], errors="coerce") * pd.to_numeric(df["B365D"], errors="coerce") - 1
-        evA = pd.to_numeric(df[pA], errors="coerce") * pd.to_numeric(df["B365A"], errors="coerce") - 1
-
-        mat = np.vstack([
-            evA.fillna(-np.inf).to_numpy(),
-            evD.fillna(-np.inf).to_numpy(),
-            evH.fillna(-np.inf).to_numpy()
-        ])
+        evH = pd.to_numeric(df[pH], errors="coerce")*pd.to_numeric(df["B365H"], errors="coerce") - 1
+        evD = pd.to_numeric(df[pD], errors="coerce")*pd.to_numeric(df["B365D"], errors="coerce") - 1
+        evA = pd.to_numeric(df[pA], errors="coerce")*pd.to_numeric(df["B365A"], errors="coerce") - 1
+        mat = np.vstack([evA.fillna(-np.inf), evD.fillna(-np.inf), evH.fillna(-np.inf)])
         arg = np.argmax(mat, axis=0)  # 0->A, 1->D, 2->H
         best_ev = np.take_along_axis(mat, arg[np.newaxis,:], axis=0).ravel()
 
-        # Crear columnas faltantes
-        if not have_ev:
-            df["value_ev"] = best_ev
-        if not have_pick:
-            df["value_pick"] = np.where(arg==2,"H", np.where(arg==1,"D","A"))
-
-        # Partido con valor si EV>0 (umbral base; ajusta si quieres exigir margen)
-        df["Partido_con_valor"] = (df["value_ev"] > 0).fillna(False)
-
+        df["value_ev"] = best_ev
+        df["value_pick"] = np.where(arg==2,"H", np.where(arg==1,"D","A"))
+        df["Partido_con_valor"] = (df["value_ev"] > VALUE_EV_THRESHOLD).fillna(False)
     else:
-        # Si no podemos calcular EV, al menos añade la bandera si ya viene en columnas existentes
-        if "value_ev" in df.columns:
-            df["Partido_con_valor"] = (pd.to_numeric(df["value_ev"], errors="coerce") > 0).fillna(False)
-        elif "edge" in df.columns:
-            # heurística: edge>0 indica valor
-            df["Partido_con_valor"] = (pd.to_numeric(df["edge"], errors="coerce") > 0).fillna(False)
-        else:
-            df["Partido_con_valor"] = False
+        # Fallback conservador: si no hay datos suficientes, no marcamos valor
+        if "value_ev" not in df.columns:
+            df["value_ev"] = np.nan
+        if "value_pick" not in df.columns:
+            df["value_pick"] = np.nan
+        df["Partido_con_valor"] = False
 
     return df
 
@@ -164,7 +163,6 @@ with tab_public:
             played_mask = pd.to_numeric(df[res_col], errors="coerce").isin([0,1,2])
         elif res_col:
             played_mask = df[res_col].astype(str).str.upper().isin(["H","D","A"])
-
         n_played = int(played_mask.sum())
 
         # Acierto y # aciertos (si existe 'Correct')
@@ -183,7 +181,7 @@ with tab_public:
             cum_profit = float(net.sum())
             roi_por_partido = float(net.sum() / n_played)
 
-        # ROI partidos con valor (media de value_net_profit sobre Partido_con_valor==True)
+        # ROI partidos con valor (EV>2%)
         roi_partidos_con_valor = np.nan
         cum_profit_value = np.nan
         n_value = int(df["Partido_con_valor"].sum()) if "Partido_con_valor" in df.columns else 0
@@ -193,7 +191,6 @@ with tab_public:
                 cum_profit_value = float(vnet.sum())
                 roi_partidos_con_valor = float(vnet.mean())
             else:
-                # si no existe value_net_profit, aproximamos con net_profit de esos partidos
                 vnet = pd.to_numeric(df.loc[df["Partido_con_valor"], "net_profit"], errors="coerce").fillna(0)
                 cum_profit_value = float(vnet.sum())
                 roi_partidos_con_valor = float(vnet.mean())
@@ -216,7 +213,7 @@ with tab_public:
         if not np.isnan(n_hits):            k3.metric("# aciertos", f"{int(n_hits)}")
         if not np.isnan(roi_por_partido):   k4.metric("ROI por partido", f"{roi_por_partido:.1%}")
         if not np.isnan(roi_partidos_con_valor): 
-            k5.metric("ROI partidos con valor", f"{roi_partidos_con_valor:.1%}")
+            k5.metric("ROI partidos con valor", f"{roi_partidos_con_valor:.1%}", help="EV > 2%")
         if roi_model_temp is not None:      k6.metric("ROI", f"{roi_model_temp:.2%}")
 
         c1, c2, c3 = st.columns(3)
@@ -231,8 +228,6 @@ with tab_public:
     dfj = df.copy()
     if not dfj.empty and jornada is not None:
         dfj = dfj[pd.to_numeric(dfj["Week"], errors="coerce").astype("Int64") == int(jornada)]
-
-    # Asegura columnas de value en la tabla
     dfj = _compute_value_columns(dfj)
 
     cols_show = [c for c in [
@@ -322,8 +317,7 @@ with tab_private:
             st.info("No hay predicciones para la próxima jornada todavía.")
         else:
             dfp = _ensure_week_col(dfp)
-            # Calcula columnas de value al vuelo si faltan
-            dfp = _compute_value_columns(dfp)
+            dfp = _compute_value_columns(dfp)  # aplica EV>2%
 
             wk_next = pd.to_numeric(dfp["Week"], errors="coerce").dropna().astype(int).unique().tolist()
             title_wk = wk_next[0] if wk_next else "próxima"
