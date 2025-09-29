@@ -1,193 +1,214 @@
-# Home.py
+# Home.py — SOLO temporada actual + filtros por jornada y modelo + zona privada (próxima jornada)
 from __future__ import annotations
 
 import sys, importlib.util
 from pathlib import Path
 import numpy as np
 import pandas as pd
+import plotly.express as px
 import streamlit as st
 
-# --- import robusto del módulo io ---
 ROOT = Path(__file__).resolve().parent
 SCRIPTS_DIR = ROOT / "scripts"
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+# ---- Carga robusta de scripts/io.py (como usas en el repo) ----
 try:
-    # preferimos import explícito (cuando corre desde streamlit run)
     from scripts.io import (
         ensure_outputs_dir,
         has_outputs,
         available_seasons,
         current_season,
-        load_matchlog,
-        load_cumprofit,
-        load_roi_by_season,
+        load_matchlog,             # load_matchlog(model, season)
+        load_cumprofit,            # load_cumprofit(season) -> DF curva (index/x + series)
+        load_roi_by_season,        # load_roi_by_season(model)
         load_bet365_metrics_by_season,
-        _ensure_week_col,   # helpers internos, los usamos igual
+        load_csv,                  # genérico: outputs/<file>.csv
+        _ensure_week_col,          # añade/normaliza Week
         _coerce_date_col,
     )
 except Exception:
-    # fallback por si el import relativo falla en algún entorno
     spec = importlib.util.spec_from_file_location("io", SCRIPTS_DIR / "io.py")
     io = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(io)  # type: ignore
-    ensure_outputs_dir      = io.ensure_outputs_dir
-    has_outputs             = io.has_outputs
-    available_seasons       = io.available_seasons
-    current_season          = io.current_season
-    load_matchlog           = io.load_matchlog
-    load_cumprofit          = io.load_cumprofit
-    load_roi_by_season      = io.load_roi_by_season
-    load_bet365_metrics_by_season = io.load_bet365_metrics_by_season
-    _ensure_week_col        = io._ensure_week_col
-    _coerce_date_col        = io._coerce_date_col
+    ensure_outputs_dir                  = io.ensure_outputs_dir
+    has_outputs                         = io.has_outputs
+    available_seasons                   = io.available_seasons
+    current_season                      = io.current_season
+    load_matchlog                       = io.load_matchlog
+    load_cumprofit                      = io.load_cumprofit
+    load_roi_by_season                  = io.load_roi_by_season
+    load_bet365_metrics_by_season       = io.load_bet365_metrics_by_season
+    load_csv                            = getattr(io, "load_csv", None)
+    _ensure_week_col                    = io._ensure_week_col
+    _coerce_date_col                    = io._coerce_date_col
 
-st.set_page_config(page_title="LaLiga 1X2 · Modelo vs Bet365", page_icon="⚽", layout="wide")
-st.title("LaLiga 1X2 · Modelo vs Bet365")
+# ──────────────────────────────────────────────────────────────────────────────
+st.set_page_config(page_title="LaLiga 1X2 · Home", page_icon="⚽", layout="wide")
+st.title("LaLiga 1X2 · Temporada en curso")
 
-# --- chequeo de outputs/ ---
 ensure_outputs_dir()
 if not has_outputs():
-    st.warning(
-        "No se encontraron artefactos en `outputs/`. "
-        "Sube los ficheros generados por el repo de motor o espera a la sincronización."
-    )
+    st.warning("No se encontraron artefactos en `outputs/`. Sube/sincroniza y recarga.")
     st.stop()
 
-# === Selector de temporada ===
+# Determina temporada ACTUAL (solo esa se mostrará en Home)
 seasons = available_seasons()
-if not seasons:
-    st.info("No pude inferir temporadas disponibles. ¿Están los CSV/JSON en `outputs/`?")
+cur_season = current_season() or (seasons[-1] if seasons else None)
+if not cur_season:
+    st.info("No pude inferir la temporada actual.")
     st.stop()
 
-default_season = current_season() or seasons[-1]
-season = st.selectbox("Temporada", seasons, index=seasons.index(default_season))
+# Sidebar global: modelo + jornada
+with st.sidebar:
+    st.subheader("Filtros (temporada actual)")
+    model = st.radio("Modelo", ["base", "smote"], horizontal=True, help="Selecciona el modelo a mostrar.")
+    # Las jornadas se obtienen del matchlog de la temporada actual para ese modelo
+    _logs_tmp = load_matchlog(model, cur_season)
+    _logs_tmp = _ensure_week_col(_logs_tmp)
+    jornadas = (
+        pd.to_numeric(_logs_tmp.get("Week"), errors="coerce")
+        .dropna().astype(int).sort_values().unique().tolist()
+        if not _logs_tmp.empty else []
+    )
+    jornada = st.select_slider("Jornada", options=jornadas, value=jornadas[-1] if jornadas else None)
 
-st.caption(f"Portada enfocada en: **{season}**")
+# Tabs: pública (datos presentes) y privada (próxima jornada)
+tab_public, tab_private = st.tabs(["📊 Temporada actual", "🔒 Zona privada (próxima jornada)"])
 
-tab_resumen, tab_privado = st.tabs(["📊 Resumen", "🔒 Zona privada"])
+# =============== TAB PÚBLICA: todo lo disponible de la temporada actual ===============
+with tab_public:
+    st.caption(f"Temporada actual: **{cur_season}** · Modelo: **{model.upper()}**")
 
-# =========================================================
-# TAB: RESUMEN
-# =========================================================
-with tab_resumen:
-    # Matchlog del modelo BASE
-    df = load_matchlog("base", season)
+    # 1) KPIs de temporada
+    df = load_matchlog(model, cur_season).copy()
     if df.empty:
-        st.info(f"No encontré matchlogs del modelo BASE para la temporada {season}.")
-        st.stop()
+        st.warning(f"No hay matchlogs de {model.upper()} para {cur_season}.")
+    else:
+        df = _ensure_week_col(df)
+        df["Date_dt"] = _coerce_date_col(df)
 
-    # Normaliza fecha y jornada/semana
-    df = _ensure_week_col(df)
-    df["Date_dt"] = _coerce_date_col(df)
+        # Partidos disputados (según columna de resultado)
+        res_col = next((c for c in ["true_result","target","FTR","Result","ftr","resultado"] if c in df.columns), None)
+        played = pd.Series(False, index=df.index)
+        if res_col in ("true_result","target"):
+            played = pd.to_numeric(df[res_col], errors="coerce").isin([0,1,2])
+        elif res_col:
+            played = df[res_col].astype(str).str.upper().isin(["H","D","A"])
+        n_played = int(played.sum())
+        n_total  = int(len(df))
 
-    # Resultado real: preferimos 'true_result' (0/1/2); si no, 'target' o textual 'FTR'
-    result_col = None
-    for c in ["true_result", "target", "FTR", "Result", "ftr", "resultado"]:
-        if c in df.columns:
-            result_col = c
-            break
+        # Acierto (si existe)
+        hit = (pd.to_numeric(df["Correct"], errors="coerce").mean() if "Correct" in df.columns else np.nan)
 
-    played_mask = pd.Series(False, index=df.index)
-    if result_col in ("true_result", "target"):
-        played_mask = pd.to_numeric(df[result_col], errors="coerce").isin([0, 1, 2])
-    elif result_col is not None:
-        played_mask = df[result_col].astype(str).str.upper().isin(["H", "D", "A"])
+        # ROI pick del modelo si hay net_profit por partido
+        roi_pick = (
+            pd.to_numeric(df["net_profit"], errors="coerce").fillna(0).sum() / max(len(df), 1)
+            if "net_profit" in df.columns else np.nan
+        )
 
-    total_played = int(played_mask.sum())
-    total_matches = int(len(df))
+        # ROI value si existen señales de value betting
+        roi_val = np.nan
+        if {"use_value","value_net_profit"}.issubset(df.columns):
+            m = df["use_value"] == True
+            cnt = int(m.sum())
+            if cnt > 0:
+                roi_val = pd.to_numeric(df.loc[m, "value_net_profit"], errors="coerce").fillna(0).sum() / cnt
 
-    # ROI temporada (BASE, SMOTE y Bet365 si están)
-    roi_base  = load_roi_by_season("base")
-    roi_smote = load_roi_by_season("smote")
-    roi_b365  = load_bet365_metrics_by_season()
+        # ROI agregado por temporada (según fichero roi_by_season_{model})
+        roi_by_season = load_roi_by_season(model)
+        season_col = next((c for c in ["Season","test_season","season"] if c in (roi_by_season.columns if not roi_by_season.empty else [])), None)
+        roi_model = None
+        if season_col:
+            row = roi_by_season[pd.to_numeric(roi_by_season[season_col], errors="coerce") == pd.to_numeric(cur_season)]
+            if not row.empty:
+                roi_col = "roi" if "roi" in row.columns else next((c for c in row.columns if str(c).lower().startswith("roi")), None)
+                if roi_col:
+                    roi_model = float(pd.to_numeric(row[roi_col], errors="coerce").iloc[0])
 
-    def _pick_roi(df_roi, col="ROI"):
-        if df_roi.empty:
-            return None
-        # normaliza nombre de temporada
-        sc = "Season" if "Season" in df_roi.columns else "test_season" if "test_season" in df_roi.columns else None
-        if sc is None:
-            return None
-        sub = df_roi[pd.to_numeric(df_roi[sc], errors="coerce") == season]
-        if sub.empty or col not in sub.columns:
-            return None
-        try:
-            return float(pd.to_numeric(sub[col], errors="coerce").iloc[0])
-        except Exception:
-            return None
+        # ROI Bet365 (si existe)
+        b365_df = load_bet365_metrics_by_season()
+        roi_b365 = None
+        if not b365_df.empty:
+            s_col = "Season" if "Season" in b365_df.columns else ("test_season" if "test_season" in b365_df.columns else None)
+            r_col = "ROI" if "ROI" in b365_df.columns else ("roi" if "roi" in b365_df.columns else None)
+            if s_col and r_col:
+                row = b365_df[pd.to_numeric(b365_df[s_col], errors="coerce") == pd.to_numeric(cur_season)]
+                if not row.empty:
+                    roi_b365 = float(pd.to_numeric(row[r_col], errors="coerce").iloc[0])
 
-    r_base  = _pick_roi(roi_base, "ROI")
-    r_smote = _pick_roi(roi_smote, "ROI")
-    r_b365  = _pick_roi(roi_b365.rename(columns={"test_season":"Season","roi":"ROI"}) if not roi_b365.empty else pd.DataFrame(), "ROI")
-
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Partidos disputados", f"{total_played}/{total_matches}")
-    if r_base  is not None: c2.metric("ROI modelo BASE",  f"{r_base*100:.2f}%")
-    if r_smote is not None: c3.metric("ROI modelo SMOTE", f"{r_smote*100:.2f}%")
-    if r_b365  is not None: c4.metric("ROI Bet365",       f"{r_b365*100:.2f}%")
+        k1,k2,k3,k4,k5 = st.columns(5)
+        k1.metric("Partidos disputados", f"{n_played}/{n_total}")
+        if not np.isnan(hit):     k2.metric("Acierto del pick", f"{hit:.1%}")
+        if not np.isnan(roi_pick):k3.metric("ROI pick (media/partido)", f"{roi_pick:.1%}")
+        if not np.isnan(roi_val): k4.metric("ROI value (si hay)", f"{roi_val:.1%}")
+        if roi_model is not None: k5.metric(f"ROI {model.upper()} (temp.)", f"{roi_model:.2%}")
 
     st.divider()
 
-    # Filtro por jornada/semana
-    weeks = df["Week"].dropna().astype(int).sort_values().unique().tolist()
-    col_toggle, col_wk = st.columns([1, 2])
-    with col_toggle:
-        mostrar_todo = st.toggle("Mostrar toda la temporada", value=True)
-    if mostrar_todo:
-        df_view = df.copy()
-        titulo = f"Temporada {season}"
+    # 2) Tabla por jornada (modelo + jornada seleccionada)
+    st.subheader("Partidos y señales — jornada seleccionada")
+    dfj = df.copy()
+    if not dfj.empty and jornada is not None:
+        dfj = dfj[pd.to_numeric(dfj["Week"], errors="coerce").astype("Int64") == int(jornada)]
+    cols_show = [c for c in [
+        "Date","Date_dt","Week","jornada",
+        "HomeTeam_norm","AwayTeam_norm",
+        "Pred","edge","value_pick","value_ev",
+        "B365H","B365D","B365A",
+        "Correct","net_profit","value_net_profit"
+    ] if c in dfj.columns]
+    if not dfj.empty:
+        st.dataframe(dfj[cols_show], use_container_width=True, hide_index=True)
+        st.download_button(
+            "Descargar jornada (CSV)",
+            dfj[cols_show].to_csv(index=False).encode("utf-8"),
+            file_name=f"matchlog_{model}_{cur_season}_J{jornada or 'all'}.csv"
+        )
     else:
-        with col_wk:
-            wk = st.select_slider("Filtrar por jornada/semana", options=weeks, value=weeks[-1])
-        df_view = df[df["Week"].astype("Int64") == wk].copy()
-        titulo = f"Temporada {season} — Jornada/Semana {wk}"
+        st.info("No hay filas para esa jornada.")
 
-    # Resumen de resultados (solo jugados)
-    sub = df_view[played_mask.reindex(df_view.index, fill_value=False)]
-    home_w = away_w = draws = 0
-    if result_col in ("true_result", "target"):
-        vals = pd.to_numeric(sub[result_col], errors="coerce")
-        home_w = int((vals == 2).sum())
-        draws  = int((vals == 1).sum())
-        away_w = int((vals == 0).sum())
-    elif result_col is not None:
-        s = sub[result_col].astype(str).str.upper()
-        home_w = int((s == "H").sum())
-        draws  = int((s == "D").sum())
-        away_w = int((s == "A").sum())
+    st.divider()
 
-    d1, d2, d3 = st.columns(3)
-    d1.metric("Victorias HOME", home_w)
-    d2.metric("Empates", draws)
-    d3.metric("Victorias AWAY", away_w)
-
-    # Tabla de partidos (selección mínima de columnas)
-    cols_basic = []
-    for c in ["Date", "Week", "jornada", "HomeTeam_norm", "AwayTeam_norm",
-              result_col, "Pred", "edge", "value_pick", "value_ev", "B365H", "B365D", "B365A",
-              "net_profit", "value_net_profit"]:
-        if c and c in df_view.columns:
-            cols_basic.append(c)
-    if "Date" not in cols_basic and "Date_dt" in df_view.columns:
-        cols_basic = ["Date_dt"] + [c for c in cols_basic if c != "Date_dt"]
-
-    st.subheader(titulo)
-    st.dataframe(df_view[cols_basic], use_container_width=True, hide_index=True)
-
-    # Curvas acumuladas (si existen)
-    curv = load_cumprofit(season)
-    if not curv.empty:
-        st.subheader("Beneficio acumulado (Modelo vs Bet365)")
-        st.line_chart(curv.set_index("x"), height=420)
+    # 3) Curva acumulada de la temporada (hasta la jornada seleccionada)
+    st.subheader("Beneficio acumulado (temporada actual)")
+    curves = load_cumprofit(cur_season)  # admite cumprofit_index_base/smote.* o similares
+    if not curves.empty:
+        d = curves.copy()
+        d.columns = [str(c).strip() for c in d.columns]
+        # Intenta detectar eje x
+        x_col = "x"
+        if "x" not in d.columns:
+            for cand in ("match_num","index","i","step","round","n"):
+                if cand in d.columns:
+                    x_col = cand
+                    break
+            else:
+                d.insert(0, "x", range(1, len(d)+1))
+                x_col = "x"
+        # Quedarse con series del modelo elegido + (si existe) Bet365
+        keep = [c for c in d.columns if c.lower().find(model) >= 0 or c.lower().find("bet365") >= 0 or c == x_col]
+        if len(keep) <= 1:  # si no encuentra nombres, coge todas menos el x
+            keep = [x_col] + [c for c in d.columns if c != x_col]
+        d = d[keep].copy()
+        # recorta hasta jornada seleccionada si hay Week o similar
+        if jornada is not None and len(d) >= int(jornada):
+            d = d.iloc[:int(jornada)]
+        long = d.melt(id_vars=x_col, var_name="Serie", value_name="Beneficio")
+        fig = px.line(long, x=x_col, y="Beneficio", color="Serie")
+        fig.update_layout(margin=dict(l=10,r=10,t=30,b=10), legend_title_text="")
+        fig.update_xaxes(title_text="Partidos (acumulado)")
+        fig.update_yaxes(title_text="Beneficio")
+        st.plotly_chart(fig, use_container_width=True)
         with st.expander("Ver datos de la curva"):
-            st.dataframe(curv, use_container_width=True, hide_index=True)
+            st.dataframe(d, use_container_width=True, hide_index=True)
+    else:
+        st.info("No encontré curvas de cumprofit para la temporada actual.")
 
-# =========================================================
-# TAB: ZONA PRIVADA (PIN)
-# =========================================================
-with tab_privado:
-    st.write("Introduce tu PIN para ver las predicciones de la próxima jornada.")
+# =============== TAB PRIVADA: solo predicciones de la PRÓXIMA jornada ===============
+with tab_private:
+    st.write("Introduce tu PIN para ver las predicciones **de la próxima jornada**.")
     PIN_CORRECTO = st.secrets.get("APP_PIN", "")
     ok = st.session_state.get("pin_ok", False)
 
@@ -201,60 +222,54 @@ with tab_privado:
                 st.error("PIN incorrecto.")
 
     if ok:
-        df = load_matchlog("base", season)
-        if df.empty:
-            st.info("No hay matchlog disponible.")
-            st.stop()
+        # Preferimos predictions_current_<modelo>.csv si existe; es “futura jornada”
+        dfp = pd.DataFrame()
+        if callable(load_csv):
+            try:
+                dfp = load_csv(f"predictions_current_{model}.csv")
+            except Exception:
+                dfp = pd.DataFrame()
 
-        df = _ensure_week_col(df)
-        d = _coerce_date_col(df)
-        today = pd.Timestamp.now(tz="Europe/Madrid").normalize().tz_localize(None)
+        # Fallback: si no existe predictions_current, intentamos deducir “próxima” con max(Week)+1
+        if dfp.empty:
+            df_all = load_matchlog(model, cur_season).copy()
+            df_all = _ensure_week_col(df_all)
+            if not df_all.empty:
+                last_week = pd.to_numeric(df_all["Week"], errors="coerce").dropna().astype(int).max()
+                # También soporta ficheros fechados predictions_YYYY... si los tienes
+                # (omitido por brevedad; se podría buscar en outputs por patrón)
+                dfp = df_all[df_all["Week"].astype("Int64") == (last_week + 1)]
 
-        # Futuros = sin resultado o con Date >= hoy
-        no_target = pd.Series(True, index=df.index)
-        if "true_result" in df.columns:
-            no_target = ~pd.to_numeric(df["true_result"], errors="coerce").isin([0, 1, 2])
-        elif "target" in df.columns:
-            no_target = ~pd.to_numeric(df["target"], errors="coerce").isin([0, 1, 2])
-        elif "FTR" in df.columns:
-            no_target = ~df["FTR"].astype(str).str.upper().isin(["H", "D", "A"])
+        if dfp.empty:
+            st.info("No hay predicciones para la próxima jornada todavía.")
+        else:
+            dfp = _ensure_week_col(dfp)
+            # Si falta EV, lo calculamos si hay proba y odds
+            if "value_ev" not in dfp.columns:
+                pH = next((c for c in ["p_H","proba_H","prob_H","proba_home","pHome"] if c in dfp.columns), None)
+                pD = next((c for c in ["p_D","proba_D","prob_D","proba_draw","pDraw"] if c in dfp.columns), None)
+                pA = next((c for c in ["p_A","proba_A","prob_A","proba_away","pAway"] if c in dfp.columns), None)
+                if all([pH,pD,pA]) and all(c in dfp.columns for c in ["B365H","B365D","B365A"]):
+                    evH = pd.to_numeric(dfp[pH], errors="coerce")*pd.to_numeric(dfp["B365H"], errors="coerce") - 1
+                    evD = pd.to_numeric(dfp[pD], errors="coerce")*pd.to_numeric(dfp["B365D"], errors="coerce") - 1
+                    evA = pd.to_numeric(dfp[pA], errors="coerce")*pd.to_numeric(dfp["B365A"], errors="coerce") - 1
+                    mat = np.vstack([evA.fillna(-np.inf), evD.fillna(-np.inf), evH.fillna(-np.inf)])
+                    arg = np.argmax(mat, axis=0)
+                    dfp["value_ev"] = np.take_along_axis(mat, arg[np.newaxis,:], axis=0).ravel()
+                    dfp["value_pick"] = np.where(arg==2,"H", np.where(arg==1,"D","A"))
 
-        future_mask = no_target | (pd.to_datetime(d, errors="coerce") >= today)
-        fut = df[future_mask].copy()
-        if fut.empty:
-            st.info("Ahora mismo no hay partidos futuros en outputs.")
-            st.stop()
-
-        # Si no existen value_pick/value_ev intentamos construirlos (solo si hay proba por clase)
-        for k in ["value_pick", "value_ev"]:
-            if k not in fut.columns:
-                fut[k] = np.nan
-
-        if fut["value_ev"].isna().all():
-            # Intento de cálculo desde probabilidades si existieran
-            pH = next((c for c in ["p_H", "proba_H", "prob_H", "proba_home", "pHome"] if c in fut.columns), None)
-            pD = next((c for c in ["p_D", "proba_D", "prob_D", "proba_draw", "pDraw"] if c in fut.columns), None)
-            pA = next((c for c in ["p_A", "proba_A", "prob_A", "proba_away", "pAway"] if c in fut.columns), None)
-            if all([pH, pD, pA]) and all(c in fut.columns for c in ["B365H", "B365D", "B365A"]):
-                evH = pd.to_numeric(fut[pH], errors="coerce") * pd.to_numeric(fut["B365H"], errors="coerce") - 1
-                evD = pd.to_numeric(fut[pD], errors="coerce") * pd.to_numeric(fut["B365D"], errors="coerce") - 1
-                evA = pd.to_numeric(fut[pA], errors="coerce") * pd.to_numeric(fut["B365A"], errors="coerce") - 1
-                mat = np.vstack([evA.fillna(-np.inf), evD.fillna(-np.inf), evH.fillna(-np.inf)])
-                arg = np.argmax(mat, axis=0)
-                fut["value_ev"] = np.take_along_axis(mat, arg[np.newaxis, :], axis=0).ravel()
-                fut["value_pick"] = np.where(arg == 2, "H", np.where(arg == 1, "D", "A"))
-
-        # Orden por EV descendente
-        fut = fut.sort_values("value_ev", ascending=False)
-
-        # Selector de jornada para predicciones (última por defecto)
-        weeks = fut["Week"].dropna().astype(int).sort_values().unique().tolist()
-        wk = st.selectbox("Jornada/Semana", weeks, index=len(weeks) - 1)
-
-        show = fut[fut["Week"].astype("Int64") == wk]
-        cols = [c for c in ["Date", "Week", "jornada", "HomeTeam_norm", "AwayTeam_norm",
-                            "Pred", "value_pick", "value_ev", "B365H", "B365D", "B365A"] if c in show.columns]
-        st.subheader(f"Predicciones privadas · Temporada {season} · Jornada {wk}")
-        st.dataframe(show[cols], use_container_width=True, hide_index=True)
-
-        st.caption("Nota: EV = p*odds - 1. `value_pick` = clase con mayor EV entre A/D/H.")
+            wk_next = pd.to_numeric(dfp["Week"], errors="coerce").dropna().astype(int).unique().tolist()
+            title_wk = wk_next[0] if wk_next else "próxima"
+            st.subheader(f"Predicciones (privadas) · {cur_season} · {model.upper()} · Jornada {title_wk}")
+            cols = [c for c in [
+                "Date","Week","jornada",
+                "HomeTeam_norm","AwayTeam_norm",
+                "Pred","value_pick","value_ev",
+                "B365H","B365D","B365A"
+            ] if c in dfp.columns]
+            st.dataframe(dfp[cols], use_container_width=True, hide_index=True)
+            st.download_button(
+                "Descargar predicciones (CSV)",
+                dfp[cols].to_csv(index=False).encode("utf-8"),
+                file_name=f"predictions_{model}_{cur_season}_J{title_wk}.csv"
+            )
