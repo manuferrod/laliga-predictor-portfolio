@@ -1,4 +1,4 @@
-# Home.py — LaLiga 1X2 · 25/26 (solo temporada actual)
+# Home.py — LaLiga 1X2 · 25/26 (solo temporada actual, sin métricas ni columnas de "value")
 from __future__ import annotations
 
 import sys, importlib.util
@@ -82,79 +82,18 @@ with colf2:
 # Tabs: pública (datos presentes) y privada (próxima jornada)
 tab_public, tab_private = st.tabs(["📊 Temporada actual", "🔒 Zona privada (próxima jornada)"])
 
-# ============ Detección de 'value' (EV > 2%) ============
-VALUE_EV_THRESHOLD = 0.02  # 2%
-
-def _compute_value_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Asegura columnas: value_ev, value_pick, Partido_con_valor (bool).
-    - Si existe 'use_value': lo usa para Partido_con_valor.
-    - Si no, calcula EV_i = p_i * O_i - 1 para H/D/A y toma el máximo.
-    - Marca Partido_con_valor = (value_ev > 0.02).
-    """
-    if df.empty:
-        return df
-    df = df.copy()
-
-    # Si ya existe 'use_value', úsalo directamente
-    if "use_value" in df.columns:
-        df["Partido_con_valor"] = df["use_value"].fillna(False).astype(bool)
-        # Si no vienen value_ev/value_pick, intenta inferirlos de probabilidades + cuotas
-        if "value_ev" not in df.columns or "value_pick" not in df.columns:
-            pH = next((c for c in ["p_H","proba_H","prob_H","proba_home","pHome"] if c in df.columns), None)
-            pD = next((c for c in ["p_D","proba_D","prob_D","proba_draw","pDraw"] if c in df.columns), None)
-            pA = next((c for c in ["p_A","proba_A","prob_A","proba_away","pAway"] if c in df.columns), None)
-            if all([pH,pD,pA]) and all(c in df.columns for c in ["B365H","B365D","B365A"]):
-                evH = pd.to_numeric(df[pH], errors="coerce")*pd.to_numeric(df["B365H"], errors="coerce") - 1
-                evD = pd.to_numeric(df[pD], errors="coerce")*pd.to_numeric(df["B365D"], errors="coerce") - 1
-                evA = pd.to_numeric(df[pA], errors="coerce")*pd.to_numeric(df["B365A"], errors="coerce") - 1
-                mat = np.vstack([evA.fillna(-np.inf), evD.fillna(-np.inf), evH.fillna(-np.inf)])
-                arg = np.argmax(mat, axis=0)
-                best_ev = np.take_along_axis(mat, arg[np.newaxis,:], axis=0).ravel()
-                if "value_ev" not in df.columns:
-                    df["value_ev"] = best_ev
-                if "value_pick" not in df.columns:
-                    df["value_pick"] = np.where(arg==2,"H", np.where(arg==1,"D","A"))
-        return df
-
-    # No hay 'use_value': calculamos EV y aplicamos umbral 2%
-    pH = next((c for c in ["p_H","proba_H","prob_H","proba_home","pHome"] if c in df.columns), None)
-    pD = next((c for c in ["p_D","proba_D","prob_D","proba_draw","pDraw"] if c in df.columns), None)
-    pA = next((c for c in ["p_A","proba_A","prob_A","proba_away","pAway"] if c in df.columns), None)
-
-    if all([pH,pD,pA]) and all(c in df.columns for c in ["B365H","B365D","B365A"]):
-        evH = pd.to_numeric(df[pH], errors="coerce")*pd.to_numeric(df["B365H"], errors="coerce") - 1
-        evD = pd.to_numeric(df[pD], errors="coerce")*pd.to_numeric(df["B365D"], errors="coerce") - 1
-        evA = pd.to_numeric(df[pA], errors="coerce")*pd.to_numeric(df["B365A"], errors="coerce") - 1
-        mat = np.vstack([evA.fillna(-np.inf), evD.fillna(-np.inf), evH.fillna(-np.inf)])
-        arg = np.argmax(mat, axis=0)  # 0->A, 1->D, 2->H
-        best_ev = np.take_along_axis(mat, arg[np.newaxis,:], axis=0).ravel()
-
-        df["value_ev"] = best_ev
-        df["value_pick"] = np.where(arg==2,"H", np.where(arg==1,"D","A"))
-        df["Partido_con_valor"] = (df["value_ev"] > VALUE_EV_THRESHOLD).fillna(False)
-    else:
-        # Fallback conservador: si no hay datos suficientes, no marcamos valor
-        if "value_ev" not in df.columns:
-            df["value_ev"] = np.nan
-        if "value_pick" not in df.columns:
-            df["value_pick"] = np.nan
-        df["Partido_con_valor"] = False
-
-    return df
-
 # =============== TAB PÚBLICA ===============
 with tab_public:
     st.caption(f"Temporada: **{cur_season}** · Modelo: **{model.upper()}**")
 
-    # 1) KPIs de temporada
+    # 1) KPIs de temporada (sin métricas de value)
     df = load_matchlog(model, cur_season).copy()
     if df.empty:
         st.warning(f"No hay matchlogs de {model.upper()} para {cur_season}.")
     else:
         df = _ensure_week_col(df)
+        # (No mostramos Date_dt; solo normalizamos si luego quisieras usar Date_dt internamente)
         df["Date_dt"] = _coerce_date_col(df)
-        df = _compute_value_columns(df)
 
         # Partidos disputados (según columna de resultado)
         res_col = next((c for c in ["true_result","target","FTR","Result","ftr","resultado"] if c in df.columns), None)
@@ -181,20 +120,6 @@ with tab_public:
             cum_profit = float(net.sum())
             roi_por_partido = float(net.sum() / n_played)
 
-        # ROI partidos con valor (EV>2%)
-        roi_partidos_con_valor = np.nan
-        cum_profit_value = np.nan
-        n_value = int(df["Partido_con_valor"].sum()) if "Partido_con_valor" in df.columns else 0
-        if n_value > 0:
-            if "value_net_profit" in df.columns:
-                vnet = pd.to_numeric(df.loc[df["Partido_con_valor"], "value_net_profit"], errors="coerce").fillna(0)
-                cum_profit_value = float(vnet.sum())
-                roi_partidos_con_valor = float(vnet.mean())
-            else:
-                vnet = pd.to_numeric(df.loc[df["Partido_con_valor"], "net_profit"], errors="coerce").fillna(0)
-                cum_profit_value = float(vnet.sum())
-                roi_partidos_con_valor = float(vnet.mean())
-
         # ROI (agregado de temporada desde roi_by_season_{model})
         roi_model_temp = None
         roi_by_season = load_roi_by_season(model)
@@ -206,36 +131,33 @@ with tab_public:
                 if roi_col:
                     roi_model_temp = float(pd.to_numeric(row[roi_col], errors="coerce").iloc[0])
 
-        # KPIs
-        k1, k2, k3, k4, k5, k6 = st.columns(6)
+        # KPIs (sin métricas de value)
+        k1, k2, k3, k4, k5 = st.columns(5)
         k1.metric("Partidos disputados", f"{n_played}")
-        if not np.isnan(hit_rate):          k2.metric("Acierto", f"{hit_rate:.1%}")
-        if not np.isnan(n_hits):            k3.metric("# aciertos", f"{int(n_hits)}")
-        if not np.isnan(roi_por_partido):   k4.metric("ROI por partido", f"{roi_por_partido:.1%}")
-        if not np.isnan(roi_partidos_con_valor): 
-            k5.metric("ROI partidos con valor", f"{roi_partidos_con_valor:.1%}", help="EV > 2%")
-        if roi_model_temp is not None:      k6.metric("ROI", f"{roi_model_temp:.2%}")
+        if not np.isnan(hit_rate):        k2.metric("Acierto", f"{hit_rate:.1%}")
+        if not np.isnan(n_hits):          k3.metric("# aciertos", f"{int(n_hits)}")
+        if not np.isnan(roi_por_partido): k4.metric("ROI por partido", f"{roi_por_partido:.1%}")
+        if roi_model_temp is not None:    k5.metric("ROI", f"{roi_model_temp:.2%}")
 
-        c1, c2, c3 = st.columns(3)
-        if not np.isnan(cum_profit):        c1.metric("Beneficio acumulado", f"{cum_profit:,.2f}")
-        c2.metric("# partidos con valor", f"{n_value}")
-        if not np.isnan(cum_profit_value):  c3.metric("Beneficio valor acumulado", f"{cum_profit_value:,.2f}")
+        c1 = st.columns(1)[0]
+        if not np.isnan(cum_profit):
+            c1.metric("Beneficio acumulado", f"{cum_profit:,.2f}")
 
     st.divider()
 
-    # 2) Tabla por jornada (incluye bandera 'Partido_con_valor')
-    st.subheader("Partidos y señales — jornada seleccionada")
+    # 2) Tabla por jornada (SIN columnas de value ni Date_dt)
+    st.subheader("Partidos — jornada seleccionada")
     dfj = df.copy()
     if not dfj.empty and jornada is not None:
         dfj = dfj[pd.to_numeric(dfj["Week"], errors="coerce").astype("Int64") == int(jornada)]
-    dfj = _compute_value_columns(dfj)
 
+    # columnas visibles (sin value_* ni Partido_con_valor ni Date_dt)
     cols_show = [c for c in [
-        "Date","Date_dt","Week","jornada",
+        "Date","Week","jornada",
         "HomeTeam_norm","AwayTeam_norm",
-        "Pred","value_pick","value_ev","Partido_con_valor",
+        "Pred",  # mantenemos la predicción del modelo
         "B365H","B365D","B365A",
-        "Correct","net_profit","value_net_profit"
+        "Correct","net_profit"
     ] if c in dfj.columns]
 
     if not dfj.empty:
@@ -265,6 +187,7 @@ with tab_public:
             else:
                 d.insert(0, "x", range(1, len(d)+1))
                 x_col = "x"
+        # mostramos solo serie del modelo + (si existe) Bet365
         keep = [c for c in d.columns if c.lower().find(model) >= 0 or c.lower().find("bet365") >= 0 or c == x_col]
         if len(keep) <= 1:
             keep = [x_col] + [c for c in d.columns if c != x_col]
@@ -282,7 +205,7 @@ with tab_public:
     else:
         st.info("No encontré curvas de cumprofit para la temporada actual.")
 
-# =============== TAB PRIVADA: próxima jornada ===============
+# =============== TAB PRIVADA: próxima jornada (sin columnas de value) ===============
 with tab_private:
     st.write("Introduce tu PIN para ver las predicciones **de la próxima jornada**.")
     PIN_CORRECTO = st.secrets.get("APP_PIN", "")
@@ -317,21 +240,17 @@ with tab_private:
             st.info("No hay predicciones para la próxima jornada todavía.")
         else:
             dfp = _ensure_week_col(dfp)
-            dfp = _compute_value_columns(dfp)  # aplica EV>2%
-
-            wk_next = pd.to_numeric(dfp["Week"], errors="coerce").dropna().astype(int).unique().tolist()
-            title_wk = wk_next[0] if wk_next else "próxima"
-            st.subheader(f"Predicciones (privadas) · {cur_season} · {model.upper()} · Jornada {title_wk}")
-
+            # columnas visibles (sin value_*, sin Partido_con_valor)
             cols = [c for c in [
                 "Date","Week","jornada",
                 "HomeTeam_norm","AwayTeam_norm",
-                "Pred","value_pick","value_ev","Partido_con_valor",
+                "Pred",
                 "B365H","B365D","B365A"
             ] if c in dfp.columns]
+            st.subheader(f"Predicciones (privadas) · {cur_season} · {model.upper()}")
             st.dataframe(dfp[cols], use_container_width=True, hide_index=True)
             st.download_button(
                 "Descargar predicciones (CSV)",
                 dfp[cols].to_csv(index=False).encode("utf-8"),
-                file_name=f"predictions_{model}_{cur_season}_J{title_wk}.csv"
+                file_name=f"predictions_{model}_{cur_season}_proxima.csv"
             )
