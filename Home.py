@@ -1,4 +1,4 @@
-# Home.py — LaLiga 1X2 · 25/26 (solo temporada actual, sin "value", con Stake y Beneficio €)
+# Home.py — LaLiga 1X2 · 25/26 (solo temporada actual, sin "value", con Stake y Acierto Y/X)
 from __future__ import annotations
 
 import sys, importlib.util
@@ -67,7 +67,6 @@ colf1, colf2, colf3 = st.columns([1, 1, 2])
 with colf1:
     model = st.radio("Modelo", ["base", "smote"], horizontal=True)
 
-# jornadas dependen del modelo en la temporada actual
 _logs_tmp = _ensure_week_col(load_matchlog(model, cur_season))
 jornadas = (
     pd.to_numeric(_logs_tmp.get("Week"), errors="coerce")
@@ -76,45 +75,46 @@ jornadas = (
 )
 
 with colf2:
-    jornada = st.selectbox("Jornada", jornadas if jornadas else [None],
-                           index=len(jornadas)-1 if jornadas else 0)
+    jornada = st.selectbox(
+        "Jornada",
+        jornadas if jornadas else [None],
+        index=len(jornadas) - 1 if jornadas else 0
+    )
 
 with colf3:
-    stake = st.slider("Stake (€ por apuesta)", min_value=1, max_value=10, value=1, step=1,
-                      help="Multiplica el beneficio (sum(net_profit)·stake). El ROI no cambia con el stake.")
+    stake = st.slider(
+        "Stake (€ por apuesta)",
+        min_value=1, max_value=10, value=1, step=1,
+        help="Multiplica el beneficio (sum(net_profit)·stake). El ROI no cambia con el stake."
+    )
 
 # Tabs: pública (datos presentes) y privada (próxima jornada)
 tab_public, tab_private = st.tabs(["📊 Temporada actual", "🔒 Zona privada (próxima jornada)"])
 
-# =============== Helpers ===============
+# ===== Helpers =====
 def _infer_correct_from_pred(df: pd.DataFrame) -> pd.Series:
     """
     Si 'Correct' no existe, intenta inferirlo comparando 'Pred' con el resultado real.
-    Soporta: true_result/target (0/1/2) o FTR/Result (H/D/A).
-    Mapeo asumido: 0→A, 1→D, 2→H.
+    Soporta: true_result/target (0/1/2) o FTR/Result (H/D/A). Mapa: 0→A, 1→D, 2→H.
     """
     if df.empty or "Pred" not in df.columns:
         return pd.Series(index=df.index, dtype="float")
 
     pred = df["Pred"].astype(str).str.upper().str.strip()
-    # Resultado real
-    res_col = next((c for c in ["true_result","target","FTR","Result","ftr","resultado"] if c in df.columns), None)
+    res_col = next((c for c in ["true_result", "target", "FTR", "Result", "ftr", "resultado"] if c in df.columns), None)
     if not res_col:
         return pd.Series(index=df.index, dtype="float")
 
     truth = df[res_col]
     if pd.api.types.is_numeric_dtype(truth):
-        # map 0/1/2 → A/D/H
         mapping = {0: "A", 1: "D", 2: "H"}
         truth_norm = pd.to_numeric(truth, errors="coerce").map(mapping)
     else:
         truth_norm = truth.astype(str).str.upper().str.strip()
 
-    correct = (pred == truth_norm)
-    # Devuelve float (1.0/0.0) para poder hacer .mean() luego sin problemas
-    return correct.astype("float")
+    return (pred == truth_norm).astype("float")
 
-def _format_euros(x: float) -> str:
+def _euros(x: float) -> str:
     sign = "-" if x < 0 else ""
     return f"{sign}{abs(x):,.2f} €".replace(",", "X").replace(".", ",").replace("X", ".")
 
@@ -128,30 +128,34 @@ with tab_public:
         st.warning(f"No hay matchlogs de {model.upper()} para {cur_season}.")
     else:
         df = _ensure_week_col(df)
-        df["Date_dt"] = _coerce_date_col(df)  # no se muestra, solo para orden si luego hiciera falta
+        df["Date_dt"] = _coerce_date_col(df)  # no se muestra
 
         # Partidos disputados (según columna de resultado)
         res_col = next((c for c in ["true_result","target","FTR","Result","ftr","resultado"] if c in df.columns), None)
         played_mask = pd.Series(False, index=df.index)
         if res_col in ("true_result","target"):
-            played_mask = pd.to_numeric(df[res_col], errors="coerce").isin([0,1,2])
+            played_mask = pd.to_numeric(df[res_col], errors="coerce").isin([0, 1, 2])
         elif res_col:
-            played_mask = df[res_col].astype(str).str.upper().isin(["H","D","A"])
+            played_mask = df[res_col].astype(str).str.upper().isin(["H", "D", "A"])
         n_played = int(played_mask.sum())
 
-        # Accuracy (Correct o inferido)
+        # Accuracy (Correct o inferido) — SOLO partidos jugados
         if "Correct" in df.columns:
-            corr = pd.to_numeric(df["Correct"], errors="coerce")
+            corr_all = pd.to_numeric(df["Correct"], errors="coerce")
         else:
-            corr = _infer_correct_from_pred(df)
-        hit_rate = float(corr.mean()) if len(corr) else np.nan
-        n_hits = int(corr.sum()) if corr.notna().any() else np.nan
+            corr_all = _infer_correct_from_pred(df)
+        corr_played = corr_all[played_mask]
+        if n_played > 0:
+            hit_rate = float(corr_played.mean())
+            n_hits = int(corr_played.sum())
+        else:
+            hit_rate, n_hits = float("nan"), float("nan")
 
-        # ROI por partido (media de net_profit sobre partidos disputados)
-        roi_por_partido = np.nan
-        beneficio_base = np.nan
+        # ROI por partido (media de net_profit sobre partidos jugados)
+        roi_por_partido = float("nan")
+        beneficio_base = float("nan")
         if "net_profit" in df.columns and n_played > 0:
-            net = pd.to_numeric(df["net_profit"], errors="coerce").fillna(0)
+            net = pd.to_numeric(df.loc[played_mask, "net_profit"], errors="coerce").fillna(0)
             beneficio_base = float(net.sum())
             roi_por_partido = float(net.sum() / n_played)
 
@@ -167,38 +171,49 @@ with tab_public:
                     roi_model_temp = float(pd.to_numeric(row[roi_col], errors="coerce").iloc[0])
 
         # Beneficio escalado por Stake (€)
-        beneficio = np.nan
+        beneficio = float("nan")
         if not np.isnan(beneficio_base):
             beneficio = beneficio_base * float(stake)
 
-        # KPIs — ROI a la derecha y debajo Beneficio (tamaño medio, €)
+        # KPIs — ROI a la derecha y debajo Beneficio €
         k1, k2, k3, k4, k5 = st.columns(5)
 
-        # Col 1: Partidos disputados + aciertos Y/X (con accuracy)
+        # Col 1: Partidos disputados
         k1.metric("Partidos disputados", f"{n_played}")
-        with k1:
-            if not np.isnan(hit_rate) and not np.isnan(n_hits):
-                st.caption(f"Aciertos: **{int(n_hits)}/{n_played}** ({hit_rate:.1%})")
 
-        # Col 2: Acierto (porcentaje)
-        if not np.isnan(hit_rate):
-            k2.metric("Acierto", f"{hit_rate:.1%}")
+        # Col 2: Acierto (% grande + (Y/X) pequeño)
+        with k2:
+            st.caption("Acierto")
+            if n_played > 0 and not np.isnan(hit_rate):
+                st.markdown(
+                    f"""
+                    <div style="display:flex;align-items:baseline;gap:.5rem;">
+                        <div style="font-size:2rem;font-weight:600;">{hit_rate:.1%}</div>
+                        <div style="font-size:.95rem;color:var(--text-color);">({int(n_hits)}/{n_played})</div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+            else:
+                st.markdown(
+                    "<div style='font-size:1.25rem;color:var(--text-color);'>—</div>",
+                    unsafe_allow_html=True
+                )
 
         # Col 3: ROI por partido
         if not np.isnan(roi_por_partido):
             k3.metric("ROI por partido", f"{roi_por_partido:.1%}")
 
-        # Col 4: (vacío para respiración visual o futuras métricas)
-        # Puedes reutilizarlo si quieres añadir otro KPI.
+        # Col 4: (espacio libre para futuras métricas)
 
-        # Col 5: ROI (agregado) y debajo Beneficio (formato medio, €)
+        # Col 5: ROI (agregado) y debajo Beneficio €
         if roi_model_temp is not None:
             k5.metric("ROI", f"{roi_model_temp:.2%}")
         with k5:
             if not np.isnan(beneficio):
                 st.markdown(
                     f"<div style='margin-top:0.25rem;font-size:1.05rem;color:var(--text-color);'>"
-                    f"<strong>Beneficio</strong>: {_format_euros(beneficio)}</div>",
+                    f"<strong>Beneficio</strong>: {_euros(beneficio)}</div>",
                     unsafe_allow_html=True
                 )
 
@@ -210,7 +225,6 @@ with tab_public:
     if not dfj.empty and jornada is not None:
         dfj = dfj[pd.to_numeric(dfj["Week"], errors="coerce").astype("Int64") == int(jornada)]
 
-    # columnas visibles (sin value_* ni Date_dt)
     cols_show = [c for c in [
         "Date","Week","jornada",
         "HomeTeam_norm","AwayTeam_norm",
@@ -231,7 +245,7 @@ with tab_public:
 
     st.divider()
 
-    # 3) Curva acumulada (recortada hasta la jornada) — en unidades base (stake=1)
+    # 3) Curva acumulada (recortada hasta la jornada) — stake=1
     st.subheader("Beneficio acumulado (temporada actual)")
     curves = load_cumprofit(cur_season)
     if not curves.empty:
@@ -244,21 +258,25 @@ with tab_public:
                     x_col = cand
                     break
             else:
-                d.insert(0, "x", range(1, len(d)+1))
+                d.insert(0, "x", range(1, len(d) + 1))
                 x_col = "x"
-        # mostramos solo serie del modelo + (si existe) Bet365
+
+        # mostrar solo serie del modelo + Bet365 (si existe)
         keep = [c for c in d.columns if c.lower().find(model) >= 0 or c.lower().find("bet365") >= 0 or c == x_col]
         if len(keep) <= 1:
             keep = [x_col] + [c for c in d.columns if c != x_col]
         d = d[keep].copy()
+
         if jornada is not None and len(d) >= int(jornada):
             d = d.iloc[:int(jornada)]
+
         long = d.melt(id_vars=x_col, var_name="Serie", value_name="Beneficio")
         fig = px.line(long, x=x_col, y="Beneficio", color="Serie")
-        fig.update_layout(margin=dict(l=10,r=10,t=30,b=10), legend_title_text="")
+        fig.update_layout(margin=dict(l=10, r=10, t=30, b=10), legend_title_text="")
         fig.update_xaxes(title_text="Partidos (acumulado)")
         fig.update_yaxes(title_text="Beneficio (stake=1)")
         st.plotly_chart(fig, use_container_width=True)
+
         with st.expander("Ver datos de la curva"):
             st.dataframe(d, use_container_width=True, hide_index=True)
     else:
