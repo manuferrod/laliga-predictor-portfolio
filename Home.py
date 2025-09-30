@@ -270,7 +270,13 @@ with tab_public:
     }
 
     if not dfj.empty:
-        dfj_vista = dfj[cols_show].rename(columns=rename_map)
+        view = dfj[cols_show].copy()
+
+        # ESCALAR el beneficio neto por STAKE (solo visualización y CSV)
+        if "net_profit" in view.columns:
+            view["net_profit"] = pd.to_numeric(view["net_profit"], errors="coerce").fillna(0.0) * float(stake)
+
+        dfj_vista = view.rename(columns=rename_map)
 
         st.dataframe(dfj_vista, use_container_width=True, hide_index=True)
         st.download_button(
@@ -295,7 +301,6 @@ with tab_public:
 
         wk_beneficio = wk_beneficio_base * float(stake) if not np.isnan(wk_beneficio_base) else float("nan")
 
-        # ---- FIX: preparar los textos antes de formatear en el f-string ----
         wk_hit_rate_txt = f"{wk_hit_rate:.1%}" if not np.isnan(wk_hit_rate) else "—"
         wk_roi_por_partido_txt = f"{wk_roi_por_partido:.1%}" if not np.isnan(wk_roi_por_partido) else "—"
         wk_beneficio_txt = _euros(wk_beneficio) if not np.isnan(wk_beneficio) else "—"
@@ -364,7 +369,7 @@ with tab_private:
     if not ok:
         pin = st.text_input("PIN", type="password")
         if st.button("Entrar"):
-            if PIN_CORRECTO y pin == PIN_CORRECTO:
+            if PIN_CORRECTO and pin == PIN_CORRECTO:
                 st.session_state["pin_ok"] = True
                 ok = True
             else:
