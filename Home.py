@@ -146,6 +146,59 @@ def _extract_correct_series(df: pd.DataFrame) -> pd.Series:
 
     return out
 
+def _beneficio_acum_por_jornada(df: pd.DataFrame, stake: float = 1.0) -> pd.DataFrame:
+    """
+    Devuelve DataFrame con columnas: Jornada (int), Beneficio (acumulado hasta esa jornada),
+    calculado desde df con columnas Week y net_profit. Aplica escala por 'stake'.
+    """
+    if df.empty or "net_profit" not in df.columns:
+        return pd.DataFrame(columns=["Jornada", "Beneficio"])
+    d = df.copy()
+    d = _ensure_week_col(d)
+    # Orden para estabilidad: por Week y fecha si existe
+    if "Date_dt" in d.columns:
+        d = d.sort_values(["Week", "Date_dt"])
+    else:
+        d = d.sort_values(["Week"])
+    d["net_profit"] = pd.to_numeric(d["net_profit"], errors="coerce").fillna(0.0)
+    # Beneficio por jornada (suma dentro de cada semana)
+    by_w = d.groupby(pd.to_numeric(d["Week"], errors="coerce").astype("Int64"))["net_profit"].sum().dropna()
+    by_w.index = by_w.index.astype(int)
+    by_w = by_w.sort_index()
+    # Acumulado y escala por stake
+    acum = by_w.cumsum() * float(stake)
+    out = pd.DataFrame({"Jornada": acum.index.values, "Beneficio": acum.values})
+    return out
+
+def _load_bet365_matchlogs_for_season(season: str) -> pd.DataFrame:
+    "Carga bet365_matchlogs para la temporada si existe, probando varios nombres comunes."
+    candidates = [
+        "bet365_matchlogs.csv",
+        f"bet365_matchlogs_{season}.csv",
+        f"bet365_matchlogs_{str(season).replace('/','_')}.csv",
+    ]
+    for fname in candidates:
+        try:
+            if callable(load_csv):
+                df = load_csv(fname)
+                if not df.empty:
+                    # si tiene columna Season, filtramos
+                    if "Season" in df.columns:
+                        df = df[df["Season"].astype(str) == str(season)]
+                    return df
+        except Exception:
+            pass
+        path = Path("outputs") / fname
+        if path.exists():
+            try:
+                df = pd.read_csv(path)
+                if not df.empty and "Season" in df.columns:
+                    df = df[df["Season"].astype(str) == str(season)]
+                return df
+            except Exception:
+                continue
+    return pd.DataFrame()
+
 # =============== TAB PÚBLICA ===============
 with tab_public:
     st.caption(f"Temporada: **{cur_season}** · Modelo: **{model.upper()}**")
@@ -322,64 +375,86 @@ with tab_public:
 
     st.divider()
 
-    # 3) Trayectoria de beneficio (Modelo & Bet365)
+    # 3) Trayectoria de beneficio (Modelo & Bet365) — BENEFICIO ACUMULADO POR JORNADA
     st.subheader("Trayectoria de beneficio (Modelo & Bet365)")
-    curves = load_cumprofit(cur_season)
-    if not curves.empty:
-        d = curves.copy()
-        d.columns = [str(c).strip() for c in d.columns]
-        x_col = "x"
-        if "x" not in d.columns:
-            for cand in ("match_num","index","i","step","round","n"):
-                if cand in d.columns:
-                    x_col = cand
-                    break
+    curves = load_cumprofit(cur_season)  # posible fallback para Bet365
+    # Serie acumulada por jornada para tu modelo (desde matchlogs, stake aplicado)
+    modelo_acum = _beneficio_acum_por_jornada(df, stake=stake)
+
+    # Intentamos Bet365 desde matchlogs; si no, reconstruimos desde curves
+    bet365_df = _load_bet365_matchlogs_for_season(cur_season)
+    if not bet365_df.empty:
+        bet365_df = _ensure_week_col(bet365_df)
+        if "Date_dt" not in bet365_df.columns:
+            bet365_df["Date_dt"] = _coerce_date_col(bet365_df)
+        bet365_acum = _beneficio_acum_por_jornada(bet365_df, stake=stake)
+    else:
+        bet365_acum = pd.DataFrame(columns=["Jornada", "Beneficio"])
+        # Fallback: usar curva acumulada de Bet365 y mapear a fin de cada jornada
+        if not curves.empty and not df.empty:
+            dcur = curves.copy()
+            dcur.columns = [str(c).strip() for c in dcur.columns]
+            # Localizar columna Bet365
+            bet_col = next((c for c in dcur.columns if c.lower().find("bet365") >= 0), None)
+            # Contar partidos por jornada en tu df para saber índices de corte
+            df_w = _ensure_week_col(df).copy()
+            if "Date_dt" in df_w.columns:
+                df_w = df_w.sort_values(["Week", "Date_dt"])
             else:
-                d.insert(0, "x", range(1, len(d) + 1))
-                x_col = "x"
+                df_w = df_w.sort_values(["Week"])
+            counts = df_w.groupby(pd.to_numeric(df_w["Week"], errors="coerce").astype("Int64")).size()
+            counts = counts.dropna()
+            if bet_col is not None and "x" in dcur.columns and not counts.empty:
+                cut_idx = counts.astype(int).cumsum().tolist()  # índices fin de jornada (1-based si 'x' empieza en 1)
+                # Ajustar por base 1/0
+                # Buscamos el valor de la curva en esas posiciones
+                series = []
+                for j, end_i in enumerate(cut_idx, start=1):
+                    # 'x' puede empezar en 1; buscamos fila con x==end_i
+                    row = dcur[dcur["x"] == end_i]
+                    if row.empty:
+                        # fallback: iloc si no hay coincidencia exacta
+                        if end_i-1 < len(dcur):
+                            val = float(pd.to_numeric(dcur[bet_col], errors="coerce").iloc[end_i-1])
+                        else:
+                            val = float(pd.to_numeric(dcur[bet_col], errors="coerce").iloc[-1])
+                    else:
+                        val = float(pd.to_numeric(row[bet_col], errors="coerce").iloc[0])
+                    series.append((j, val * float(stake)))  # escala por stake
+                if series:
+                    bet365_acum = pd.DataFrame(series, columns=["Jornada", "Beneficio"])
 
-        # mostrar solo serie del modelo + Bet365 (si existe)
-        keep = [c for c in d.columns if c.lower().find(model) >= 0 or c.lower().find("bet365") >= 0 or c == x_col]
-        if len(keep) <= 1:
-            keep = [x_col] + [c for c in d.columns if c != x_col]
-        d = d[keep].copy()
+    # Unimos y graficamos
+    plot_df = pd.DataFrame()
+    if not modelo_acum.empty:
+        a = modelo_acum.copy()
+        a["Serie"] = "Modelo"
+        plot_df = pd.concat([plot_df, a], ignore_index=True)
+    if not bet365_acum.empty:
+        b = bet365_acum.copy()
+        b["Serie"] = "Bet365"
+        plot_df = pd.concat([plot_df, b], ignore_index=True)
 
-        # Recorte por jornada (si aplicase)
-        if jornada is not None and len(d) >= int(jornada):
-            d = d.iloc[:int(jornada)]
+    if not plot_df.empty:
+        # Limitar por jornada seleccionada (si aplicase)
+        if jornada is not None:
+            plot_df = plot_df[plot_df["Jornada"] <= int(jornada)]
 
-        # Renombrar series para la leyenda: modelo -> "Modelo", bet365 -> "Bet365"
-        legend_map = {}
-        for c in d.columns:
-            cl = c.lower()
-            if c == x_col:
-                continue
-            if "bet365" in cl:
-                legend_map[c] = "Bet365"
-            elif model in cl:
-                legend_map[c] = "Modelo"
-        d = d.rename(columns=legend_map)
-
-        long = d.melt(id_vars=x_col, var_name="Serie", value_name="Beneficio")
-        fig = px.line(long, x=x_col, y="Beneficio", color="Serie")
+        fig = px.line(plot_df, x="Jornada", y="Beneficio", color="Serie")
         fig.update_layout(margin=dict(l=10, r=10, t=30, b=10), legend_title_text="")
         fig.update_xaxes(title_text="Jornadas")
         fig.update_yaxes(title_text=f"Beneficio (STAKE = {stake})")
         st.plotly_chart(fig, use_container_width=True)
 
         with st.expander("Ver datos de la curva"):
-            # Renombrar la columna x a "Jornada" solo para la vista en la tabla
-            d_show = d.copy()
-            if x_col in d_show.columns and x_col != "Jornada":
-                d_show = d_show.rename(columns={x_col: "Jornada"})
-            # Que "Jornada" quede la primera columna
-            cols = d_show.columns.tolist()
-            if "Jornada" in cols:
-                cols = ["Jornada"] + [c for c in cols if c != "Jornada"]
-                d_show = d_show[cols]
-            st.dataframe(d_show, use_container_width=True, hide_index=True)
+            # Tabla ancha: Jornada | Modelo | Bet365
+            pivot = plot_df.pivot_table(index="Jornada", columns="Serie", values="Beneficio", aggfunc="last").reset_index()
+            # Aseguramos el orden de columnas
+            columns = ["Jornada"] + [c for c in ["Modelo", "Bet365"] if c in pivot.columns]
+            pivot = pivot[columns]
+            st.dataframe(pivot, use_container_width=True, hide_index=True)
     else:
-        st.info("No encontré curvas de cumprofit para la temporada actual.")
+        st.info("No pude construir la trayectoria acumulada por jornada (faltan datos).")
 
 # =============== TAB PRIVADA: próxima jornada (sin columnas de value) ===============
 with tab_private:
