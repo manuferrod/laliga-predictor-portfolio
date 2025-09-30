@@ -246,11 +246,9 @@ with tab_public:
     if not dfj.empty and jornada is not None:
         dfj = dfj[pd.to_numeric(dfj["Week"], errors="coerce").astype("Int64") == int(jornada)]
 
-    # columnas base de la tabla (sin Week ni 'jornada', como pediste)
+    # columnas base de la tabla (sin Week ni 'jornada')
     cols_show = [c for c in [
         "Date",
-        # "Week",        # <- eliminado
-        # "jornada",     # <- eliminado
         "HomeTeam_norm","AwayTeam_norm",
         "Pred",
         "B365H","B365D","B365A",
@@ -293,20 +291,17 @@ with tab_public:
         wk_n_hits = int((corr_series_week == 1.0).sum()) if wk_n_played > 0 else 0
         wk_hit_rate = float(corr_series_week[wk_played_mask].mean()) if wk_n_played > 0 else float("nan")
 
-        wk_roi_por_partido = float("nan")
         wk_beneficio_base = float("nan")
         if "net_profit" in dfj.columns and wk_n_played > 0:
             net_wk = pd.to_numeric(dfj.loc[wk_played_mask, "net_profit"], errors="coerce").fillna(0.0)
             wk_beneficio_base = float(net_wk.sum())
-            wk_roi_por_partido = float(net_wk.sum() / wk_n_played)
 
         wk_beneficio = wk_beneficio_base * float(stake) if not np.isnan(wk_beneficio_base) else float("nan")
-        # ROI jornada (porcentaje total de la jornada; con stake unitario coincide con ROI por partido)
-        wk_roi_pct = (wk_beneficio_base / wk_n_played) if wk_n_played > 0 else float("nan")
+        # ROI (jornada) — proporción total de la jornada (con stake unitario coincide con el promedio por partido)
+        wk_roi = (wk_beneficio_base / wk_n_played) if wk_n_played > 0 else float("nan")
 
         wk_hit_rate_txt = f"{wk_hit_rate:.1%}" if not np.isnan(wk_hit_rate) else "—"
-        wk_roi_por_partido_txt = f"{wk_roi_por_partido:.1%}" if not np.isnan(wk_roi_por_partido) else "—"
-        wk_roi_pct_txt = f"{wk_roi_pct:.1%}" if not np.isnan(wk_roi_pct) else "—"
+        wk_roi_txt = f"{wk_roi:.1%}" if not np.isnan(wk_roi) else "—"
         wk_beneficio_txt = _euros(wk_beneficio) if not np.isnan(wk_beneficio) else "—"
 
         st.markdown(
@@ -315,8 +310,7 @@ with tab_public:
               <strong>Resumen jornada</strong> — 
               Partidos: <strong>{wk_n_played}</strong> · 
               Aciertos: <strong>{wk_n_hits}/{wk_n_played}</strong> ({wk_hit_rate_txt}) · 
-              ROI jornada: <strong>{wk_roi_pct_txt}</strong> · 
-              ROI por partido: <strong>{wk_roi_por_partido_txt}</strong> · 
+              ROI: <strong>{wk_roi_txt}</strong> · 
               Beneficio: <strong>{wk_beneficio_txt}</strong>
             </div>
             """,
@@ -328,8 +322,8 @@ with tab_public:
 
     st.divider()
 
-    # 3) Trayectoria de beneficio (modelo & Bet365) — temporada actual
-    st.subheader(f"Trayectoria de beneficio (modelo & Bet365) — {cur_season}")
+    # 3) Trayectoria de beneficio (Modelo & Bet365)
+    st.subheader("Trayectoria de beneficio (Modelo & Bet365)")
     curves = load_cumprofit(cur_season)
     if not curves.empty:
         d = curves.copy()
@@ -350,14 +344,27 @@ with tab_public:
             keep = [x_col] + [c for c in d.columns if c != x_col]
         d = d[keep].copy()
 
+        # Recorte por jornada (si aplicase)
         if jornada is not None and len(d) >= int(jornada):
             d = d.iloc[:int(jornada)]
+
+        # Renombrar series para la leyenda: modelo -> "Modelo", bet365 -> "Bet365"
+        legend_map = {}
+        for c in d.columns:
+            cl = c.lower()
+            if c == x_col:
+                continue
+            if "bet365" in cl:
+                legend_map[c] = "Bet365"
+            elif model in cl:
+                legend_map[c] = "Modelo"
+        d = d.rename(columns=legend_map)
 
         long = d.melt(id_vars=x_col, var_name="Serie", value_name="Beneficio")
         fig = px.line(long, x=x_col, y="Beneficio", color="Serie")
         fig.update_layout(margin=dict(l=10, r=10, t=30, b=10), legend_title_text="")
-        fig.update_xaxes(title_text="Partidos (acumulado)")
-        fig.update_yaxes(title_text="Beneficio (stake=1)")
+        fig.update_xaxes(title_text="Jornadas")
+        fig.update_yaxes(title_text=f"Beneficio (STAKE = {stake})")
         st.plotly_chart(fig, use_container_width=True)
 
         with st.expander("Ver datos de la curva"):
