@@ -62,7 +62,8 @@ if not cur_season:
 
 # ========= Filtros (debajo del título) =========
 st.subheader("Filtros")
-colf1, colf2, colf3 = st.columns([1, 1, 2])
+# Mismo ancho para los tres filtros
+colf1, colf2, colf3 = st.columns([1, 1, 1])
 
 with colf1:
     model = st.radio("Modelo", ["base", "smote"], horizontal=True)
@@ -127,15 +128,12 @@ def _extract_correct_series(df: pd.DataFrame) -> pd.Series:
         return pd.Series(index=df.index, dtype="float")
 
     s = df["Correct"]
-    # Normaliza a string para detectar símbolos
     t = s.astype(str).str.strip().str.lower()
 
     true_tokens  = {"✓", "✔", "true", "1", "si", "sí", "y", "acierto", "correct", "correcto"}
     false_tokens = {"✗", "✘", "false", "0", "no", "n", "fallo", "incorrect", "incorrecto"}
 
     out = pd.Series(np.nan, index=df.index, dtype="float")
-
-    # Marca True/False por símbolos conocidos
     out[t.isin(true_tokens)]  = 1.0
     out[t.isin(false_tokens)] = 0.0
 
@@ -143,9 +141,8 @@ def _extract_correct_series(df: pd.DataFrame) -> pd.Series:
     if s.dtype == bool:
         out = s.astype(float)
     else:
-        # números 0/1
         num = pd.to_numeric(s, errors="coerce")
-        out = out.fillna(num.where(num.isin([0,1]), np.nan).astype("float"))
+        out = out.fillna(num.where(num.isin([0, 1]), np.nan).astype("float"))
 
     return out
 
@@ -206,16 +203,19 @@ with tab_public:
         # Col 1: Partidos disputados
         k1.metric("Partidos disputados", f"{n_played}")
 
-        # Col 2: Acierto (porcentaje grande de metrics_by_season) y debajo Y/X sin paréntesis
+        # Col 2: Acierto (métrico) + Y/X debajo, un poco más grande y más negro
         if not np.isnan(acc_pct):
             k2.metric("Acierto", f"{acc_pct:.1%}")
         else:
-            # Fallback si faltara acc_test -> calcula desde 'Correct'
             hit_rate_fb = float(corr_series[played_mask].mean()) if n_played > 0 else float("nan")
             k2.metric("Acierto", f"{hit_rate_fb:.1%}" if not np.isnan(hit_rate_fb) else "—")
         with k2:
             if n_played > 0:
-                st.caption(f"{n_hits}/{n_played}")
+                st.markdown(
+                    f"<div style='margin-top:0.10rem;font-size:1.05rem;font-weight:600;'>"
+                    f"{n_hits}/{n_played}</div>",
+                    unsafe_allow_html=True
+                )
 
         # Col 3: ROI (agregado) + Beneficio €
         if roi_model_temp is not None:
