@@ -368,7 +368,16 @@ with tab_public:
         st.plotly_chart(fig, use_container_width=True)
 
         with st.expander("Ver datos de la curva"):
-            st.dataframe(d, use_container_width=True, hide_index=True)
+            # Renombrar la columna x a "Jornada" solo para la vista en la tabla
+            d_show = d.copy()
+            if x_col in d_show.columns and x_col != "Jornada":
+                d_show = d_show.rename(columns={x_col: "Jornada"})
+            # Que "Jornada" quede la primera columna
+            cols = d_show.columns.tolist()
+            if "Jornada" in cols:
+                cols = ["Jornada"] + [c for c in cols if c != "Jornada"]
+                d_show = d_show[cols]
+            st.dataframe(d_show, use_container_width=True, hide_index=True)
     else:
         st.info("No encontré curvas de cumprofit para la temporada actual.")
 
