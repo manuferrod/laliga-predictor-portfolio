@@ -238,12 +238,15 @@ with tab_public:
 
     st.divider()
 
-    # 2) Tabla por jornada (simple, sin Date_dt ni "value")
-    st.subheader("Partidos — jornada seleccionada")
+    # 2) Tabla por jornada (renombrada y con columnas en castellano)
+    titulo_jornada = f"Jornada {int(jornada)}" if jornada is not None else "Jornada —"
+    st.subheader(f"Partidos — {titulo_jornada}")
+
     dfj = df.copy()
     if not dfj.empty and jornada is not None:
         dfj = dfj[pd.to_numeric(dfj["Week"], errors="coerce").astype("Int64") == int(jornada)]
 
+    # columnas base de la tabla
     cols_show = [c for c in [
         "Date","Week","jornada",
         "HomeTeam_norm","AwayTeam_norm",
@@ -252,13 +255,61 @@ with tab_public:
         "Correct","net_profit"
     ] if c in dfj.columns]
 
+    # renombrado a español (solo en la vista)
+    rename_map = {
+        "Date": "Fecha",
+        "Week": "Jornada",
+        "HomeTeam_norm": "Local",
+        "AwayTeam_norm": "Visitante",
+        "Pred": "Predicción",
+        "B365H": "Bet365 H",
+        "B365D": "Bet365 D",
+        "B365A": "Bet365 A",
+        "Correct": "Acierto",
+        "net_profit": "Beneficio neto",
+        # "jornada": podrías dejarlo o quitarlo si es redundante con Week
+    }
+
     if not dfj.empty:
-        st.dataframe(dfj[cols_show], use_container_width=True, hide_index=True)
+        dfj_vista = dfj[cols_show].rename(columns=rename_map)
+
+        st.dataframe(dfj_vista, use_container_width=True, hide_index=True)
         st.download_button(
             "Descargar jornada (CSV)",
-            dfj[cols_show].to_csv(index=False).encode("utf-8"),
+            dfj_vista.to_csv(index=False).encode("utf-8"),
             file_name=f"matchlog_{model}_{cur_season}_J{jornada or 'all'}.csv"
         )
+
+        # --- Resumen de métricas de la jornada (letra pequeña) ---
+        # Cálculos específicos de la jornada usando 'Correct' y 'net_profit'
+        corr_series_week = _extract_correct_series(dfj)
+        wk_played_mask = corr_series_week.notna()
+        wk_n_played = int(wk_played_mask.sum())
+        wk_n_hits = int((corr_series_week == 1.0).sum()) if wk_n_played > 0 else 0
+        wk_hit_rate = float(corr_series_week[wk_played_mask].mean()) if wk_n_played > 0 else float("nan")
+
+        wk_roi_por_partido = float("nan")
+        wk_beneficio_base = float("nan")
+        if "net_profit" in dfj.columns and wk_n_played > 0:
+            net_wk = pd.to_numeric(dfj.loc[wk_played_mask, "net_profit"], errors="coerce").fillna(0.0)
+            wk_beneficio_base = float(net_wk.sum())
+            wk_roi_por_partido = float(net_wk.sum() / wk_n_played)
+
+        wk_beneficio = wk_beneficio_base * float(stake) if not np.isnan(wk_beneficio_base) else float("nan")
+
+        st.markdown(
+            f"""
+            <div style="margin-top:.5rem; font-size:0.95rem;">
+              <strong>Resumen jornada</strong> — 
+              Partidos: <strong>{wk_n_played}</strong> · 
+              Aciertos: <strong>{wk_n_hits}/{wk_n_played}</strong> ({wk_hit_rate:.1% if not np.isnan(wk_hit_rate) else '—'}) · 
+              ROI por partido: <strong>{wk_roi_por_partido:.1% if not np.isnan(wk_roi_por_partido) else '—'}</strong> · 
+              Beneficio: <strong>{_euros(wk_beneficio) if not np.isnan(wk_beneficio) else '—'}</strong>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
     else:
         st.info("No hay filas para esa jornada.")
 
