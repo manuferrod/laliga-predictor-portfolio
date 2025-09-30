@@ -267,7 +267,6 @@ with tab_public:
         "B365A": "Bet365 A",
         "Correct": "Acierto",
         "net_profit": "Beneficio neto",
-        # "jornada": podrías dejarlo o quitarlo si es redundante con Week
     }
 
     if not dfj.empty:
@@ -281,7 +280,6 @@ with tab_public:
         )
 
         # --- Resumen de métricas de la jornada (letra pequeña) ---
-        # Cálculos específicos de la jornada usando 'Correct' y 'net_profit'
         corr_series_week = _extract_correct_series(dfj)
         wk_played_mask = corr_series_week.notna()
         wk_n_played = int(wk_played_mask.sum())
@@ -297,14 +295,19 @@ with tab_public:
 
         wk_beneficio = wk_beneficio_base * float(stake) if not np.isnan(wk_beneficio_base) else float("nan")
 
+        # ---- FIX: preparar los textos antes de formatear en el f-string ----
+        wk_hit_rate_txt = f"{wk_hit_rate:.1%}" if not np.isnan(wk_hit_rate) else "—"
+        wk_roi_por_partido_txt = f"{wk_roi_por_partido:.1%}" if not np.isnan(wk_roi_por_partido) else "—"
+        wk_beneficio_txt = _euros(wk_beneficio) if not np.isnan(wk_beneficio) else "—"
+
         st.markdown(
             f"""
             <div style="margin-top:.5rem; font-size:0.95rem;">
               <strong>Resumen jornada</strong> — 
               Partidos: <strong>{wk_n_played}</strong> · 
-              Aciertos: <strong>{wk_n_hits}/{wk_n_played}</strong> ({wk_hit_rate:.1% if not np.isnan(wk_hit_rate) else '—'}) · 
-              ROI por partido: <strong>{wk_roi_por_partido:.1% if not np.isnan(wk_roi_por_partido) else '—'}</strong> · 
-              Beneficio: <strong>{_euros(wk_beneficio) if not np.isnan(wk_beneficio) else '—'}</strong>
+              Aciertos: <strong>{wk_n_hits}/{wk_n_played}</strong> ({wk_hit_rate_txt}) · 
+              ROI por partido: <strong>{wk_roi_por_partido_txt}</strong> · 
+              Beneficio: <strong>{wk_beneficio_txt}</strong>
             </div>
             """,
             unsafe_allow_html=True
@@ -361,7 +364,7 @@ with tab_private:
     if not ok:
         pin = st.text_input("PIN", type="password")
         if st.button("Entrar"):
-            if PIN_CORRECTO and pin == PIN_CORRECTO:
+            if PIN_CORRECTO y pin == PIN_CORRECTO:
                 st.session_state["pin_ok"] = True
                 ok = True
             else:
