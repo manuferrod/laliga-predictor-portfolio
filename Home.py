@@ -1,4 +1,4 @@
-# Home.py — LaLiga 1X2 · 25/26 (temporada actual, KPIs con acc_test, ROI/ROI por partido juntos, STAKE select)
+# Home.py — LaLiga 1X2 · 25/26 (temporada actual, KPIs con acc_test y Y/X desde 'Correct', ROI/ROI por partido juntos, STAKE select)
 from __future__ import annotations
 
 import sys, importlib.util
@@ -86,35 +86,13 @@ with colf3:
         "STAKE",
         options=list(range(1, 11)),
         index=0,
-        help="€ por apuesta. Solo afecta al Beneficio (ROI no cambia)."
+        help="€ por apuesta. Afecta solo al Beneficio (ROI no cambia)."
     )
 
 # Tabs: pública (datos presentes) y privada (próxima jornada)
 tab_public, tab_private = st.tabs(["📊 Temporada actual", "🔒 Zona privada (próxima jornada)"])
 
 # ===== Helpers =====
-def _infer_correct_from_pred(df: pd.DataFrame) -> pd.Series:
-    """
-    Si 'Correct' no existe, intenta inferirlo comparando 'Pred' con el resultado real.
-    Soporta: true_result/target (0/1/2) o FTR/Result (H/D/A). Mapa: 0→A, 1→D, 2→H.
-    """
-    if df.empty or "Pred" not in df.columns:
-        return pd.Series(index=df.index, dtype="float")
-
-    pred = df["Pred"].astype(str).str.upper().str.strip()
-    res_col = next((c for c in ["true_result", "target", "FTR", "Result", "ftr", "resultado"] if c in df.columns), None)
-    if not res_col:
-        return pd.Series(index=df.index, dtype="float")
-
-    truth = df[res_col]
-    if pd.api.types.is_numeric_dtype(truth):
-        mapping = {0: "A", 1: "D", 2: "H"}
-        truth_norm = pd.to_numeric(truth, errors="coerce").map(mapping)
-    else:
-        truth_norm = truth.astype(str).str.upper().str.strip()
-
-    return (pred == truth_norm).astype("float")
-
 def _euros(x: float) -> str:
     sign = "-" if x < 0 else ""
     return f"{sign}{abs(x):,.2f} €".replace(",", "X").replace(".", ",").replace("X", ".")
@@ -137,6 +115,40 @@ def _load_metrics_by_season_for_model(model: str) -> pd.DataFrame:
                 df = pd.DataFrame()
     return df
 
+def _extract_correct_series(df: pd.DataFrame) -> pd.Series:
+    """
+    Extrae una serie booleana de acierto a partir de la columna 'Correct':
+      ✓ / ✔ / True / 1  -> True
+      ✗ / ✘ / False / 0 -> False
+      otros / NaN       -> NaN
+    Si no existe 'Correct', devuelve serie vacía (NaN).
+    """
+    if df.empty or "Correct" not in df.columns:
+        return pd.Series(index=df.index, dtype="float")
+
+    s = df["Correct"]
+    # Normaliza a string para detectar símbolos
+    t = s.astype(str).str.strip().str.lower()
+
+    true_tokens  = {"✓", "✔", "true", "1", "si", "sí", "y", "acierto", "correct", "correcto"}
+    false_tokens = {"✗", "✘", "false", "0", "no", "n", "fallo", "incorrect", "incorrecto"}
+
+    out = pd.Series(np.nan, index=df.index, dtype="float")
+
+    # Marca True/False por símbolos conocidos
+    out[t.isin(true_tokens)]  = 1.0
+    out[t.isin(false_tokens)] = 0.0
+
+    # Si hay booleanos/números verdaderos, intenta mapearlos
+    if s.dtype == bool:
+        out = s.astype(float)
+    else:
+        # números 0/1
+        num = pd.to_numeric(s, errors="coerce")
+        out = out.fillna(num.where(num.isin([0,1]), np.nan).astype("float"))
+
+    return out
+
 # =============== TAB PÚBLICA ===============
 with tab_public:
     st.caption(f"Temporada: **{cur_season}** · Modelo: **{model.upper()}**")
@@ -149,54 +161,41 @@ with tab_public:
         df = _ensure_week_col(df)
         df["Date_dt"] = _coerce_date_col(df)  # no se muestra
 
-        # Partidos disputados (según columna de resultado)
-        res_col = next((c for c in ["true_result","target","FTR","Result","ftr","resultado"] if c in df.columns), None)
-        played_mask = pd.Series(False, index=df.index)
-        if res_col in ("true_result","target"):
-            played_mask = pd.to_numeric(df[res_col], errors="coerce").isin([0, 1, 2])
-        elif res_col:
-            played_mask = df[res_col].astype(str).str.upper().isin(["H", "D", "A"])
+        # Partidos jugados y aciertos/fallos a partir de 'Correct' (✓/✗)
+        corr_series = _extract_correct_series(df)  # float {1.0, 0.0, NaN}
+        played_mask = corr_series.notna()
         n_played = int(played_mask.sum())
+        n_hits = int((corr_series == 1.0).sum()) if n_played > 0 else 0
 
-        # Acierto → de metrics_by_season (acc_test) para la temporada actual
+        # Acierto (%) desde metrics_by_season (acc_test) para temporada actual
         acc_pct = float("nan")
         metrics_df = _load_metrics_by_season_for_model(model)
-        if not metrics_df.empty:
-            season_col = "test_season" if "test_season" in metrics_df.columns else None
-            acc_col = "acc_test" if "acc_test" in metrics_df.columns else None
-            if season_col and acc_col:
-                row = metrics_df[pd.to_numeric(metrics_df[season_col], errors="coerce") == pd.to_numeric(cur_season)]
-                if not row.empty:
-                    acc_pct = float(pd.to_numeric(row[acc_col], errors="coerce").iloc[0])
+        if not metrics_df.empty and {"test_season", "acc_test"}.issubset(metrics_df.columns):
+            row = metrics_df[pd.to_numeric(metrics_df["test_season"], errors="coerce") == pd.to_numeric(cur_season)]
+            if not row.empty:
+                acc_pct = float(pd.to_numeric(row["acc_test"], errors="coerce").iloc[0])
 
-        # Fallback para Y/X (desde matchlogs jugados)
-        if "Correct" in df.columns:
-            corr_all = pd.to_numeric(df["Correct"], errors="coerce")
-        else:
-            corr_all = _infer_correct_from_pred(df)
-        corr_played = corr_all[played_mask]
-        n_hits = int(corr_played.sum()) if n_played > 0 and corr_played.notna().any() else 0
-
-        # ROI por partido (media de net_profit sobre partidos jugados)
+        # ROI por partido y Beneficio base (sobre partidos jugados)
         roi_por_partido = float("nan")
         beneficio_base = float("nan")
         if "net_profit" in df.columns and n_played > 0:
-            net = pd.to_numeric(df.loc[played_mask, "net_profit"], errors="coerce").fillna(0)
+            net = pd.to_numeric(df.loc[played_mask, "net_profit"], errors="coerce").fillna(0.0)
             beneficio_base = float(net.sum())
             roi_por_partido = float(net.sum() / n_played)
 
         # ROI (agregado de temporada desde roi_by_season_{model})
         roi_model_temp = None
         roi_by_season = load_roi_by_season(model)
-        season_col_r = next((c for c in ["Season","test_season","season"] if c in (roi_by_season.columns if not roi_by_season.empty else [])), None)
-        if season_col_r:
-            row = roi_by_season[pd.to_numeric(roi_by_season[season_col_r], errors="coerce") == pd.to_numeric(cur_season)]
-            if not row.empty:
-                roi_col = "roi" if "roi" in row.columns else next((c for c in row.columns if str(c).lower().startswith("roi")), None)
-                if roi_col:
-                    roi_model_temp = float(pd.to_numeric(row[roi_col], errors="coerce").iloc[0])
+        if not roi_by_season.empty:
+            season_col_r = next((c for c in ["Season","test_season","season"] if c in roi_by_season.columns), None)
+            if season_col_r:
+                row = roi_by_season[pd.to_numeric(roi_by_season[season_col_r], errors="coerce") == pd.to_numeric(cur_season)]
+                if not row.empty:
+                    roi_col = "roi" if "roi" in row.columns else next((c for c in row.columns if str(c).lower().startswith("roi")), None)
+                    if roi_col:
+                        roi_model_temp = float(pd.to_numeric(row[roi_col], errors="coerce").iloc[0])
 
-        # Beneficio escalado por Stake (€)
+        # Beneficio escalado por STAKE (€)
         beneficio = float("nan")
         if not np.isnan(beneficio_base):
             beneficio = beneficio_base * float(stake)
@@ -207,19 +206,16 @@ with tab_public:
         # Col 1: Partidos disputados
         k1.metric("Partidos disputados", f"{n_played}")
 
-        # Col 2: Acierto (mismo estilo que otros KPIs) + línea pequeña "Y/X" debajo, sin paréntesis
+        # Col 2: Acierto (porcentaje grande de metrics_by_season) y debajo Y/X sin paréntesis
         if not np.isnan(acc_pct):
             k2.metric("Acierto", f"{acc_pct:.1%}")
         else:
-            # Fallback si no hay acc_test
-            hit_rate_fb = float(corr_played.mean()) if n_played > 0 else float("nan")
-            if not np.isnan(hit_rate_fb):
-                k2.metric("Acierto", f"{hit_rate_fb:.1%}")
-            else:
-                k2.metric("Acierto", "—")
+            # Fallback si faltara acc_test -> calcula desde 'Correct'
+            hit_rate_fb = float(corr_series[played_mask].mean()) if n_played > 0 else float("nan")
+            k2.metric("Acierto", f"{hit_rate_fb:.1%}" if not np.isnan(hit_rate_fb) else "—")
         with k2:
             if n_played > 0:
-                st.caption(f"{int(n_hits)}/{n_played}")
+                st.caption(f"{n_hits}/{n_played}")
 
         # Col 3: ROI (agregado) + Beneficio €
         if roi_model_temp is not None:
@@ -242,7 +238,7 @@ with tab_public:
 
     st.divider()
 
-    # 2) Tabla por jornada (simple, sin Date_dt ni value)
+    # 2) Tabla por jornada (simple, sin Date_dt ni "value")
     st.subheader("Partidos — jornada seleccionada")
     dfj = df.copy()
     if not dfj.empty and jornada is not None:
