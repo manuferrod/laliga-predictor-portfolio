@@ -246,9 +246,11 @@ with tab_public:
     if not dfj.empty and jornada is not None:
         dfj = dfj[pd.to_numeric(dfj["Week"], errors="coerce").astype("Int64") == int(jornada)]
 
-    # columnas base de la tabla
+    # columnas base de la tabla (sin Week ni 'jornada', como pediste)
     cols_show = [c for c in [
-        "Date","Week","jornada",
+        "Date",
+        # "Week",        # <- eliminado
+        # "jornada",     # <- eliminado
         "HomeTeam_norm","AwayTeam_norm",
         "Pred",
         "B365H","B365D","B365A",
@@ -258,7 +260,6 @@ with tab_public:
     # renombrado a español (solo en la vista)
     rename_map = {
         "Date": "Fecha",
-        "Week": "Jornada",
         "HomeTeam_norm": "Local",
         "AwayTeam_norm": "Visitante",
         "Pred": "Predicción",
@@ -300,9 +301,12 @@ with tab_public:
             wk_roi_por_partido = float(net_wk.sum() / wk_n_played)
 
         wk_beneficio = wk_beneficio_base * float(stake) if not np.isnan(wk_beneficio_base) else float("nan")
+        # ROI jornada (porcentaje total de la jornada; con stake unitario coincide con ROI por partido)
+        wk_roi_pct = (wk_beneficio_base / wk_n_played) if wk_n_played > 0 else float("nan")
 
         wk_hit_rate_txt = f"{wk_hit_rate:.1%}" if not np.isnan(wk_hit_rate) else "—"
         wk_roi_por_partido_txt = f"{wk_roi_por_partido:.1%}" if not np.isnan(wk_roi_por_partido) else "—"
+        wk_roi_pct_txt = f"{wk_roi_pct:.1%}" if not np.isnan(wk_roi_pct) else "—"
         wk_beneficio_txt = _euros(wk_beneficio) if not np.isnan(wk_beneficio) else "—"
 
         st.markdown(
@@ -311,6 +315,7 @@ with tab_public:
               <strong>Resumen jornada</strong> — 
               Partidos: <strong>{wk_n_played}</strong> · 
               Aciertos: <strong>{wk_n_hits}/{wk_n_played}</strong> ({wk_hit_rate_txt}) · 
+              ROI jornada: <strong>{wk_roi_pct_txt}</strong> · 
               ROI por partido: <strong>{wk_roi_por_partido_txt}</strong> · 
               Beneficio: <strong>{wk_beneficio_txt}</strong>
             </div>
@@ -323,8 +328,8 @@ with tab_public:
 
     st.divider()
 
-    # 3) Curva acumulada (recortada hasta la jornada) — stake=1
-    st.subheader("Beneficio acumulado (temporada actual)")
+    # 3) Trayectoria de beneficio (modelo & Bet365) — temporada actual
+    st.subheader(f"Trayectoria de beneficio (modelo & Bet365) — {cur_season}")
     curves = load_cumprofit(cur_season)
     if not curves.empty:
         d = curves.copy()
