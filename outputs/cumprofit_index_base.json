@@ -200,11 +200,11 @@
   {
     "test_season": 2025,
     "train_until": 2024,
-    "n_matches": 60,
-    "profit_model": -10.75,
-    "profit_bet365": -4.42,
-    "roi_model": -0.17916666666666667,
-    "roi_bet365": -0.07366666666666667,
+    "n_matches": 69,
+    "profit_model": -8.95,
+    "profit_bet365": -5.92,
+    "roi_model": -0.12971014492753621,
+    "roi_bet365": -0.08579710144927537,
     "csv_file": "cumprofit_2025.csv",
     "json_file": "cumprofit_2025.json"
   }
