@@ -1,0 +1,17 @@
+{
+  "generated_at": "2025-10-16 10:48:26",
+  "model": "market_argmax(pimp1,pimpx,pimp2)",
+  "overall": {
+    "n_scored_total": 5780,
+    "n_bets_total": 5780,
+    "accuracy_overall": 0.49290657439446367,
+    "logloss_overall": 1.383610368996285,
+    "brier_overall": 0.6207449413768082,
+    "roi_overall": -0.10785294117647058,
+    "hit_rate_overall": 0.49290657439446367,
+    "avg_overround_overall": 1.0567322432011097,
+    "avg_conf_overall": 0.5307104274643374,
+    "avg_entropy_overall": 0.9728131942862404,
+    "avg_margin_overall": 0.2709199590018867
+  }
+}

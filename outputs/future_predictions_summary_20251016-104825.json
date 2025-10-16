@@ -1,0 +1,91 @@
+{
+  "generated_at": "20251016-104825",
+  "model": {
+    "type": "LogisticRegression(multinomial)",
+    "C": 1.0,
+    "max_iter": 1000,
+    "n_seasons_window": 4,
+    "season_size": 380,
+    "recent_weight": 3.0,
+    "older_weight": 1.0,
+    "features": [
+      "pimp1",
+      "pimpx",
+      "pimp2",
+      "relative_perf_diff",
+      "avg_xg_last7_diff",
+      "form_points_6_diff",
+      "home_total_gd_cum",
+      "away_total_gd_cum",
+      "h2h_win_rate_ewm_diff",
+      "home_total_matches_prev",
+      "away_total_matches_prev",
+      "home_avg_shotsontarget_last7",
+      "avg_shots_last7_diff",
+      "away_gd_cum"
+    ],
+    "classes_order": [
+      "A",
+      "D",
+      "H"
+    ],
+    "proba_mapping": {
+      "pH_pred": "H",
+      "pD_pred": "D",
+      "pA_pred": "A"
+    }
+  },
+  "filters": {
+    "season_filter": 2025
+  },
+  "data": {
+    "n_future_rows_out": 10,
+    "future_min_date": "2025-10-17 00:00:00",
+    "future_max_date": "2025-10-20 00:00:00",
+    "unique_key_report": {
+      "collisions_augmented": 0
+    }
+  },
+  "by_date": [
+    {
+      "date": "2025-10-17",
+      "n_matches": 1,
+      "mean_conf": 0.3925114442159576,
+      "mean_entropy": 1.085473214769953,
+      "mean_margin": 0.04808942725397913,
+      "pct_pick_H": 0.0,
+      "pct_pick_D": 0.0,
+      "pct_pick_A": 1.0
+    },
+    {
+      "date": "2025-10-18",
+      "n_matches": 4,
+      "mean_conf": 0.6572333205632155,
+      "mean_entropy": 0.8257542308872104,
+      "mean_margin": 0.46224316864712645,
+      "pct_pick_H": 1.0,
+      "pct_pick_D": 0.0,
+      "pct_pick_A": 0.0
+    },
+    {
+      "date": "2025-10-19",
+      "n_matches": 4,
+      "mean_conf": 0.52607719285562,
+      "mean_entropy": 0.9850827050821319,
+      "mean_margin": 0.2568835363068718,
+      "pct_pick_H": 0.25,
+      "pct_pick_D": 0.0,
+      "pct_pick_A": 0.75
+    },
+    {
+      "date": "2025-10-20",
+      "n_matches": 1,
+      "mean_conf": 0.4614908683348731,
+      "mean_entropy": 1.0537381626708124,
+      "mean_margin": 0.14126852458307548,
+      "pct_pick_H": 0.0,
+      "pct_pick_D": 1.0,
+      "pct_pick_A": 0.0
+    }
+  ]
+}
