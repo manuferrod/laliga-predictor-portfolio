@@ -1,97 +1,131 @@
-# matchlogs.py
+# matchlogs.py — Visor de matchlogs (nuevos outputs)
 from __future__ import annotations
 
-import sys, importlib.util, json
+import re
 from pathlib import Path
 import streamlit as st
 import pandas as pd
 import numpy as np
 
-# --- import robusto del módulo scripts/io ---
+# ================== Paths ==================
 ROOT = Path(__file__).resolve().parent
-SCRIPTS_DIR = ROOT / "scripts"
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-
-try:
-    # Preferido
-    from scripts.io import (
-        ensure_outputs_dir,
-        has_outputs,
-        seasons as load_seasons,
-        load_matchlog,
-        _ensure_week_col,
-        _coerce_date_col,
-        BASE as OUTPUTS_BASE,
-    )
-except Exception:
-    # Fallback defensivo
-    spec = importlib.util.spec_from_file_location("io", SCRIPTS_DIR / "io.py")
-    io = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(io)  # type: ignore
-    ensure_outputs_dir = io.ensure_outputs_dir
-    has_outputs        = io.has_outputs
-    load_seasons       = io.seasons
-    load_matchlog      = io.load_matchlog
-    _ensure_week_col   = io._ensure_week_col
-    _coerce_date_col   = io._coerce_date_col
-    OUTPUTS_BASE       = io.BASE
+OUT = ROOT / "outputs"
 
 st.set_page_config(page_title="Matchlogs", page_icon="📋", layout="wide")
 st.header("Matchlogs por temporada")
 
-# --- existencia de outputs ---
-ensure_outputs_dir()
-if not has_outputs():
+# ================== Helpers E/S ==================
+def _read_csv(path: Path) -> pd.DataFrame:
+    if not path.exists():
+        return pd.DataFrame()
+    try:
+        return pd.read_csv(path)
+    except Exception:
+        return pd.DataFrame()
+
+def _list_seasons() -> list[int]:
+    seasons = set()
+    for p in OUT.glob("matchlogs_*.csv"):
+        m = re.match(r"matchlogs_(\d{4})\.csv$", p.name)
+        if m:
+            seasons.add(int(m.group(1)))
+    return sorted(seasons)
+
+def _ensure_date(df: pd.DataFrame) -> pd.DataFrame:
+    if "Date" in df.columns:
+        df = df.copy()
+        df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+    return df
+
+def _ensure_matchday(df: pd.DataFrame) -> pd.DataFrame:
+    if df.empty:
+        return df
+    if "Matchday" not in df.columns:
+        d = df.copy().reset_index(drop=True)
+        d["Matchday"] = np.arange(1, len(d) + 1)
+        return d
+    return df
+
+def _only_played_mask(df: pd.DataFrame) -> pd.Series:
+    """Disputados = y_true ∈ {H,D,A}."""
+    if "y_true" not in df.columns:
+        return pd.Series(False, index=df.index)
+    t = df["y_true"].astype(str).str.strip().str.upper()
+    return t.isin({"H","D","A"})
+
+def _source_file(source: str, season: int) -> Path:
+    if source == "Modelo":
+        return OUT / f"matchlogs_{season}.csv"
+    else:
+        return OUT / f"matchlogs_market_{season}.csv"
+
+def _normalize_market_cols(df: pd.DataFrame, source: str) -> pd.DataFrame:
+    """Unifica nombres para la vista cuando la fuente es Bet365."""
+    if df.empty or source != "Bet365":
+        return df
+    d = df.copy()
+    # Renombrar y_pred_market -> y_pred para homogenizar
+    if "y_pred_market" in d.columns and "y_pred" not in d.columns:
+        d = d.rename(columns={"y_pred_market": "y_pred"})
+    # p*_mkt_pred -> proba_* (para homogeneizar con modelo)
+    ren = {}
+    if "pH_mkt_pred" in d.columns: ren["pH_mkt_pred"] = "proba_H"
+    if "pD_mkt_pred" in d.columns: ren["pD_mkt_pred"] = "proba_D"
+    if "pA_mkt_pred" in d.columns: ren["pA_mkt_pred"] = "proba_A"
+    if ren:
+        d = d.rename(columns=ren)
+    return d
+
+# ================== Comprobaciones ==================
+OUT.mkdir(parents=True, exist_ok=True)
+if not any(OUT.iterdir()):
     st.warning("No hay artefactos en `outputs/` todavía.")
     st.stop()
 
-# --- temporadas disponibles ---
-seas = load_seasons()
-if not seas:
-    st.warning("No hay temporadas detectadas en `outputs/`.")
+seasons = _list_seasons()
+if not seasons:
+    st.warning("No hay temporadas detectadas en `outputs/` (matchlogs_YYYY.csv).")
     st.stop()
 
-# --- controles superiores ---
+# ================== Controles superiores ==================
 c1, c2, c3 = st.columns([1,1,2])
 with c1:
-    model = st.radio("Modelo", ["base", "smote"], horizontal=True)
+    source = st.radio("Fuente", ["Modelo", "Bet365"], horizontal=True)
 with c2:
-    sel = st.selectbox("Temporada", seas, index=len(seas)-1)
+    sel = st.selectbox("Temporada", seasons, index=len(seasons)-1)
 with c3:
     team = st.text_input("Filtrar por equipo (contiene)", placeholder="barcelona, betis, ...")
 
-# --- carga del matchlog ---
-df = load_matchlog(model, sel)
+# ================== Carga y normalización ==================
+path = _source_file(source, sel)
+df = _read_csv(path)
 if df.empty:
-    st.info(f"No hay matchlog para {model} / {sel}.")
+    st.info(f"No hay matchlog para {source} / {sel}.")
     st.stop()
 
-# --- normaliza fecha/jornada ---
-df = df.copy()
-df = _ensure_week_col(df)  # crea/renombra 'Week' si es necesario
-# preserva 'jornada' si existe
-has_jornada = "jornada" in df.columns
-date_ser = _coerce_date_col(df)
-df["Date_dt"] = pd.to_datetime(date_ser, errors="coerce")
-df = df.sort_values(["Date_dt", "HomeTeam_norm", "AwayTeam_norm"], na_position="last").reset_index(drop=True)
+df = _ensure_matchday(_ensure_date(df.copy()))
+df = _normalize_market_cols(df, source)
+df = df.sort_values(["Date","HomeTeam_norm","AwayTeam_norm"], na_position="last").reset_index(drop=True)
 
-# --- filtros opcionales ---
+# ================== Filtros ==================
 with st.expander("Filtros"):
     cols = st.columns(4)
     with cols[0]:
-        only_value = st.checkbox("Solo value bets", value=False, help="Filtra filas con `use_value=True` si existe.")
+        only_bet_placed = st.checkbox(
+            "Solo apuestas colocadas",
+            value=False,
+            help="Filtra filas con `bet_placed == True` si existe."
+        )
     with cols[1]:
-        only_played = st.checkbox("Solo disputados", value=False, help="Filtra por partidos con resultado real disponible.")
+        only_played = st.checkbox(
+            "Solo disputados",
+            value=False,
+            help="Filtra por partidos con resultado real (y_true en H/D/A)."
+        )
     with cols[2]:
-        # elegir jornada (prioriza 'jornada' y si no, 'Week')
-        if has_jornada:
-            weeks_all = pd.to_numeric(df["jornada"], errors="coerce").dropna().astype(int).sort_values().unique().tolist()
-            label_week = "Jornada"
-        else:
-            weeks_all = pd.to_numeric(df["Week"], errors="coerce").dropna().astype(int).sort_values().unique().tolist()
-            label_week = "Week"
-        wk_sel = st.selectbox(label_week, options=["(todas)"] + weeks_all, index=0)
+        # Jornada
+        all_md = pd.to_numeric(df["Matchday"], errors="coerce").dropna().astype(int).sort_values().unique().tolist()
+        wk_sel = st.selectbox("Jornada", options=["(todas)"] + all_md, index=0)
     with cols[3]:
         order_ev_desc = st.checkbox("Ordenar por EV (desc)", value=False)
 
@@ -104,100 +138,123 @@ if team:
             mask = mask | df[c].astype(str).str.contains(t, case=False, na=False)
     df = df[mask]
 
-# filtro por value bets
-if only_value and "use_value" in df.columns:
-    df = df[df["use_value"] == True]
+# filtro solo apuestas colocadas
+if only_bet_placed and "bet_placed" in df.columns:
+    df = df[df["bet_placed"] == True]
 
-# filtro por disputados
+# filtro solo disputados
 if only_played:
-    if "true_result" in df.columns:
-        df = df[df["true_result"].isin([0,1,2])]
-    elif "FTR" in df.columns:
-        df = df[df["FTR"].astype(str).str.upper().isin(["H","D","A"])]
+    df = df[_only_played_mask(df)]
 
-# filtro por jornada/semana
+# filtro por jornada
 if wk_sel != "(todas)":
-    if has_jornada:
-        df = df[pd.to_numeric(df["jornada"], errors="coerce").astype("Int64") == int(wk_sel)]
-    else:
-        df = df[pd.to_numeric(df["Week"], errors="coerce").astype("Int64") == int(wk_sel)]
+    df = df[pd.to_numeric(df["Matchday"], errors="coerce").astype("Int64") == int(wk_sel)]
 
-# orden final
-if order_ev_desc and "value_ev" in df.columns:
-    df = df.sort_values("value_ev", ascending=False)
+# orden final por EV
+if order_ev_desc and "ev_pick" in df.columns:
+    df = df.sort_values("ev_pick", ascending=False)
 
-# --- KPIs rápidos ---
+# ================== KPIs rápidos ==================
 n_rows = int(len(df))
-roi_pick = roi_value = None
+roi_pick = None
+hit_rate = None
+n_bets = None
 
-# ROI del pick del modelo si existe net_profit
-if "net_profit" in df.columns and n_rows > 0:
-    try:
-        roi_pick = float(pd.to_numeric(df["net_profit"], errors="coerce").fillna(0).sum() / n_rows)
-    except Exception:
-        roi_pick = None
+# ROI del pick (profit)
+if "profit" in df.columns and n_rows > 0:
+    roi_pick = float(pd.to_numeric(df["profit"], errors="coerce").fillna(0).sum() / n_rows)
 
-# ROI de value bets si existen columnas
-if {"use_value", "value_net_profit"}.issubset(df.columns):
-    mask_v = df["use_value"] == True
-    n_v = int(mask_v.sum())
-    if n_v > 0:
-        roi_value = float(pd.to_numeric(df.loc[mask_v, "value_net_profit"], errors="coerce").fillna(0).sum() / n_v)
+# Hit rate (si hay 'correct')
+if "correct" in df.columns and n_rows > 0:
+    hit_rate = float(pd.to_numeric(df["correct"], errors="coerce").where(lambda x: x.isin([0,1])).mean())
+
+# Nº apuestas colocadas
+if "bet_placed" in df.columns:
+    n_bets = int((df["bet_placed"] == True).sum())
 
 k1, k2, k3 = st.columns(3)
 k1.metric("Filas visibles", f"{n_rows}")
 if roi_pick is not None:
-    k2.metric("ROI pick modelo", f"{roi_pick:.1%}")
-if roi_value is not None:
-    k3.metric("ROI value bets", f"{roi_value:.1%}")
+    k2.metric("ROI (pick)", f"{roi_pick:.1%}")
+if hit_rate is not None:
+    k3.metric("Acierto", f"{hit_rate:.1%}")
+
+if n_bets is not None:
+    st.caption(f"Apuestas colocadas en vista: **{n_bets}**")
 
 st.divider()
 
-# --- selección de columnas amigables ---
-ordered_cols = []
-# clave temporal y contexto
-for c in ["Date", "Date_dt", "jornada", "Week", "HomeTeam_norm", "AwayTeam_norm"]:
-    if c in df.columns: ordered_cols.append(c)
-# predicción del modelo
-for c in ["Pred", "predicted_result", "predicted_prob", "predicted_odds", "edge"]:
-    if c in df.columns: ordered_cols.append(c)
-# value bets
-for c in ["value_pick", "value_ev", "value_prob", "value_odds", "use_value"]:
-    if c in df.columns: ordered_cols.append(c)
-# cuotas
-for c in ["B365H", "B365D", "B365A"]:
-    if c in df.columns: ordered_cols.append(c)
-# verdad y métricas
-for c in ["true_result", "Correct", "value_correct", "bet_return", "net_profit", "value_bet_return", "value_net_profit", "Cum_net_profit"]:
-    if c in df.columns: ordered_cols.append(c)
+# ================== Selección de columnas para vista ==================
+# columnas propias de tus outputs (modelo/market)
+preferred_cols = [
+    # contexto
+    "Date","Matchday","Season","HomeTeam_norm","AwayTeam_norm",
+    # señales modelo / market
+    "pred_key","y_true","y_pred",
+    "proba_H","proba_D","proba_A",
+    "pH_mkt","pD_mkt","pA_mkt",            # si vinieran en modelo
+    "B365H","B365D","B365A","overround",
+    # pick y valor esperado
+    "odds_pick","p_pick","ev_pick","kelly_pick","bet_placed",
+    # verificación y P&L
+    "correct","profit","cum_profit_season",
+]
 
-# añade el resto (si no estaban)
-ordered_cols += [c for c in df.columns if c not in ordered_cols]
-
+# añade solo las que existan y luego el resto
+ordered_cols = [c for c in preferred_cols if c in df.columns] + [c for c in df.columns if c not in preferred_cols]
 view = df[ordered_cols].copy()
+
 # formateos suaves
-if "Date_dt" in view.columns:
-    view["Date_dt"] = pd.to_datetime(view["Date_dt"], errors="coerce").dt.strftime("%Y-%m-%d")
-if "value_ev" in view.columns:
-    view["value_ev"] = pd.to_numeric(view["value_ev"], errors="coerce").round(3)
-if "edge" in view.columns:
-    view["edge"] = pd.to_numeric(view["edge"], errors="coerce").round(3)
+if "Date" in view.columns:
+    view["Date"] = pd.to_datetime(view["Date"], errors="coerce").dt.strftime("%Y-%m-%d")
+for c in ["proba_H","proba_D","proba_A","pH_mkt","pD_mkt","pA_mkt","p_pick","kelly_pick","ev_pick"]:
+    if c in view.columns:
+        view[c] = pd.to_numeric(view[c], errors="coerce").round(4)
+for c in ["profit","cum_profit_season","odds_pick","B365H","B365D","B365A","overround"]:
+    if c in view.columns:
+        view[c] = pd.to_numeric(view[c], errors="coerce").round(3)
+
+# renombrado amigable
+rename_map = {
+    "Date": "Fecha",
+    "Matchday": "Jornada",
+    "HomeTeam_norm": "Local",
+    "AwayTeam_norm": "Visitante",
+    "y_true": "Resultado real",
+    "y_pred": "Predicción",
+    "proba_H": "p(H)",
+    "proba_D": "p(D)",
+    "proba_A": "p(A)",
+    "B365H": "Bet365 H",
+    "B365D": "Bet365 D",
+    "B365A": "Bet365 A",
+    "overround": "Overround",
+    "odds_pick": "Cuota pick",
+    "p_pick": "p(pick)",
+    "ev_pick": "EV pick",
+    "kelly_pick": "Kelly",
+    "bet_placed": "Apuesta colocada",
+    "correct": "Acierto",
+    "profit": "Beneficio",
+    "cum_profit_season": "Beneficio acumulado (temp)",
+}
+view = view.rename(columns=rename_map)
 
 st.dataframe(view, use_container_width=True, hide_index=True)
 
-# --- descargas ---
+# ================== Descargas ==================
 col_dl1, col_dl2 = st.columns(2)
 with col_dl1:
     st.download_button(
         "Descargar CSV",
         data=view.to_csv(index=False).encode("utf-8"),
-        file_name=f"matchlog_{sel}_{model}.csv",
+        file_name=f"matchlog_{sel}_{source.lower()}.csv",
         mime="text/csv",
     )
 with col_dl2:
     st.download_button(
         "Descargar JSON",
         data=view.to_json(orient="records", force_ascii=False).encode("utf-8"),
-        file_name=f"matchlog_{sel}_{model}.json",
+        file_name=f"matchlog_{sel}_{source.lower()}.json",
         mime="application/json",
     )
