@@ -1,4 +1,4 @@
-# matchlogs.py — Visor de matchlogs (nuevos outputs)
+# matchlogs.py — Visor de matchlogs (nuevos outputs) con detección robusta de 'outputs/'
 from __future__ import annotations
 
 import re
@@ -7,14 +7,40 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# ================== Paths ==================
-ROOT = Path(__file__).resolve().parent
-OUT = ROOT / "outputs"
-
 st.set_page_config(page_title="Matchlogs", page_icon="📋", layout="wide")
 st.header("Matchlogs por temporada")
 
-# ================== Helpers E/S ==================
+# ================== Local helpers ==================
+def _find_outputs_dir() -> Path:
+    """
+    Detecta la carpeta 'outputs' de forma robusta:
+    - mismo nivel que el repo (parents[1]/outputs si la página está en /pages)
+    - directorio del archivo actual / 'outputs'
+    - CWD / 'outputs'
+    - buscar hacia arriba hasta 4 niveles
+    Devuelve la PRIMERA coincidencia existente; si ninguna existe, devuelve la primera candidata.
+    """
+    here = Path(__file__).resolve()
+    candidates: list[Path] = []
+
+    # 1) Si el archivo está en /pages, el repo root suele ser parents[1]
+    candidates.append(here.parents[1] / "outputs")  # .../repo/outputs
+    # 2) Mismo directorio del archivo
+    candidates.append(here.parent / "outputs")
+    # 3) CWD/outputs
+    candidates.append(Path.cwd() / "outputs")
+    # 4) Buscar hacia arriba varios niveles
+    for i in range(2, 6):
+        candidates.append(here.parents[i] / "outputs" if len(here.parents) > i else here.parent / "outputs")
+
+    # Devuelve la primera que exista; si ninguna existe, devuelve la 1ª candidata
+    for c in candidates:
+        if c.exists():
+            return c
+    return candidates[0]
+
+OUT = _find_outputs_dir()
+
 def _read_csv(path: Path) -> pd.DataFrame:
     if not path.exists():
         return pd.DataFrame()
@@ -23,9 +49,9 @@ def _read_csv(path: Path) -> pd.DataFrame:
     except Exception:
         return pd.DataFrame()
 
-def _list_seasons() -> list[int]:
+def _list_seasons(out_dir: Path) -> list[int]:
     seasons = set()
-    for p in OUT.glob("matchlogs_*.csv"):
+    for p in out_dir.glob("matchlogs_*.csv"):
         m = re.match(r"matchlogs_(\d{4})\.csv$", p.name)
         if m:
             seasons.add(int(m.group(1)))
@@ -53,21 +79,16 @@ def _only_played_mask(df: pd.DataFrame) -> pd.Series:
     t = df["y_true"].astype(str).str.strip().str.upper()
     return t.isin({"H","D","A"})
 
-def _source_file(source: str, season: int) -> Path:
-    if source == "Modelo":
-        return OUT / f"matchlogs_{season}.csv"
-    else:
-        return OUT / f"matchlogs_market_{season}.csv"
+def _source_file(source: str, season: int, out_dir: Path) -> Path:
+    return out_dir / (f"matchlogs_{season}.csv" if source == "Modelo" else f"matchlogs_market_{season}.csv")
 
 def _normalize_market_cols(df: pd.DataFrame, source: str) -> pd.DataFrame:
     """Unifica nombres para la vista cuando la fuente es Bet365."""
     if df.empty or source != "Bet365":
         return df
     d = df.copy()
-    # Renombrar y_pred_market -> y_pred para homogenizar
     if "y_pred_market" in d.columns and "y_pred" not in d.columns:
         d = d.rename(columns={"y_pred_market": "y_pred"})
-    # p*_mkt_pred -> proba_* (para homogeneizar con modelo)
     ren = {}
     if "pH_mkt_pred" in d.columns: ren["pH_mkt_pred"] = "proba_H"
     if "pD_mkt_pred" in d.columns: ren["pD_mkt_pred"] = "proba_D"
@@ -77,14 +98,20 @@ def _normalize_market_cols(df: pd.DataFrame, source: str) -> pd.DataFrame:
     return d
 
 # ================== Comprobaciones ==================
-OUT.mkdir(parents=True, exist_ok=True)
-if not any(OUT.iterdir()):
-    st.warning("No hay artefactos en `outputs/` todavía.")
+# Mostrar la ruta detectada (útil para depurar)
+st.caption(f"Ruta de outputs detectada: `{OUT}`")
+
+# Revisa que haya matchlogs (no cualquier archivo)
+has_model_logs = any(OUT.glob("matchlogs_*.csv"))
+has_market_logs = any(OUT.glob("matchlogs_market_*.csv"))
+if not has_model_logs and not has_market_logs:
+    st.warning("No se encontraron `matchlogs_*.csv` ni `matchlogs_market_*.csv` en la carpeta detectada de `outputs/`.\n"
+               "Verifica la ruta anterior y que los ficheros existan.")
     st.stop()
 
-seasons = _list_seasons()
+seasons = _list_seasons(OUT)
 if not seasons:
-    st.warning("No hay temporadas detectadas en `outputs/` (matchlogs_YYYY.csv).")
+    st.warning("No hay temporadas detectadas (no hay ficheros `matchlogs_YYYY.csv`).")
     st.stop()
 
 # ================== Controles superiores ==================
@@ -97,7 +124,7 @@ with c3:
     team = st.text_input("Filtrar por equipo (contiene)", placeholder="barcelona, betis, ...")
 
 # ================== Carga y normalización ==================
-path = _source_file(source, sel)
+path = _source_file(source, sel, OUT)
 df = _read_csv(path)
 if df.empty:
     st.info(f"No hay matchlog para {source} / {sel}.")
@@ -160,15 +187,12 @@ roi_pick = None
 hit_rate = None
 n_bets = None
 
-# ROI del pick (profit)
 if "profit" in df.columns and n_rows > 0:
     roi_pick = float(pd.to_numeric(df["profit"], errors="coerce").fillna(0).sum() / n_rows)
 
-# Hit rate (si hay 'correct')
 if "correct" in df.columns and n_rows > 0:
     hit_rate = float(pd.to_numeric(df["correct"], errors="coerce").where(lambda x: x.isin([0,1])).mean())
 
-# Nº apuestas colocadas
 if "bet_placed" in df.columns:
     n_bets = int((df["bet_placed"] == True).sum())
 
@@ -178,43 +202,33 @@ if roi_pick is not None:
     k2.metric("ROI (pick)", f"{roi_pick:.1%}")
 if hit_rate is not None:
     k3.metric("Acierto", f"{hit_rate:.1%}")
-
 if n_bets is not None:
     st.caption(f"Apuestas colocadas en vista: **{n_bets}**")
 
 st.divider()
 
 # ================== Selección de columnas para vista ==================
-# columnas propias de tus outputs (modelo/market)
 preferred_cols = [
-    # contexto
     "Date","Matchday","Season","HomeTeam_norm","AwayTeam_norm",
-    # señales modelo / market
     "pred_key","y_true","y_pred",
     "proba_H","proba_D","proba_A",
-    "pH_mkt","pD_mkt","pA_mkt",            # si vinieran en modelo
     "B365H","B365D","B365A","overround",
-    # pick y valor esperado
     "odds_pick","p_pick","ev_pick","kelly_pick","bet_placed",
-    # verificación y P&L
     "correct","profit","cum_profit_season",
 ]
-
-# añade solo las que existan y luego el resto
 ordered_cols = [c for c in preferred_cols if c in df.columns] + [c for c in df.columns if c not in preferred_cols]
 view = df[ordered_cols].copy()
 
 # formateos suaves
 if "Date" in view.columns:
     view["Date"] = pd.to_datetime(view["Date"], errors="coerce").dt.strftime("%Y-%m-%d")
-for c in ["proba_H","proba_D","proba_A","pH_mkt","pD_mkt","pA_mkt","p_pick","kelly_pick","ev_pick"]:
+for c in ["proba_H","proba_D","proba_A","p_pick","kelly_pick","ev_pick"]:
     if c in view.columns:
         view[c] = pd.to_numeric(view[c], errors="coerce").round(4)
 for c in ["profit","cum_profit_season","odds_pick","B365H","B365D","B365A","overround"]:
     if c in view.columns:
         view[c] = pd.to_numeric(view[c], errors="coerce").round(3)
 
-# renombrado amigable
 rename_map = {
     "Date": "Fecha",
     "Matchday": "Jornada",
@@ -248,13 +262,13 @@ with col_dl1:
     st.download_button(
         "Descargar CSV",
         data=view.to_csv(index=False).encode("utf-8"),
-        file_name=f"matchlog_{sel}_{source.lower()}.csv",
+        file_name=f"matchlog_{sel}_{'modelo' if source=='Modelo' else 'bet365'}.csv",
         mime="text/csv",
     )
 with col_dl2:
     st.download_button(
         "Descargar JSON",
         data=view.to_json(orient="records", force_ascii=False).encode("utf-8"),
-        file_name=f"matchlog_{sel}_{source.lower()}.json",
+        file_name=f"matchlog_{sel}_{'modelo' if source=='Modelo' else 'bet365'}.json",
         mime="application/json",
     )
