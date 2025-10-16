@@ -1,4 +1,4 @@
-# Home.py — LaLiga 1X2 · 25/26 (alineado con tus nuevos outputs y SOLO partidos ya disputados)
+# Home.py — LaLiga 1X2 · 25/26 (solo jornadas COMPLETADAS en público)
 from __future__ import annotations
 
 import re
@@ -62,6 +62,29 @@ def _profit_cols(df: pd.DataFrame) -> tuple[str | None, str | None]:
     c = "cum_profit_season" if "cum_profit_season" in df.columns else None
     return p, c
 
+def _ytrue_played_mask(df: pd.DataFrame) -> pd.Series:
+    """
+    'Jugado' estricto: y_true en {H,D,A}. Excluye 0, vacío o NaN.
+    Devuelve máscara booleana por fila.
+    """
+    if "y_true" not in df.columns:
+        return pd.Series(False, index=df.index)
+    t = df["y_true"].astype(str).str.strip().str.upper()
+    return t.isin({"H", "D", "A"})
+
+def _complete_matchdays(df: pd.DataFrame) -> list[int]:
+    """
+    Jornadas COMPLETADAS: todas sus filas tienen y_true en {H,D,A}.
+    """
+    if df.empty or "Matchday" not in df.columns:
+        return []
+    played = _ytrue_played_mask(df)
+    grp = df.groupby("Matchday")
+    n_total = grp["Matchday"].size()
+    n_played = grp.apply(lambda g: _ytrue_played_mask(g).sum())
+    complete = n_played[n_played == n_total].index.astype(int).tolist()
+    return sorted(complete)
+
 def _beneficio_acum_por_jornada(df: pd.DataFrame, stake: float = 1.0) -> pd.DataFrame:
     if df.empty:
         return pd.DataFrame(columns=["Jornada", "Beneficio"])
@@ -104,25 +127,15 @@ cur_season = seasons[-1]
 st.subheader("Filtros")
 colf1, colf2 = st.columns([1, 1])
 
+# Cargamos matchlogs y determinamos jornadas COMPLETADAS
 df_tmp = _ensure_matchday(_ensure_date(_read_csv(OUT / f"matchlogs_{cur_season}.csv")))
-
-# "Jugado" = correct en {0,1} o y_true no vacío
-corr_tmp = _correct_series(df_tmp)
-played_mask_tmp = corr_tmp.notna()
-if "y_true" in df_tmp.columns:
-    played_mask_tmp |= df_tmp["y_true"].astype(str).str.strip().ne("").fillna(False)
-df_tmp_played = df_tmp[played_mask_tmp].copy()
-
-weeks = (
-    pd.to_numeric(df_tmp_played.get("Matchday"), errors="coerce")
-      .dropna().astype(int)
-    if not df_tmp_played.empty else pd.Series(dtype=int)
-)
-jornada_opts = sorted(weeks.unique().tolist())
-default_idx = (len(jornada_opts) - 1) if jornada_opts else 0
+completed_matchdays = _complete_matchdays(df_tmp)
 
 with colf1:
-    jornada = st.selectbox("Jornada", jornada_opts if jornada_opts else [1], index=default_idx)
+    if completed_matchdays:
+        jornada = st.selectbox("Jornada", completed_matchdays, index=len(completed_matchdays) - 1)
+    else:
+        jornada = st.selectbox("Jornada", [1], index=0)
 
 with colf2:
     stake = st.selectbox("STAKE", options=list(range(1, 11)), index=0,
@@ -134,19 +147,19 @@ tab_public, tab_private = st.tabs(["📊 Temporada actual", "🔒 Zona privada (
 with tab_public:
     st.caption(f"Temporada: **{cur_season}**")
 
-    # KPIs con SOLO partidos jugados
+    # KPIs solo con jornadas COMPLETADAS
     df = _ensure_matchday(_ensure_date(_read_csv(OUT / f"matchlogs_{cur_season}.csv")))
     if df.empty:
         st.warning(f"No hay matchlogs para {cur_season}.")
     else:
-        corr = _correct_series(df)
-        played_mask = corr.notna()
-        if "y_true" in df.columns:
-            played_mask |= df["y_true"].astype(str).str.strip().ne("").fillna(False)
-        df_played = df[played_mask].copy()
-        corr = corr[played_mask]
+        # Filtra SOLO filas de jornadas completas
+        if completed_matchdays:
+            df_public = df[df["Matchday"].isin(completed_matchdays)].copy()
+        else:
+            df_public = df.iloc[0:0].copy()
 
-        n_played = len(df_played)
+        corr = _correct_series(df_public)
+        n_played = len(df_public)
         n_hits = int((corr == 1.0).sum()) if n_played > 0 else 0
 
         # accuracy y roi desde metrics_main_by_season.csv
@@ -159,17 +172,17 @@ with tab_public:
                 acc_pct = float(pd.to_numeric(row["accuracy"], errors="coerce").iloc[0])
                 roi_temp = float(pd.to_numeric(row["roi"], errors="coerce").iloc[0])
 
-        # ROI por partido y beneficio total desde df_played
-        p_col, c_col = _profit_cols(df_played)
+        # ROI por partido y beneficio total desde df_public
+        p_col, c_col = _profit_cols(df_public)
         beneficio_base = float("nan")
         roi_por_partido = float("nan")
         if n_played > 0:
             if p_col:
-                net = pd.to_numeric(df_played[p_col], errors="coerce").fillna(0.0)
+                net = pd.to_numeric(df_public[p_col], errors="coerce").fillna(0.0)
                 beneficio_base = float(net.sum())
                 roi_por_partido = float(net.sum() / n_played)
             elif c_col:
-                total = float(pd.to_numeric(df_played[c_col], errors="coerce").fillna(0.0).iloc[-1])
+                total = float(pd.to_numeric(df_public[c_col], errors="coerce").fillna(0.0).iloc[-1])
                 beneficio_base = total
                 roi_por_partido = total / n_played
 
@@ -199,93 +212,88 @@ with tab_public:
 
     st.divider()
 
-    # Tabla por jornada (solo jugados)
+    # Tabla por jornada (solo jornadas COMPLETADAS)
     st.subheader(f"Partidos — Jornada {int(jornada)}")
-    dfj = df_played.copy()
-    if not dfj.empty:
-        dfj = dfj[pd.to_numeric(dfj["Matchday"], errors="coerce").astype("Int64") == int(jornada)]
-        if dfj.empty:
-            st.info("Esa jornada todavía no se ha disputado. Las predicciones se muestran solo en la zona privada.")
-        else:
-            cols_show = [
-                c for c in [
-                    "Date","Matchday",
-                    "HomeTeam_norm","AwayTeam_norm",
-                    "pred_key","y_true","y_pred",
-                    "proba_H","proba_D","proba_A",
-                    "B365H","B365D","B365A",
-                    "correct","profit"
-                ] if c in dfj.columns
-            ]
-            view = dfj[cols_show].copy()
-            if "profit" in view.columns:
-                view["profit"] = pd.to_numeric(view["profit"], errors="coerce").fillna(0.0) * float(stake)
-
-            rename_map = {
-                "Date": "Fecha",
-                "Matchday": "Jornada",
-                "HomeTeam_norm": "Local",
-                "AwayTeam_norm": "Visitante",
-                "pred_key": "Pred clave",
-                "y_true": "Resultado real",
-                "y_pred": "Predicción",
-                "proba_H": "p(H)",
-                "proba_D": "p(D)",
-                "proba_A": "p(A)",
-                "B365H": "Bet365 H",
-                "B365D": "Bet365 D",
-                "B365A": "Bet365 A",
-                "correct": "Acierto",
-                "profit": "Beneficio neto",
-            }
-            dfj_vista = view.rename(columns=rename_map)
-
-            st.dataframe(dfj_vista, use_container_width=True, hide_index=True)
-            st.download_button(
-                "Descargar jornada (CSV)",
-                dfj_vista.to_csv(index=False).encode("utf-8"),
-                file_name=f"matchlog_{cur_season}_J{jornada}.csv"
-            )
-
-            corr_w = _correct_series(dfj)
-            wk_mask = corr_w.notna()
-            wk_n_played = int(wk_mask.sum())
-            wk_n_hits = int((corr_w == 1.0).sum()) if wk_n_played > 0 else 0
-            wk_hit_rate = float(corr_w[wk_mask].mean()) if wk_n_played > 0 else float("nan")
-            wk_beneficio_base = float(pd.to_numeric(dfj.loc[wk_mask, "profit"], errors="coerce").fillna(0.0).sum()) if "profit" in dfj.columns and wk_n_played > 0 else float("nan")
-            wk_beneficio = wk_beneficio_base * float(stake) if not np.isnan(wk_beneficio_base) else float("nan")
-            wk_roi = (wk_beneficio_base / wk_n_played) if wk_n_played > 0 else float("nan")
-
-            st.markdown(
-                f"""
-                <div style="margin-top:.5rem; font-size:0.95rem;">
-                  <strong>Resumen jornada</strong> — 
-                  Partidos: <strong>{wk_n_played}</strong> · 
-                  Aciertos: <strong>{wk_n_hits}/{wk_n_played}</strong> ({f"{wk_hit_rate:.1%}" if not np.isnan(wk_hit_rate) else "—"}) · 
-                  ROI: <strong>{f"{wk_roi:.1%}" if not np.isnan(wk_roi) else "—"}</strong> · 
-                  Beneficio: <strong>{_euros(wk_beneficio)}</strong>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+    dfj = df[df["Matchday"].isin(completed_matchdays)].copy()
+    dfj = dfj[pd.to_numeric(dfj["Matchday"], errors="coerce").astype("Int64") == int(jornada)]
+    if dfj.empty:
+        st.info("Esa jornada todavía no se ha disputado. Las predicciones se muestran solo en la zona privada.")
     else:
-        st.info("No hay filas para esa jornada.")
+        cols_show = [
+            c for c in [
+                "Date","Matchday",
+                "HomeTeam_norm","AwayTeam_norm",
+                "pred_key","y_true","y_pred",
+                "proba_H","proba_D","proba_A",
+                "B365H","B365D","B365A",
+                "correct","profit"
+            ] if c in dfj.columns
+        ]
+        view = dfj[cols_show].copy()
+        if "profit" in view.columns:
+            view["profit"] = pd.to_numeric(view["profit"], errors="coerce").fillna(0.0) * float(stake)
+
+        rename_map = {
+            "Date": "Fecha",
+            "Matchday": "Jornada",
+            "HomeTeam_norm": "Local",
+            "AwayTeam_norm": "Visitante",
+            "pred_key": "Pred clave",
+            "y_true": "Resultado real",
+            "y_pred": "Predicción",
+            "proba_H": "p(H)",
+            "proba_D": "p(D)",
+            "proba_A": "p(A)",
+            "B365H": "Bet365 H",
+            "B365D": "Bet365 D",
+            "B365A": "Bet365 A",
+            "correct": "Acierto",
+            "profit": "Beneficio neto",
+        }
+        dfj_vista = view.rename(columns=rename_map)
+
+        st.dataframe(dfj_vista, use_container_width=True, hide_index=True)
+        st.download_button(
+            "Descargar jornada (CSV)",
+            dfj_vista.to_csv(index=False).encode("utf-8"),
+            file_name=f"matchlog_{cur_season}_J{jornada}.csv"
+        )
+
+        corr_w = _correct_series(dfj)
+        wk_mask = corr_w.notna()
+        wk_n_played = int(wk_mask.sum())
+        wk_n_hits = int((corr_w == 1.0).sum()) if wk_n_played > 0 else 0
+        wk_hit_rate = float(corr_w[wk_mask].mean()) if wk_n_played > 0 else float("nan")
+        wk_beneficio_base = float(pd.to_numeric(dfj.loc[wk_mask, "profit"], errors="coerce").fillna(0.0).sum()) if "profit" in dfj.columns and wk_n_played > 0 else float("nan")
+        wk_beneficio = wk_beneficio_base * float(stake) if not np.isnan(wk_beneficio_base) else float("nan")
+        wk_roi = (wk_beneficio_base / wk_n_played) if wk_n_played > 0 else float("nan")
+
+        st.markdown(
+            f"""
+            <div style="margin-top:.5rem; font-size:0.95rem;">
+              <strong>Resumen jornada</strong> — 
+              Partidos: <strong>{wk_n_played}</strong> · 
+              Aciertos: <strong>{wk_n_hits}/{wk_n_played}</strong> ({f"{wk_hit_rate:.1%}" if not np.isnan(wk_hit_rate) else "—"}) · 
+              ROI: <strong>{f"{wk_roi:.1%}" if not np.isnan(wk_roi) else "—"}</strong> · 
+              Beneficio: <strong>{_euros(wk_beneficio)}</strong>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
     st.divider()
 
-    # Trayectoria de beneficio (Modelo & Bet365) — SOLO jugados
+    # Trayectoria de beneficio (Modelo & Bet365) — SOLO jornadas COMPLETADAS
     st.subheader("Trayectoria de beneficio (Modelo & Bet365)")
 
-    modelo_acum = _beneficio_acum_por_jornada(df_played, stake=stake)
+    df_public = df[df["Matchday"].isin(completed_matchdays)].copy()
+    modelo_acum = _beneficio_acum_por_jornada(df_public, stake=stake)
 
-    df_mkt = _ensure_matchday(_ensure_date(_read_csv(OUT / f"matchlogs_market_{cur_season}.csv")))
-    if not df_mkt.empty:
-        corr_mkt = _correct_series(df_mkt)
-        played_mkt = corr_mkt.notna()
-        if "y_true" in df_mkt.columns:
-            played_mkt |= df_mkt["y_true"].astype(str).str.strip().ne("").fillna(False)
-        df_mkt_played = df_mkt[played_mkt].copy()
-        bet365_acum = _beneficio_acum_por_jornada(df_mkt_played, stake=stake)
+    df_mkt_all = _ensure_matchday(_ensure_date(_read_csv(OUT / f"matchlogs_market_{cur_season}.csv")))
+    if not df_mkt_all.empty:
+        completed_mkt = _complete_matchdays(df_mkt_all)
+        df_mkt_public = df_mkt_all[df_mkt_all["Matchday"].isin(completed_mkt)].copy()
+        bet365_acum = _beneficio_acum_por_jornada(df_mkt_public, stake=stake)
     else:
         bet365_acum = pd.DataFrame(columns=["Jornada", "Beneficio"])
 
