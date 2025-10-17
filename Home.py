@@ -65,7 +65,6 @@ def _profit_cols(df: pd.DataFrame) -> tuple[str | None, str | None]:
 def _ytrue_played_mask(df: pd.DataFrame) -> pd.Series:
     """
     'Jugado' estricto: y_true en {H,D,A}. Excluye 0, vacío o NaN.
-    Devuelve máscara booleana por fila.
     """
     if "y_true" not in df.columns:
         return pd.Series(False, index=df.index)
@@ -78,9 +77,8 @@ def _complete_matchdays(df: pd.DataFrame) -> list[int]:
     """
     if df.empty or "Matchday" not in df.columns:
         return []
-    played = _ytrue_played_mask(df)
     grp = df.groupby("Matchday")
-    n_total = grp["Matchday"].size()
+    n_total = grp.size()
     n_played = grp.apply(lambda g: _ytrue_played_mask(g).sum())
     complete = n_played[n_played == n_total].index.astype(int).tolist()
     return sorted(complete)
@@ -111,6 +109,12 @@ def _euros(x: float) -> str:
     sign = "-" if x < 0 else ""
     return f"{sign}{abs(x):,.2f} €".replace(",", "X").replace(".", ",").replace("X", ".")
 
+def _season_label(start_year: int) -> str:
+    """Convierte 2025 -> '25/26'."""
+    a = start_year % 100
+    b = (start_year + 1) % 100
+    return f"{a:02d}/{b:02d}"
+
 # ============= Arranque / comprobaciones =============
 if not OUT.exists() or not any(OUT.iterdir()):
     st.warning("No se encontraron artefactos en `outputs/`. Sube/sincroniza y recarga.")
@@ -122,6 +126,7 @@ if not seasons:
     st.stop()
 
 cur_season = seasons[-1]
+season_lbl = _season_label(cur_season)
 
 # ============= Filtros =============
 st.subheader("Filtros")
@@ -152,11 +157,7 @@ with tab_public:
     if df.empty:
         st.warning(f"No hay matchlogs para {cur_season}.")
     else:
-        # Filtra SOLO filas de jornadas completas
-        if completed_matchdays:
-            df_public = df[df["Matchday"].isin(completed_matchdays)].copy()
-        else:
-            df_public = df.iloc[0:0].copy()
+        df_public = df[df["Matchday"].isin(completed_matchdays)].copy() if completed_matchdays else df.iloc[0:0].copy()
 
         corr = _correct_series(df_public)
         n_played = len(df_public)
@@ -219,17 +220,25 @@ with tab_public:
     if dfj.empty:
         st.info("Esa jornada todavía no se ha disputado. Las predicciones se muestran solo en la zona privada.")
     else:
+        # columnas visibles (sin 'pred_key')
         cols_show = [
             c for c in [
                 "Date","Matchday",
                 "HomeTeam_norm","AwayTeam_norm",
-                "pred_key","y_true","y_pred",
+                # "pred_key",   # ← oculto
+                "y_true","y_pred",
                 "proba_H","proba_D","proba_A",
                 "B365H","B365D","B365A",
                 "correct","profit"
             ] if c in dfj.columns
         ]
         view = dfj[cols_show].copy()
+
+        # Formato fecha sin hora
+        if "Date" in view.columns:
+            view["Date"] = pd.to_datetime(view["Date"], errors="coerce").dt.strftime("%Y-%m-%d")
+
+        # Escalar beneficio por stake
         if "profit" in view.columns:
             view["profit"] = pd.to_numeric(view["profit"], errors="coerce").fillna(0.0) * float(stake)
 
@@ -238,7 +247,6 @@ with tab_public:
             "Matchday": "Jornada",
             "HomeTeam_norm": "Local",
             "AwayTeam_norm": "Visitante",
-            "pred_key": "Pred clave",
             "y_true": "Resultado real",
             "y_pred": "Predicción",
             "proba_H": "p(H)",
@@ -259,6 +267,7 @@ with tab_public:
             file_name=f"matchlog_{cur_season}_J{jornada}.csv"
         )
 
+        # Resumen de la jornada (tamaño de letra ↑)
         corr_w = _correct_series(dfj)
         wk_mask = corr_w.notna()
         wk_n_played = int(wk_mask.sum())
@@ -270,7 +279,7 @@ with tab_public:
 
         st.markdown(
             f"""
-            <div style="margin-top:.5rem; font-size:0.95rem;">
+            <div style="margin-top:.5rem; font-size:1.10rem;">
               <strong>Resumen jornada</strong> — 
               Partidos: <strong>{wk_n_played}</strong> · 
               Aciertos: <strong>{wk_n_hits}/{wk_n_played}</strong> ({f"{wk_hit_rate:.1%}" if not np.isnan(wk_hit_rate) else "—"}) · 
@@ -344,18 +353,41 @@ with tab_private:
             st.info("No hay predicciones futuras disponibles todavía.")
         else:
             dfp = _ensure_date(_ensure_matchday(dfp))
+
+            # Determinar la(s) jornada(s) en el fichero; usamos la moda (valor más frecuente)
+            md_series = pd.to_numeric(dfp.get("Matchday"), errors="coerce")
+            jornada_priv = int(md_series.mode().iloc[0]) if md_series.notna().any() else "-"
+            st.subheader(f"Predicciones jornada {jornada_priv} · {season_lbl}")
+
+            # Construir vista sin horas y con renombrados, ocultando pred_key
             cols = [c for c in [
                 "Date","Matchday",
                 "HomeTeam_norm","AwayTeam_norm",
-                "pred_key","y_pred",
+                # "pred_key",   # ← oculto
+                "y_pred",
                 "pH_pred","pD_pred","pA_pred",
                 "conf_maxprob","entropy","margin_top12"
             ] if c in dfp.columns]
 
-            st.subheader(f"Predicciones (privadas) · {cur_season}")
-            st.dataframe(dfp[cols] if cols else dfp, use_container_width=True, hide_index=True)
+            viewp = dfp[cols].copy()
+            if "Date" in viewp.columns:
+                viewp["Date"] = pd.to_datetime(viewp["Date"], errors="coerce").dt.strftime("%Y-%m-%d")
+
+            rename_map_p = {
+                "Date": "Fecha",
+                "Matchday": "Jornada",
+                "HomeTeam_norm": "Local",
+                "AwayTeam_norm": "Visitante",
+                "y_pred": "Predicción",
+                "pH_pred": "p(H)",
+                "pD_pred": "p(D)",
+                "pA_pred": "p(A)",
+            }
+            viewp = viewp.rename(columns=rename_map_p)
+
+            st.dataframe(viewp, use_container_width=True, hide_index=True)
             st.download_button(
                 "Descargar predicciones (CSV)",
-                (dfp[cols] if cols else dfp).to_csv(index=False).encode("utf-8"),
-                file_name=f"predictions_{cur_season}_proxima.csv"
+                viewp.to_csv(index=False).encode("utf-8"),
+                file_name=f"predictions_{cur_season}_J{jornada_priv}.csv"
             )
