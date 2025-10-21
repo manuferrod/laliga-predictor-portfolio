@@ -1,8 +1,11 @@
 # Home.py
 from __future__ import annotations
+from pathlib import Path
+from PIL import Image
 import streamlit as st
 
-st.set_page_config(page_title="LaLiga 1X2", page_icon="⚽", layout="wide")
+ICON = Image.open("logo.png")
+st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
 
 # ======= Hero =======
 st.title("🏟️ LaLiga 1X2")
