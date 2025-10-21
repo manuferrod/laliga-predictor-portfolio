@@ -8,7 +8,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs"
 
 st.set_page_config(page_title="LaLiga 1X2 · 25/26", page_icon="⚽", layout="wide")
