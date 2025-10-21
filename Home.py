@@ -5,8 +5,8 @@ import streamlit as st
 st.set_page_config(page_title="LaLiga 1X2", page_icon="⚽", layout="wide")
 
 # ======= Hero =======
-st.title("LaLiga 1X2")
-st.caption("Predicción y análisis de resultados 1X2 para LaLiga — temporada 25/26")
+st.title("🏟️ LaLiga 1X2")
+st.caption("Predicción y análisis de resultados 1X2 para LaLiga")
 
 with st.container():
     c1, c2 = st.columns([3,2], gap="large")
