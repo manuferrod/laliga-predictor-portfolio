@@ -167,4 +167,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
+st.divider()
+st.caption(
+    "© LaLiga 1X2 — Área pública basada únicamente en jornadas completadas. "
+    "Predicciones futuras disponibles en la pestaña privada con PIN."
+)
