@@ -439,9 +439,8 @@ with tab_private:
             st.info("No encuentro el CSV de radar prematch para esta temporada.")
         else:
             # Normalizar fecha para emparejar
-            for dcol in ("Date",):
-                if dcol in radar_df.columns:
-                    radar_df[dcol] = pd.to_datetime(radar_df[dcol], errors="coerce").dt.strftime("%Y-%m-%d")
+            if "Date" in radar_df.columns:
+                radar_df["Date"] = pd.to_datetime(radar_df["Date"], errors="coerce").dt.strftime("%Y-%m-%d")
 
             # Selector de partido (por defecto, el primero de la tabla)
             opciones = []
@@ -462,9 +461,9 @@ with tab_private:
 
                 # Buscar fila correspondiente en radar_df
                 cand = radar_df.copy()
-                # renombre por seguridad
+                # renombre por seguridad (incluimos cuotas y overround)
                 ren = {}
-                for c in ["HomeTeam_norm","AwayTeam_norm","Season","Date"]:
+                for c in ["HomeTeam_norm","AwayTeam_norm","Season","Date","B365H","B365D","B365A","overround"]:
                     for cc in [c, c.lower(), c.upper()]:
                         if cc in cand.columns:
                             ren[cc] = c
@@ -492,23 +491,48 @@ with tab_private:
                 else:
                     r = row.iloc[0].to_dict()
 
-                    # ====================== Encabezado con escudos ======================
+                    # ====================== Encabezado con escudos + cuotas ======================
+                    def _fmt_odds(x):
+                        try:
+                            return f"{float(x):.2f}"
+                        except Exception:
+                            return "—"
+
+                    h_odds = _fmt_odds(r.get("B365H"))
+                    d_odds = _fmt_odds(r.get("B365D"))
+                    a_odds = _fmt_odds(r.get("B365A"))
+
                     c_logo1, c_vs, c_logo2 = st.columns([1, 0.3, 1])
                     with c_logo1:
                         st.markdown(
-                            f"<div style='text-align:center;'>{_logo_html(sel_home, 80)}"
-                            f"<div style='font-weight:600;margin-top:4px;'>{sel_home}</div></div>",
+                            f"""
+                            <div style='text-align:center;'>
+                                {_logo_html(sel_home, 84)}
+                                <div style='font-weight:700;margin-top:6px;font-size:1.05rem'>{sel_home}</div>
+                                <div style='margin-top:2px;color:#666'>Cuota: {h_odds}</div>
+                            </div>
+                            """,
                             unsafe_allow_html=True,
                         )
                     with c_vs:
                         st.markdown(
-                            "<div style='text-align:center;font-size:1.4rem;font-weight:700;margin-top:30px;'>VS</div>",
+                            f"""
+                            <div style='text-align:center;'>
+                                <div style='font-size:1.6rem;font-weight:800;margin-top:18px;'>VS</div>
+                                <div style='margin-top:6px;color:#666'>Empate: {d_odds}</div>
+                            </div>
+                            """,
                             unsafe_allow_html=True
                         )
                     with c_logo2:
                         st.markdown(
-                            f"<div style='text-align:center;'>{_logo_html(sel_away, 80)}"
-                            f"<div style='font-weight:600;margin-top:4px;'>{sel_away}</div></div>",
+                            f"""
+                            <div style='text-align:center;'>
+                                {_logo_html(sel_away, 84)}
+                                <div style='font-weight:700;margin-top:6px;font-size:1.05rem'>{sel_away}</div>
+                                <div style='margin-top:2px;color:#666'>Cuota: {a_odds}</div>
+                            </div>
+                            """,
                             unsafe_allow_html=True,
                         )
 
@@ -533,7 +557,7 @@ with tab_private:
                          "home_relative_perf", "away_relative_perf"),
                     ]
 
-                    # Si alguna *_norm no existe (según tu CSV), la intentamos calcular on-the-fly con los rangos usados
+                    # Si alguna *_norm no existe, la normalizamos on-the-fly con rangos fijos
                     ranges = {
                         "home_avg_xg_last7": (0, 4), "away_avg_xg_last7": (0, 4),
                         "home_avg_shotsontarget_last7": (0, 12), "away_avg_shotsontarget_last7": (0, 12),
