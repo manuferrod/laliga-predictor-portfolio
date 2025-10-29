@@ -391,3 +391,227 @@ with tab_private:
                 viewp.to_csv(index=False).encode("utf-8"),
                 file_name=f"predictions_{cur_season}_J{jornada_priv}.csv"
             )
+
+        # ===================== RADAR + BARRAS (zona privada) =====================
+        st.divider()
+        st.subheader("Perfil del partido (Radar + Barras)")
+
+        # --- Cargar CSV del radar prematch de la temporada actual ---
+        radar_csv = OUT / "radar_prematch" / f"radar_prematch_{cur_season}.csv"
+        radar_df = _read_csv(radar_csv)
+        if radar_df.empty:
+            st.info("No encuentro el CSV de radar prematch para esta temporada.")
+        else:
+            # Normalizar fecha para emparejar
+            for dcol in ("Date",):
+                if dcol in radar_df.columns:
+                    radar_df[dcol] = pd.to_datetime(radar_df[dcol], errors="coerce").dt.strftime("%Y-%m-%d")
+            if "Date" in viewp.columns:
+                viewp_dates = viewp["Fecha"]
+            else:
+                viewp_dates = pd.Series([], dtype=str)
+
+            # Selector de partido (por defecto, el primero de la tabla)
+            opciones = []
+            for _, r in viewp.iterrows():
+                opciones.append(f"{r.get('Fecha','?')} — {r['Local']} vs {r['Visitante']}")
+            if not opciones:
+                st.info("No hay filas en la tabla de predicciones para seleccionar un partido.")
+            else:
+                pick = st.selectbox("Selecciona partido", opciones, index=0)
+
+                # Parse selección
+                m = re.match(r"(.+?)\s+—\s+(.+?)\s+vs\s+(.+)$", pick)
+                sel_date, sel_home, sel_away = None, None, None
+                if m:
+                    sel_date = m.group(1).strip()
+                    sel_home = m.group(2).strip()
+                    sel_away = m.group(3).strip()
+
+                # Buscar fila correspondiente en radar_df
+                cand = radar_df.copy()
+                # renombre por seguridad
+                ren = {}
+                for c in ["HomeTeam_norm","AwayTeam_norm","Season","Date"]:
+                    for cc in [c, c.lower(), c.upper()]:
+                        if cc in cand.columns:
+                            ren[cc] = c
+                cand = cand.rename(columns=ren)
+                # coerción tipos clave
+                if "Season" in cand.columns:
+                    cand["Season"] = pd.to_numeric(cand["Season"], errors="coerce").astype("Int64")
+                if "Date" in cand.columns:
+                    cand["Date"] = pd.to_datetime(cand["Date"], errors="coerce").dt.strftime("%Y-%m-%d")
+
+                mask = (pd.to_numeric(cand.get("Season"), errors="coerce") == pd.to_numeric(cur_season)) \
+                       & (cand.get("HomeTeam_norm","") == sel_home) \
+                       & (cand.get("AwayTeam_norm","") == sel_away)
+                if sel_date and "Date" in cand.columns:
+                    mask = mask & (cand["Date"] == sel_date)
+
+                row = cand.loc[mask].copy()
+                if row.empty:
+                    # fallback (sin fecha exacta): primera coincidencia por equipos
+                    mask2 = (cand.get("HomeTeam_norm","") == sel_home) & (cand.get("AwayTeam_norm","") == sel_away)
+                    row = cand.loc[mask2].sort_values("Date").tail(1).copy()
+
+                if row.empty:
+                    st.warning("No encontré métricas de radar para ese partido.")
+                else:
+                    r = row.iloc[0].to_dict()
+
+                    # ---------------- RADAR ----------------
+                    import plotly.graph_objects as go
+
+                    radar_axes = [
+                        ("xG (7)", "home_avg_xg_last7_norm", "away_avg_xg_last7_norm",
+                         "home_avg_xg_last7", "away_avg_xg_last7"),
+                        ("On Target (7)", "home_avg_shotsontarget_last7_norm", "away_avg_shotsontarget_last7_norm",
+                         "home_avg_shotsontarget_last7", "away_avg_shotsontarget_last7"),
+                        ("Corners (7)", "home_avg_corners_last7_norm", "away_avg_corners_last7_norm",
+                         "home_avg_corners_last7", "away_avg_corners_last7"),
+                        ("Efectividad", "home_effectiveness_norm", "away_effectiveness_norm",
+                         "home_effectiveness", "away_effectiveness"),
+                        ("Forma Pts (6)", "home_form_points_6_norm", "away_form_points_6_norm",
+                         "home_form_points_6", "away_form_points_6"),
+                        ("Forma GD (6)", "home_form_gd_6_norm", "away_form_gd_6_norm",
+                         "home_form_gd_6", "away_form_gd_6"),
+                        ("Elo", "h_elo_norm", "a_elo_norm", "h_elo", "a_elo"),
+                        ("Rend. relativo", "home_relative_perf_norm", "away_relative_perf_norm",
+                         "home_relative_perf", "away_relative_perf"),
+                    ]
+
+                    # Si alguna *_norm no existe (según tu CSV), la intentamos calcular on-the-fly con los rangos usados
+                    ranges = {
+                        "home_avg_xg_last7": (0, 4), "away_avg_xg_last7": (0, 4),
+                        "home_avg_shotsontarget_last7": (0, 12), "away_avg_shotsontarget_last7": (0, 12),
+                        "home_avg_corners_last7": (0, 12), "away_avg_corners_last7": (0, 12),
+                        "home_effectiveness": (0, 1), "away_effectiveness": (0, 1),
+                        "home_form_points_6": (0, 18), "away_form_points_6": (0, 18),
+                        "home_form_gd_6": (-10, 10), "away_form_gd_6": (-10, 10),
+                        "h_elo": (1450, 2150), "a_elo": (1450, 2150),
+                        "home_relative_perf": (0, 2), "away_relative_perf": (0, 2),
+                    }
+                    def norm_val(raw_col, v):
+                        lo, hi = ranges[raw_col]
+                        if v is None or pd.isna(v):
+                            return np.nan
+                        return float(np.clip((float(v)-lo) / (hi-lo+1e-12), 0, 1))
+
+                    thetas, home_vals, away_vals, hover_home, hover_away = [], [], [], [], []
+                    for label, h_norm, a_norm, h_raw, a_raw in radar_axes:
+                        thetas.append(label)
+                        hv = r.get(h_norm)
+                        av = r.get(a_norm)
+                        if hv is None and h_raw in r:
+                            hv = norm_val(h_raw, r.get(h_raw))
+                        if av is None and a_raw in r:
+                            av = norm_val(a_raw, r.get(a_raw))
+                        home_vals.append(hv)
+                        away_vals.append(av)
+                        hover_home.append(f"{label}: {r.get(h_raw, '—')}")
+                        hover_away.append(f"{label}: {r.get(a_raw, '—')}")
+
+                    # cerrar el polígono
+                    thetas_loop = thetas + [thetas[0]]
+                    home_loop = home_vals + [home_vals[0]]
+                    away_loop = away_vals + [away_vals[0]]
+
+                    c1, c2 = st.columns([1,1])
+                    with c1:
+                        fig_radar = go.Figure()
+                        fig_radar.add_trace(go.Scatterpolar(
+                            r=home_loop, theta=thetas_loop, name=sel_home,
+                            fill="toself", hovertext=hover_home+hover_home[:1]
+                        ))
+                        fig_radar.add_trace(go.Scatterpolar(
+                            r=away_loop, theta=thetas_loop, name=sel_away,
+                            fill="toself", hovertext=hover_away+hover_away[:1]
+                        ))
+                        fig_radar.update_layout(
+                            polar=dict(radialaxis=dict(visible=True, range=[0,1])),
+                            margin=dict(l=10, r=10, t=30, b=10), legend_title_text=""
+                        )
+                        st.plotly_chart(fig_radar, use_container_width=True)
+
+                    # ---------------- BARRAS (butterfly) ----------------
+                    # Métricas para barras: usamos *_norm para longitud, y brutas para texto
+                    bars_spec = [
+                        # label, home_raw, away_raw, home_norm, away_norm
+                        ("Puntos totales", "home_total_points_cum", "away_total_points_cum",
+                         "home_total_points_cum_norm", "away_total_points_cum_norm"),
+                        ("% puntos posibles", "home_points_pct", "away_points_pct",
+                         "home_points_pct_norm", "away_points_pct_norm"),
+                        ("Posición (inv.)", "home_prev_position", "away_prev_position",
+                         "home_prev_position_norm", "away_prev_position_norm"),
+                        ("GD acumulado", "home_gd_cum", "away_gd_cum",
+                         "home_gd_cum_norm", "away_gd_cum_norm"),
+                        ("Tiros (7)", "home_avg_shots_last7", "away_avg_shots_last7",
+                         "home_avg_shots_last7_norm", "away_avg_shots_last7_norm"),
+                        ("Corners (7)", "home_avg_corners_last7", "away_avg_corners_last7",
+                         "home_avg_corners_last7_norm", "away_avg_corners_last7_norm"),
+                        ("Faltas (7, inv.)", "home_avg_fouls_last7", "away_avg_fouls_last7",
+                         "home_avg_fouls_last7_norm", "away_avg_fouls_last7_norm"),
+                        ("Amarillas (7, inv.)", "home_avg_yellows_last7", "away_avg_yellows_last7",
+                         "home_avg_yellows_last7_norm", "away_avg_yellows_last7_norm"),
+                        ("Prob. implícita", "pimp1", "pimp2",
+                         "pimp1_norm", "pimp2_norm"),
+                    ]
+
+                    rows = []
+                    for label, hr, ar, hn, an in bars_spec:
+                        hraw = r.get(hr); araw = r.get(ar)
+                        hnm = r.get(hn);  anm = r.get(an)
+                        # si norm no existe, intenta derivar en % puntos posibles y posición según rangos típicos
+                        def _try(v): 
+                            return np.nan if v is None or (isinstance(v,str) and v.strip()=="") else float(v)
+                        rows.append({
+                            "Métrica": label,
+                            "Home_norm": -_try(hnm) if not pd.isna(_try(hnm)) else np.nan, # negativo (izq)
+                            "Away_norm":  _try(anm),
+                            "Home_txt":  hraw,
+                            "Away_txt":  araw,
+                        })
+                    bars_df = pd.DataFrame(rows)
+
+                    with c2:
+                        if bars_df.dropna(subset=["Home_norm","Away_norm"], how="all").empty:
+                            st.info("No hay suficientes métricas normalizadas para construir las barras.")
+                        else:
+                            # Construimos butterfly: dos trazas, mismas categorías
+                            cats = bars_df["Métrica"].tolist()
+                            home_x = bars_df["Home_norm"].fillna(0.0).tolist()
+                            away_x = bars_df["Away_norm"].fillna(0.0).tolist()
+                            # Tooltips con valor bruto
+                            home_text = [f"{sel_home}: {v if v is not None else '—'}" for v in bars_df["Home_txt"]]
+                            away_text = [f"{sel_away}: {v if v is not None else '—'}" for v in bars_df["Away_txt"]]
+
+                            fig_bar = go.Figure()
+                            fig_bar.add_bar(
+                                x=home_x, y=cats, name=sel_home, orientation="h",
+                                hovertext=home_text, hoverinfo="text"
+                            )
+                            fig_bar.add_bar(
+                                x=away_x, y=cats, name=sel_away, orientation="h",
+                                hovertext=away_text, hoverinfo="text"
+                            )
+                            # Eje X simétrico [-1,1]
+                            fig_bar.update_layout(
+                                barmode="relative",
+                                xaxis=dict(range=[-1, 1], tickvals=[-1,-0.5,0,0.5,1],
+                                           ticktext=["100%","","0","", "100%"]),
+                                margin=dict(l=10, r=10, t=30, b=10), legend_title_text=""
+                            )
+                            fig_bar.update_yaxes(autorange="reversed")  # arriba la primera métrica
+                            st.plotly_chart(fig_bar, use_container_width=True)
+
+                    # --------- Footer pequeño: cuotas y overround ----------
+                    c3, c4, c5 = st.columns([1,1,1])
+                    with c3:
+                        st.metric("Cuota Bet365 — Home", f"{r.get('B365H','—')}")
+                    with c4:
+                        st.metric("Cuota Bet365 — Draw", f"{r.get('B365D','—')}")
+                    with c5:
+                        st.metric("Cuota Bet365 — Away", f"{r.get('B365A','—')}")
+                    st.caption(f"Overround: {r.get('overround','—')}")
+
