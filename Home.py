@@ -55,6 +55,8 @@ with st.container():
         unsafe_allow_html=False
     )
 
+st.divider()
+
 # ======= Qué puedes hacer aquí =======
 st.header("¿Qué puedes hacer aquí?")
 st.markdown(
@@ -102,6 +104,8 @@ st.markdown(
     combinando la potencia de los datos con el rigor del modelado estadístico para entender —y medir— el valor en el fútbol.
     """
 )
+
+st.divider()
 
 # ======= Navegación sugerida =======
 st.header("Navegación")
