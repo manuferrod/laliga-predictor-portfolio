@@ -381,6 +381,50 @@ with tab_private:
         mime = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
         return f"<img src='data:{mime};base64,{data}' width='{size}' height='{size}' style='object-fit:contain;'/>"
 
+    # === Colores por equipo (hex) + helpers ===
+    TEAM_COLORS = {
+        "real_madrid": "#FEBE10",
+        "barcelona": "#A50044",
+        "atletico_madrid": "#D1002D",
+        "athletic_bilbao": "#E2231A",
+        "sevilla": "#D50032",
+        "real_betis": "#009150",
+        "valencia": "#F49F1C",
+        "villarreal": "#F2E600",
+        "real_sociedad": "#0056A6",
+        "celta": "#7EB7E6",
+        "girona": "#D50032",
+        "osasuna": "#002D62",
+        "mallorca": "#C8102E",
+        "rayo_vallecano": "#C8102E",
+        "getafe": "#0059B3",
+        "alaves": "#003D8F",
+        "las_palmas": "#FFDD00",
+        "leganes": "#2CA6E0",
+        "levante": "#1E2A78",
+        "granada": "#D50032",
+        # añade más si los necesitas
+    }
+    def _norm_team_key(name: str) -> str:
+        return (
+            (name or "")
+            .lower()
+            .replace(" ", "_")
+            .replace(".", "")
+            .replace("á", "a")
+            .replace("é", "e")
+            .replace("í", "i")
+            .replace("ó", "o")
+            .replace("ú", "u")
+            .replace("ñ", "n")
+        )
+    def team_color(name: str, fallback: str = "#1f77b4") -> str:
+        return TEAM_COLORS.get(_norm_team_key(name), fallback)
+    def hex_to_rgba(hex_color: str, alpha: float = 0.25) -> str:
+        h = hex_color.lstrip("#")
+        r = int(h[0:2], 16); g = int(h[2:4], 16); b = int(h[4:6], 16)
+        return f"rgba({r},{g},{b},{alpha})"
+
     if ok:
         year_tag = cur_season  # año de inicio de la temporada
         dfp = _read_csv(OUT / f"future_predictions_{year_tag}.csv")
@@ -491,28 +535,26 @@ with tab_private:
                 else:
                     r = row.iloc[0].to_dict()
 
-
                     # ===== Encabezado con escudos + cuotas (fuentes ↑ y empate alineado) =====
                     def _fmt_odds(x):
                         try:
                             return f"{float(x):.2f}"
                         except Exception:
                             return "—"
-                    
+
                     h_odds = _fmt_odds(r.get("B365H"))
                     d_odds = _fmt_odds(r.get("B365D"))
                     a_odds = _fmt_odds(r.get("B365A"))
-                    
+
                     # Tamaños tipográficos y alturas
                     LOGO_SIZE = 84           # px (de tu _logo_html)
                     NAME_FS   = "1.15rem"    # tamaño nombre equipo
                     ODDS_FS   = "1.00rem"    # tamaño texto de cuota
                     VS_FS     = "1.85rem"    # tamaño del "VS"
                     # Altura del bloque superior (logo + nombre) para alinear la 'Cuota Empate'
-                    SPACER_PX = LOGO_SIZE - 30  # ajusta 28 si ves que necesita un pelín más/menos
-                    
+                    SPACER_PX = LOGO_SIZE - 30  # ajusta si necesitas
+
                     c_logo1, c_vs, c_logo2 = st.columns([1, 0.3, 1])
-                    
                     with c_logo1:
                         st.markdown(
                             f"""
@@ -524,7 +566,6 @@ with tab_private:
                             """,
                             unsafe_allow_html=True,
                         )
-                    
                     with c_vs:
                         st.markdown(
                             f"""
@@ -536,7 +577,6 @@ with tab_private:
                             """,
                             unsafe_allow_html=True
                         )
-                    
                     with c_logo2:
                         st.markdown(
                             f"""
@@ -548,6 +588,12 @@ with tab_private:
                             """,
                             unsafe_allow_html=True,
                         )
+
+                    # Colores por equipo para las gráficas
+                    home_col = team_color(sel_home, "#1f77b4")
+                    away_col = team_color(sel_away, "#ff7f0e")
+                    home_fill = hex_to_rgba(home_col, 0.25)
+                    away_fill = hex_to_rgba(away_col, 0.25)
 
                     # ---------------- RADAR ----------------
                     import plotly.graph_objects as go
@@ -611,11 +657,15 @@ with tab_private:
                         fig_radar = go.Figure()
                         fig_radar.add_trace(go.Scatterpolar(
                             r=home_loop, theta=thetas_loop, name=sel_home,
-                            fill="toself", hovertext=hover_home+hover_home[:1]
+                            line=dict(color=home_col, width=3),
+                            fill="toself", fillcolor=home_fill,
+                            hovertext=hover_home+hover_home[:1]
                         ))
                         fig_radar.add_trace(go.Scatterpolar(
                             r=away_loop, theta=thetas_loop, name=sel_away,
-                            fill="toself", hovertext=hover_away+hover_away[:1]
+                            line=dict(color=away_col, width=3),
+                            fill="toself", fillcolor=away_fill,
+                            hovertext=hover_away+hover_away[:1]
                         ))
                         fig_radar.update_layout(
                             polar=dict(radialaxis=dict(visible=True, range=[0,1])),
@@ -675,11 +725,13 @@ with tab_private:
                             fig_bar = go.Figure()
                             fig_bar.add_bar(
                                 x=home_x, y=cats, name=sel_home, orientation="h",
-                                hovertext=home_text, hoverinfo="text"
+                                hovertext=home_text, hoverinfo="text",
+                                marker_color=home_col
                             )
                             fig_bar.add_bar(
                                 x=away_x, y=cats, name=sel_away, orientation="h",
-                                hovertext=away_text, hoverinfo="text"
+                                hovertext=away_text, hoverinfo="text",
+                                marker_color=away_col
                             )
                             # Eje X simétrico [-1,1]
                             fig_bar.update_layout(
@@ -690,4 +742,5 @@ with tab_private:
                             )
                             fig_bar.update_yaxes(autorange="reversed")  # arriba la primera métrica
                             st.plotly_chart(fig_bar, use_container_width=True)
+
 
