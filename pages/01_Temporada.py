@@ -346,7 +346,7 @@ with tab_private:
                 st.error("PIN incorrecto.")
 
     # === Logos: helpers y ruta local (ajusta si usas otra carpeta) ===
-    LOGOS_DIR = ROOT / "app" / "logos"
+    LOGOS_DIR = ROOT / "pages" / "logos"
 
     def _team_logo_path(team: str) -> Path | None:
         """Devuelve la ruta al escudo (busca png/jpg/jpeg/webp)."""
