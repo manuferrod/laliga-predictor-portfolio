@@ -3,6 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 from PIL import Image
 import streamlit as st
+import streamlit.components.v1 as components
+from urllib.parse import quote_plus
 
 # --------- Metadatos del pie (edita estos valores) ---------
 CONTACT_EMAIL = "manuelfernandezrodriguez1@gmail.com"
@@ -16,6 +18,11 @@ DATA_SOURCES = {
     "FBref": "https://fbref.com/"
 }
 APP_VERSION   = "1.0.0"
+
+# Mailto con asunto y cuerpo (mejor compatibilidad)
+_subject = quote_plus("Contacto LaLiga 1X2")
+_body    = quote_plus("Hola, me gustaría acceder a las predicciones privadas y saber los pasos a seguir. Gracias.")
+MAILTO_URL = f"mailto:{CONTACT_EMAIL}?subject={_subject}&body={_body}"
 
 ICON = Image.open("logo.png")
 st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
@@ -108,9 +115,10 @@ st.markdown(
     }
     .support-text{ margin: 0; line-height: 1.6; }
     .support-actions{ margin-top: .85rem; display: flex; gap: .9rem; flex-wrap: wrap; }
-    .support-actions a{
+    .support-actions a, .copy-btn{
         text-decoration: none; padding: .5rem .8rem; border-radius: 999px;
         border: 1px solid rgba(120,120,120,.35);
+        background: transparent; cursor: pointer;
     }
     .footer-meta{
         display: flex; justify-content: space-between; align-items: center;
@@ -130,6 +138,18 @@ sources_html = " / ".join(
     for name, url in DATA_SOURCES.items()
 )
 
+# Botón "Copiar email" (fallback si el mailto no abre cliente)
+components.html(
+    f"""
+    <button class="copy-btn"
+      onclick="navigator.clipboard.writeText('{CONTACT_EMAIL}');
+               this.innerText='¡Copiado!'; setTimeout(()=>this.innerText='Copiar email',1500);">
+      Copiar email
+    </button>
+    """,
+    height=40
+)
+
 st.markdown(
     f"""
     <div class="support-box">
@@ -140,11 +160,11 @@ st.markdown(
       </p>
       <div class="support-actions">
         <a href="{PAYPAL_URL}" target="_blank">💙 Apoyar en PayPal</a>
-        <a href="mailto:{CONTACT_EMAIL}" target="_blank">✉️ Contacto</a>
+        <a href="{MAILTO_URL}">✉️ Contacto</a>
       </div>
       <p class="support-text" style="margin-top:.85rem;">
         <b>Predicciones futuras (zona privada):</b> si deseas acceso, por favor
-        <a href="mailto:{CONTACT_EMAIL}">contacta conmigo</a> y te indicaré los pasos.
+        <a href="{MAILTO_URL}">contacta conmigo</a> y te indicaré los pasos.
       </p>
 
       <div class="footer-meta">
