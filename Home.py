@@ -36,8 +36,7 @@ with st.container():
         - Consultar **métricas clave**: nivel de acierto (accuracy), log loss, Brier, **ROI** y **beneficio acumulado** por jornada/temporada.
         - **Comparar** el rendimiento del **modelo** con el **benchmark de mercado**: apostar siempre a lo más probable según **Bet365**, con curvas de beneficio lado a lado.
         - Explorar **matchlogs** con filtros por equipo, jornada y “value”.
-        - Obtener **predicciones para la próxima jornada** *(zona privada con PIN; solicita acceso)*.
-        - Realizar **análisis pre-partido** (tendencias recientes, forma, etc.).
+        - Obtener **predicciones para la próxima jornada** además de **análisis prepartido** (tendencias recientes, forma, etc.) *(zona privada con PIN; solicita acceso)*.
         """,
         unsafe_allow_html=False
     )
