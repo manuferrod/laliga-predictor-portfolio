@@ -52,7 +52,7 @@ st.markdown(
     para entender mejor cómo se comportan los resultados del fútbol y las cuotas de las casas de apuestas.
 
     **1️⃣ Fuentes de datos**
-    Los datos se obtienen de varias fuentes complementarias: [Football-Data.co.uk](https://www.football-data.co.uk/), [Understat](https://understat.com/), [ClubElo](https://www.clubelo.com/), [Transfermarkt](https://www.transfermarkt.com/) y [FBref](https://fbref.com/)  
+    Los datos se obtienen de varias fuentes complementarias: [Football-Data.co.uk](https://www.football-data.co.uk/), [Understat](https://understat.com/), [ClubElo](https://www.clubelo.com/), [Transfermarkt](https://www.transfermarkt.com/) y [FBref](https://fbref.com/). 
 
     **2️⃣ Preparación de los datos**
     Toda esta información pasa por un proceso de **limpieza, integración y normalización**, en el que se unifican
