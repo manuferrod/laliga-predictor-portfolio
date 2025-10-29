@@ -92,83 +92,78 @@ with st.expander("Transparencia y uso responsable"):
         """
     )
 
-# ======= Caja de soporte / contacto (con botón copiar email) =======
+# ======= Caja de soporte / contacto (HTML estable en iframe) =======
 st.divider()
-
-st.markdown(
-    """
-    <style>
-    .support-box{
-        padding: 1.1rem 1.25rem;
-        border-radius: 16px;
-        border: 1px solid rgba(120,120,120,.25);
-        background: rgba(30, 100, 160, .10);
-    }
-    .support-title{
-        font-size: 1.05rem; font-weight: 600; margin: 0 0 .5rem 0;
-    }
-    .support-text{ margin: 0; line-height: 1.6; }
-    .support-actions{ margin-top: .85rem; display: flex; gap: .9rem; flex-wrap: wrap; }
-    .support-actions a, .copy-btn{
-        text-decoration: none; padding: .5rem .8rem; border-radius: 999px;
-        border: 1px solid rgba(120,120,120,.35);
-        background: transparent; cursor: pointer;
-    }
-    .footer-meta{
-        display: flex; justify-content: space-between; align-items: center;
-        gap: .75rem; margin-top: 1.1rem; padding-top: 1.1rem;
-        border-top: 1px solid rgba(120,120,120,.25);
-        font-size: .93rem;
-        flex-wrap: wrap;
-    }
-    .footer-meta a{ text-decoration: none; }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 sources_html = " / ".join(
     f'<a href="{url}" target="_blank">{name}</a>'
     for name, url in DATA_SOURCES.items()
 )
 
-# HTML + JS para el botón "Copiar email"
-copy_email_button = f"""
-<button class="copy-btn"
-  onclick="navigator.clipboard.writeText('{CONTACT_EMAIL}');
-           this.innerText='¡Copiado!'; setTimeout(()=>this.innerText='✉️ Copiar email',1500);">
-  ✉️ Copiar email
-</button>
-"""
+import streamlit.components.v1 as components
 
-st.markdown(
+components.html(
     f"""
-    <div class="support-box">
-      <p class="support-title">¿Te resulta útil LaLiga 1X2?</p>
-      <p class="support-text">
-        Esta app es <b>gratuita</b>. Si te ha ayudado o añadido valor a tu trabajo, puedes
-        apoyar el proyecto con una donación. Tu contribución me ayuda a seguir mejorándola. 🙌
-      </p>
-      <div class="support-actions">
-        <a href="{PAYPAL_URL}" target="_blank">💙 Apoyar en PayPal</a>
-        {copy_email_button}
-      </div>
-      <p class="support-text" style="margin-top:.85rem;">
-        <b>Predicciones futuras (zona privada):</b> si deseas acceso, por favor usa el botón de arriba para copiar mi correo
-        y <b>contacta conmigo directamente</b> para que te indique los pasos.
-      </p>
+<div class="llx2-support">
+  <div class="box">
+    <p class="title">¿Te resulta útil LaLiga 1X2?</p>
+    <p class="text">
+      Esta app es <b>gratuita</b>. Si te ha ayudado o añadido valor a tu trabajo, puedes
+      apoyar el proyecto con una donación. Tu contribución me ayuda a seguir mejorándola. 🙌
+    </p>
 
-      <div class="footer-meta">
-        <div>📅 Datos actualizados: <b>{LAST_UPDATE}</b> · Fuentes: {sources_html}</div>
-        <div>💙 <a href="{PAYPAL_URL}" target="_blank">Apoyar en PayPal</a> · Versión <b>{APP_VERSION}</b></div>
-      </div>
+    <div class="actions">
+      <a class="btn" href="{PAYPAL_URL}" target="_blank">💙 Apoyar en PayPal</a>
+      <button class="btn" onclick="
+        navigator.clipboard.writeText('{CONTACT_EMAIL}');
+        this.innerText='✔ Copiado';
+        setTimeout(()=>this.innerText='✉️ Copiar email',1500);
+      ">✉️ Copiar email</button>
     </div>
+
+    <p class="text mt">
+      <b>Predicciones futuras (zona privada):</b> si deseas acceso, copia mi correo y
+      <b>contacta conmigo</b> para que te indique los pasos.
+    </p>
+
+    <div class="meta">
+      <div>📅 Datos actualizados: <b>{LAST_UPDATE}</b> · Fuentes: {sources_html}</div>
+      <div>💙 <a href="{PAYPAL_URL}" target="_blank">Apoyar en PayPal</a> · Versión <b>{APP_VERSION}</b></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .llx2-support .box {{
+    padding: 1.1rem 1.25rem;
+    border-radius: 16px;
+    border: 1px solid rgba(120,120,120,.25);
+    background: rgba(30, 100, 160, .10);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+  }}
+  .llx2-support .title {{ font-size: 1.05rem; font-weight: 600; margin: 0 0 .5rem 0; }}
+  .llx2-support .text {{ margin: 0; line-height: 1.6; }}
+  .llx2-support .mt {{ margin-top: .85rem; }}
+  .llx2-support .actions {{ margin-top: .85rem; display: flex; gap: .9rem; flex-wrap: wrap; }}
+  .llx2-support .btn {{
+    text-decoration: none; padding: .55rem .9rem; border-radius: 999px;
+    border: 1px solid rgba(120,120,120,.35); background: transparent; cursor: pointer;
+  }}
+  .llx2-support .btn:hover {{ filter: brightness(1.05); }}
+  .llx2-support .meta {{
+    display: flex; justify-content: space-between; align-items: center;
+    gap: .75rem; margin-top: 1.1rem; padding-top: 1.1rem;
+    border-top: 1px solid rgba(120,120,120,.25);
+    font-size: .93rem; flex-wrap: wrap;
+  }}
+  .llx2-support .meta a {{ text-decoration: none; }}
+  @media (max-width: 700px) {{
+    .llx2-support .meta {{ flex-direction: column; align-items: flex-start; }}
+  }}
+</style>
     """,
-    unsafe_allow_html=True
+    height=320,
 )
+# ======= /Caja soporte =======
 
 st.divider()
-st.caption(
-    "© LaLiga 1X2 — Área pública basada únicamente en jornadas completadas. "
-    "Predicciones futuras disponibles en la pestaña privada con PIN."
-)
