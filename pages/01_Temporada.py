@@ -386,7 +386,7 @@ with tab_private:
         # usa 1 o 2 tonos por equipo (principal, secundario)
         "real_madrid": ["#FEBE10", "#FFFFFF"],
         "barcelona": ["#004d98", "#a50044"],           # grana + azul
-        "atletico_madrid": ["#272e61", "#CB3524"],     # rojo + azul
+        "atletico_madrid": ["#272E61", "#CB3524"],     # rojo + azul
         "athletic_bilbao": ["#ee2523", "#000000"],     # rojo + blanco
         "sevilla": ["#f43333", "#FFFFFF"],
         "real_betis": ["#0BB363", "#FFFFFF"],
