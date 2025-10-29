@@ -509,7 +509,7 @@ with tab_private:
                     ODDS_FS   = "1.00rem"    # tamaño texto de cuota
                     VS_FS     = "1.85rem"    # tamaño del "VS"
                     # Altura del bloque superior (logo + nombre) para alinear la 'Cuota Empate'
-                    SPACER_PX = LOGO_SIZE - 27  # ajusta 28 si ves que necesita un pelín más/menos
+                    SPACER_PX = LOGO_SIZE - 28  # ajusta 28 si ves que necesita un pelín más/menos
                     
                     c_logo1, c_vs, c_logo2 = st.columns([1, 0.3, 1])
                     
