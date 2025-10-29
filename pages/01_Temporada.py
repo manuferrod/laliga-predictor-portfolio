@@ -503,7 +503,7 @@ with tab_private:
             # Selector de partido (por defecto, el primero de la tabla)
             opciones = []
             for _, rsel in viewp.iterrows():
-                opciones.append(f"{rsel['Local']} vs {rsel['Visitante']}")
+                opciones.append(f"{rsel.get('Fecha','?')} — {rsel['Local']} vs {rsel['Visitante']}")
             if not opciones:
                 st.info("No hay filas en la tabla de predicciones para seleccionar un partido.")
             else:
