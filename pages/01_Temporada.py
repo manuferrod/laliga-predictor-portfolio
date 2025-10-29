@@ -397,12 +397,13 @@ with tab_private:
         "girona": ["#CD2534", "#F0D233"],
         "osasuna": ["#0a346f", "#d91a21"],
         "mallorca": ["#E20613", "#00844B"],
-        "vallecano": ["#FFFFFF", "#EBB200"],
+        "vallecano": ["#EBB200"],
         "getafe": ["#005999"],
         "alaves": ["#0761af", "#009ad7"],
         "levante": ["#b4053f", "#000000"],
         "real_oviedo": ["#094ca1"],
-        "espanol": ["#1e6bc0", "#f5c03e"]
+        "espanol": ["#1e6bc0", "#f5c03e"],
+        "elche": ["#05642c"]
         # añade más si los necesitas
     }
 
