@@ -121,17 +121,6 @@ st.markdown(
     """
 )
 
-# ======= Transparencia y uso responsable =======
-with st.expander("Transparencia y uso responsable"):
-    st.markdown(
-        """
-        - Este sitio **no es una recomendación financiera**; su objetivo es **analítico y educativo**.  
-        - Los **ROI** y **beneficios** mostrados se calculan con **stake unitario** (configurable en la UI).  
-        - Las **probabilidades** del modelo se muestran como **p(H), p(D), p(A)** junto con métricas de confianza
-          (entropía, margen top-2), cuando están disponibles.
-        """
-    )
-
 # ======= Caja de soporte / contacto (HTML estable en iframe) =======
 st.divider()
 
