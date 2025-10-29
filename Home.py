@@ -5,19 +5,6 @@ from PIL import Image
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.set_page_config(page_title="LaLiga 1X2", page_icon="🏠", layout="wide")
-
-home = st.Page("pages/home_content.py", title="Home", icon="🏠")
-temporada = st.Page("pages/temporada.py", title="Temporada", icon="📅")
-historico = st.Page("pages/historico.py", title="Histórico", icon="📈")
-metodologia = st.Page("pages/metodologia.py", title="Metodología", icon="🧠")
-metricas = st.Page("pages/metricas.py", title="Métricas", icon="📊")
-matchlogs = st.Page("pages/matchlogs.py", title="Matchlogs", icon="🧾")
-
-pg = st.navigation([home, temporada, historico, metodologia, metricas, matchlogs])
-pg.run()
-
-
 # --------- Metadatos del pie ---------
 CONTACT_EMAIL = "manuelfernandezrodriguez1@gmail.com"
 PAYPAL_URL    = "https://paypal.me/LaLiga1x2"
@@ -33,6 +20,27 @@ APP_VERSION   = "1.0.0"
 
 ICON = Image.open("logo.png")
 st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
+
+# --- Prefijo emoji en el primer item de la navegación lateral (Home) ---
+st.markdown(
+    """
+    <style>
+    /* El contenedor del nav del sidebar */
+    [data-testid="stSidebarNav"] ul li:first-child a {
+        position: relative;
+        padding-left: 0.15rem !important;
+    }
+    /* Añade el emoji antes del texto del primer item (Home) */
+    [data-testid="stSidebarNav"] ul li:first-child a:before {
+        content: "🏠 ";
+        margin-right: .15rem;
+        font-size: 1rem;
+        vertical-align: middle;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # ======= Hero =======
 st.title("🏟️ LaLiga 1X2")
