@@ -4,9 +4,8 @@ from pathlib import Path
 from PIL import Image
 import streamlit as st
 import streamlit.components.v1 as components
-from urllib.parse import quote_plus
 
-# --------- Metadatos del pie (edita estos valores) ---------
+# --------- Metadatos del pie ---------
 CONTACT_EMAIL = "manuelfernandezrodriguez1@gmail.com"
 PAYPAL_URL    = "https://paypal.me/LaLiga1x2"
 LAST_UPDATE   = "Octubre 29, 2025"
@@ -18,11 +17,6 @@ DATA_SOURCES = {
     "FBref": "https://fbref.com/"
 }
 APP_VERSION   = "1.0.0"
-
-# Mailto con asunto y cuerpo (mejor compatibilidad)
-_subject = quote_plus("Contacto LaLiga 1X2")
-_body    = quote_plus("Hola, me gustaría acceder a las predicciones privadas y saber los pasos a seguir. Gracias.")
-MAILTO_URL = f"mailto:{CONTACT_EMAIL}?subject={_subject}&body={_body}"
 
 ICON = Image.open("logo.png")
 st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
@@ -98,7 +92,7 @@ with st.expander("Transparencia y uso responsable"):
         """
     )
 
-# ======= Caja de soporte / contacto (actualizada con múltiples fuentes) =======
+# ======= Caja de soporte / contacto (con botón copiar email) =======
 st.divider()
 
 st.markdown(
@@ -138,17 +132,14 @@ sources_html = " / ".join(
     for name, url in DATA_SOURCES.items()
 )
 
-# Botón "Copiar email" (fallback si el mailto no abre cliente)
-components.html(
-    f"""
-    <button class="copy-btn"
-      onclick="navigator.clipboard.writeText('{CONTACT_EMAIL}');
-               this.innerText='¡Copiado!'; setTimeout(()=>this.innerText='Copiar email',1500);">
-      Copiar email
-    </button>
-    """,
-    height=40
-)
+# HTML + JS para el botón "Copiar email"
+copy_email_button = f"""
+<button class="copy-btn"
+  onclick="navigator.clipboard.writeText('{CONTACT_EMAIL}');
+           this.innerText='¡Copiado!'; setTimeout(()=>this.innerText='✉️ Copiar email',1500);">
+  ✉️ Copiar email
+</button>
+"""
 
 st.markdown(
     f"""
@@ -160,11 +151,11 @@ st.markdown(
       </p>
       <div class="support-actions">
         <a href="{PAYPAL_URL}" target="_blank">💙 Apoyar en PayPal</a>
-        <a href="{MAILTO_URL}">✉️ Contacto</a>
+        {copy_email_button}
       </div>
       <p class="support-text" style="margin-top:.85rem;">
-        <b>Predicciones futuras (zona privada):</b> si deseas acceso, por favor
-        <a href="{MAILTO_URL}">contacta conmigo</a> y te indicaré los pasos.
+        <b>Predicciones futuras (zona privada):</b> si deseas acceso, por favor usa el botón de arriba para copiar mi correo
+        y <b>contacta conmigo directamente</b> para que te indique los pasos.
       </p>
 
       <div class="footer-meta">
@@ -175,3 +166,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
