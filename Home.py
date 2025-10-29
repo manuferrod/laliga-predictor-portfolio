@@ -157,7 +157,7 @@ components.html(
 
     <div class="meta">
       <div>📅 Datos actualizados: <b>{LAST_UPDATE}</b> · Fuentes: {sources_html}</div>
-      <div>💙 <a href="{PAYPAL_URL}" target="_blank">Apoyar en PayPal</a> · Versión <b>{APP_VERSION}</b></div>
+      <div>Versión <b>{APP_VERSION}</b></div>
     </div>
   </div>
 </div>
