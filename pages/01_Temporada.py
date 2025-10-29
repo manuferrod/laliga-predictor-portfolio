@@ -370,7 +370,7 @@ with tab_private:
                 return p
         return None
 
-    def _logo_html(team: str, size: int = 80) -> str:
+    def _logo_html(team: str, size: int = 84) -> str:
         """Devuelve <img> embebido base64 para mostrar el logo."""
         path = _team_logo_path(team)
         if not path:
@@ -383,7 +383,7 @@ with tab_private:
 
     # === Colores por equipo (soporta franjas bicolores) + helpers ===
     TEAM_COLORS = {
-        # usa 1 o 2 tonos por equipo
+        # usa 1 o 2 tonos por equipo (principal, secundario)
         "real_madrid": ["#FEBE10"],
         "barcelona": ["#A50044", "#004D98"],           # grana + azul
         "atletico_madrid": ["#D1002D", "#1D3A94"],     # rojo + azul
@@ -394,11 +394,11 @@ with tab_private:
         "villarreal": ["#F2E600"],
         "real_sociedad": ["#0056A6", "#FFFFFF"],
         "celta": ["#7EB7E6"],
-        "girona": ["#CD2534", "#F0D233"],
+        "girona": ["#D50032", "#FFFFFF"],
         "osasuna": ["#002D62", "#E5002D"],
         "mallorca": ["#C8102E", "#000000"],
         "rayo_vallecano": ["#FFFFFF", "#D50032"],
-        "getafe": ["#005D9F"],
+        "getafe": ["#0059B3"],
         "alaves": ["#003D8F", "#FFFFFF"],
         "las_palmas": ["#FFDD00", "#1B75BB"],
         "leganes": ["#2CA6E0", "#FFFFFF"],
@@ -426,7 +426,7 @@ with tab_private:
         return TEAM_COLORS.get(_norm_team_key(name), fallback)
 
     def blend_color(c1: str, c2: str, ratio: float = 0.5) -> str:
-        """Mezcla dos colores hex a uno intermedio (para fill)."""
+        """Mezcla dos colores hex a uno intermedio (para fill de radar)."""
         h1, h2 = c1.lstrip("#"), c2.lstrip("#")
         r = round(int(h1[0:2], 16) * (1-ratio) + int(h2[0:2], 16) * ratio)
         g = round(int(h1[2:4], 16) * (1-ratio) + int(h2[2:4], 16) * ratio)
@@ -610,8 +610,17 @@ with tab_private:
                     home_col = home_palette[0]
                     away_col = away_palette[0]
                     # Relleno del radar: si hay 2 tonos, usa mezcla; si no, usa el principal
-                    home_fill = hex_to_rgba(blend_color(*home_palette, 0.5), 0.25) if len(home_palette) > 1 else hex_to_rgba(home_col, 0.25)
-                    away_fill = hex_to_rgba(blend_color(*away_palette, 0.5), 0.25) if len(away_palette) > 1 else hex_to_rgba(away_col, 0.25)
+                    if len(home_palette) > 1:
+                        home_mix = blend_color(home_palette[0], home_palette[1], 0.5)
+                        home_fill = hex_to_rgba(home_mix, 0.25)
+                    else:
+                        home_fill = hex_to_rgba(home_col, 0.25)
+
+                    if len(away_palette) > 1:
+                        away_mix = blend_color(away_palette[0], away_palette[1], 0.5)
+                        away_fill = hex_to_rgba(away_mix, 0.25)
+                    else:
+                        away_fill = hex_to_rgba(away_col, 0.25)
 
                     # ---------------- RADAR ----------------
                     import plotly.graph_objects as go
@@ -740,13 +749,19 @@ with tab_private:
                             home_text = [f"{sel_home}: {v if v is not None else '—'}" for v in bars_df["Home_txt"]]
                             away_text = [f"{sel_away}: {v if v is not None else '—'}" for v in bars_df["Away_txt"]]
 
-                            # Patrón de rayas si hay 2 tonos
-                            home_marker = dict(color=home_col)
-                            away_marker = dict(color=away_col)
+                            # Patrón de rayas si hay 2 tonos (¡con bgcolor!)
+                            home_marker = dict(color=home_col, line=dict(width=0))
+                            away_marker = dict(color=away_col, line=dict(width=0))
                             if len(home_palette) > 1:
-                                home_marker["pattern"] = dict(shape="/", fgcolor=home_palette[1], solidity=0.4)
+                                home_marker["pattern"] = dict(
+                                    shape="/", fgcolor=home_palette[1],
+                                    bgcolor=home_col, solidity=0.45
+                                )
                             if len(away_palette) > 1:
-                                away_marker["pattern"] = dict(shape="/", fgcolor=away_palette[1], solidity=0.4)
+                                away_marker["pattern"] = dict(
+                                    shape="/", fgcolor=away_palette[1],
+                                    bgcolor=away_col, solidity=0.45
+                                )
 
                             fig_bar = go.Figure()
                             fig_bar.add_bar(
