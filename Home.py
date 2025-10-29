@@ -22,6 +22,7 @@ ICON = Image.open("logo.png")
 st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
 
 # ======= Hero =======
+st.sidebar.title("🏠 Home")
 st.title("🏟️ LaLiga 1X2")
 st.caption("Predicción y análisis de resultados 1X2 para LaLiga")
 
