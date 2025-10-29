@@ -4,6 +4,13 @@ from pathlib import Path
 from PIL import Image
 import streamlit as st
 
+# --------- Metadatos del pie (edita estos valores) ---------
+CONTACT_EMAIL = "tuemail@dominio.com"
+PAYPAL_URL    = "https://paypal.me/tuenlace"
+LAST_UPDATE   = "Octubre 29, 2025"
+DATA_SOURCE   = "FBref"
+APP_VERSION   = "1.0.0"
+
 ICON = Image.open("logo.png")
 st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
 
@@ -76,6 +83,69 @@ with st.expander("Transparencia y uso responsable"):
         - Las **probabilidades** del modelo se muestran como **p(H), p(D), p(A)** junto con métricas de confianza
           (entropía, margen top-2), cuando están disponibles.
         """
+    )
+
+# ======= Caja de soporte / contacto (estilo tarjeta) =======
+st.divider()
+
+# CSS ligero para la tarjeta (funciona en tema claro y oscuro)
+st.markdown(
+    """
+    <style>
+    .support-box{
+        padding: 1.1rem 1.25rem;
+        border-radius: 16px;
+        border: 1px solid rgba(120,120,120,.25);
+        background: rgba(30, 100, 160, .10);
+    }
+    .support-title{
+        font-size: 1.05rem; font-weight: 600; margin: 0 0 .5rem 0;
+    }
+    .support-text{ margin: 0; line-height: 1.6; }
+    .support-actions{ margin-top: .85rem; display: flex; gap: .9rem; flex-wrap: wrap; }
+    .support-actions a{
+        text-decoration: none; padding: .5rem .8rem; border-radius: 999px;
+        border: 1px solid rgba(120,120,120,.35);
+    }
+    .footer-meta{
+        display: flex; justify-content: space-between; align-items: center;
+        gap: .75rem; margin-top: 1.1rem; padding-top: 1.1rem;
+        border-top: 1px solid rgba(120,120,120,.25);
+        font-size: .93rem;
+    }
+    @media (max-width: 700px){
+        .footer-meta{ flex-direction: column; align-items: flex-start; }
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+with st.container():
+    st.markdown(
+        f"""
+        <div class="support-box">
+          <p class="support-title">¿Te resulta útil LaLiga 1X2?</p>
+          <p class="support-text">
+            Esta app es <b>gratuita</b>. Si te ha ayudado o añadido valor a tu trabajo, puedes
+            apoyar el proyecto con una donación. Tu contribución me ayuda a seguir mejorándola. 🙌
+          </p>
+          <div class="support-actions">
+            <a href="{PAYPAL_URL}" target="_blank">💙 Apoyar en PayPal</a>
+            <a href="mailto:{CONTACT_EMAIL}" target="_blank">✉️ Contacto</a>
+          </div>
+          <p class="support-text" style="margin-top:.85rem;">
+            <b>Predicciones futuras (zona privada):</b> si deseas acceso, por favor
+            <a href="mailto:{CONTACT_EMAIL}">contacta conmigo</a> y te indicaré los pasos.
+          </p>
+
+          <div class="footer-meta">
+            <div>📅 Datos actualizados: <b>{LAST_UPDATE}</b> · Fuente: <a href="https://fbref.com" target="_blank">{DATA_SOURCE}</a></div>
+            <div>💙 <a href="{PAYPAL_URL}" target="_blank">Apoyar en PayPal</a></div>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True
     )
 
 st.divider()
