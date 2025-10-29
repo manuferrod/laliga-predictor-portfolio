@@ -48,23 +48,41 @@ st.divider()
 st.header("Cómo funciona")
 st.markdown(
     """
-    - **Datos**: históricos de partidos y cuotas (por ejemplo, Bet365) + variables derivadas (*features*).
-    - **Modelo**: **Logistic Regression (multinomial)** con ventana *walk-forward* (varias temporadas),
-      que produce probabilidades **p(H), p(D), p(A)** por partido.
-    - **Alineación robusta**: todas las tablas se indexan con una **clave estable** y por **(fecha + orden en el día)** para evitar desalineaciones.
-    - **Métricas**: los CSV en `outputs/` (p. ej., `metrics_main_by_season.csv`, `matchlogs_<season>.csv`, etc.)
-      alimentan cada página de la app.
-    """
-)
+    El proyecto **LaLiga 1X2** nace con el objetivo de combinar el análisis de datos y la modelización estadística
+    para entender mejor cómo se comportan los resultados del fútbol y las cuotas de las casas de apuestas.
 
-# ======= Por qué esta web =======
-st.header("¿Por qué esta web y no otra?")
-st.markdown(
-    """
-    - **Transparencia**: cada cifra visible (aciertos, ROI, beneficio) se **traza** a un fichero concreto de `outputs/`.
-    - **Rigor**: solo se muestran **jornadas 100% completadas** en público. Las **predicciones futuras** quedan en el área privada.
-    - **Reproducibilidad**: el flujo del *notebook* y de generación de artefactos está diseñado para dar **resultados estables**.
-    - **Auditable**: las curvas de beneficio y las tablas de matchlogs permiten auditar pick por pick.
+    **1️⃣ Fuentes de datos**
+    Los datos se obtienen de varias fuentes complementarias:
+    - [Football-Data.co.uk](https://www.football-data.co.uk/) → resultados y cuotas históricas (Bet365).  
+    - [Understat](https://understat.com/) → métricas avanzadas de rendimiento, como **expected goals (xG)**.  
+    - [ClubElo](https://www.clubelo.com/) → valoraciones dinámicas de fuerza de equipo (**Elo ratings**).  
+    - [Transfermarkt](https://www.transfermarkt.com/) → valor de mercado, edad media y tamaño de plantilla.  
+    - [FBref](https://fbref.com/) → estadísticas de juego adicionales (tiros, posesión, tarjetas…).  
+
+    **2️⃣ Preparación de los datos**
+    Toda esta información pasa por un proceso de **limpieza, integración y normalización**, en el que se unifican
+    nombres de equipos, se alinean temporadas, se eliminan valores ausentes y se crean decenas de **variables derivadas**:
+    rendimiento reciente, forma acumulada, efectividad, diferencia de Elo, dinámica de posición, cuotas implícitas,
+    o indicadores de rivalidad y tendencia de mercado, entre otras.
+
+    **3️⃣ El modelo**
+    Una vez preparado el dataset, se alimenta a un **modelo de regresión logística multinomial**, entrenado
+    con una ventana móvil (*walk-forward*) que utiliza varias temporadas anteriores para estimar las probabilidades
+    de cada posible resultado:  
+    **p(1)** = victoria local,  **p(X)** = empate,  **p(2)** = victoria visitante.  
+
+    El modelo aprende a partir de la relación entre el rendimiento de los equipos, sus métricas contextuales
+    y el histórico de cuotas, lo que permite **detectar discrepancias entre la estimación estadística y la valoración del mercado**.
+
+    **4️⃣ Resultados y evaluación**
+    Cada jornada se evalúa mediante métricas de clasificación (**accuracy, log loss, Brier score**) y métricas económicas
+    (**ROI y beneficio acumulado**).  
+    El rendimiento del modelo se compara con un **benchmark de mercado** basado en apostar siempre a la opción
+    más probable según Bet365.  
+    Los resultados se almacenan en ficheros reproducibles (`outputs/`) y se visualizan dinámicamente en esta app.
+
+    En definitiva, **LaLiga 1X2** pretende ofrecer una visión transparente, analítica y evolutiva de la competición,
+    combinando la potencia de los datos con el rigor del modelado estadístico para entender —y medir— el valor en el fútbol.
     """
 )
 
