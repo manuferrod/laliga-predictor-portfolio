@@ -5,10 +5,10 @@ from PIL import Image
 import streamlit as st
 
 # --------- Metadatos del pie (edita estos valores) ---------
-CONTACT_EMAIL = "tuemail@dominio.com"
-PAYPAL_URL    = "https://paypal.me/tuenlace"
+CONTACT_EMAIL = "manuelfernandezrodriguez1@gmail.com"
+PAYPAL_URL    = "https://paypal.me/LaLiga1x2"
 LAST_UPDATE   = "Octubre 29, 2025"
-DATA_SOURCE   = "FBref"
+DATA_SOURCE   = "Football-Data.co.uk / Understat / ClubElo / Transfermarkt / FBref"
 APP_VERSION   = "1.0.0"
 
 ICON = Image.open("logo.png")
