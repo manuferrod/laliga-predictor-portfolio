@@ -8,7 +8,13 @@ import streamlit as st
 CONTACT_EMAIL = "manuelfernandezrodriguez1@gmail.com"
 PAYPAL_URL    = "https://paypal.me/LaLiga1x2"
 LAST_UPDATE   = "Octubre 29, 2025"
-DATA_SOURCE   = "Football-Data.co.uk / Understat / ClubElo / Transfermarkt / FBref"
+DATA_SOURCES = {
+    "Football-Data.co.uk": "https://www.football-data.co.uk/",
+    "Understat": "https://understat.com/",
+    "ClubElo": "https://www.clubelo.com/",
+    "Transfermarkt": "https://www.transfermarkt.com/",
+    "FBref": "https://fbref.com/"
+}
 APP_VERSION   = "1.0.0"
 
 ICON = Image.open("logo.png")
@@ -85,10 +91,9 @@ with st.expander("Transparencia y uso responsable"):
         """
     )
 
-# ======= Caja de soporte / contacto (estilo tarjeta) =======
+# ======= Caja de soporte / contacto (actualizada con múltiples fuentes) =======
 st.divider()
 
-# CSS ligero para la tarjeta (funciona en tema claro y oscuro)
 st.markdown(
     """
     <style>
@@ -112,44 +117,41 @@ st.markdown(
         gap: .75rem; margin-top: 1.1rem; padding-top: 1.1rem;
         border-top: 1px solid rgba(120,120,120,.25);
         font-size: .93rem;
+        flex-wrap: wrap;
     }
-    @media (max-width: 700px){
-        .footer-meta{ flex-direction: column; align-items: flex-start; }
-    }
+    .footer-meta a{ text-decoration: none; }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-with st.container():
-    st.markdown(
-        f"""
-        <div class="support-box">
-          <p class="support-title">¿Te resulta útil LaLiga 1X2?</p>
-          <p class="support-text">
-            Esta app es <b>gratuita</b>. Si te ha ayudado o añadido valor a tu trabajo, puedes
-            apoyar el proyecto con una donación. Tu contribución me ayuda a seguir mejorándola. 🙌
-          </p>
-          <div class="support-actions">
-            <a href="{PAYPAL_URL}" target="_blank">💙 Apoyar en PayPal</a>
-            <a href="mailto:{CONTACT_EMAIL}" target="_blank">✉️ Contacto</a>
-          </div>
-          <p class="support-text" style="margin-top:.85rem;">
-            <b>Predicciones futuras (zona privada):</b> si deseas acceso, por favor
-            <a href="mailto:{CONTACT_EMAIL}">contacta conmigo</a> y te indicaré los pasos.
-          </p>
+sources_html = " / ".join(
+    f'<a href="{url}" target="_blank">{name}</a>'
+    for name, url in DATA_SOURCES.items()
+)
 
-          <div class="footer-meta">
-            <div>📅 Datos actualizados: <b>{LAST_UPDATE}</b> · Fuente: <a href="https://fbref.com" target="_blank">{DATA_SOURCE}</a></div>
-            <div>💙 <a href="{PAYPAL_URL}" target="_blank">Apoyar en PayPal</a></div>
-          </div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+st.markdown(
+    f"""
+    <div class="support-box">
+      <p class="support-title">¿Te resulta útil LaLiga 1X2?</p>
+      <p class="support-text">
+        Esta app es <b>gratuita</b>. Si te ha ayudado o añadido valor a tu trabajo, puedes
+        apoyar el proyecto con una donación. Tu contribución me ayuda a seguir mejorándola. 🙌
+      </p>
+      <div class="support-actions">
+        <a href="{PAYPAL_URL}" target="_blank">💙 Apoyar en PayPal</a>
+        <a href="mailto:{CONTACT_EMAIL}" target="_blank">✉️ Contacto</a>
+      </div>
+      <p class="support-text" style="margin-top:.85rem;">
+        <b>Predicciones futuras (zona privada):</b> si deseas acceso, por favor
+        <a href="mailto:{CONTACT_EMAIL}">contacta conmigo</a> y te indicaré los pasos.
+      </p>
 
-st.divider()
-st.caption(
-    "© LaLiga 1X2 — Área pública basada únicamente en jornadas completadas. "
-    "Predicciones futuras disponibles en la pestaña privada con PIN."
+      <div class="footer-meta">
+        <div>📅 Datos actualizados: <b>{LAST_UPDATE}</b> · Fuentes: {sources_html}</div>
+        <div>💙 <a href="{PAYPAL_URL}" target="_blank">Apoyar en PayPal</a> · Versión <b>{APP_VERSION}</b></div>
+      </div>
+    </div>
+    """,
+    unsafe_allow_html=True
 )
