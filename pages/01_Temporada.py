@@ -345,6 +345,42 @@ with tab_private:
             else:
                 st.error("PIN incorrecto.")
 
+    # === Logos: helpers y ruta local (ajusta si usas otra carpeta) ===
+    LOGOS_DIR = ROOT / "app" / "logos"
+
+    def _team_logo_path(team: str) -> Path | None:
+        """Devuelve la ruta al escudo (busca png/jpg/jpeg/webp)."""
+        if not team:
+            return None
+        team_norm = (
+            str(team)
+            .lower()
+            .replace(" ", "_")
+            .replace(".", "")
+            .replace("á", "a")
+            .replace("é", "e")
+            .replace("í", "i")
+            .replace("ó", "o")
+            .replace("ú", "u")
+            .replace("ñ", "n")
+        )
+        for ext in (".png", ".jpg", ".jpeg", ".webp"):
+            p = LOGOS_DIR / f"{team_norm}{ext}"
+            if p.exists():
+                return p
+        return None
+
+    def _logo_html(team: str, size: int = 80) -> str:
+        """Devuelve <img> embebido base64 para mostrar el logo."""
+        path = _team_logo_path(team)
+        if not path:
+            return f"<div style='width:{size}px;height:{size}px;display:inline-block;'></div>"
+        import base64
+        with open(path, "rb") as f:
+            data = base64.b64encode(f.read()).decode("utf-8")
+        mime = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
+        return f"<img src='data:{mime};base64,{data}' width='{size}' height='{size}' style='object-fit:contain;'/>"
+
     if ok:
         year_tag = cur_season  # año de inicio de la temporada
         dfp = _read_csv(OUT / f"future_predictions_{year_tag}.csv")
@@ -406,15 +442,11 @@ with tab_private:
             for dcol in ("Date",):
                 if dcol in radar_df.columns:
                     radar_df[dcol] = pd.to_datetime(radar_df[dcol], errors="coerce").dt.strftime("%Y-%m-%d")
-            if "Date" in viewp.columns:
-                viewp_dates = viewp["Fecha"]
-            else:
-                viewp_dates = pd.Series([], dtype=str)
 
             # Selector de partido (por defecto, el primero de la tabla)
             opciones = []
-            for _, r in viewp.iterrows():
-                opciones.append(f"{r.get('Fecha','?')} — {r['Local']} vs {r['Visitante']}")
+            for _, rsel in viewp.iterrows():
+                opciones.append(f"{rsel.get('Fecha','?')} — {rsel['Local']} vs {rsel['Visitante']}")
             if not opciones:
                 st.info("No hay filas en la tabla de predicciones para seleccionar un partido.")
             else:
@@ -459,6 +491,26 @@ with tab_private:
                     st.warning("No encontré métricas de radar para ese partido.")
                 else:
                     r = row.iloc[0].to_dict()
+
+                    # ====================== Encabezado con escudos ======================
+                    c_logo1, c_vs, c_logo2 = st.columns([1, 0.3, 1])
+                    with c_logo1:
+                        st.markdown(
+                            f"<div style='text-align:center;'>{_logo_html(sel_home, 80)}"
+                            f"<div style='font-weight:600;margin-top:4px;'>{sel_home}</div></div>",
+                            unsafe_allow_html=True,
+                        )
+                    with c_vs:
+                        st.markdown(
+                            "<div style='text-align:center;font-size:1.4rem;font-weight:700;margin-top:30px;'>VS</div>",
+                            unsafe_allow_html=True
+                        )
+                    with c_logo2:
+                        st.markdown(
+                            f"<div style='text-align:center;'>{_logo_html(sel_away, 80)}"
+                            f"<div style='font-weight:600;margin-top:4px;'>{sel_away}</div></div>",
+                            unsafe_allow_html=True,
+                        )
 
                     # ---------------- RADAR ----------------
                     import plotly.graph_objects as go
@@ -562,12 +614,11 @@ with tab_private:
                     for label, hr, ar, hn, an in bars_spec:
                         hraw = r.get(hr); araw = r.get(ar)
                         hnm = r.get(hn);  anm = r.get(an)
-                        # si norm no existe, intenta derivar en % puntos posibles y posición según rangos típicos
-                        def _try(v): 
-                            return np.nan if v is None or (isinstance(v,str) and v.strip()=="") else float(v)
+                        def _try(v):
+                            return np.nan if v is None or (isinstance(v, str) and v.strip() == "") else float(v)
                         rows.append({
                             "Métrica": label,
-                            "Home_norm": -_try(hnm) if not pd.isna(_try(hnm)) else np.nan, # negativo (izq)
+                            "Home_norm": -_try(hnm) if not pd.isna(_try(hnm)) else np.nan,  # negativo (izq)
                             "Away_norm":  _try(anm),
                             "Home_txt":  hraw,
                             "Away_txt":  araw,
@@ -578,11 +629,9 @@ with tab_private:
                         if bars_df.dropna(subset=["Home_norm","Away_norm"], how="all").empty:
                             st.info("No hay suficientes métricas normalizadas para construir las barras.")
                         else:
-                            # Construimos butterfly: dos trazas, mismas categorías
                             cats = bars_df["Métrica"].tolist()
                             home_x = bars_df["Home_norm"].fillna(0.0).tolist()
                             away_x = bars_df["Away_norm"].fillna(0.0).tolist()
-                            # Tooltips con valor bruto
                             home_text = [f"{sel_home}: {v if v is not None else '—'}" for v in bars_df["Home_txt"]]
                             away_text = [f"{sel_away}: {v if v is not None else '—'}" for v in bars_df["Away_txt"]]
 
@@ -614,4 +663,3 @@ with tab_private:
                     with c5:
                         st.metric("Cuota Bet365 — Away", f"{r.get('B365A','—')}")
                     st.caption(f"Overround: {r.get('overround','—')}")
-
