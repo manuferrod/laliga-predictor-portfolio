@@ -381,30 +381,32 @@ with tab_private:
         mime = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
         return f"<img src='data:{mime};base64,{data}' width='{size}' height='{size}' style='object-fit:contain;'/>"
 
-    # === Colores por equipo (hex) + helpers ===
+    # === Colores por equipo (soporta franjas bicolores) + helpers ===
     TEAM_COLORS = {
-        "real_madrid": "#FEBE10",
-        "barcelona": "#A50044",
-        "atletico_madrid": "#D1002D",
-        "athletic_bilbao": "#E2231A",
-        "sevilla": "#D50032",
-        "real_betis": "#009150",
-        "valencia": "#F49F1C",
-        "villarreal": "#F2E600",
-        "real_sociedad": "#0056A6",
-        "celta": "#7EB7E6",
-        "girona": "#D50032",
-        "osasuna": "#002D62",
-        "mallorca": "#C8102E",
-        "rayo_vallecano": "#C8102E",
-        "getafe": "#0059B3",
-        "alaves": "#003D8F",
-        "las_palmas": "#FFDD00",
-        "leganes": "#2CA6E0",
-        "levante": "#1E2A78",
-        "granada": "#D50032",
+        # usa 1 o 2 tonos por equipo
+        "real_madrid": ["#FEBE10"],
+        "barcelona": ["#A50044", "#004D98"],           # grana + azul
+        "atletico_madrid": ["#D1002D", "#1D3A94"],     # rojo + azul
+        "athletic_bilbao": ["#E2231A", "#FFFFFF"],     # rojo + blanco
+        "sevilla": ["#D50032", "#FFFFFF"],
+        "real_betis": ["#009150", "#FFFFFF"],
+        "valencia": ["#F49F1C", "#000000"],
+        "villarreal": ["#F2E600"],
+        "real_sociedad": ["#0056A6", "#FFFFFF"],
+        "celta": ["#7EB7E6"],
+        "girona": ["#D50032", "#FFFFFF"],
+        "osasuna": ["#002D62", "#E5002D"],
+        "mallorca": ["#C8102E", "#000000"],
+        "rayo_vallecano": ["#FFFFFF", "#D50032"],
+        "getafe": ["#0059B3"],
+        "alaves": ["#003D8F", "#FFFFFF"],
+        "las_palmas": ["#FFDD00", "#1B75BB"],
+        "leganes": ["#2CA6E0", "#FFFFFF"],
+        "levante": ["#1E2A78", "#A50044"],
+        "granada": ["#D50032", "#FFFFFF"],
         # añade más si los necesitas
     }
+
     def _norm_team_key(name: str) -> str:
         return (
             (name or "")
@@ -418,9 +420,21 @@ with tab_private:
             .replace("ú", "u")
             .replace("ñ", "n")
         )
-    def team_color(name: str, fallback: str = "#1f77b4") -> str:
+
+    def team_colors(name: str, fallback: list[str] = ["#1f77b4"]) -> list[str]:
+        """Devuelve lista de colores del equipo (1 o 2 tonos)."""
         return TEAM_COLORS.get(_norm_team_key(name), fallback)
+
+    def blend_color(c1: str, c2: str, ratio: float = 0.5) -> str:
+        """Mezcla dos colores hex a uno intermedio (para fill)."""
+        h1, h2 = c1.lstrip("#"), c2.lstrip("#")
+        r = round(int(h1[0:2], 16) * (1-ratio) + int(h2[0:2], 16) * ratio)
+        g = round(int(h1[2:4], 16) * (1-ratio) + int(h2[2:4], 16) * ratio)
+        b = round(int(h1[4:6], 16) * (1-ratio) + int(h2[4:6], 16) * ratio)
+        return f"#{r:02X}{g:02X}{b:02X}"
+
     def hex_to_rgba(hex_color: str, alpha: float = 0.25) -> str:
+        """Convierte #RRGGBB → rgba(r,g,b,a)."""
         h = hex_color.lstrip("#")
         r = int(h[0:2], 16); g = int(h[2:4], 16); b = int(h[4:6], 16)
         return f"rgba({r},{g},{b},{alpha})"
@@ -535,7 +549,7 @@ with tab_private:
                 else:
                     r = row.iloc[0].to_dict()
 
-                    # ===== Encabezado con escudos + cuotas (fuentes ↑ y empate alineado) =====
+                    # ===== Encabezado con escudos + cuotas (tipografía algo mayor) =====
                     def _fmt_odds(x):
                         try:
                             return f"{float(x):.2f}"
@@ -547,10 +561,10 @@ with tab_private:
                     a_odds = _fmt_odds(r.get("B365A"))
 
                     # Tamaños tipográficos y alturas
-                    LOGO_SIZE = 84           # px (de tu _logo_html)
-                    NAME_FS   = "1.15rem"    # tamaño nombre equipo
-                    ODDS_FS   = "1.00rem"    # tamaño texto de cuota
-                    VS_FS     = "1.85rem"    # tamaño del "VS"
+                    LOGO_SIZE = 84
+                    NAME_FS   = "1.20rem"
+                    ODDS_FS   = "1.05rem"
+                    VS_FS     = "2.00rem"
                     # Altura del bloque superior (logo + nombre) para alinear la 'Cuota Empate'
                     SPACER_PX = LOGO_SIZE - 30  # ajusta si necesitas
 
@@ -589,11 +603,15 @@ with tab_private:
                             unsafe_allow_html=True,
                         )
 
-                    # Colores por equipo para las gráficas
-                    home_col = team_color(sel_home, "#1f77b4")
-                    away_col = team_color(sel_away, "#ff7f0e")
-                    home_fill = hex_to_rgba(home_col, 0.25)
-                    away_fill = hex_to_rgba(away_col, 0.25)
+                    # Paletas por equipo
+                    home_palette = team_colors(sel_home)
+                    away_palette = team_colors(sel_away)
+
+                    home_col = home_palette[0]
+                    away_col = away_palette[0]
+                    # Relleno del radar: si hay 2 tonos, usa mezcla; si no, usa el principal
+                    home_fill = hex_to_rgba(blend_color(*home_palette, 0.5), 0.25) if len(home_palette) > 1 else hex_to_rgba(home_col, 0.25)
+                    away_fill = hex_to_rgba(blend_color(*away_palette, 0.5), 0.25) if len(away_palette) > 1 else hex_to_rgba(away_col, 0.25)
 
                     # ---------------- RADAR ----------------
                     import plotly.graph_objects as go
@@ -722,16 +740,24 @@ with tab_private:
                             home_text = [f"{sel_home}: {v if v is not None else '—'}" for v in bars_df["Home_txt"]]
                             away_text = [f"{sel_away}: {v if v is not None else '—'}" for v in bars_df["Away_txt"]]
 
+                            # Patrón de rayas si hay 2 tonos
+                            home_marker = dict(color=home_col)
+                            away_marker = dict(color=away_col)
+                            if len(home_palette) > 1:
+                                home_marker["pattern"] = dict(shape="/", fgcolor=home_palette[1], solidity=0.4)
+                            if len(away_palette) > 1:
+                                away_marker["pattern"] = dict(shape="/", fgcolor=away_palette[1], solidity=0.4)
+
                             fig_bar = go.Figure()
                             fig_bar.add_bar(
                                 x=home_x, y=cats, name=sel_home, orientation="h",
                                 hovertext=home_text, hoverinfo="text",
-                                marker_color=home_col
+                                marker=home_marker
                             )
                             fig_bar.add_bar(
                                 x=away_x, y=cats, name=sel_away, orientation="h",
                                 hovertext=away_text, hoverinfo="text",
-                                marker_color=away_col
+                                marker=away_marker
                             )
                             # Eje X simétrico [-1,1]
                             fig_bar.update_layout(
@@ -742,5 +768,3 @@ with tab_private:
                             )
                             fig_bar.update_yaxes(autorange="reversed")  # arriba la primera métrica
                             st.plotly_chart(fig_bar, use_container_width=True)
-
-
