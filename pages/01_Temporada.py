@@ -488,7 +488,7 @@ with tab_private:
 
         # ===================== RADAR + BARRAS (zona privada) =====================
         st.divider()
-        st.subheader("Perfil del partido (Radar + Barras)")
+        st.subheader("Análisis Prepartido")
 
         # --- Cargar CSV del radar prematch de la temporada actual ---
         radar_csv = OUT / "radar_prematch" / f"radar_prematch_{cur_season}.csv"
@@ -503,7 +503,7 @@ with tab_private:
             # Selector de partido (por defecto, el primero de la tabla)
             opciones = []
             for _, rsel in viewp.iterrows():
-                opciones.append(f"{rsel.get('Fecha','?')} — {rsel['Local']} vs {rsel['Visitante']}")
+                opciones.append(f"{rsel['Local']} vs {rsel['Visitante']}")
             if not opciones:
                 st.info("No hay filas en la tabla de predicciones para seleccionar un partido.")
             else:
