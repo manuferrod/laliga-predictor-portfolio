@@ -1,0 +1,80 @@
+{
+  "norm_version": "radar_v1.0",
+  "radar_ranges": {
+    "xG7": [
+      0.0,
+      4.0
+    ],
+    "OnTarget7": [
+      0.0,
+      12.0
+    ],
+    "Corners7": [
+      0.0,
+      12.0
+    ],
+    "Effectiveness": [
+      0.0,
+      1.0
+    ],
+    "FormPts6": [
+      0.0,
+      18.0
+    ],
+    "FormGD6": [
+      -10.0,
+      10.0
+    ],
+    "Elo": [
+      1450.0,
+      2150.0
+    ],
+    "RelPerf": [
+      0.0,
+      2.0
+    ]
+  },
+  "bars_ranges": {
+    "TotalPoints": [
+      0.0,
+      114.0
+    ],
+    "PointsPct": [
+      0.0,
+      1.0
+    ],
+    "Position": [
+      1.0,
+      20.0
+    ],
+    "GDCum": [
+      -30.0,
+      30.0
+    ],
+    "Shots7": [
+      0.0,
+      30.0
+    ],
+    "Corners7_bar": [
+      0.0,
+      12.0
+    ],
+    "Fouls7": [
+      5.0,
+      25.0
+    ],
+    "Yellows7": [
+      0.0,
+      5.0
+    ],
+    "ImpProb": [
+      0.0,
+      1.0
+    ]
+  },
+  "bars_invert": [
+    "Fouls7",
+    "Position",
+    "Yellows7"
+  ]
+}
