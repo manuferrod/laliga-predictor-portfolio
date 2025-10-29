@@ -386,24 +386,23 @@ with tab_private:
         # usa 1 o 2 tonos por equipo (principal, secundario)
         "real_madrid": ["#FEBE10", "#FFFFFF"],
         "barcelona": ["#004d98", "#a50044"],           # grana + azul
-        "atletico_madrid": ["#262F61", "#CB3524"],     # rojo + azul
-        "athletic_bilbao": ["#ee2523", "#000000"],     # rojo + blanco
+        "ath_madrid": ["#262F61", "#CB3524"],     # rojo + azul
+        "ath_bilbao": ["#ee2523", "#000000"],     # rojo + blanco
         "sevilla": ["#f43333", "#FFFFFF"],
-        "real_betis": ["#0BB363", "#FFFFFF"],
+        "betis": ["#0BB363", "#FFFFFF"],
         "valencia": ["#d18816", "#000000"],
         "villarreal": ["#ffe667"],
-        "real_sociedad": ["#0067b1", "#e4b630"],
+        "sociedad": ["#0067b1", "#e4b630"],
         "celta": ["#8ac3ee"],
         "girona": ["#CD2534", "#F0D233"],
         "osasuna": ["#0a346f", "#d91a21"],
         "mallorca": ["#E20613", "#00844B"],
-        "rayo_vallecano": ["#FFFFFF", "#EBB200"],
+        "vallecano": ["#FFFFFF", "#EBB200"],
         "getafe": ["#005999"],
         "alaves": ["#0761af", "#009ad7"],
-        "las_palmas": ["#FFDD00", "#1B75BB"],
-        "leganes": ["#b4053f", "#000000"],
         "levante": ["#b4053f", "#000000"],
-        "granada": ["#D50032", "#FFFFFF"],
+        "real_oviedo": ["#094ca1"],
+        "espanol": ["#1e6bc0", "#f5c03e"]
         # añade más si los necesitas
     }
 
