@@ -51,7 +51,7 @@ with st.container():
         """
         Bienvenido/a a **LaLiga 1X2**, una web app que combina *datos históricos, cuotas de mercado* y un
         **modelo de clasificación multinomial** para analizar jornadas pasadas y estimar resultados de las próximas.
-
+        
         **¿Qué puedes hacer aquí?**
         - **Revisar en detalle** la **temporada actual** y **todas las temporadas desde 2010**.
         - Consultar **métricas clave**: nivel de acierto (accuracy), log loss, Brier, **ROI** y **beneficio acumulado** por jornada/temporada.
