@@ -52,24 +52,16 @@ st.markdown(
     para entender mejor cómo se comportan los resultados del fútbol y las cuotas de las casas de apuestas.
 
     **1️⃣ Fuentes de datos**
-    Los datos se obtienen de varias fuentes complementarias:
-    - [Football-Data.co.uk](https://www.football-data.co.uk/) → resultados y cuotas históricas (Bet365).  
-    - [Understat](https://understat.com/) → métricas avanzadas de rendimiento, como **expected goals (xG)**.  
-    - [ClubElo](https://www.clubelo.com/) → valoraciones dinámicas de fuerza de equipo (**Elo ratings**).  
-    - [Transfermarkt](https://www.transfermarkt.com/) → valor de mercado, edad media y tamaño de plantilla.  
-    - [FBref](https://fbref.com/) → estadísticas de juego adicionales (tiros, posesión, tarjetas…).  
+    Los datos se obtienen de varias fuentes complementarias: [Football-Data.co.uk](https://www.football-data.co.uk/), [Understat](https://understat.com/), [ClubElo](https://www.clubelo.com/), [Transfermarkt](https://www.transfermarkt.com/) y [FBref](https://fbref.com/)  
 
     **2️⃣ Preparación de los datos**
     Toda esta información pasa por un proceso de **limpieza, integración y normalización**, en el que se unifican
-    nombres de equipos, se alinean temporadas, se eliminan valores ausentes y se crean decenas de **variables derivadas**:
-    rendimiento reciente, forma acumulada, efectividad, diferencia de Elo, dinámica de posición, cuotas implícitas,
-    o indicadores de rivalidad y tendencia de mercado, entre otras.
+    nombres de equipos, se alinean temporadas, se eliminan valores ausentes y se crean decenas de **variables derivadas**.
 
     **3️⃣ El modelo**
     Una vez preparado el dataset, se alimenta a un **modelo de regresión logística multinomial**, entrenado
     con una ventana móvil (*walk-forward*) que utiliza varias temporadas anteriores para estimar las probabilidades
-    de cada posible resultado:  
-    **p(1)** = victoria local,  **p(X)** = empate,  **p(2)** = victoria visitante.  
+    de cada posible resultado: **p(H)** = victoria local,  **p(D)** = empate,  **p(A)** = victoria visitante.  
 
     El modelo aprende a partir de la relación entre el rendimiento de los equipos, sus métricas contextuales
     y el histórico de cuotas, lo que permite **detectar discrepancias entre la estimación estadística y la valoración del mercado**.
@@ -79,7 +71,7 @@ st.markdown(
     (**ROI y beneficio acumulado**).  
     El rendimiento del modelo se compara con un **benchmark de mercado** basado en apostar siempre a la opción
     más probable según Bet365.  
-    Los resultados se almacenan en ficheros reproducibles (`outputs/`) y se visualizan dinámicamente en esta app.
+    Los resultados se almacenan en ficheros reproducibles y se visualizan dinámicamente en esta app.
 
     En definitiva, **LaLiga 1X2** pretende ofrecer una visión transparente, analítica y evolutiva de la competición,
     combinando la potencia de los datos con el rigor del modelado estadístico para entender —y medir— el valor en el fútbol.
