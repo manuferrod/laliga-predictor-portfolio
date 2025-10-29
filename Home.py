@@ -4,28 +4,32 @@ from pathlib import Path
 from PIL import Image
 import streamlit as st
 
-ICON = Image.open("logo.png")
-st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
+# ======= Configuración general =======
+ICON_FAV = Image.open("logo.png")  # mismo logo, sirve como favicon
+st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON_FAV, layout="wide")
 
 # ======= Hero =======
-st.title("🏟️ LaLiga 1X2")
-st.caption("Predicción y análisis de resultados 1X2 para LaLiga")
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    st.image("logo.png", use_container_width=False, width=220)
+st.markdown("<h1 style='text-align: center;'>🏟️ LaLiga 1X2</h1>", unsafe_allow_html=True)
+st.caption("Predicción y análisis de resultados 1X2 para LaLiga", help="Basado en modelos estadísticos y cuotas de mercado")
 
-with st.container():
-    st.markdown(
-        """
-        Bienvenido/a a **LaLiga 1X2**, una web app que combina *datos históricos, cuotas de mercado* y un
-        **modelo de clasificación multinomial** para analizar jornadas pasadas y estimar resultados de las próximas.
+# ======= Intro =======
+st.markdown(
+    """
+    Bienvenido/a a **LaLiga 1X2**, una web app que combina *datos históricos, cuotas de mercado* y un
+    **modelo de clasificación multinomial** para analizar jornadas pasadas y estimar resultados de las próximas.
 
-        **¿Qué puedes hacer aquí?**
-        - **Revisar jornadas completadas**: resultados reales, aciertos del modelo, cuotas y *profit/ROI* por partido.
-        - **Explorar matchlogs** con filtros por equipo, jornada y *value* (si aplica).
-        - **Ver métricas por temporada** (accuracy, logloss, brier, ROI) del **modelo** y del **mercado**.
-        - **Comparar Modelo vs Bet365** con curvas de beneficio acumulado.
-        - **(Privado)** Consultar **predicciones de la próxima jornada** con PIN.
-        """,
-        unsafe_allow_html=False
-    )
+    **¿Qué puedes hacer aquí?**
+    - **Revisar jornadas completadas**: resultados reales, aciertos del modelo, cuotas y *profit/ROI* por partido.
+    - **Explorar matchlogs** con filtros por equipo, jornada y *value* (si aplica).
+    - **Ver métricas por temporada** (accuracy, logloss, brier, ROI) del **modelo** y del **mercado**.
+    - **Comparar Modelo vs Bet365** con curvas de beneficio acumulado.
+    - **(Privado)** Consultar **predicciones de la próxima jornada** con PIN.
+    """,
+    unsafe_allow_html=False
+)
 
 st.divider()
 
