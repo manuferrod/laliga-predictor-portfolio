@@ -51,17 +51,21 @@ with st.container():
         """
         Bienvenido/a a **LaLiga 1X2**, una web app que combina *datos históricos, cuotas de mercado* y un
         **modelo de clasificación multinomial** para analizar jornadas pasadas y estimar resultados de las próximas.
-        
-        **¿Qué puedes hacer aquí?**
-        - **Revisar en detalle** la **temporada actual** y **todas las temporadas desde 2010**.
-        - Consultar **métricas clave**: nivel de acierto (accuracy), log loss, Brier, **ROI** y **beneficio acumulado** por jornada/temporada.
-        - **Comparar** el rendimiento del **modelo** con el **benchmark de mercado**: apostar siempre a lo más probable según **Bet365**, con curvas de beneficio lado a lado.
-        - Explorar **matchlogs** con filtros por equipo, jornada y “value”.
-        - Obtener **predicciones para la próxima jornada** además de **análisis prepartido** (tendencias recientes, forma, etc.) *(zona privada con PIN; solicita acceso)*.
         """,
         unsafe_allow_html=False
     )
 
+# ======= Qué puedes hacer aquí =======
+st.header("¿Qué puedes hacer aquí?")
+st.markdown(
+    """
+    - **Revisar en detalle** la **temporada actual** y **todas las temporadas desde 2010**.  
+    - Consultar **métricas clave**: nivel de acierto (accuracy), log loss, Brier, **ROI** y **beneficio acumulado** por jornada/temporada.  
+    - **Comparar** el rendimiento del **modelo** con el **benchmark de mercado**: apostar siempre a lo más probable según **Bet365**, con curvas de beneficio lado a lado.  
+    - Explorar **matchlogs** con filtros por equipo, jornada y “value”.  
+    - Obtener **predicciones para la próxima jornada** además de **análisis pre-partido** (tendencias recientes, forma, etc.) *(zona privada con PIN; solicita acceso)*.
+    """
+)
 
 st.divider()
 
