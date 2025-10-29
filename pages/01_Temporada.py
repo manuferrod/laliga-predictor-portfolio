@@ -678,12 +678,3 @@ with tab_private:
                             fig_bar.update_yaxes(autorange="reversed")  # arriba la primera métrica
                             st.plotly_chart(fig_bar, use_container_width=True)
 
-                    # --------- Footer pequeño: cuotas y overround ----------
-                    c3, c4, c5 = st.columns([1,1,1])
-                    with c3:
-                        st.metric("Cuota Bet365 — Home", f"{r.get('B365H','—')}")
-                    with c4:
-                        st.metric("Cuota Bet365 — Draw", f"{r.get('B365D','—')}")
-                    with c5:
-                        st.metric("Cuota Bet365 — Away", f"{r.get('B365A','—')}")
-                    st.caption(f"Overround: {r.get('overround','—')}")
