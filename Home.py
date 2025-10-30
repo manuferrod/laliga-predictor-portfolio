@@ -131,13 +131,10 @@ st.divider()
 st.header("Navegación")
 st.markdown(
     """
-    - **🏠 Home**: resumen de temporada, KPIs y trayectoria de beneficio *(público)*.  
-    - **📅 Jornadas**: detalle de cada jornada completada *(público)*.  
-    - **📋 Matchlogs**: explorador con filtros y descargas *(público)*.  
-    - **📊 Métricas**: ROI/accuracy por temporada (modelo y mercado) *(público)*.  
-    - **🆚 Modelo vs Mercado**: comparación de curvas y KPIs *(público)*.  
-    - **🧪 Análisis de Cuotas**: controles de calidad y desalineaciones *(público/privado, opcional)*.  
-    - **🔒 Predicciones (Privado)**: próximas jornadas con **PIN**.
+    - **📅 Temporada Actual**: detalle de cada jornada completada de la temporada actual*(público)*, y sección privada con las predicciones y analisis estadísticos para la jornada siguiente*(público)*.  
+    - **📈 Historico**: curvas de beneficio acumulado para todo el histórico de temporadas (modelo y mercado) *(público)*.
+    - **📊 Métricas**: ROI/accuracy por temporada (modelo y mercado) *(público)*.
+    - **🧾 Matchlogs**: explorador de cada uno de los partidos de todo el histórico con filtros y descargas *(público)*.     
     """
 )
 
