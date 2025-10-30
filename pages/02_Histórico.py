@@ -47,7 +47,7 @@ def add_sidebar_icons(mapping: dict[str, str]):
 SIDEBAR_ICONS = {
     "Home": "🏠",
     "Temporada Actual": "📅",
-    "Historico": "📈",
+    "Histórico": "📈",
     "Métricas": "📊",
     "Matchlogs": "🧾",
 }
