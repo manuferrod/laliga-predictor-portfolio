@@ -199,8 +199,7 @@ st.divider()
 
 # ================== Selección de columnas para vista ==================
 preferred_cols = [
-    "Date","Matchday","Season","HomeTeam_norm","AwayTeam_norm",
-    "pred_key","y_true","y_pred",
+    "Date","Matchday","Season","HomeTeam_norm","AwayTeam_norm","y_true","y_pred",
     "proba_H","proba_D","proba_A",
     "B365H","B365D","B365A","overround",
     "odds_pick","p_pick","ev_pick","kelly_pick","bet_placed",
