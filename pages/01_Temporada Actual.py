@@ -1,6 +1,6 @@
 # Home.py — LaLiga 1X2 · 25/26 (solo jornadas COMPLETADAS en público)
 from __future__ import annotations
-
+import streamlit.components.v1 as components
 import re
 from pathlib import Path
 import numpy as np
