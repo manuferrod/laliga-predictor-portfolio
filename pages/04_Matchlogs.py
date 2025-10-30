@@ -1,6 +1,6 @@
 # matchlogs.py — Visor de matchlogs (solo partidos disputados; sin fugas de predicciones)
 from __future__ import annotations
-
+import streamlit.components.v1 as components
 import re
 from pathlib import Path
 import streamlit as st
