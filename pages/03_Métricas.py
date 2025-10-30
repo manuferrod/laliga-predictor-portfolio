@@ -1,6 +1,6 @@
 # pages/03_Métricas.py — Métricas y ROI por temporada (nuevos outputs)
 from __future__ import annotations
-
+import streamlit.components.v1 as components
 import sys, importlib.util
 from pathlib import Path
 import pandas as pd
