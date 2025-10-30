@@ -199,12 +199,18 @@ st.divider()
 
 # ================== Selección de columnas para vista ==================
 preferred_cols = [
-    "Date","Matchday","Season","HomeTeam_norm","AwayTeam_norm","y_true","y_pred",
+    "Date","Matchday","Season","HomeTeam_norm","AwayTeam_norm",
+    "y_true","y_pred",
     "proba_H","proba_D","proba_A",
     "B365H","B365D","B365A","overround",
     "odds_pick","p_pick","ev_pick","kelly_pick","bet_placed",
     "correct","profit","cum_profit_season",
 ]
+
+# 🔒 Eliminamos columnas privadas/no necesarias
+cols_to_drop = {"pred_key", "pred_key_match"}
+df = df.drop(columns=[c for c in cols_to_drop if c in df.columns], errors="ignore")
+
 ordered_cols = [c for c in preferred_cols if c in df.columns] + [c for c in df.columns if c not in preferred_cols]
 view = df[ordered_cols].copy()
 
