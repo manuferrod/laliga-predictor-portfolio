@@ -22,39 +22,36 @@ ICON = Image.open("logo.png")
 st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
 
 # --- Emojis en el sidebar, robusto en todas las páginas ---
-
 def add_sidebar_icons(mapping: dict[str, str]):
     # mapping = {"Home":"🏠", "Temporada":"📅", ...}
     items_js = ",".join([f'["{k}","{v}"]' for k, v in mapping.items()])
-    components.html(
-        f"""
-        <script>
-        const mapping = new Map([{items_js}]);
-        // reintenta porque Streamlit re-renderiza el DOM
-        let tries = 0;
-        const iv = setInterval(() => {{
-          const nav = window.parent.document.querySelector('[data-testid="stSidebarNav"] ul');
-          if (!nav) {{ if (++tries>20) clearInterval(iv); return; }}
-          const spans = nav.querySelectorAll('li a span');
-          spans.forEach(span => {{
-            const label = span.textContent.trim();
-            const ico = mapping.get(label);
-            if (ico && !span.dataset.iconApplied) {{
-              span.dataset.iconApplied = "1";
-              // evita duplicar si ya tenía un emoji manual
-              if (!label.startsWith(ico)) {{
-                span.textContent = `${{ico}} ${label.replace(/^\\p{{Emoji}}\\s*/u, "")}`;
-              }}
-            }}
-          }});
-          if (++tries>20) clearInterval(iv);
-        }}, 300);
-        </script>
-        """,
-        height=0,
-    )
+    js_code = """
+    <script>
+    const mapping = new Map([{items_js}]);
+    let tries = 0;
+    const iv = setInterval(() => {{
+      const nav = window.parent.document.querySelector('[data-testid="stSidebarNav"] ul');
+      if (!nav) {{ if (++tries>20) clearInterval(iv); return; }}
+      const spans = nav.querySelectorAll('li a span');
+      spans.forEach(span => {{
+        const label = span.textContent.trim();
+        const ico = mapping.get(label);
+        if (ico && !span.dataset.iconApplied) {{
+          span.dataset.iconApplied = "1";
+          // evita duplicar si ya tenía emoji manual
+          if (!label.startsWith(ico)) {{
+            span.textContent = `${{ico}} ${{label}}`;
+          }}
+        }}
+      }});
+      if (++tries>20) clearInterval(iv);
+    }}, 300);
+    </script>
+    """.format(items_js=items_js)
 
-# 👉 Define aquí tus iconos (los textos deben coincidir EXACTO con tus etiquetas de páginas)
+    components.html(js_code, height=0)
+
+# 👉 Define aquí tus iconos (los textos deben coincidir EXACTO con los nombres del sidebar)
 SIDEBAR_ICONS = {
     "Home": "🏠",
     "Temporada": "📅",
