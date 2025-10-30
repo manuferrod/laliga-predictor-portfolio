@@ -25,7 +25,7 @@ ICON = Image.open("logo.png")
 st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
 
 st.markdown(
-    '<meta name="google-site-verification" content="Ik6p2ImS4kWpFkm-1kr5yectOjj0-z2ERD7pfJNtXZ8" />',
+    '<meta name="google-site-verification" content="Ik6p2ImS4kWpFkm-1kr5yectOjj0-z2ERD7pfJNtXZ8"/>',
     unsafe_allow_html=True
 )
 
