@@ -54,7 +54,7 @@ def add_sidebar_icons(mapping: dict[str, str]):
 # 👉 Define aquí tus iconos (los textos deben coincidir EXACTO con los nombres del sidebar)
 SIDEBAR_ICONS = {
     "Home": "🏠",
-    "Temporada": "📅",
+    "Temporada Actual": "📅",
     "Historico": "📈",
     "Métricas": "📊",
     "Matchlogs": "🧾",
