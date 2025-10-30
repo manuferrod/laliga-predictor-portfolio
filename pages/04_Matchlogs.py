@@ -1,4 +1,4 @@
-# matchlogs.py — Visor de matchlogs (nuevos outputs) con detección robusta de 'outputs/'
+# matchlogs.py — Visor de matchlogs (solo partidos disputados; sin fugas de predicciones)
 from __future__ import annotations
 
 import re
@@ -98,10 +98,8 @@ def _normalize_market_cols(df: pd.DataFrame, source: str) -> pd.DataFrame:
     return d
 
 # ================== Comprobaciones ==================
-# Mostrar la ruta detectada (útil para depurar)
 st.caption(f"Ruta de outputs detectada: `{OUT}`")
 
-# Revisa que haya matchlogs (no cualquier archivo)
 has_model_logs = any(OUT.glob("matchlogs_*.csv"))
 has_market_logs = any(OUT.glob("matchlogs_market_*.csv"))
 if not has_model_logs and not has_market_logs:
@@ -134,26 +132,26 @@ df = _ensure_matchday(_ensure_date(df.copy()))
 df = _normalize_market_cols(df, source)
 df = df.sort_values(["Date","HomeTeam_norm","AwayTeam_norm"], na_position="last").reset_index(drop=True)
 
+# 🚫 POLÍTICA PÚBLICA: ocultar partidos futuros (sin resultado real) y, por tanto, sus predicciones
+mask_played = _only_played_mask(df)
+df = df[mask_played].reset_index(drop=True)
+st.caption("🔒 Por política pública, esta vista solo muestra **partidos disputados**. Las predicciones futuras están en el área privada.")
+
+if df.empty:
+    st.info("No hay partidos disputados para los filtros seleccionados.")
+    st.stop()
+
 # ================== Filtros ==================
 with st.expander("Filtros"):
-    cols = st.columns(4)
+    cols = st.columns(3)
     with cols[0]:
-        only_bet_placed = st.checkbox(
-            "Solo apuestas colocadas",
-            value=False,
-            help="Filtra filas con `bet_placed == True` si existe."
-        )
+        # filtro por equipo (texto)
+        pass
     with cols[1]:
-        only_played = st.checkbox(
-            "Solo disputados",
-            value=False,
-            help="Filtra por partidos con resultado real (y_true en H/D/A)."
-        )
-    with cols[2]:
         # Jornada
         all_md = pd.to_numeric(df["Matchday"], errors="coerce").dropna().astype(int).sort_values().unique().tolist()
         wk_sel = st.selectbox("Jornada", options=["(todas)"] + all_md, index=0)
-    with cols[3]:
+    with cols[2]:
         order_ev_desc = st.checkbox("Ordenar por EV (desc)", value=False)
 
 # filtro por equipo
@@ -164,14 +162,6 @@ if team:
         if c in df.columns:
             mask = mask | df[c].astype(str).str.contains(t, case=False, na=False)
     df = df[mask]
-
-# filtro solo apuestas colocadas
-if only_bet_placed and "bet_placed" in df.columns:
-    df = df[df["bet_placed"] == True]
-
-# filtro solo disputados
-if only_played:
-    df = df[_only_played_mask(df)]
 
 # filtro por jornada
 if wk_sel != "(todas)":
@@ -262,13 +252,13 @@ with col_dl1:
     st.download_button(
         "Descargar CSV",
         data=view.to_csv(index=False).encode("utf-8"),
-        file_name=f"matchlog_{sel}_{'modelo' if source=='Modelo' else 'bet365'}.csv",
+        file_name=f"matchlog_{sel}_{'modelo' if source=='Modelo' else 'bet365'}_SOLO_DISPUTADOS.csv",
         mime="text/csv",
     )
 with col_dl2:
     st.download_button(
         "Descargar JSON",
         data=view.to_json(orient="records", force_ascii=False).encode("utf-8"),
-        file_name=f"matchlog_{sel}_{'modelo' if source=='Modelo' else 'bet365'}.json",
+        file_name=f"matchlog_{sel}_{'modelo' if source=='Modelo' else 'bet365'}_SOLO_DISPUTADOS.json",
         mime="application/json",
     )
