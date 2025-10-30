@@ -21,6 +21,33 @@ APP_VERSION   = "1.0.0"
 ICON = Image.open("logo.png")
 st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
 
+ICON = Image.open("logo.png")
+st.set_page_config(page_title="LaLiga 1X2", page_icon=ICON, layout="wide")
+
+# === META TAGS SEO + VERIFICACIÓN GOOGLE ===
+st.markdown("""
+<meta name="title" content="LaLiga 1X2 – Predicción y análisis de resultados de fútbol">
+<meta name="description" content="Predicciones 1X2 para LaLiga española con modelos estadísticos, datos históricos, Elo, xG y cuotas Bet365. Análisis de rendimiento y ROI.">
+<meta name="keywords" content="LaLiga, predicciones fútbol, apuestas deportivas, modelo 1X2, expected goals, Elo rating, Bet365, ROI, análisis estadístico">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://laliga1x2.streamlit.app/">
+<meta property="og:title" content="LaLiga 1X2 – Predicciones y análisis estadístico de LaLiga">
+<meta property="og:description" content="Análisis predictivo de LaLiga con métricas avanzadas, ROI y comparación con Bet365.">
+<meta property="og:image" content="https://laliga1x2.streamlit.app/logo.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="LaLiga 1X2 – Predicción y análisis de resultados de fútbol">
+<meta property="twitter:description" content="Modelo de predicción de resultados 1X2 basado en datos de LaLiga española y métricas de mercado.">
+<meta property="twitter:image" content="https://laliga1x2.streamlit.app/logo.png">
+
+<!-- Verificación Google Search Console -->
+<meta name="google-site-verification" content="google0f7613efc37c0292.html" />
+""", unsafe_allow_html=True)
+
 # --- Emojis en el sidebar, robusto en todas las páginas ---
 def add_sidebar_icons(mapping: dict[str, str]):
     # mapping = {"Home":"🏠", "Temporada":"📅", ...}
