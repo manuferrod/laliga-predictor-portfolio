@@ -12,6 +12,48 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs"
 
 st.set_page_config(page_title="Curvas", page_icon="📈")
+
+# --- Emojis en el sidebar, robusto en todas las páginas ---
+def add_sidebar_icons(mapping: dict[str, str]):
+    # mapping = {"Home":"🏠", "Temporada":"📅", ...}
+    items_js = ",".join([f'["{k}","{v}"]' for k, v in mapping.items()])
+    js_code = """
+    <script>
+    const mapping = new Map([{items_js}]);
+    let tries = 0;
+    const iv = setInterval(() => {{
+      const nav = window.parent.document.querySelector('[data-testid="stSidebarNav"] ul');
+      if (!nav) {{ if (++tries>20) clearInterval(iv); return; }}
+      const spans = nav.querySelectorAll('li a span');
+      spans.forEach(span => {{
+        const label = span.textContent.trim();
+        const ico = mapping.get(label);
+        if (ico && !span.dataset.iconApplied) {{
+          span.dataset.iconApplied = "1";
+          // evita duplicar si ya tenía emoji manual
+          if (!label.startsWith(ico)) {{
+            span.textContent = `${{ico}} ${{label}}`;
+          }}
+        }}
+      }});
+      if (++tries>20) clearInterval(iv);
+    }}, 300);
+    </script>
+    """.format(items_js=items_js)
+
+    components.html(js_code, height=0)
+
+# 👉 Define aquí tus iconos (los textos deben coincidir EXACTO con los nombres del sidebar)
+SIDEBAR_ICONS = {
+    "Home": "🏠",
+    "Temporada Actual": "📅",
+    "Historico": "📈",
+    "Métricas": "📊",
+    "Matchlogs": "🧾",
+}
+
+add_sidebar_icons(SIDEBAR_ICONS)
+
 st.header("Curvas de beneficio acumulado")
 
 # ----------------- Utils locales -----------------
