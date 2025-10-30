@@ -11,7 +11,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs"
 
-st.set_page_config(page_title="Histórico", page_icon="📈")
+st.set_page_config(page_title="Histórico", page_icon="📈", layout="wide")
 
 # --- Emojis en el sidebar, robusto en todas las páginas ---
 def add_sidebar_icons(mapping: dict[str, str]):
