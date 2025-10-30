@@ -11,7 +11,7 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs"
 
-st.set_page_config(page_title="LaLiga 1X2 · 25/26", page_icon="⚽", layout="wide")
+st.set_page_config(page_title="Temporada Actual", page_icon="📅", layout="wide")
 
 # --- Emojis en el sidebar, robusto en todas las páginas ---
 def add_sidebar_icons(mapping: dict[str, str]):
