@@ -1,6 +1,6 @@
 # pages/01_Historico.py
 from __future__ import annotations
-
+import streamlit.components.v1 as components
 import sys, re
 from pathlib import Path
 import streamlit as st
