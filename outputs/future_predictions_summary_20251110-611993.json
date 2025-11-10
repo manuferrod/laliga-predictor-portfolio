@@ -1,6 +1,6 @@
 {
-  "generated_at": "20251106",
-  "run_code": "016216",
+  "generated_at": "20251110",
+  "run_code": "611993",
   "model": {
     "type": "LogisticRegression(multinomial)",
     "C": 1.0,
@@ -41,8 +41,8 @@
   },
   "data": {
     "n_future_rows_out": 10,
-    "future_min_date": "2025-11-07 00:00:00",
-    "future_max_date": "2025-11-09 00:00:00",
+    "future_min_date": "2025-11-21 00:00:00",
+    "future_max_date": "2025-11-24 00:00:00",
     "unique_key_report": {
       "collisions_augmented": 0
     },
@@ -57,34 +57,44 @@
   },
   "by_date": [
     {
-      "Date": "2025-11-07",
+      "Date": "2025-11-21",
       "n_matches": 1,
-      "mean_conf": 0.36683650426069947,
-      "mean_entropy": 1.094750495022409,
-      "mean_margin": 0.02939452928726133,
-      "pct_pick_H": 0.0,
-      "pct_pick_D": 1.0,
-      "pct_pick_A": 0.0
-    },
-    {
-      "Date": "2025-11-08",
-      "n_matches": 4,
-      "mean_conf": 0.5304393392313439,
-      "mean_entropy": 0.9315988432770095,
-      "mean_margin": 0.2542337435780269,
+      "mean_conf": 0.49468402041120474,
+      "mean_entropy": 1.0301896930258665,
+      "mean_margin": 0.1846166001976935,
       "pct_pick_H": 1.0,
       "pct_pick_D": 0.0,
       "pct_pick_A": 0.0
     },
     {
-      "Date": "2025-11-09",
-      "n_matches": 5,
-      "mean_conf": 0.5875246379224444,
-      "mean_entropy": 0.8993588208849778,
-      "mean_margin": 0.33717332360194163,
-      "pct_pick_H": 0.4,
+      "Date": "2025-11-22",
+      "n_matches": 4,
+      "mean_conf": 0.5339992151006243,
+      "mean_entropy": 0.9632690480362145,
+      "mean_margin": 0.268663495478667,
+      "pct_pick_H": 0.75,
+      "pct_pick_D": 0.25,
+      "pct_pick_A": 0.0
+    },
+    {
+      "Date": "2025-11-23",
+      "n_matches": 4,
+      "mean_conf": 0.5526595859877903,
+      "mean_entropy": 0.939490059002163,
+      "mean_margin": 0.2635401926852054,
+      "pct_pick_H": 0.25,
       "pct_pick_D": 0.0,
-      "pct_pick_A": 0.6
+      "pct_pick_A": 0.75
+    },
+    {
+      "Date": "2025-11-24",
+      "n_matches": 1,
+      "mean_conf": 0.5418821071726737,
+      "mean_entropy": 0.9904058233562354,
+      "mean_margin": 0.25122208778269484,
+      "pct_pick_H": 1.0,
+      "pct_pick_D": 0.0,
+      "pct_pick_A": 0.0
     }
   ]
 }
