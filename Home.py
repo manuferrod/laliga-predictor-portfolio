@@ -7,7 +7,7 @@ import streamlit.components.v1 as components
 
 st.markdown(
     """
-    <meta name="google-site-verification" content="google0f7613efc37c0292.html" />
+    <meta name="google-site-verification" content="Ik6p2ImS4kWpFkm-1kr5yectOjj0-z2ERD7pfJNtXZ8" />
     """,
     unsafe_allow_html=True
 )
