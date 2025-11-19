@@ -5,6 +5,13 @@ from PIL import Image
 import streamlit as st
 import streamlit.components.v1 as components
 
+st.markdown(
+    """
+    <meta name="google-site-verification" content="google0f7613efc37c0292.html" />
+    """,
+    unsafe_allow_html=True
+)
+
 # --------- Metadatos del pie ---------
 CONTACT_EMAIL = "manuelfernandezrodriguez1@gmail.com"
 PAYPAL_URL    = "https://paypal.me/LaLiga1x2"
