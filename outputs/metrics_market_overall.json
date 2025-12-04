@@ -1,11 +1,11 @@
 {
-  "generated_at": "2025-12-02 10:46:04",
+  "generated_at": "2025-12-04 19:55:51",
   "model": "market_argmax(pimp1,pimpx,pimp2)",
   "overall": {
     "n_scored_total": 5840,
     "n_bets_total": 5840,
     "accuracy_overall": 0.5457191780821918,
-    "logloss_overall": 1.459207988462623,
+    "logloss_overall": 1.4592079884626232,
     "brier_overall": 0.5658124326675087,
     "roi_overall": -0.0302654109589041,
     "hit_rate_overall": 0.5457191780821918,

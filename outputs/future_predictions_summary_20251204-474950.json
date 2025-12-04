@@ -1,6 +1,6 @@
 {
-  "generated_at": "20251202",
-  "run_code": "616034",
+  "generated_at": "20251204",
+  "run_code": "474950",
   "model": {
     "type": "LogisticRegression(multinomial)",
     "C": 1.0,
@@ -41,8 +41,8 @@
   },
   "data": {
     "n_future_rows_out": 10,
-    "future_min_date": "2025-12-02 00:00:00",
-    "future_max_date": "2026-01-11 00:00:00",
+    "future_min_date": "2025-12-05 00:00:00",
+    "future_max_date": "2025-12-08 00:00:00",
     "unique_key_report": {
       "collisions_augmented": 0
     },
@@ -57,31 +57,41 @@
   },
   "by_date": [
     {
-      "Date": "2025-12-02",
+      "Date": "2025-12-05",
       "n_matches": 1,
-      "mean_conf": 0.6313948353923583,
-      "mean_entropy": 0.9066658259697171,
-      "mean_margin": 0.4111842818145961,
+      "mean_conf": 0.6436203177420625,
+      "mean_entropy": 0.8865152473979367,
+      "mean_margin": 0.4198021074164927,
       "pct_pick_H": 1.0,
       "pct_pick_D": 0.0,
       "pct_pick_A": 0.0
     },
     {
-      "Date": "2025-12-03",
-      "n_matches": 1,
-      "mean_conf": 0.6011582568544638,
-      "mean_entropy": 0.943027580007295,
-      "mean_margin": 0.36732613591945873,
-      "pct_pick_H": 0.0,
+      "Date": "2025-12-06",
+      "n_matches": 4,
+      "mean_conf": 0.5825517064238792,
+      "mean_entropy": 0.9269025727704854,
+      "mean_margin": 0.30572746323801425,
+      "pct_pick_H": 0.75,
       "pct_pick_D": 0.0,
-      "pct_pick_A": 1.0
+      "pct_pick_A": 0.25
     },
     {
-      "Date": "2026-01-11",
-      "n_matches": 8,
-      "mean_conf": 0.6053722548474941,
-      "mean_entropy": 0.90811595211404,
-      "mean_margin": 0.3338762270164234,
+      "Date": "2025-12-07",
+      "n_matches": 4,
+      "mean_conf": 0.5963334619429097,
+      "mean_entropy": 0.9292200067164155,
+      "mean_margin": 0.34854747195089025,
+      "pct_pick_H": 1.0,
+      "pct_pick_D": 0.0,
+      "pct_pick_A": 0.0
+    },
+    {
+      "Date": "2025-12-08",
+      "n_matches": 1,
+      "mean_conf": 0.6163982460996796,
+      "mean_entropy": 0.9115126621471578,
+      "mean_margin": 0.3629360558765844,
       "pct_pick_H": 1.0,
       "pct_pick_D": 0.0,
       "pct_pick_A": 0.0
