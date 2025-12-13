@@ -1,6 +1,6 @@
 {
-  "generated_at": "20251212",
-  "run_code": "008558",
+  "generated_at": "20251213",
+  "run_code": "244828",
   "model": {
     "type": "LogisticRegression(multinomial)",
     "C": 1.0,
@@ -41,7 +41,7 @@
   },
   "data": {
     "n_future_rows_out": 10,
-    "future_min_date": "2025-12-12 00:00:00",
+    "future_min_date": "2025-12-13 00:00:00",
     "future_max_date": "2025-12-15 00:00:00",
     "unique_key_report": {
       "collisions_augmented": 0
@@ -57,41 +57,31 @@
   },
   "by_date": [
     {
-      "Date": "2025-12-12",
-      "n_matches": 1,
-      "mean_conf": 0.5199418712841642,
-      "mean_entropy": 1.0029778417210418,
-      "mean_margin": 0.2076046192425537,
-      "pct_pick_H": 1.0,
-      "pct_pick_D": 0.0,
-      "pct_pick_A": 0.0
-    },
-    {
       "Date": "2025-12-13",
       "n_matches": 4,
-      "mean_conf": 0.6121603439840627,
-      "mean_entropy": 0.8096925602837055,
-      "mean_margin": 0.3980538627381512,
-      "pct_pick_H": 1.0,
-      "pct_pick_D": 0.0,
-      "pct_pick_A": 0.0
+      "mean_conf": 0.6067314987688278,
+      "mean_entropy": 0.8132274054051412,
+      "mean_margin": 0.39475703976981336,
+      "pct_pick_H": 0.5,
+      "pct_pick_D": 0.25,
+      "pct_pick_A": 0.25
     },
     {
       "Date": "2025-12-14",
-      "n_matches": 4,
-      "mean_conf": 0.49422678317909974,
-      "mean_entropy": 1.0241813286275927,
-      "mean_margin": 0.19548102415151491,
-      "pct_pick_H": 0.25,
+      "n_matches": 5,
+      "mean_conf": 0.49936980080011023,
+      "mean_entropy": 1.0199406312462838,
+      "mean_margin": 0.19790574316971715,
+      "pct_pick_H": 0.4,
       "pct_pick_D": 0.0,
-      "pct_pick_A": 0.75
+      "pct_pick_A": 0.6
     },
     {
       "Date": "2025-12-15",
       "n_matches": 1,
-      "mean_conf": 0.39103006740584045,
-      "mean_entropy": 1.0902193788615357,
-      "mean_margin": 0.0683074280432569,
+      "mean_conf": 0.3910300674058408,
+      "mean_entropy": 1.090219378861536,
+      "mean_margin": 0.06830742804325901,
       "pct_pick_H": 0.0,
       "pct_pick_D": 0.0,
       "pct_pick_A": 1.0
