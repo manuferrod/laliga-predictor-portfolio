@@ -163,20 +163,20 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 162,2025-12-19,23.34,7.69,-1.0,-1.0,valencia,mallorca,Draw,Home,Home
 163,2025-12-20,23.54,7.89,0.2,0.2,real madrid,sevilla,Home,Home,Home
 164,2025-12-20,22.54,6.89,-1.0,-1.0,levante,sociedad,Draw,Away,Away
-165,2025-12-20,21.54,8.09,-1.0,1.2,osasuna,alaves,Home,Draw,Home
-166,2025-12-20,20.54,7.09,-1.0,-1.0,real oviedo,celta,Draw,Away,Away
-167,2025-12-21,21.94,8.49,1.4,1.4,elche,vallecano,Home,Home,Home
-168,2025-12-21,22.6,9.15,0.66,0.66,girona,ath madrid,Away,Away,Away
-169,2025-12-21,23.45,10.0,0.85,0.85,villarreal,barcelona,Away,Away,Away
-170,2025-12-21,24.15,10.7,0.7,0.7,betis,getafe,Home,Home,Home
-171,2025-12-22,23.15,9.7,-1.0,-1.0,ath bilbao,espanol,Away,Home,Home
-172,2026-01-02,23.15,9.7,0.0,0.0,vallecano,getafe,Draw,Home,Home
-173,2026-01-03,23.15,9.7,0.0,0.0,celta,valencia,Draw,Home,Home
-174,2026-01-03,23.15,9.7,0.0,0.0,espanol,barcelona,Draw,Away,Away
-175,2026-01-03,23.15,9.7,0.0,0.0,osasuna,ath bilbao,Draw,Draw,Away
-176,2026-01-03,23.15,9.7,0.0,0.0,elche,villarreal,Draw,Away,Away
-177,2026-01-04,23.15,9.7,0.0,0.0,alaves,real oviedo,Draw,Home,Home
-178,2026-01-04,23.15,9.7,0.0,0.0,mallorca,girona,Draw,Draw,Home
-179,2026-01-04,23.15,9.7,0.0,0.0,real madrid,betis,Draw,Home,Home
-180,2026-01-04,23.15,9.7,0.0,0.0,sevilla,levante,Draw,Home,Home
-181,2026-01-04,23.15,9.7,0.0,0.0,sociedad,ath madrid,Draw,Away,Away
+165,2025-12-20,23.69,8.04,1.15,1.15,osasuna,alaves,Home,Home,Home
+166,2025-12-20,22.69,7.04,-1.0,-1.0,real oviedo,celta,Draw,Away,Away
+167,2025-12-21,24.09,8.44,1.4,1.4,elche,vallecano,Home,Home,Home
+168,2025-12-21,24.75,9.1,0.66,0.66,girona,ath madrid,Away,Away,Away
+169,2025-12-21,25.6,9.95,0.85,0.85,villarreal,barcelona,Away,Away,Away
+170,2025-12-21,26.3,10.65,0.7,0.7,betis,getafe,Home,Home,Home
+171,2025-12-22,25.3,9.65,-1.0,-1.0,ath bilbao,espanol,Away,Home,Home
+172,2026-01-02,25.3,9.65,0.0,0.0,vallecano,getafe,Draw,Home,Home
+173,2026-01-03,25.3,9.65,0.0,0.0,celta,valencia,Draw,Home,Home
+174,2026-01-03,25.3,9.65,0.0,0.0,espanol,barcelona,Draw,Away,Away
+175,2026-01-03,25.3,9.65,0.0,0.0,osasuna,ath bilbao,Draw,Draw,Away
+176,2026-01-03,25.3,9.65,0.0,0.0,elche,villarreal,Draw,Away,Away
+177,2026-01-04,25.3,9.65,0.0,0.0,alaves,real oviedo,Draw,Home,Home
+178,2026-01-04,25.3,9.65,0.0,0.0,mallorca,girona,Draw,Draw,Home
+179,2026-01-04,25.3,9.65,0.0,0.0,real madrid,betis,Draw,Home,Home
+180,2026-01-04,25.3,9.65,0.0,0.0,sevilla,levante,Draw,Home,Home
+181,2026-01-04,25.3,9.65,0.0,0.0,sociedad,ath madrid,Draw,Away,Away
