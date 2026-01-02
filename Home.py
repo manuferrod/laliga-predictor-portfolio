@@ -4,6 +4,7 @@ from pathlib import Path
 from PIL import Image
 import streamlit as st
 import streamlit.components.v1 as components
+from scripts.io import get_data_last_update
 
 st.markdown(
     """
@@ -15,7 +16,7 @@ st.markdown(
 # --------- Metadatos del pie ---------
 CONTACT_EMAIL = "manuelfernandezrodriguez1@gmail.com"
 PAYPAL_URL    = "https://paypal.me/LaLiga1x2"
-LAST_UPDATE   = "Octubre 29, 2025"
+LAST_UPDATE   = get_data_last_update()
 DATA_SOURCES = {
     "Football-Data.co.uk": "https://www.football-data.co.uk/",
     "Understat": "https://understat.com/",
