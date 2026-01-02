@@ -1,0 +1,178 @@
+[
+  {
+    "test_season": 2010,
+    "train_until": 2009,
+    "n_matches": 380,
+    "profit_model": 43.59,
+    "profit_bet365": 36.99,
+    "roi_model": 0.11471052631578948,
+    "roi_bet365": 0.0973421052631579,
+    "csv_file": "cumprofit_2010.csv",
+    "json_file": "cumprofit_2010.json"
+  },
+  {
+    "test_season": 2011,
+    "train_until": 2010,
+    "n_matches": 380,
+    "profit_model": -23.34,
+    "profit_bet365": -30.06,
+    "roi_model": -0.061421052631578946,
+    "roi_bet365": -0.07910526315789473,
+    "csv_file": "cumprofit_2011.csv",
+    "json_file": "cumprofit_2011.json"
+  },
+  {
+    "test_season": 2012,
+    "train_until": 2011,
+    "n_matches": 380,
+    "profit_model": -35.5,
+    "profit_bet365": -19.43,
+    "roi_model": -0.09342105263157895,
+    "roi_bet365": -0.051131578947368424,
+    "csv_file": "cumprofit_2012.csv",
+    "json_file": "cumprofit_2012.json"
+  },
+  {
+    "test_season": 2013,
+    "train_until": 2012,
+    "n_matches": 380,
+    "profit_model": -22.37,
+    "profit_bet365": -35.03,
+    "roi_model": -0.058868421052631584,
+    "roi_bet365": -0.0921842105263158,
+    "csv_file": "cumprofit_2013.csv",
+    "json_file": "cumprofit_2013.json"
+  },
+  {
+    "test_season": 2014,
+    "train_until": 2013,
+    "n_matches": 380,
+    "profit_model": -22.16,
+    "profit_bet365": -20.14,
+    "roi_model": -0.05831578947368421,
+    "roi_bet365": -0.053,
+    "csv_file": "cumprofit_2014.csv",
+    "json_file": "cumprofit_2014.json"
+  },
+  {
+    "test_season": 2015,
+    "train_until": 2014,
+    "n_matches": 380,
+    "profit_model": -8.64,
+    "profit_bet365": -23.78,
+    "roi_model": -0.02273684210526316,
+    "roi_bet365": -0.06257894736842105,
+    "csv_file": "cumprofit_2015.csv",
+    "json_file": "cumprofit_2015.json"
+  },
+  {
+    "test_season": 2016,
+    "train_until": 2015,
+    "n_matches": 380,
+    "profit_model": 15.47,
+    "profit_bet365": -2.53,
+    "roi_model": 0.040710526315789475,
+    "roi_bet365": -0.006657894736842105,
+    "csv_file": "cumprofit_2016.csv",
+    "json_file": "cumprofit_2016.json"
+  },
+  {
+    "test_season": 2017,
+    "train_until": 2016,
+    "n_matches": 380,
+    "profit_model": -8.72,
+    "profit_bet365": -13.69,
+    "roi_model": -0.022947368421052633,
+    "roi_bet365": -0.036026315789473684,
+    "csv_file": "cumprofit_2017.csv",
+    "json_file": "cumprofit_2017.json"
+  },
+  {
+    "test_season": 2018,
+    "train_until": 2017,
+    "n_matches": 380,
+    "profit_model": -27.65,
+    "profit_bet365": -53.67,
+    "roi_model": -0.07276315789473684,
+    "roi_bet365": -0.14123684210526316,
+    "csv_file": "cumprofit_2018.csv",
+    "json_file": "cumprofit_2018.json"
+  },
+  {
+    "test_season": 2019,
+    "train_until": 2018,
+    "n_matches": 380,
+    "profit_model": 4.98,
+    "profit_bet365": -15.43,
+    "roi_model": 0.013105263157894738,
+    "roi_bet365": -0.040605263157894735,
+    "csv_file": "cumprofit_2019.csv",
+    "json_file": "cumprofit_2019.json"
+  },
+  {
+    "test_season": 2020,
+    "train_until": 2019,
+    "n_matches": 380,
+    "profit_model": 5.39,
+    "profit_bet365": -4.61,
+    "roi_model": 0.014184210526315789,
+    "roi_bet365": -0.012131578947368422,
+    "csv_file": "cumprofit_2020.csv",
+    "json_file": "cumprofit_2020.json"
+  },
+  {
+    "test_season": 2021,
+    "train_until": 2020,
+    "n_matches": 380,
+    "profit_model": 14.61,
+    "profit_bet365": -14.45,
+    "roi_model": 0.03844736842105263,
+    "roi_bet365": -0.03802631578947368,
+    "csv_file": "cumprofit_2021.csv",
+    "json_file": "cumprofit_2021.json"
+  },
+  {
+    "test_season": 2022,
+    "train_until": 2021,
+    "n_matches": 380,
+    "profit_model": 17.41,
+    "profit_bet365": 12.38,
+    "roi_model": 0.04581578947368421,
+    "roi_bet365": 0.032578947368421055,
+    "csv_file": "cumprofit_2022.csv",
+    "json_file": "cumprofit_2022.json"
+  },
+  {
+    "test_season": 2023,
+    "train_until": 2022,
+    "n_matches": 380,
+    "profit_model": 43.87,
+    "profit_bet365": 8.33,
+    "roi_model": 0.11544736842105262,
+    "roi_bet365": 0.02192105263157895,
+    "csv_file": "cumprofit_2023.csv",
+    "json_file": "cumprofit_2023.json"
+  },
+  {
+    "test_season": 2024,
+    "train_until": 2023,
+    "n_matches": 380,
+    "profit_model": 10.95,
+    "profit_bet365": -6.79,
+    "roi_model": 0.028815789473684208,
+    "roi_bet365": -0.01786842105263158,
+    "csv_file": "cumprofit_2024.csv",
+    "json_file": "cumprofit_2024.json"
+  },
+  {
+    "test_season": 2025,
+    "train_until": 2024,
+    "n_matches": 181,
+    "profit_model": 23.15,
+    "profit_bet365": 9.7,
+    "roi_model": 0.12790055248618784,
+    "roi_bet365": 0.05359116022099447,
+    "csv_file": "cumprofit_2025.csv",
+    "json_file": "cumprofit_2025.json"
+  }
+]
