@@ -1,6 +1,6 @@
 {
-  "generated_at": "20251219",
-  "run_code": "218645",
+  "generated_at": "20260102",
+  "run_code": "129841",
   "model": {
     "type": "LogisticRegression(multinomial)",
     "C": 1.0,
@@ -41,8 +41,8 @@
   },
   "data": {
     "n_future_rows_out": 10,
-    "future_min_date": "2025-12-19 00:00:00",
-    "future_max_date": "2025-12-22 00:00:00",
+    "future_min_date": "2026-01-02 00:00:00",
+    "future_max_date": "2026-01-04 00:00:00",
     "unique_key_report": {
       "collisions_augmented": 0
     },
@@ -57,44 +57,34 @@
   },
   "by_date": [
     {
-      "Date": "2025-12-19",
+      "Date": "2026-01-02",
       "n_matches": 1,
-      "mean_conf": 0.548667308217321,
-      "mean_entropy": 0.9916757520851599,
-      "mean_margin": 0.2767016422072465,
+      "mean_conf": 0.46448218589871937,
+      "mean_entropy": 1.0232670509777801,
+      "mean_margin": 0.09636723837807498,
       "pct_pick_H": 1.0,
       "pct_pick_D": 0.0,
       "pct_pick_A": 0.0
     },
     {
-      "Date": "2025-12-20",
+      "Date": "2026-01-03",
       "n_matches": 4,
-      "mean_conf": 0.5300522938308362,
-      "mean_entropy": 0.9064141530897784,
-      "mean_margin": 0.24927841538962697,
-      "pct_pick_H": 0.5,
-      "pct_pick_D": 0.0,
+      "mean_conf": 0.49361609705043064,
+      "mean_entropy": 1.0024455891521709,
+      "mean_margin": 0.21384428018368806,
+      "pct_pick_H": 0.25,
+      "pct_pick_D": 0.25,
       "pct_pick_A": 0.5
     },
     {
-      "Date": "2025-12-21",
-      "n_matches": 4,
-      "mean_conf": 0.5787705844502404,
-      "mean_entropy": 0.9468210775761525,
-      "mean_margin": 0.3410322432135262,
-      "pct_pick_H": 0.5,
-      "pct_pick_D": 0.0,
-      "pct_pick_A": 0.5
-    },
-    {
-      "Date": "2025-12-22",
-      "n_matches": 1,
-      "mean_conf": 0.7056424931087991,
-      "mean_entropy": 0.8080492830342109,
-      "mean_margin": 0.5413642468639737,
-      "pct_pick_H": 1.0,
-      "pct_pick_D": 0.0,
-      "pct_pick_A": 0.0
+      "Date": "2026-01-04",
+      "n_matches": 5,
+      "mean_conf": 0.5551397704882459,
+      "mean_entropy": 0.9471532735111801,
+      "mean_margin": 0.28234912039269505,
+      "pct_pick_H": 0.6,
+      "pct_pick_D": 0.2,
+      "pct_pick_A": 0.2
     }
   ]
 }
