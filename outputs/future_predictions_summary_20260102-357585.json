@@ -1,6 +1,6 @@
 {
   "generated_at": "20260102",
-  "run_code": "796396",
+  "run_code": "357585",
   "model": {
     "type": "LogisticRegression(multinomial)",
     "C": 1.0,
@@ -59,9 +59,9 @@
     {
       "Date": "2026-01-02",
       "n_matches": 1,
-      "mean_conf": 0.5151548145199284,
-      "mean_entropy": 0.9896948789897679,
-      "mean_margin": 0.17675136005816694,
+      "mean_conf": 0.508968437628525,
+      "mean_entropy": 0.9937939480102361,
+      "mean_margin": 0.16626011500813004,
       "pct_pick_H": 1.0,
       "pct_pick_D": 0.0,
       "pct_pick_A": 0.0
