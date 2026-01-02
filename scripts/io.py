@@ -1,6 +1,6 @@
 # scripts/io.py
 from __future__ import annotations
-
+import datetime
 import numpy as np
 from pathlib import Path
 import json
@@ -50,6 +50,22 @@ def _to_season_int(season) -> int:
         if m:
             return int(m.group(0))
         raise ValueError(f"Temporada no válida: {season!r}")
+
+def get_data_last_update() -> str:
+    """Devuelve la fecha de modificación del archivo más reciente en outputs/."""
+    if not BASE.exists():
+        return "Desconocida"
+    # Busca cualquier archivo en outputs
+    files = list(BASE.glob("*"))
+    if not files:
+        return "Desconocida"
+    # Encuentra el más nuevo
+    latest = max(files, key=lambda f: f.stat().st_mtime)
+    dt = datetime.datetime.fromtimestamp(latest.stat().st_mtime)
+    # Formato: 02 de Enero, 2026
+    meses = {1:"Enero", 2:"Febrero", 3:"Marzo", 4:"Abril", 5:"Mayo", 6:"Junio", 
+             7:"Julio", 8:"Agosto", 9:"Septiembre", 10:"Octubre", 11:"Noviembre", 12:"Diciembre"}
+    return f"{dt.day} de {meses.get(dt.month, 'Enero')}, {dt.year}"
 
 # -------------------------
 # Lectura básica (fail-soft)
@@ -175,16 +191,34 @@ def current_season() -> int | None:
 # -------------------------
 @st.cache_data
 def list_seasons_from_matchlogs(tag: str = "base") -> list[int]:
-    folder = {"base": "matchlogs_base", "smote": "matchlogs_smote"}.get(tag, tag)
-    root = _p(folder)
-    if not root.exists():
+    # Buscar directamente en BASE (outputs/)
+    if not BASE.exists():
         return []
+    
     out = []
-    for f in root.glob("matchlog_*.csv"):
+    # Definir el prefijo según el tag
+    if tag in ("base", ""):
+        prefix = "matchlogs_"
+        exclude = "market" # Para no confundir matchlogs_2025 con matchlogs_market_2025
+    else:
+        prefix = f"matchlogs_{tag}_"
+        exclude = None
+
+    for f in BASE.glob(f"{prefix}*.csv"):
+        # Evitar falsos positivos (ej: matchlogs_market cuando buscamos base)
+        if exclude and exclude in f.name:
+            continue
+            
         try:
-            out.append(int(f.stem.split("_")[1]))
+            # Extraer año: matchlogs_2025.csv -> 2025
+            # Usamos una heurística simple: coger los dígitos del nombre
+            parts = f.stem.split("_")
+            year = parts[-1] 
+            if year.isdigit():
+                out.append(int(year))
         except Exception:
             pass
+            
     return sorted(set(out))
 
 @st.cache_data
@@ -246,18 +280,21 @@ def load_roc_grid(tag: str = "base") -> dict:
 
 @st.cache_data
 def load_matchlog(model: str, season: int) -> pd.DataFrame:
-    folder = f"matchlogs_{model}"
     try:
         s = _to_season_int(season)
     except Exception:
-        # si no se puede interpretar, devolvemos vacío (Home lo maneja bonito)
         return pd.DataFrame()
-    rel = f"{folder}/matchlog_{s}.csv"
-    p = BASE / rel
-    if not p.exists():
-        # devolvemos DF vacío para que Home muestre el aviso “No hay matchlog…”
-        return pd.DataFrame()
-    return load_csv(rel)
+    
+    # Lógica plana: todo está en la raíz de outputs/
+    if model in ("base", ""):
+        filename = f"matchlogs_{s}.csv"
+    elif model in ("market", "bet365"):
+        filename = f"matchlogs_market_{s}.csv"
+    else:
+        # Por si usas smote u otros en el futuro con el formato plano
+        filename = f"matchlogs_{model}_{s}.csv"
+        
+    return load_csv(filename)
 
 # -------------------------
 # Baseline Bet365
