@@ -348,7 +348,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 347,2013-05-11,-34.35,-20.78,-1.0,-1.0,espanol,real madrid,Draw,Away,Away
 348,2013-05-12,-33.44,-19.87,0.91,0.91,ath madrid,barcelona,Away,Away,Away
 349,2013-05-12,-32.53,-18.96,0.91,0.91,betis,celta,Home,Home,Home
-350,2013-05-12,-33.53,-19.96,-1.0,-1.0,malaga,sevilla,Draw,Away,Home
+350,2013-05-12,-33.53,-19.96,-1.0,-1.0,malaga,sevilla,Draw,Home,Home
 351,2013-05-12,-32.48,-18.91,1.05,1.05,vallecano,valencia,Away,Away,Away
 352,2013-05-13,-33.48,-19.91,-1.0,-1.0,sociedad,granada,Draw,Home,Home
 353,2013-05-18,-34.48,-20.91,-1.0,-1.0,sevilla,sociedad,Away,Home,Home

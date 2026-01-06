@@ -364,18 +364,18 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 363,2014-05-11,-20.67,-30.08,-1.0,-1.0,elche,barcelona,Draw,Away,Away
 364,2014-05-11,-21.67,-31.08,-1.0,-1.0,granada,almeria,Away,Home,Home
 365,2014-05-11,-20.82,-30.23,0.85,0.85,getafe,sevilla,Home,Home,Home
-366,2014-05-11,-18.57,-31.23,2.25,-1.0,espanol,osasuna,Draw,Draw,Home
-367,2014-05-11,-19.57,-32.23,-1.0,-1.0,celta,real madrid,Home,Away,Away
-368,2014-05-11,-20.57,-33.23,-1.0,-1.0,betis,valladolid,Home,Away,Away
-369,2014-05-11,-21.57,-34.23,-1.0,-1.0,ath madrid,malaga,Draw,Home,Home
-370,2014-05-11,-22.57,-35.23,-1.0,-1.0,ath bilbao,sociedad,Draw,Home,Home
-371,2014-05-16,-21.66,-34.32,0.91,0.91,malaga,levante,Home,Home,Home
-372,2014-05-17,-22.66,-35.32,-1.0,-1.0,barcelona,ath madrid,Draw,Home,Home
-373,2014-05-17,-22.33,-34.99,0.33,0.33,real madrid,espanol,Home,Home,Home
-374,2014-05-17,-21.58,-34.24,0.75,0.75,valencia,celta,Home,Home,Home
-375,2014-05-18,-22.58,-35.24,-1.0,-1.0,sociedad,villarreal,Away,Home,Home
-376,2014-05-18,-21.78,-34.44,0.8,0.8,sevilla,elche,Home,Home,Home
-377,2014-05-18,-22.78,-35.44,-1.0,-1.0,valladolid,granada,Away,Home,Home
-378,2014-05-18,-23.78,-36.44,-1.0,-1.0,almeria,ath bilbao,Draw,Home,Home
-379,2014-05-18,-23.42,-36.08,0.36,0.36,osasuna,betis,Home,Home,Home
-380,2014-05-18,-22.37,-35.03,1.05,1.05,vallecano,getafe,Away,Away,Away
+366,2014-05-11,-21.82,-31.23,-1.0,-1.0,espanol,osasuna,Draw,Home,Home
+367,2014-05-11,-22.82,-32.23,-1.0,-1.0,celta,real madrid,Home,Away,Away
+368,2014-05-11,-23.82,-33.23,-1.0,-1.0,betis,valladolid,Home,Away,Away
+369,2014-05-11,-24.82,-34.23,-1.0,-1.0,ath madrid,malaga,Draw,Home,Home
+370,2014-05-11,-25.82,-35.23,-1.0,-1.0,ath bilbao,sociedad,Draw,Home,Home
+371,2014-05-16,-24.91,-34.32,0.91,0.91,malaga,levante,Home,Home,Home
+372,2014-05-17,-25.91,-35.32,-1.0,-1.0,barcelona,ath madrid,Draw,Home,Home
+373,2014-05-17,-25.58,-34.99,0.33,0.33,real madrid,espanol,Home,Home,Home
+374,2014-05-17,-24.83,-34.24,0.75,0.75,valencia,celta,Home,Home,Home
+375,2014-05-18,-25.83,-35.24,-1.0,-1.0,sociedad,villarreal,Away,Home,Home
+376,2014-05-18,-25.03,-34.44,0.8,0.8,sevilla,elche,Home,Home,Home
+377,2014-05-18,-26.03,-35.44,-1.0,-1.0,valladolid,granada,Away,Home,Home
+378,2014-05-18,-27.03,-36.44,-1.0,-1.0,almeria,ath bilbao,Draw,Home,Home
+379,2014-05-18,-26.67,-36.08,0.36,0.36,osasuna,betis,Home,Home,Home
+380,2014-05-18,-25.62,-35.03,1.05,1.05,vallecano,getafe,Away,Away,Away

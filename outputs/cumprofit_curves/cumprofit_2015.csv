@@ -97,7 +97,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 96,2015-10-31,3.66,-17.08,0.29,0.29,getafe,barcelona,Away,Away,Away
 97,2015-11-01,4.96,-15.78,1.3,1.3,betis,ath bilbao,Away,Away,Away
 98,2015-11-01,6.16,-14.58,1.2,1.2,eibar,vallecano,Home,Home,Home
-99,2015-11-01,5.16,-15.58,-1.0,-1.0,espanol,granada,Draw,Home,Home
+99,2015-11-01,5.16,-15.58,-1.0,-1.0,espanol,granada,Draw,Away,Home
 100,2015-11-01,6.54,-14.2,1.38,1.38,sp gijon,malaga,Home,Home,Home
 101,2015-11-06,5.54,-12.45,-1.0,1.75,las palmas,sociedad,Home,Away,Home
 102,2015-11-07,4.54,-13.45,-1.0,-1.0,malaga,betis,Away,Home,Home
