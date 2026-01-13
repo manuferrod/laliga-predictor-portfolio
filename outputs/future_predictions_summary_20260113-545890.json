@@ -1,6 +1,6 @@
 {
-  "generated_at": "20260108",
-  "run_code": "430222",
+  "generated_at": "20260113",
+  "run_code": "545890",
   "model": {
     "type": "LogisticRegression(multinomial)",
     "C": 1.0,
@@ -40,9 +40,9 @@
     "season_filter": 2025
   },
   "data": {
-    "n_future_rows_out": 8,
-    "future_min_date": "2026-01-09 00:00:00",
-    "future_max_date": "2026-01-12 00:00:00",
+    "n_future_rows_out": 10,
+    "future_min_date": "2026-01-16 00:00:00",
+    "future_max_date": "2026-01-19 00:00:00",
     "unique_key_report": {
       "collisions_augmented": 0
     },
@@ -51,49 +51,49 @@
         "season": 2025,
         "csv": "outputs/future_predictions_2025.csv",
         "json": "outputs/future_predictions_2025.json",
-        "n_rows": 8
+        "n_rows": 10
       }
     ]
   },
   "by_date": [
     {
-      "Date": "2026-01-09",
+      "Date": "2026-01-16",
       "n_matches": 1,
-      "mean_conf": 0.458771125195967,
-      "mean_entropy": 1.0252791037512743,
-      "mean_margin": 0.08590025015781882,
-      "pct_pick_H": 0.0,
+      "mean_conf": 0.5262191089232672,
+      "mean_entropy": 1.0116524841264416,
+      "mean_margin": 0.24454070202134343,
+      "pct_pick_H": 1.0,
       "pct_pick_D": 0.0,
-      "pct_pick_A": 1.0
+      "pct_pick_A": 0.0
     },
     {
-      "Date": "2026-01-10",
+      "Date": "2026-01-17",
       "n_matches": 4,
-      "mean_conf": 0.5343449485908007,
-      "mean_entropy": 0.969299806615455,
-      "mean_margin": 0.26441221046237884,
+      "mean_conf": 0.6220270434134533,
+      "mean_entropy": 0.8336605248225571,
+      "mean_margin": 0.389956929612861,
       "pct_pick_H": 0.75,
       "pct_pick_D": 0.0,
       "pct_pick_A": 0.25
     },
     {
-      "Date": "2026-01-11",
-      "n_matches": 2,
-      "mean_conf": 0.46921115227829574,
-      "mean_entropy": 1.0164336700221628,
-      "mean_margin": 0.1556498068575239,
+      "Date": "2026-01-18",
+      "n_matches": 4,
+      "mean_conf": 0.571204478835593,
+      "mean_entropy": 0.9069974360961636,
+      "mean_margin": 0.3191568583864288,
       "pct_pick_H": 0.5,
-      "pct_pick_D": 0.5,
-      "pct_pick_A": 0.0
+      "pct_pick_D": 0.25,
+      "pct_pick_A": 0.25
     },
     {
-      "Date": "2026-01-12",
+      "Date": "2026-01-19",
       "n_matches": 1,
-      "mean_conf": 0.40870060286358223,
-      "mean_entropy": 1.0527805154996905,
-      "mean_margin": 0.014541339080374582,
-      "pct_pick_H": 0.0,
-      "pct_pick_D": 1.0,
+      "mean_conf": 0.43057266790835874,
+      "mean_entropy": 1.0781129577073123,
+      "mean_margin": 0.14173822333122282,
+      "pct_pick_H": 1.0,
+      "pct_pick_D": 0.0,
       "pct_pick_A": 0.0
     }
   ]

@@ -322,7 +322,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 321,2020-06-30,8.88,-10.55,-1.0,-1.0,barcelona,ath madrid,Draw,Home,Home
 322,2020-06-30,9.83,-9.6,0.95,0.95,leganes,sevilla,Away,Away,Away
 323,2020-06-30,8.83,-10.6,-1.0,-1.0,mallorca,celta,Home,Away,Away
-324,2020-07-01,7.83,-11.6,-1.0,-1.0,alaves,granada,Away,Home,Home
+324,2020-07-01,7.83,-11.6,-1.0,-1.0,alaves,granada,Away,Draw,Home
 325,2020-07-01,6.83,-10.2,-1.0,1.4,betis,villarreal,Away,Home,Away
 326,2020-07-01,5.83,-11.2,-1.0,-1.0,valencia,ath bilbao,Away,Home,Home
 327,2020-07-01,4.83,-12.2,-1.0,-1.0,valladolid,levante,Draw,Home,Home
