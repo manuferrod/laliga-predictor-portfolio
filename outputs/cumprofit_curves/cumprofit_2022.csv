@@ -12,370 +12,370 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 11,2022-08-19,-0.31,-0.31,-1.0,-1.0,sevilla,valladolid,Draw,Home,Home
 12,2022-08-19,-1.31,-1.31,-1.0,-1.0,espanol,vallecano,Away,Home,Home
 13,2022-08-20,-0.65,-0.65,0.66,0.66,celta,real madrid,Away,Away,Away
-14,2022-08-20,-1.65,0.75,-1.0,1.4,mallorca,betis,Away,Draw,Away
-15,2022-08-20,-0.75,1.65,0.9,0.9,osasuna,cadiz,Home,Home,Home
-16,2022-08-21,0.05,2.45,0.8,0.8,ath bilbao,valencia,Home,Home,Home
-17,2022-08-21,-0.95,1.45,-1.0,-1.0,ath madrid,villarreal,Away,Home,Home
-18,2022-08-21,0.15,2.55,1.1,1.1,sociedad,barcelona,Away,Away,Away
-19,2022-08-22,2.35,1.55,2.2,-1.0,elche,almeria,Draw,Draw,Home
-20,2022-08-22,1.35,3.35,-1.0,1.8,girona,getafe,Home,Draw,Home
-21,2022-08-26,3.1,5.1,1.75,1.75,girona,celta,Away,Away,Away
-22,2022-08-26,3.9,5.9,0.8,0.8,betis,osasuna,Home,Home,Home
-23,2022-08-27,2.9,4.9,-1.0,-1.0,vallecano,mallorca,Away,Home,Home
-24,2022-08-27,1.9,3.9,-1.0,-1.0,almeria,sevilla,Home,Away,Away
-25,2022-08-27,3.05,5.05,1.15,1.15,elche,sociedad,Away,Away,Away
-26,2022-08-28,3.19,5.19,0.14,0.14,barcelona,valladolid,Home,Home,Home
-27,2022-08-28,3.64,5.64,0.45,0.45,espanol,real madrid,Away,Away,Away
-28,2022-08-28,2.64,4.64,-1.0,-1.0,getafe,villarreal,Draw,Away,Away
-29,2022-08-29,1.64,5.79,-1.0,1.15,cadiz,ath bilbao,Away,Draw,Away
-30,2022-08-29,2.64,6.79,1.0,1.0,valencia,ath madrid,Away,Away,Away
-31,2022-09-02,3.3,7.45,0.66,0.66,celta,cadiz,Home,Home,Home
-32,2022-09-03,5.5,6.45,2.2,-1.0,sociedad,ath madrid,Draw,Draw,Away
-33,2022-09-03,6.3,7.25,0.8,0.8,sevilla,barcelona,Away,Away,Away
-34,2022-09-03,6.7,7.65,0.4,0.4,real madrid,betis,Home,Home,Home
-35,2022-09-03,5.7,6.65,-1.0,-1.0,mallorca,girona,Draw,Home,Home
-36,2022-09-04,4.7,5.65,-1.0,-1.0,ath bilbao,espanol,Away,Home,Home
-37,2022-09-04,5.7,6.65,1.0,1.0,osasuna,vallecano,Home,Home,Home
-38,2022-09-04,6.6,7.55,0.9,0.9,valencia,getafe,Home,Home,Home
-39,2022-09-04,6.93,7.88,0.33,0.33,villarreal,elche,Home,Home,Home
-40,2022-09-05,8.23,9.18,1.3,1.3,valladolid,almeria,Home,Home,Home
-41,2022-09-09,9.48,10.43,1.25,1.25,girona,valladolid,Home,Home,Home
-42,2022-09-10,8.48,11.93,-1.0,1.5,espanol,sevilla,Away,Draw,Away
-43,2022-09-10,7.48,13.55,-1.0,1.62,vallecano,valencia,Home,Draw,Home
-44,2022-09-10,8.09,14.16,0.61,0.61,ath madrid,celta,Home,Home,Home
-45,2022-09-10,8.31,14.38,0.22,0.22,cadiz,barcelona,Away,Away,Away
-46,2022-09-11,8.56,14.63,0.25,0.25,real madrid,mallorca,Home,Home,Home
-47,2022-09-11,7.56,13.63,-1.0,-1.0,getafe,sociedad,Home,Away,Away
-48,2022-09-11,8.46,14.53,0.9,0.9,elche,ath bilbao,Away,Away,Away
-49,2022-09-11,7.46,13.53,-1.0,-1.0,betis,villarreal,Home,Away,Away
-50,2022-09-12,6.46,12.53,-1.0,-1.0,almeria,osasuna,Away,Home,Home
-51,2022-09-16,5.46,11.53,-1.0,-1.0,valladolid,cadiz,Away,Home,Home
-52,2022-09-17,5.99,12.06,0.53,0.53,ath bilbao,vallecano,Home,Home,Home
-53,2022-09-17,6.07,12.14,0.08,0.08,barcelona,elche,Home,Home,Home
-54,2022-09-17,7.07,13.14,1.0,1.0,mallorca,almeria,Home,Home,Home
-55,2022-09-17,8.37,14.44,1.3,1.3,valencia,celta,Home,Home,Home
-56,2022-09-18,7.37,13.44,-1.0,-1.0,villarreal,sevilla,Draw,Home,Home
-57,2022-09-18,6.37,12.44,-1.0,-1.0,osasuna,getafe,Away,Home,Home
-58,2022-09-18,7.07,13.14,0.7,0.7,sociedad,espanol,Home,Home,Home
-59,2022-09-18,8.37,14.44,1.3,1.3,ath madrid,real madrid,Away,Away,Away
-60,2022-09-18,9.12,15.19,0.75,0.75,betis,girona,Home,Home,Home
-61,2022-09-30,9.45,15.52,0.33,0.33,ath bilbao,almeria,Home,Home,Home
-62,2022-10-01,8.45,14.52,-1.0,-1.0,cadiz,villarreal,Draw,Away,Away
-63,2022-10-01,7.45,13.52,-1.0,-1.0,getafe,valladolid,Away,Draw,Home
-64,2022-10-01,7.81,13.88,0.36,0.36,mallorca,barcelona,Away,Away,Away
-65,2022-10-01,6.81,15.38,-1.0,1.5,sevilla,ath madrid,Away,Draw,Away
-66,2022-10-02,5.81,14.38,-1.0,-1.0,real madrid,osasuna,Draw,Home,Home
-67,2022-10-02,7.26,15.83,1.45,1.45,celta,betis,Home,Home,Home
-68,2022-10-02,6.26,14.83,-1.0,-1.0,espanol,valencia,Draw,Home,Home
-69,2022-10-02,7.56,16.13,1.3,1.3,girona,sociedad,Away,Away,Away
-70,2022-10-03,8.28,16.85,0.72,0.72,vallecano,elche,Home,Home,Home
-71,2022-10-07,7.28,15.85,-1.0,-1.0,osasuna,valencia,Away,Draw,Home
-72,2022-10-08,6.28,14.85,-1.0,-1.0,almeria,vallecano,Home,Away,Away
-73,2022-10-08,6.73,15.3,0.45,0.45,ath madrid,girona,Home,Home,Home
-74,2022-10-08,7.23,15.8,0.5,0.5,getafe,real madrid,Away,Away,Away
-75,2022-10-08,9.53,14.8,2.3,-1.0,sevilla,ath bilbao,Draw,Draw,Away
-76,2022-10-09,9.81,15.08,0.28,0.28,barcelona,celta,Home,Home,Home
-77,2022-10-09,12.01,14.08,2.2,-1.0,cadiz,espanol,Draw,Draw,Away
-78,2022-10-09,11.01,15.58,-1.0,1.5,sociedad,villarreal,Home,Away,Home
-79,2022-10-09,10.01,14.58,-1.0,-1.0,valladolid,betis,Draw,Home,Away
-80,2022-10-10,12.11,13.58,2.1,-1.0,elche,mallorca,Draw,Draw,Away
-81,2022-10-14,11.11,12.58,-1.0,-1.0,vallecano,getafe,Draw,Home,Home
-82,2022-10-15,10.11,11.58,-1.0,-1.0,valencia,elche,Draw,Home,Home
-83,2022-10-15,11.81,13.28,1.7,1.7,mallorca,sevilla,Away,Away,Away
-84,2022-10-15,10.81,12.28,-1.0,-1.0,ath bilbao,ath madrid,Away,Home,Home
-85,2022-10-15,9.81,11.28,-1.0,-1.0,girona,cadiz,Draw,Home,Home
-86,2022-10-16,10.38,11.85,0.57,0.57,betis,almeria,Home,Home,Home
-87,2022-10-16,9.38,10.85,-1.0,-1.0,celta,sociedad,Away,Home,Home
-88,2022-10-16,10.58,12.05,1.2,1.2,espanol,valladolid,Home,Home,Home
-89,2022-10-16,11.78,13.25,1.2,1.2,real madrid,barcelona,Home,Home,Home
-90,2022-10-17,12.35,13.82,0.57,0.57,villarreal,osasuna,Home,Home,Home
-91,2022-10-18,11.35,12.82,-1.0,-1.0,getafe,ath bilbao,Draw,Away,Away
-92,2022-10-18,10.35,11.82,-1.0,-1.0,ath madrid,vallecano,Draw,Home,Home
-93,2022-10-18,9.35,10.82,-1.0,-1.0,sevilla,valencia,Draw,Home,Home
-94,2022-10-19,8.35,9.82,-1.0,-1.0,valladolid,celta,Home,Away,Away
-95,2022-10-19,8.9,10.37,0.55,0.55,sociedad,mallorca,Home,Home,Home
-96,2022-10-19,7.9,9.37,-1.0,-1.0,cadiz,betis,Draw,Away,Away
-97,2022-10-19,8.2,9.67,0.3,0.3,elche,real madrid,Away,Away,Away
-98,2022-10-20,7.2,11.27,-1.0,1.6,almeria,girona,Home,Draw,Home
-99,2022-10-20,7.7,11.77,0.5,0.5,barcelona,villarreal,Home,Home,Home
-100,2022-10-20,8.75,12.82,1.05,1.05,osasuna,espanol,Home,Home,Home
-101,2022-10-22,9.11,13.18,0.36,0.36,real madrid,sevilla,Home,Home,Home
-102,2022-10-22,8.11,12.18,-1.0,-1.0,valencia,mallorca,Away,Home,Home
-103,2022-10-22,7.11,11.18,-1.0,-1.0,valladolid,sociedad,Home,Away,Away
-104,2022-10-22,7.83,11.9,0.72,0.72,vallecano,cadiz,Home,Home,Home
-105,2022-10-23,8.19,12.26,0.36,0.36,villarreal,almeria,Home,Home,Home
-106,2022-10-23,7.19,11.26,-1.0,-1.0,girona,osasuna,Draw,Home,Home
-107,2022-10-23,8.49,12.56,1.3,1.3,betis,ath madrid,Away,Away,Away
-108,2022-10-23,9.04,13.11,0.55,0.55,barcelona,ath bilbao,Home,Home,Home
-109,2022-10-23,8.04,12.11,-1.0,-1.0,espanol,elche,Draw,Home,Home
-110,2022-10-24,7.04,11.11,-1.0,-1.0,celta,getafe,Draw,Home,Home
-111,2022-10-28,9.14,10.11,2.1,-1.0,mallorca,espanol,Draw,Draw,Home
-112,2022-10-29,9.71,10.68,0.57,0.57,valencia,barcelona,Away,Away,Away
-113,2022-10-29,8.71,9.68,-1.0,-1.0,almeria,celta,Home,Away,Away
-114,2022-10-29,7.71,8.68,-1.0,-1.0,cadiz,ath madrid,Home,Away,Away
-115,2022-10-29,6.71,7.68,-1.0,-1.0,sevilla,vallecano,Away,Home,Home
-116,2022-10-30,5.71,6.68,-1.0,-1.0,real madrid,girona,Draw,Home,Home
-117,2022-10-30,4.71,5.68,-1.0,-1.0,sociedad,betis,Away,Home,Home
-118,2022-10-30,5.91,6.88,1.2,1.2,ath bilbao,villarreal,Home,Home,Home
-119,2022-10-30,6.81,7.78,0.9,0.9,osasuna,valladolid,Home,Home,Home
-120,2022-10-31,5.81,6.78,-1.0,-1.0,elche,getafe,Away,Home,Home
-121,2022-11-04,4.81,5.78,-1.0,-1.0,girona,ath bilbao,Home,Away,Away
-122,2022-11-05,4.89,5.86,0.08,0.08,barcelona,almeria,Home,Home,Home
-123,2022-11-05,3.89,4.86,-1.0,-1.0,celta,osasuna,Away,Home,Home
-124,2022-11-05,2.89,3.86,-1.0,-1.0,getafe,cadiz,Draw,Home,Home
-125,2022-11-05,3.72,4.69,0.83,0.83,valladolid,elche,Home,Home,Home
-126,2022-11-06,2.72,3.69,-1.0,-1.0,sociedad,valencia,Draw,Home,Home
-127,2022-11-06,1.72,2.69,-1.0,-1.0,villarreal,mallorca,Away,Home,Home
-128,2022-11-06,0.72,1.69,-1.0,-1.0,ath madrid,espanol,Draw,Home,Home
-129,2022-11-06,2.92,0.69,2.2,-1.0,betis,sevilla,Draw,Draw,Home
-130,2022-11-07,1.92,-0.31,-1.0,-1.0,vallecano,real madrid,Home,Away,Away
-131,2022-11-08,2.32,0.09,0.4,0.4,ath bilbao,valladolid,Home,Home,Home
-132,2022-11-08,3.52,1.29,1.2,1.2,elche,girona,Away,Away,Away
-133,2022-11-08,4.05,1.82,0.53,0.53,osasuna,barcelona,Away,Away,Away
-134,2022-11-09,5.2,2.97,1.15,1.15,almeria,getafe,Home,Home,Home
-135,2022-11-09,6.57,4.34,1.37,1.37,espanol,villarreal,Away,Away,Away
-136,2022-11-09,5.57,3.34,-1.0,-1.0,mallorca,ath madrid,Home,Away,Away
-137,2022-11-09,4.57,2.34,-1.0,-1.0,sevilla,sociedad,Away,Home,Home
-138,2022-11-10,4.71,2.48,0.14,0.14,real madrid,cadiz,Home,Home,Home
-139,2022-11-10,5.81,3.58,1.1,1.1,valencia,betis,Home,Home,Home
-140,2022-11-10,8.01,2.58,2.2,-1.0,vallecano,celta,Draw,Draw,Home
-141,2022-12-29,7.01,1.58,-1.0,-1.0,girona,vallecano,Draw,Home,Home
-142,2022-12-29,6.01,0.58,-1.0,-1.0,betis,ath bilbao,Draw,Away,Away
-143,2022-12-29,6.3,0.87,0.29,0.29,ath madrid,elche,Home,Home,Home
-144,2022-12-30,5.3,-0.13,-1.0,-1.0,cadiz,almeria,Draw,Home,Home
-145,2022-12-30,4.3,-1.13,-1.0,-1.0,celta,sevilla,Draw,Home,Home
-146,2022-12-30,6.05,0.62,1.75,1.75,getafe,mallorca,Home,Home,Home
-147,2022-12-30,6.5,1.07,0.45,0.45,valladolid,real madrid,Away,Away,Away
-148,2022-12-31,5.5,0.07,-1.0,-1.0,barcelona,espanol,Draw,Home,Home
-149,2022-12-31,6.35,0.92,0.85,0.85,sociedad,osasuna,Home,Home,Home
-150,2022-12-31,7.3,1.87,0.95,0.95,villarreal,valencia,Home,Home,Home
-151,2023-01-06,8.25,2.82,0.95,0.95,elche,celta,Away,Away,Away
-152,2023-01-06,7.25,1.82,-1.0,-1.0,valencia,cadiz,Away,Home,Home
-153,2023-01-07,6.25,0.82,-1.0,-1.0,villarreal,real madrid,Home,Away,Away
-154,2023-01-07,5.25,-0.18,-1.0,-1.0,espanol,girona,Draw,Home,Home
-155,2023-01-07,6.2,0.77,0.95,0.95,mallorca,valladolid,Home,Home,Home
-156,2023-01-08,7.15,1.72,0.95,0.95,almeria,sociedad,Away,Away,Away
-157,2023-01-08,8.45,3.02,1.3,1.3,ath madrid,barcelona,Away,Away,Away
-158,2023-01-08,9.2,3.77,0.75,0.75,sevilla,getafe,Home,Home,Home
-159,2023-01-08,8.2,2.77,-1.0,-1.0,vallecano,betis,Away,Home,Home
-160,2023-01-09,7.2,1.77,-1.0,-1.0,ath bilbao,osasuna,Draw,Home,Home
-161,2023-01-13,6.2,0.77,-1.0,-1.0,celta,villarreal,Draw,Home,Away
-162,2023-01-14,5.2,2.17,-1.0,1.4,sociedad,ath bilbao,Home,Draw,Home
-163,2023-01-14,4.2,3.8,-1.0,1.63,valladolid,vallecano,Away,Home,Away
-164,2023-01-14,5.2,4.8,1.0,1.0,osasuna,mallorca,Home,Home,Home
-165,2023-01-14,6.58,6.18,1.38,1.38,girona,sevilla,Home,Home,Home
-166,2023-01-15,5.58,5.18,-1.0,-1.0,almeria,ath madrid,Draw,Away,Away
-167,2023-01-15,4.58,4.18,-1.0,-1.0,getafe,espanol,Away,Home,Home
-168,2023-01-16,6.98,3.18,2.4,-1.0,cadiz,elche,Draw,Draw,Home
-169,2023-01-20,5.98,2.18,-1.0,-1.0,mallorca,celta,Home,Away,Draw
-170,2023-01-21,6.38,2.58,0.4,0.4,ath madrid,valladolid,Home,Home,Home
-171,2023-01-21,8.08,4.28,1.7,1.7,espanol,betis,Home,Home,Home
-172,2023-01-21,8.78,4.98,0.7,0.7,sevilla,cadiz,Home,Home,Home
-173,2023-01-21,10.16,6.36,1.38,1.38,vallecano,sociedad,Away,Away,Away
-174,2023-01-22,9.16,5.36,-1.0,-1.0,elche,osasuna,Draw,Away,Away
-175,2023-01-22,10.54,6.74,1.38,1.38,ath bilbao,real madrid,Away,Away,Away
-176,2023-01-22,10.72,6.92,0.18,0.18,barcelona,getafe,Home,Home,Home
-177,2023-01-22,11.45,7.65,0.73,0.73,villarreal,girona,Home,Home,Home
-178,2023-01-23,10.45,6.65,-1.0,-1.0,valencia,almeria,Draw,Home,Home
-179,2023-01-27,11.83,8.03,1.38,1.38,almeria,espanol,Home,Home,Home
-180,2023-01-28,13.71,7.03,1.88,-1.0,cadiz,mallorca,Home,Home,Draw
-181,2023-01-28,14.24,7.56,0.53,0.53,sevilla,elche,Home,Home,Home
-182,2023-01-28,14.81,8.13,0.57,0.57,girona,barcelona,Away,Away,Away
-183,2023-01-28,13.81,9.76,-1.0,1.63,getafe,betis,Away,Draw,Away
-184,2023-01-29,12.81,8.76,-1.0,-1.0,celta,ath bilbao,Home,Away,Away
-185,2023-01-29,11.81,7.76,-1.0,-1.0,valladolid,valencia,Home,Away,Away
-186,2023-01-29,10.81,6.76,-1.0,-1.0,real madrid,sociedad,Draw,Home,Home
-187,2023-01-29,12.01,7.96,1.2,1.2,osasuna,ath madrid,Away,Away,Away
-188,2023-01-30,11.01,6.96,-1.0,-1.0,villarreal,vallecano,Away,Home,Home
-189,2023-02-01,11.68,7.63,0.67,0.67,betis,barcelona,Away,Away,Away
-190,2023-02-02,12.12,8.07,0.44,0.44,real madrid,valencia,Home,Home,Home
-191,2023-02-03,12.48,8.43,0.36,0.36,ath bilbao,cadiz,Home,Home,Home
-192,2023-02-04,11.48,7.43,-1.0,-1.0,ath madrid,getafe,Draw,Home,Home
-193,2023-02-04,10.48,6.43,-1.0,-1.0,betis,celta,Away,Home,Home
-194,2023-02-04,9.48,5.43,-1.0,-1.0,elche,villarreal,Home,Away,Away
-195,2023-02-04,8.48,4.43,-1.0,-1.0,espanol,osasuna,Draw,Home,Home
-196,2023-02-05,8.81,4.76,0.33,0.33,barcelona,sevilla,Home,Home,Home
-197,2023-02-05,10.01,5.96,1.2,1.2,girona,valencia,Home,Home,Home
-198,2023-02-05,9.01,4.96,-1.0,-1.0,mallorca,real madrid,Home,Away,Away
-199,2023-02-05,8.01,3.96,-1.0,-1.0,sociedad,valladolid,Away,Home,Home
-200,2023-02-06,7.01,4.69,-1.0,0.73,vallecano,almeria,Home,Draw,Home
-201,2023-02-10,6.01,3.69,-1.0,-1.0,cadiz,girona,Home,Away,Away
-202,2023-02-11,7.51,5.19,1.5,1.5,almeria,betis,Away,Away,Away
-203,2023-02-11,8.42,6.1,0.91,0.91,sevilla,mallorca,Home,Home,Home
-204,2023-02-11,9.87,7.55,1.45,1.45,valencia,ath bilbao,Away,Away,Away
-205,2023-02-12,11.07,8.75,1.2,1.2,celta,ath madrid,Away,Away,Away
-206,2023-02-12,10.07,7.75,-1.0,-1.0,getafe,vallecano,Draw,Home,Home
-207,2023-02-12,12.17,6.75,2.1,-1.0,valladolid,osasuna,Draw,Draw,Away
-208,2023-02-12,13.02,7.6,0.85,0.85,villarreal,barcelona,Away,Away,Away
-209,2023-02-13,14.32,8.9,1.3,1.3,espanol,sociedad,Away,Away,Away
-210,2023-02-15,14.5,9.08,0.18,0.18,real madrid,elche,Home,Home,Home
-211,2023-02-17,15.3,9.88,0.8,0.8,girona,almeria,Home,Home,Home
-212,2023-02-18,15.9,10.48,0.6,0.6,betis,valladolid,Home,Home,Home
-213,2023-02-18,14.9,9.48,-1.0,-1.0,mallorca,villarreal,Home,Away,Away
-214,2023-02-18,15.7,10.28,0.8,0.8,osasuna,real madrid,Away,Away,Away
-215,2023-02-18,14.7,9.28,-1.0,-1.0,sociedad,celta,Draw,Home,Home
-216,2023-02-19,15.7,10.28,1.0,1.0,ath madrid,ath bilbao,Home,Home,Home
-217,2023-02-19,15.88,10.46,0.18,0.18,barcelona,cadiz,Home,Home,Home
-218,2023-02-19,14.88,12.09,-1.0,1.63,elche,espanol,Away,Home,Away
-219,2023-02-19,13.88,11.09,-1.0,-1.0,vallecano,sevilla,Draw,Home,Home
-220,2023-02-20,15.63,12.84,1.75,1.75,getafe,valencia,Home,Home,Home
-221,2023-02-24,16.73,13.94,1.1,1.1,elche,betis,Away,Away,Away
-222,2023-02-25,18.83,12.94,2.1,-1.0,valencia,sociedad,Home,Home,Away
-223,2023-02-25,17.83,11.94,-1.0,-1.0,real madrid,ath madrid,Draw,Home,Home
-224,2023-02-25,16.83,10.94,-1.0,-1.0,cadiz,vallecano,Home,Draw,Away
-225,2023-02-25,18.33,12.44,1.5,1.5,espanol,mallorca,Home,Home,Home
-226,2023-02-26,17.33,11.44,-1.0,-1.0,almeria,barcelona,Home,Away,Away
-227,2023-02-26,16.33,10.44,-1.0,-1.0,ath bilbao,girona,Away,Home,Home
-228,2023-02-26,17.03,11.14,0.7,0.7,celta,valladolid,Home,Home,Home
-229,2023-02-26,16.03,10.14,-1.0,-1.0,sevilla,osasuna,Away,Home,Home
-230,2023-02-27,16.7,10.81,0.67,0.67,villarreal,getafe,Home,Home,Home
-231,2023-03-03,15.7,9.81,-1.0,-1.0,sociedad,cadiz,Draw,Home,Home
-232,2023-03-04,17.45,11.56,1.75,1.75,getafe,girona,Home,Home,Home
-233,2023-03-04,16.45,10.56,-1.0,-1.0,mallorca,elche,Away,Home,Home
-234,2023-03-04,17.5,11.61,1.05,1.05,almeria,villarreal,Away,Away,Away
-235,2023-03-04,18.17,12.28,0.67,0.67,ath madrid,sevilla,Home,Home,Home
-236,2023-03-05,17.17,11.28,-1.0,-1.0,vallecano,ath bilbao,Draw,Away,Away
-237,2023-03-05,18.67,12.78,1.5,1.5,valladolid,espanol,Home,Home,Home
-238,2023-03-05,19.2,13.31,0.53,0.53,barcelona,valencia,Home,Home,Home
-239,2023-03-05,18.2,12.31,-1.0,-1.0,betis,real madrid,Draw,Away,Away
-240,2023-03-06,20.2,11.31,2.0,-1.0,osasuna,celta,Draw,Draw,Home
-241,2023-03-10,19.2,10.31,-1.0,-1.0,cadiz,getafe,Draw,Home,Home
-242,2023-03-11,20.3,11.41,1.1,1.1,celta,vallecano,Home,Home,Home
-243,2023-03-11,22.6,10.41,2.3,-1.0,elche,valladolid,Draw,Draw,Home
-244,2023-03-11,22.85,10.66,0.25,0.25,real madrid,espanol,Home,Home,Home
-245,2023-03-11,23.95,11.76,1.1,1.1,valencia,osasuna,Home,Home,Home
-246,2023-03-12,24.68,12.49,0.73,0.73,sevilla,almeria,Home,Home,Home
-247,2023-03-12,23.68,11.49,-1.0,-1.0,villarreal,betis,Draw,Home,Home
-248,2023-03-12,22.68,10.49,-1.0,-1.0,mallorca,sociedad,Draw,Away,Away
-249,2023-03-12,23.83,11.64,1.15,1.15,ath bilbao,barcelona,Away,Away,Away
-250,2023-03-13,24.88,12.69,1.05,1.05,girona,ath madrid,Away,Away,Away
-251,2023-03-17,25.71,13.52,0.83,0.83,valladolid,ath bilbao,Away,Away,Away
-252,2023-03-18,24.71,12.52,-1.0,-1.0,almeria,cadiz,Draw,Home,Home
-253,2023-03-18,25.26,13.07,0.55,0.55,ath madrid,valencia,Home,Home,Home
-254,2023-03-18,24.26,14.62,-1.0,1.55,espanol,celta,Away,Home,Away
-255,2023-03-18,23.26,13.62,-1.0,-1.0,vallecano,girona,Draw,Home,Home
-256,2023-03-19,23.66,14.02,0.4,0.4,sociedad,elche,Home,Home,Home
-257,2023-03-19,25.11,15.47,1.45,1.45,osasuna,villarreal,Away,Away,Away
-258,2023-03-19,24.11,14.47,-1.0,-1.0,getafe,sevilla,Home,Away,Away
-259,2023-03-19,24.91,15.27,0.8,0.8,betis,mallorca,Home,Home,Home
-260,2023-03-19,23.91,16.42,-1.0,1.15,barcelona,real madrid,Home,Away,Home
-261,2023-03-31,22.91,15.42,-1.0,-1.0,mallorca,osasuna,Draw,Home,Home
-262,2023-04-01,21.91,14.42,-1.0,-1.0,ath bilbao,getafe,Draw,Home,Home
-263,2023-04-01,23.21,15.72,1.3,1.3,cadiz,sevilla,Away,Away,Away
-264,2023-04-01,23.54,16.05,0.33,0.33,elche,barcelona,Away,Away,Away
-265,2023-04-01,24.45,16.96,0.91,0.91,girona,espanol,Home,Home,Home
-266,2023-04-02,24.98,17.49,0.53,0.53,ath madrid,betis,Home,Home,Home
-267,2023-04-02,23.98,16.49,-1.0,-1.0,celta,almeria,Draw,Home,Home
-268,2023-04-02,24.18,16.69,0.2,0.2,real madrid,valladolid,Home,Home,Home
-269,2023-04-02,25.58,18.09,1.4,1.4,villarreal,sociedad,Home,Home,Home
-270,2023-04-03,24.58,17.09,-1.0,-1.0,valencia,vallecano,Draw,Home,Home
-271,2023-04-07,23.58,16.09,-1.0,-1.0,sevilla,celta,Draw,Home,Home
-272,2023-04-08,24.78,17.29,1.2,1.2,espanol,ath bilbao,Away,Away,Away
-273,2023-04-08,25.51,18.02,0.73,0.73,osasuna,elche,Home,Home,Home
-274,2023-04-08,24.51,17.02,-1.0,-1.0,real madrid,villarreal,Away,Home,Home
-275,2023-04-08,25.21,17.72,0.7,0.7,sociedad,getafe,Home,Home,Home
-276,2023-04-09,24.21,16.72,-1.0,-1.0,almeria,valencia,Home,Away,Away
-277,2023-04-09,23.21,15.72,-1.0,-1.0,betis,cadiz,Away,Home,Home
-278,2023-04-09,22.21,14.72,-1.0,-1.0,valladolid,mallorca,Draw,Home,Home
-279,2023-04-09,23.06,15.57,0.85,0.85,vallecano,ath madrid,Away,Away,Away
-280,2023-04-10,22.06,14.57,-1.0,-1.0,barcelona,girona,Draw,Home,Home
-281,2023-04-14,23.26,15.77,1.2,1.2,vallecano,osasuna,Home,Home,Home
-282,2023-04-15,22.26,14.77,-1.0,-1.0,villarreal,valladolid,Away,Home,Home
-283,2023-04-15,22.81,15.32,0.55,0.55,cadiz,real madrid,Away,Away,Away
-284,2023-04-15,24.06,16.57,1.25,1.25,ath bilbao,sociedad,Home,Home,Home
-285,2023-04-15,24.89,17.4,0.83,0.83,betis,espanol,Home,Home,Home
-286,2023-04-16,25.11,17.62,0.22,0.22,ath madrid,almeria,Home,Home,Home
-287,2023-04-16,24.11,16.62,-1.0,-1.0,getafe,barcelona,Draw,Away,Away
-288,2023-04-16,24.64,17.15,0.53,0.53,girona,elche,Home,Home,Home
-289,2023-04-16,23.64,16.15,-1.0,-1.0,valencia,sevilla,Away,Home,Home
-290,2023-04-17,22.64,15.15,-1.0,-1.0,celta,mallorca,Away,Home,Home
-291,2023-04-21,21.64,14.15,-1.0,-1.0,espanol,cadiz,Draw,Home,Home
-292,2023-04-22,22.31,14.82,0.67,0.67,sociedad,vallecano,Home,Home,Home
-293,2023-04-22,22.67,15.18,0.36,0.36,real madrid,celta,Home,Home,Home
-294,2023-04-22,21.67,16.68,-1.0,1.5,valladolid,girona,Home,Draw,Home
-295,2023-04-22,22.52,17.53,0.85,0.85,almeria,ath bilbao,Away,Away,Away
-296,2023-04-22,24.07,19.08,1.55,1.55,osasuna,betis,Home,Home,Home
-297,2023-04-23,24.92,19.93,0.85,0.85,elche,valencia,Away,Away,Away
-298,2023-04-23,23.92,21.23,-1.0,1.3,mallorca,getafe,Home,Draw,Home
-299,2023-04-23,22.92,20.23,-1.0,-1.0,sevilla,villarreal,Home,Away,Away
-300,2023-04-23,23.87,21.18,0.95,0.95,barcelona,ath madrid,Home,Home,Home
-301,2023-04-25,22.87,20.18,-1.0,-1.0,betis,sociedad,Draw,Away,Away
-302,2023-04-25,21.87,19.18,-1.0,-1.0,cadiz,osasuna,Away,Home,Home
-303,2023-04-25,20.87,18.18,-1.0,-1.0,girona,real madrid,Home,Away,Away
-304,2023-04-26,19.87,17.18,-1.0,-1.0,vallecano,barcelona,Home,Away,Away
-305,2023-04-26,20.27,17.58,0.4,0.4,ath madrid,mallorca,Home,Home,Home
-306,2023-04-26,20.57,17.88,0.3,0.3,celta,elche,Home,Home,Home
-307,2023-04-26,19.57,16.88,-1.0,-1.0,getafe,almeria,Away,Home,Home
-308,2023-04-27,20.14,17.45,0.57,0.57,villarreal,espanol,Home,Home,Home
-309,2023-04-27,19.14,16.45,-1.0,-1.0,ath bilbao,sevilla,Away,Home,Home
-310,2023-04-27,19.89,17.2,0.75,0.75,valencia,valladolid,Home,Home,Home
-311,2023-04-28,21.09,18.4,1.2,1.2,osasuna,sociedad,Away,Away,Away
-312,2023-04-29,21.42,18.73,0.33,0.33,barcelona,betis,Home,Home,Home
-313,2023-04-29,20.42,17.73,-1.0,-1.0,elche,vallecano,Home,Away,Away
-314,2023-04-29,20.56,17.87,0.14,0.14,real madrid,almeria,Home,Home,Home
-315,2023-04-30,22.66,16.87,2.1,-1.0,cadiz,valencia,Home,Home,Away
-316,2023-04-30,24.04,18.25,1.38,1.38,espanol,getafe,Home,Home,Home
-317,2023-04-30,24.69,18.9,0.65,0.65,valladolid,ath madrid,Away,Away,Away
-318,2023-04-30,25.49,19.7,0.8,0.8,villarreal,celta,Home,Home,Home
-319,2023-05-01,24.49,18.7,-1.0,-1.0,sevilla,girona,Away,Draw,Home
-320,2023-05-01,23.49,17.7,-1.0,-1.0,mallorca,ath bilbao,Draw,Away,Away
-321,2023-05-02,22.49,19.25,-1.0,1.55,sociedad,real madrid,Home,Away,Home
-322,2023-05-02,23.11,19.87,0.62,0.62,almeria,elche,Home,Home,Home
-323,2023-05-02,23.25,20.01,0.14,0.14,barcelona,osasuna,Home,Home,Home
-324,2023-05-03,23.54,20.3,0.29,0.29,ath madrid,cadiz,Home,Home,Home
-325,2023-05-03,25.09,21.85,1.55,1.55,getafe,celta,Home,Home,Home
-326,2023-05-03,24.09,20.85,-1.0,-1.0,valencia,villarreal,Draw,Away,Away
-327,2023-05-04,24.82,21.58,0.73,0.73,vallecano,valladolid,Home,Home,Home
-328,2023-05-04,23.82,20.58,-1.0,-1.0,ath bilbao,betis,Away,Home,Home
-329,2023-05-04,24.92,21.68,1.1,1.1,girona,mallorca,Home,Home,Home
-330,2023-05-04,25.75,22.51,0.83,0.83,sevilla,espanol,Home,Home,Home
-331,2023-05-12,26.9,23.66,1.15,1.15,mallorca,cadiz,Home,Home,Home
-332,2023-05-13,28.0,24.76,1.1,1.1,villarreal,ath bilbao,Home,Home,Home
-333,2023-05-13,27.0,23.76,-1.0,-1.0,sociedad,girona,Draw,Home,Home
-334,2023-05-13,28.05,24.81,1.05,1.05,osasuna,almeria,Home,Home,Home
-335,2023-05-13,28.6,25.36,0.55,0.55,real madrid,getafe,Home,Home,Home
-336,2023-05-14,27.6,24.36,-1.0,-1.0,celta,valencia,Away,Home,Home
-337,2023-05-14,26.6,23.36,-1.0,-1.0,elche,ath madrid,Home,Away,Away
-338,2023-05-14,27.25,24.01,0.65,0.65,espanol,barcelona,Away,Away,Away
-339,2023-05-14,26.25,23.01,-1.0,-1.0,valladolid,sevilla,Away,Home,Home
-340,2023-05-15,25.25,23.92,-1.0,0.91,betis,vallecano,Home,Draw,Home
-341,2023-05-19,26.45,25.12,1.2,1.2,cadiz,valladolid,Home,Home,Home
-342,2023-05-20,27.75,26.42,1.3,1.3,girona,villarreal,Away,Away,Away
-343,2023-05-20,26.75,25.42,-1.0,-1.0,barcelona,sociedad,Away,Home,Home
-344,2023-05-20,25.75,24.42,-1.0,-1.0,getafe,elche,Draw,Home,Home
-345,2023-05-20,27.0,25.67,1.25,1.25,almeria,mallorca,Home,Home,Home
-346,2023-05-20,27.62,26.29,0.62,0.62,ath bilbao,celta,Home,Home,Home
-347,2023-05-21,27.98,26.65,0.36,0.36,ath madrid,osasuna,Home,Home,Home
-348,2023-05-21,26.98,25.65,-1.0,-1.0,sevilla,betis,Draw,Home,Home
-349,2023-05-21,25.98,24.65,-1.0,-1.0,valencia,real madrid,Home,Away,Away
-350,2023-05-21,24.98,23.65,-1.0,-1.0,vallecano,espanol,Away,Home,Home
-351,2023-05-23,23.98,22.65,-1.0,-1.0,celta,girona,Draw,Home,Home
-352,2023-05-23,24.34,23.01,0.36,0.36,sociedad,almeria,Home,Home,Home
-353,2023-05-23,23.34,22.01,-1.0,-1.0,valladolid,barcelona,Home,Away,Away
-354,2023-05-24,23.78,22.45,0.44,0.44,villarreal,cadiz,Home,Home,Home
-355,2023-05-24,24.4,23.07,0.62,0.62,real madrid,vallecano,Home,Home,Home
-356,2023-05-24,23.4,22.07,-1.0,-1.0,betis,getafe,Away,Home,Home
-357,2023-05-24,22.4,21.07,-1.0,-1.0,elche,sevilla,Draw,Away,Away
-358,2023-05-24,21.4,20.07,-1.0,-1.0,espanol,ath madrid,Draw,Home,Away
-359,2023-05-25,23.7,19.07,2.3,-1.0,mallorca,valencia,Home,Home,Away
-360,2023-05-25,22.7,18.07,-1.0,-1.0,osasuna,ath bilbao,Home,Away,Away
-361,2023-05-27,21.7,19.47,-1.0,1.4,sevilla,real madrid,Away,Home,Away
-362,2023-05-28,20.7,18.47,-1.0,-1.0,vallecano,villarreal,Home,Away,Away
-363,2023-05-28,19.7,17.47,-1.0,-1.0,valencia,espanol,Draw,Home,Home
-364,2023-05-28,18.7,16.47,-1.0,-1.0,girona,betis,Away,Home,Home
-365,2023-05-28,19.9,17.67,1.2,1.2,getafe,osasuna,Home,Home,Home
-366,2023-05-28,20.23,18.0,0.33,0.33,barcelona,mallorca,Home,Home,Home
-367,2023-05-28,21.23,19.0,1.0,1.0,ath madrid,sociedad,Home,Home,Home
-368,2023-05-28,20.23,18.0,-1.0,-1.0,ath bilbao,elche,Away,Home,Home
-369,2023-05-28,19.23,17.0,-1.0,-1.0,almeria,valladolid,Draw,Home,Home
-370,2023-05-28,20.83,18.6,1.6,1.6,cadiz,celta,Home,Home,Home
-371,2023-06-04,21.88,19.65,1.05,1.05,osasuna,girona,Home,Home,Home
-372,2023-06-04,22.61,20.38,0.73,0.73,sociedad,sevilla,Home,Home,Home
-373,2023-06-04,21.61,19.38,-1.0,-1.0,real madrid,ath bilbao,Draw,Home,Home
-374,2023-06-04,20.61,18.38,-1.0,-1.0,mallorca,vallecano,Home,Away,Away
-375,2023-06-04,19.61,17.38,-1.0,-1.0,valladolid,getafe,Draw,Home,Home
-376,2023-06-04,22.01,16.38,2.4,-1.0,elche,cadiz,Draw,Draw,Home
-377,2023-06-04,23.61,15.38,1.6,-1.0,celta,barcelona,Home,Home,Away
-378,2023-06-04,22.61,14.38,-1.0,-1.0,betis,valencia,Draw,Away,Away
-379,2023-06-04,21.61,13.38,-1.0,-1.0,espanol,almeria,Draw,Away,Away
-380,2023-06-04,20.61,12.38,-1.0,-1.0,villarreal,ath madrid,Draw,Away,Away
+14,2022-08-20,0.75,0.75,1.4,1.4,mallorca,betis,Away,Away,Away
+15,2022-08-20,1.65,1.65,0.9,0.9,osasuna,cadiz,Home,Home,Home
+16,2022-08-21,2.45,2.45,0.8,0.8,ath bilbao,valencia,Home,Home,Home
+17,2022-08-21,1.45,1.45,-1.0,-1.0,ath madrid,villarreal,Away,Home,Home
+18,2022-08-21,2.55,2.55,1.1,1.1,sociedad,barcelona,Away,Away,Away
+19,2022-08-22,4.75,1.55,2.2,-1.0,elche,almeria,Draw,Draw,Home
+20,2022-08-22,3.75,3.35,-1.0,1.8,girona,getafe,Home,Draw,Home
+21,2022-08-26,5.5,5.1,1.75,1.75,girona,celta,Away,Away,Away
+22,2022-08-26,6.3,5.9,0.8,0.8,betis,osasuna,Home,Home,Home
+23,2022-08-27,5.3,4.9,-1.0,-1.0,vallecano,mallorca,Away,Home,Home
+24,2022-08-27,4.3,3.9,-1.0,-1.0,almeria,sevilla,Home,Away,Away
+25,2022-08-27,5.45,5.05,1.15,1.15,elche,sociedad,Away,Away,Away
+26,2022-08-28,5.59,5.19,0.14,0.14,barcelona,valladolid,Home,Home,Home
+27,2022-08-28,6.04,5.64,0.45,0.45,espanol,real madrid,Away,Away,Away
+28,2022-08-28,5.04,4.64,-1.0,-1.0,getafe,villarreal,Draw,Away,Away
+29,2022-08-29,4.04,5.79,-1.0,1.15,cadiz,ath bilbao,Away,Draw,Away
+30,2022-08-29,5.04,6.79,1.0,1.0,valencia,ath madrid,Away,Away,Away
+31,2022-09-02,5.7,7.45,0.66,0.66,celta,cadiz,Home,Home,Home
+32,2022-09-03,7.9,6.45,2.2,-1.0,sociedad,ath madrid,Draw,Draw,Away
+33,2022-09-03,8.7,7.25,0.8,0.8,sevilla,barcelona,Away,Away,Away
+34,2022-09-03,9.1,7.65,0.4,0.4,real madrid,betis,Home,Home,Home
+35,2022-09-03,11.3,6.65,2.2,-1.0,mallorca,girona,Draw,Draw,Home
+36,2022-09-04,10.3,5.65,-1.0,-1.0,ath bilbao,espanol,Away,Home,Home
+37,2022-09-04,11.3,6.65,1.0,1.0,osasuna,vallecano,Home,Home,Home
+38,2022-09-04,12.2,7.55,0.9,0.9,valencia,getafe,Home,Home,Home
+39,2022-09-04,12.53,7.88,0.33,0.33,villarreal,elche,Home,Home,Home
+40,2022-09-05,13.83,9.18,1.3,1.3,valladolid,almeria,Home,Home,Home
+41,2022-09-09,15.08,10.43,1.25,1.25,girona,valladolid,Home,Home,Home
+42,2022-09-10,14.08,11.93,-1.0,1.5,espanol,sevilla,Away,Draw,Away
+43,2022-09-10,13.08,13.55,-1.0,1.62,vallecano,valencia,Home,Draw,Home
+44,2022-09-10,13.69,14.16,0.61,0.61,ath madrid,celta,Home,Home,Home
+45,2022-09-10,13.91,14.38,0.22,0.22,cadiz,barcelona,Away,Away,Away
+46,2022-09-11,14.16,14.63,0.25,0.25,real madrid,mallorca,Home,Home,Home
+47,2022-09-11,13.16,13.63,-1.0,-1.0,getafe,sociedad,Home,Away,Away
+48,2022-09-11,14.06,14.53,0.9,0.9,elche,ath bilbao,Away,Away,Away
+49,2022-09-11,13.06,13.53,-1.0,-1.0,betis,villarreal,Home,Away,Away
+50,2022-09-12,12.06,12.53,-1.0,-1.0,almeria,osasuna,Away,Home,Home
+51,2022-09-16,11.06,11.53,-1.0,-1.0,valladolid,cadiz,Away,Home,Home
+52,2022-09-17,11.59,12.06,0.53,0.53,ath bilbao,vallecano,Home,Home,Home
+53,2022-09-17,11.67,12.14,0.08,0.08,barcelona,elche,Home,Home,Home
+54,2022-09-17,12.67,13.14,1.0,1.0,mallorca,almeria,Home,Home,Home
+55,2022-09-17,13.97,14.44,1.3,1.3,valencia,celta,Home,Home,Home
+56,2022-09-18,12.97,13.44,-1.0,-1.0,villarreal,sevilla,Draw,Home,Home
+57,2022-09-18,11.97,12.44,-1.0,-1.0,osasuna,getafe,Away,Home,Home
+58,2022-09-18,12.67,13.14,0.7,0.7,sociedad,espanol,Home,Home,Home
+59,2022-09-18,13.97,14.44,1.3,1.3,ath madrid,real madrid,Away,Away,Away
+60,2022-09-18,14.72,15.19,0.75,0.75,betis,girona,Home,Home,Home
+61,2022-09-30,15.05,15.52,0.33,0.33,ath bilbao,almeria,Home,Home,Home
+62,2022-10-01,14.05,14.52,-1.0,-1.0,cadiz,villarreal,Draw,Away,Away
+63,2022-10-01,13.05,13.52,-1.0,-1.0,getafe,valladolid,Away,Draw,Home
+64,2022-10-01,13.41,13.88,0.36,0.36,mallorca,barcelona,Away,Away,Away
+65,2022-10-01,12.41,15.38,-1.0,1.5,sevilla,ath madrid,Away,Draw,Away
+66,2022-10-02,11.41,14.38,-1.0,-1.0,real madrid,osasuna,Draw,Home,Home
+67,2022-10-02,12.86,15.83,1.45,1.45,celta,betis,Home,Home,Home
+68,2022-10-02,11.86,14.83,-1.0,-1.0,espanol,valencia,Draw,Home,Home
+69,2022-10-02,13.16,16.13,1.3,1.3,girona,sociedad,Away,Away,Away
+70,2022-10-03,13.88,16.85,0.72,0.72,vallecano,elche,Home,Home,Home
+71,2022-10-07,12.88,15.85,-1.0,-1.0,osasuna,valencia,Away,Home,Home
+72,2022-10-08,11.88,14.85,-1.0,-1.0,almeria,vallecano,Home,Away,Away
+73,2022-10-08,12.33,15.3,0.45,0.45,ath madrid,girona,Home,Home,Home
+74,2022-10-08,12.83,15.8,0.5,0.5,getafe,real madrid,Away,Away,Away
+75,2022-10-08,15.13,14.8,2.3,-1.0,sevilla,ath bilbao,Draw,Draw,Away
+76,2022-10-09,15.41,15.08,0.28,0.28,barcelona,celta,Home,Home,Home
+77,2022-10-09,17.61,14.08,2.2,-1.0,cadiz,espanol,Draw,Draw,Away
+78,2022-10-09,16.61,15.58,-1.0,1.5,sociedad,villarreal,Home,Away,Home
+79,2022-10-09,15.61,14.58,-1.0,-1.0,valladolid,betis,Draw,Away,Away
+80,2022-10-10,17.71,13.58,2.1,-1.0,elche,mallorca,Draw,Draw,Away
+81,2022-10-14,16.71,12.58,-1.0,-1.0,vallecano,getafe,Draw,Home,Home
+82,2022-10-15,15.71,11.58,-1.0,-1.0,valencia,elche,Draw,Home,Home
+83,2022-10-15,17.41,13.28,1.7,1.7,mallorca,sevilla,Away,Away,Away
+84,2022-10-15,16.41,12.28,-1.0,-1.0,ath bilbao,ath madrid,Away,Home,Home
+85,2022-10-15,15.41,11.28,-1.0,-1.0,girona,cadiz,Draw,Home,Home
+86,2022-10-16,15.98,11.85,0.57,0.57,betis,almeria,Home,Home,Home
+87,2022-10-16,14.98,10.85,-1.0,-1.0,celta,sociedad,Away,Home,Home
+88,2022-10-16,16.18,12.05,1.2,1.2,espanol,valladolid,Home,Home,Home
+89,2022-10-16,17.38,13.25,1.2,1.2,real madrid,barcelona,Home,Home,Home
+90,2022-10-17,17.95,13.82,0.57,0.57,villarreal,osasuna,Home,Home,Home
+91,2022-10-18,16.95,12.82,-1.0,-1.0,getafe,ath bilbao,Draw,Away,Away
+92,2022-10-18,15.95,11.82,-1.0,-1.0,ath madrid,vallecano,Draw,Home,Home
+93,2022-10-18,14.95,10.82,-1.0,-1.0,sevilla,valencia,Draw,Home,Home
+94,2022-10-19,13.95,9.82,-1.0,-1.0,valladolid,celta,Home,Away,Away
+95,2022-10-19,14.5,10.37,0.55,0.55,sociedad,mallorca,Home,Home,Home
+96,2022-10-19,13.5,9.37,-1.0,-1.0,cadiz,betis,Draw,Away,Away
+97,2022-10-19,13.8,9.67,0.3,0.3,elche,real madrid,Away,Away,Away
+98,2022-10-20,12.8,11.27,-1.0,1.6,almeria,girona,Home,Draw,Home
+99,2022-10-20,13.3,11.77,0.5,0.5,barcelona,villarreal,Home,Home,Home
+100,2022-10-20,14.35,12.82,1.05,1.05,osasuna,espanol,Home,Home,Home
+101,2022-10-22,14.71,13.18,0.36,0.36,real madrid,sevilla,Home,Home,Home
+102,2022-10-22,13.71,12.18,-1.0,-1.0,valencia,mallorca,Away,Home,Home
+103,2022-10-22,12.71,11.18,-1.0,-1.0,valladolid,sociedad,Home,Away,Away
+104,2022-10-22,13.43,11.9,0.72,0.72,vallecano,cadiz,Home,Home,Home
+105,2022-10-23,13.79,12.26,0.36,0.36,villarreal,almeria,Home,Home,Home
+106,2022-10-23,12.79,11.26,-1.0,-1.0,girona,osasuna,Draw,Home,Home
+107,2022-10-23,14.09,12.56,1.3,1.3,betis,ath madrid,Away,Away,Away
+108,2022-10-23,14.64,13.11,0.55,0.55,barcelona,ath bilbao,Home,Home,Home
+109,2022-10-23,13.64,12.11,-1.0,-1.0,espanol,elche,Draw,Home,Home
+110,2022-10-24,12.64,11.11,-1.0,-1.0,celta,getafe,Draw,Home,Home
+111,2022-10-28,14.74,10.11,2.1,-1.0,mallorca,espanol,Draw,Draw,Home
+112,2022-10-29,15.31,10.68,0.57,0.57,valencia,barcelona,Away,Away,Away
+113,2022-10-29,14.31,9.68,-1.0,-1.0,almeria,celta,Home,Away,Away
+114,2022-10-29,13.31,8.68,-1.0,-1.0,cadiz,ath madrid,Home,Away,Away
+115,2022-10-29,12.31,7.68,-1.0,-1.0,sevilla,vallecano,Away,Home,Home
+116,2022-10-30,11.31,6.68,-1.0,-1.0,real madrid,girona,Draw,Home,Home
+117,2022-10-30,10.31,5.68,-1.0,-1.0,sociedad,betis,Away,Home,Home
+118,2022-10-30,11.51,6.88,1.2,1.2,ath bilbao,villarreal,Home,Home,Home
+119,2022-10-30,12.41,7.78,0.9,0.9,osasuna,valladolid,Home,Home,Home
+120,2022-10-31,11.41,6.78,-1.0,-1.0,elche,getafe,Away,Home,Home
+121,2022-11-04,10.41,5.78,-1.0,-1.0,girona,ath bilbao,Home,Away,Away
+122,2022-11-05,10.49,5.86,0.08,0.08,barcelona,almeria,Home,Home,Home
+123,2022-11-05,9.49,4.86,-1.0,-1.0,celta,osasuna,Away,Home,Home
+124,2022-11-05,8.49,3.86,-1.0,-1.0,getafe,cadiz,Draw,Home,Home
+125,2022-11-05,9.32,4.69,0.83,0.83,valladolid,elche,Home,Home,Home
+126,2022-11-06,8.32,3.69,-1.0,-1.0,sociedad,valencia,Draw,Home,Home
+127,2022-11-06,7.32,2.69,-1.0,-1.0,villarreal,mallorca,Away,Home,Home
+128,2022-11-06,6.32,1.69,-1.0,-1.0,ath madrid,espanol,Draw,Home,Home
+129,2022-11-06,8.52,0.69,2.2,-1.0,betis,sevilla,Draw,Draw,Home
+130,2022-11-07,7.52,-0.31,-1.0,-1.0,vallecano,real madrid,Home,Away,Away
+131,2022-11-08,7.92,0.09,0.4,0.4,ath bilbao,valladolid,Home,Home,Home
+132,2022-11-08,9.12,1.29,1.2,1.2,elche,girona,Away,Away,Away
+133,2022-11-08,9.65,1.82,0.53,0.53,osasuna,barcelona,Away,Away,Away
+134,2022-11-09,10.8,2.97,1.15,1.15,almeria,getafe,Home,Home,Home
+135,2022-11-09,12.17,4.34,1.37,1.37,espanol,villarreal,Away,Away,Away
+136,2022-11-09,11.17,3.34,-1.0,-1.0,mallorca,ath madrid,Home,Draw,Away
+137,2022-11-09,10.17,2.34,-1.0,-1.0,sevilla,sociedad,Away,Home,Home
+138,2022-11-10,10.31,2.48,0.14,0.14,real madrid,cadiz,Home,Home,Home
+139,2022-11-10,11.41,3.58,1.1,1.1,valencia,betis,Home,Home,Home
+140,2022-11-10,13.61,2.58,2.2,-1.0,vallecano,celta,Draw,Draw,Home
+141,2022-12-29,12.61,1.58,-1.0,-1.0,girona,vallecano,Draw,Home,Home
+142,2022-12-29,11.61,0.58,-1.0,-1.0,betis,ath bilbao,Draw,Away,Away
+143,2022-12-29,11.9,0.87,0.29,0.29,ath madrid,elche,Home,Home,Home
+144,2022-12-30,10.9,-0.13,-1.0,-1.0,cadiz,almeria,Draw,Home,Home
+145,2022-12-30,9.9,-1.13,-1.0,-1.0,celta,sevilla,Draw,Home,Home
+146,2022-12-30,11.65,0.62,1.75,1.75,getafe,mallorca,Home,Home,Home
+147,2022-12-30,12.1,1.07,0.45,0.45,valladolid,real madrid,Away,Away,Away
+148,2022-12-31,11.1,0.07,-1.0,-1.0,barcelona,espanol,Draw,Home,Home
+149,2022-12-31,11.95,0.92,0.85,0.85,sociedad,osasuna,Home,Home,Home
+150,2022-12-31,12.9,1.87,0.95,0.95,villarreal,valencia,Home,Home,Home
+151,2023-01-06,13.85,2.82,0.95,0.95,elche,celta,Away,Away,Away
+152,2023-01-06,12.85,1.82,-1.0,-1.0,valencia,cadiz,Away,Home,Home
+153,2023-01-07,11.85,0.82,-1.0,-1.0,villarreal,real madrid,Home,Away,Away
+154,2023-01-07,10.85,-0.18,-1.0,-1.0,espanol,girona,Draw,Home,Home
+155,2023-01-07,11.8,0.77,0.95,0.95,mallorca,valladolid,Home,Home,Home
+156,2023-01-08,12.75,1.72,0.95,0.95,almeria,sociedad,Away,Away,Away
+157,2023-01-08,14.05,3.02,1.3,1.3,ath madrid,barcelona,Away,Away,Away
+158,2023-01-08,14.8,3.77,0.75,0.75,sevilla,getafe,Home,Home,Home
+159,2023-01-08,13.8,2.77,-1.0,-1.0,vallecano,betis,Away,Home,Home
+160,2023-01-09,12.8,1.77,-1.0,-1.0,ath bilbao,osasuna,Draw,Home,Home
+161,2023-01-13,11.8,0.77,-1.0,-1.0,celta,villarreal,Draw,Home,Away
+162,2023-01-14,10.8,2.17,-1.0,1.4,sociedad,ath bilbao,Home,Draw,Home
+163,2023-01-14,9.8,3.8,-1.0,1.63,valladolid,vallecano,Away,Home,Away
+164,2023-01-14,10.8,4.8,1.0,1.0,osasuna,mallorca,Home,Home,Home
+165,2023-01-14,12.18,6.18,1.38,1.38,girona,sevilla,Home,Home,Home
+166,2023-01-15,11.18,5.18,-1.0,-1.0,almeria,ath madrid,Draw,Away,Away
+167,2023-01-15,10.18,4.18,-1.0,-1.0,getafe,espanol,Away,Home,Home
+168,2023-01-16,12.58,3.18,2.4,-1.0,cadiz,elche,Draw,Draw,Home
+169,2023-01-20,11.58,2.18,-1.0,-1.0,mallorca,celta,Home,Away,Draw
+170,2023-01-21,11.98,2.58,0.4,0.4,ath madrid,valladolid,Home,Home,Home
+171,2023-01-21,13.68,4.28,1.7,1.7,espanol,betis,Home,Home,Home
+172,2023-01-21,14.38,4.98,0.7,0.7,sevilla,cadiz,Home,Home,Home
+173,2023-01-21,15.76,6.36,1.38,1.38,vallecano,sociedad,Away,Away,Away
+174,2023-01-22,14.76,5.36,-1.0,-1.0,elche,osasuna,Draw,Home,Away
+175,2023-01-22,16.14,6.74,1.38,1.38,ath bilbao,real madrid,Away,Away,Away
+176,2023-01-22,16.32,6.92,0.18,0.18,barcelona,getafe,Home,Home,Home
+177,2023-01-22,17.05,7.65,0.73,0.73,villarreal,girona,Home,Home,Home
+178,2023-01-23,16.05,6.65,-1.0,-1.0,valencia,almeria,Draw,Home,Home
+179,2023-01-27,17.43,8.03,1.38,1.38,almeria,espanol,Home,Home,Home
+180,2023-01-28,19.31,7.03,1.88,-1.0,cadiz,mallorca,Home,Home,Draw
+181,2023-01-28,19.84,7.56,0.53,0.53,sevilla,elche,Home,Home,Home
+182,2023-01-28,20.41,8.13,0.57,0.57,girona,barcelona,Away,Away,Away
+183,2023-01-28,19.41,9.76,-1.0,1.63,getafe,betis,Away,Draw,Away
+184,2023-01-29,18.41,8.76,-1.0,-1.0,celta,ath bilbao,Home,Away,Away
+185,2023-01-29,17.41,7.76,-1.0,-1.0,valladolid,valencia,Home,Away,Away
+186,2023-01-29,16.41,6.76,-1.0,-1.0,real madrid,sociedad,Draw,Home,Home
+187,2023-01-29,17.61,7.96,1.2,1.2,osasuna,ath madrid,Away,Away,Away
+188,2023-01-30,16.61,6.96,-1.0,-1.0,villarreal,vallecano,Away,Home,Home
+189,2023-02-01,17.28,7.63,0.67,0.67,betis,barcelona,Away,Away,Away
+190,2023-02-02,17.72,8.07,0.44,0.44,real madrid,valencia,Home,Home,Home
+191,2023-02-03,18.08,8.43,0.36,0.36,ath bilbao,cadiz,Home,Home,Home
+192,2023-02-04,17.08,7.43,-1.0,-1.0,ath madrid,getafe,Draw,Home,Home
+193,2023-02-04,16.08,6.43,-1.0,-1.0,betis,celta,Away,Home,Home
+194,2023-02-04,15.08,5.43,-1.0,-1.0,elche,villarreal,Home,Away,Away
+195,2023-02-04,14.08,4.43,-1.0,-1.0,espanol,osasuna,Draw,Home,Home
+196,2023-02-05,14.41,4.76,0.33,0.33,barcelona,sevilla,Home,Home,Home
+197,2023-02-05,15.61,5.96,1.2,1.2,girona,valencia,Home,Home,Home
+198,2023-02-05,14.61,4.96,-1.0,-1.0,mallorca,real madrid,Home,Away,Away
+199,2023-02-05,13.61,3.96,-1.0,-1.0,sociedad,valladolid,Away,Home,Home
+200,2023-02-06,12.61,4.69,-1.0,0.73,vallecano,almeria,Home,Draw,Home
+201,2023-02-10,11.61,3.69,-1.0,-1.0,cadiz,girona,Home,Away,Away
+202,2023-02-11,13.11,5.19,1.5,1.5,almeria,betis,Away,Away,Away
+203,2023-02-11,14.02,6.1,0.91,0.91,sevilla,mallorca,Home,Home,Home
+204,2023-02-11,15.47,7.55,1.45,1.45,valencia,ath bilbao,Away,Away,Away
+205,2023-02-12,16.67,8.75,1.2,1.2,celta,ath madrid,Away,Away,Away
+206,2023-02-12,15.67,7.75,-1.0,-1.0,getafe,vallecano,Draw,Home,Home
+207,2023-02-12,17.77,6.75,2.1,-1.0,valladolid,osasuna,Draw,Draw,Away
+208,2023-02-12,18.62,7.6,0.85,0.85,villarreal,barcelona,Away,Away,Away
+209,2023-02-13,19.92,8.9,1.3,1.3,espanol,sociedad,Away,Away,Away
+210,2023-02-15,20.1,9.08,0.18,0.18,real madrid,elche,Home,Home,Home
+211,2023-02-17,20.9,9.88,0.8,0.8,girona,almeria,Home,Home,Home
+212,2023-02-18,21.5,10.48,0.6,0.6,betis,valladolid,Home,Home,Home
+213,2023-02-18,20.5,9.48,-1.0,-1.0,mallorca,villarreal,Home,Away,Away
+214,2023-02-18,21.3,10.28,0.8,0.8,osasuna,real madrid,Away,Away,Away
+215,2023-02-18,20.3,9.28,-1.0,-1.0,sociedad,celta,Draw,Home,Home
+216,2023-02-19,21.3,10.28,1.0,1.0,ath madrid,ath bilbao,Home,Home,Home
+217,2023-02-19,21.48,10.46,0.18,0.18,barcelona,cadiz,Home,Home,Home
+218,2023-02-19,20.48,12.09,-1.0,1.63,elche,espanol,Away,Home,Away
+219,2023-02-19,19.48,11.09,-1.0,-1.0,vallecano,sevilla,Draw,Away,Home
+220,2023-02-20,21.23,12.84,1.75,1.75,getafe,valencia,Home,Home,Home
+221,2023-02-24,22.33,13.94,1.1,1.1,elche,betis,Away,Away,Away
+222,2023-02-25,24.43,12.94,2.1,-1.0,valencia,sociedad,Home,Home,Away
+223,2023-02-25,23.43,11.94,-1.0,-1.0,real madrid,ath madrid,Draw,Home,Home
+224,2023-02-25,22.43,10.94,-1.0,-1.0,cadiz,vallecano,Home,Draw,Away
+225,2023-02-25,23.93,12.44,1.5,1.5,espanol,mallorca,Home,Home,Home
+226,2023-02-26,22.93,11.44,-1.0,-1.0,almeria,barcelona,Home,Away,Away
+227,2023-02-26,21.93,10.44,-1.0,-1.0,ath bilbao,girona,Away,Home,Home
+228,2023-02-26,22.63,11.14,0.7,0.7,celta,valladolid,Home,Home,Home
+229,2023-02-26,21.63,10.14,-1.0,-1.0,sevilla,osasuna,Away,Home,Home
+230,2023-02-27,22.3,10.81,0.67,0.67,villarreal,getafe,Home,Home,Home
+231,2023-03-03,21.3,9.81,-1.0,-1.0,sociedad,cadiz,Draw,Home,Home
+232,2023-03-04,23.05,11.56,1.75,1.75,getafe,girona,Home,Home,Home
+233,2023-03-04,22.05,10.56,-1.0,-1.0,mallorca,elche,Away,Home,Home
+234,2023-03-04,23.1,11.61,1.05,1.05,almeria,villarreal,Away,Away,Away
+235,2023-03-04,23.77,12.28,0.67,0.67,ath madrid,sevilla,Home,Home,Home
+236,2023-03-05,22.77,11.28,-1.0,-1.0,vallecano,ath bilbao,Draw,Away,Away
+237,2023-03-05,24.27,12.78,1.5,1.5,valladolid,espanol,Home,Home,Home
+238,2023-03-05,24.8,13.31,0.53,0.53,barcelona,valencia,Home,Home,Home
+239,2023-03-05,23.8,12.31,-1.0,-1.0,betis,real madrid,Draw,Away,Away
+240,2023-03-06,25.8,11.31,2.0,-1.0,osasuna,celta,Draw,Draw,Home
+241,2023-03-10,24.8,10.31,-1.0,-1.0,cadiz,getafe,Draw,Home,Home
+242,2023-03-11,25.9,11.41,1.1,1.1,celta,vallecano,Home,Home,Home
+243,2023-03-11,28.2,10.41,2.3,-1.0,elche,valladolid,Draw,Draw,Home
+244,2023-03-11,28.45,10.66,0.25,0.25,real madrid,espanol,Home,Home,Home
+245,2023-03-11,29.55,11.76,1.1,1.1,valencia,osasuna,Home,Home,Home
+246,2023-03-12,30.28,12.49,0.73,0.73,sevilla,almeria,Home,Home,Home
+247,2023-03-12,29.28,11.49,-1.0,-1.0,villarreal,betis,Draw,Home,Home
+248,2023-03-12,28.28,10.49,-1.0,-1.0,mallorca,sociedad,Draw,Away,Away
+249,2023-03-12,29.43,11.64,1.15,1.15,ath bilbao,barcelona,Away,Away,Away
+250,2023-03-13,30.48,12.69,1.05,1.05,girona,ath madrid,Away,Away,Away
+251,2023-03-17,31.31,13.52,0.83,0.83,valladolid,ath bilbao,Away,Away,Away
+252,2023-03-18,30.31,12.52,-1.0,-1.0,almeria,cadiz,Draw,Home,Home
+253,2023-03-18,30.86,13.07,0.55,0.55,ath madrid,valencia,Home,Home,Home
+254,2023-03-18,29.86,14.62,-1.0,1.55,espanol,celta,Away,Home,Away
+255,2023-03-18,28.86,13.62,-1.0,-1.0,vallecano,girona,Draw,Home,Home
+256,2023-03-19,29.26,14.02,0.4,0.4,sociedad,elche,Home,Home,Home
+257,2023-03-19,30.71,15.47,1.45,1.45,osasuna,villarreal,Away,Away,Away
+258,2023-03-19,29.71,14.47,-1.0,-1.0,getafe,sevilla,Home,Away,Away
+259,2023-03-19,30.51,15.27,0.8,0.8,betis,mallorca,Home,Home,Home
+260,2023-03-19,29.51,16.42,-1.0,1.15,barcelona,real madrid,Home,Away,Home
+261,2023-03-31,28.51,15.42,-1.0,-1.0,mallorca,osasuna,Draw,Home,Home
+262,2023-04-01,27.51,14.42,-1.0,-1.0,ath bilbao,getafe,Draw,Home,Home
+263,2023-04-01,28.81,15.72,1.3,1.3,cadiz,sevilla,Away,Away,Away
+264,2023-04-01,29.14,16.05,0.33,0.33,elche,barcelona,Away,Away,Away
+265,2023-04-01,30.05,16.96,0.91,0.91,girona,espanol,Home,Home,Home
+266,2023-04-02,30.58,17.49,0.53,0.53,ath madrid,betis,Home,Home,Home
+267,2023-04-02,29.58,16.49,-1.0,-1.0,celta,almeria,Draw,Home,Home
+268,2023-04-02,29.78,16.69,0.2,0.2,real madrid,valladolid,Home,Home,Home
+269,2023-04-02,31.18,18.09,1.4,1.4,villarreal,sociedad,Home,Home,Home
+270,2023-04-03,30.18,17.09,-1.0,-1.0,valencia,vallecano,Draw,Home,Home
+271,2023-04-07,29.18,16.09,-1.0,-1.0,sevilla,celta,Draw,Home,Home
+272,2023-04-08,30.38,17.29,1.2,1.2,espanol,ath bilbao,Away,Away,Away
+273,2023-04-08,31.11,18.02,0.73,0.73,osasuna,elche,Home,Home,Home
+274,2023-04-08,30.11,17.02,-1.0,-1.0,real madrid,villarreal,Away,Home,Home
+275,2023-04-08,30.81,17.72,0.7,0.7,sociedad,getafe,Home,Home,Home
+276,2023-04-09,29.81,16.72,-1.0,-1.0,almeria,valencia,Home,Away,Away
+277,2023-04-09,28.81,15.72,-1.0,-1.0,betis,cadiz,Away,Home,Home
+278,2023-04-09,27.81,14.72,-1.0,-1.0,valladolid,mallorca,Draw,Home,Home
+279,2023-04-09,28.66,15.57,0.85,0.85,vallecano,ath madrid,Away,Away,Away
+280,2023-04-10,27.66,14.57,-1.0,-1.0,barcelona,girona,Draw,Home,Home
+281,2023-04-14,28.86,15.77,1.2,1.2,vallecano,osasuna,Home,Home,Home
+282,2023-04-15,27.86,14.77,-1.0,-1.0,villarreal,valladolid,Away,Home,Home
+283,2023-04-15,28.41,15.32,0.55,0.55,cadiz,real madrid,Away,Away,Away
+284,2023-04-15,29.66,16.57,1.25,1.25,ath bilbao,sociedad,Home,Home,Home
+285,2023-04-15,30.49,17.4,0.83,0.83,betis,espanol,Home,Home,Home
+286,2023-04-16,30.71,17.62,0.22,0.22,ath madrid,almeria,Home,Home,Home
+287,2023-04-16,29.71,16.62,-1.0,-1.0,getafe,barcelona,Draw,Away,Away
+288,2023-04-16,30.24,17.15,0.53,0.53,girona,elche,Home,Home,Home
+289,2023-04-16,29.24,16.15,-1.0,-1.0,valencia,sevilla,Away,Home,Home
+290,2023-04-17,28.24,15.15,-1.0,-1.0,celta,mallorca,Away,Home,Home
+291,2023-04-21,27.24,14.15,-1.0,-1.0,espanol,cadiz,Draw,Home,Home
+292,2023-04-22,27.91,14.82,0.67,0.67,sociedad,vallecano,Home,Home,Home
+293,2023-04-22,28.27,15.18,0.36,0.36,real madrid,celta,Home,Home,Home
+294,2023-04-22,27.27,16.68,-1.0,1.5,valladolid,girona,Home,Draw,Home
+295,2023-04-22,28.12,17.53,0.85,0.85,almeria,ath bilbao,Away,Away,Away
+296,2023-04-22,29.67,19.08,1.55,1.55,osasuna,betis,Home,Home,Home
+297,2023-04-23,30.52,19.93,0.85,0.85,elche,valencia,Away,Away,Away
+298,2023-04-23,29.52,21.23,-1.0,1.3,mallorca,getafe,Home,Draw,Home
+299,2023-04-23,31.27,20.23,1.75,-1.0,sevilla,villarreal,Home,Home,Away
+300,2023-04-23,32.22,21.18,0.95,0.95,barcelona,ath madrid,Home,Home,Home
+301,2023-04-25,31.22,20.18,-1.0,-1.0,betis,sociedad,Draw,Away,Away
+302,2023-04-25,30.22,19.18,-1.0,-1.0,cadiz,osasuna,Away,Home,Home
+303,2023-04-25,29.22,18.18,-1.0,-1.0,girona,real madrid,Home,Away,Away
+304,2023-04-26,28.22,17.18,-1.0,-1.0,vallecano,barcelona,Home,Away,Away
+305,2023-04-26,28.62,17.58,0.4,0.4,ath madrid,mallorca,Home,Home,Home
+306,2023-04-26,28.92,17.88,0.3,0.3,celta,elche,Home,Home,Home
+307,2023-04-26,27.92,16.88,-1.0,-1.0,getafe,almeria,Away,Home,Home
+308,2023-04-27,28.49,17.45,0.57,0.57,villarreal,espanol,Home,Home,Home
+309,2023-04-27,27.49,16.45,-1.0,-1.0,ath bilbao,sevilla,Away,Home,Home
+310,2023-04-27,28.24,17.2,0.75,0.75,valencia,valladolid,Home,Home,Home
+311,2023-04-28,29.44,18.4,1.2,1.2,osasuna,sociedad,Away,Away,Away
+312,2023-04-29,29.77,18.73,0.33,0.33,barcelona,betis,Home,Home,Home
+313,2023-04-29,28.77,17.73,-1.0,-1.0,elche,vallecano,Home,Away,Away
+314,2023-04-29,28.91,17.87,0.14,0.14,real madrid,almeria,Home,Home,Home
+315,2023-04-30,31.01,16.87,2.1,-1.0,cadiz,valencia,Home,Home,Away
+316,2023-04-30,32.39,18.25,1.38,1.38,espanol,getafe,Home,Home,Home
+317,2023-04-30,33.04,18.9,0.65,0.65,valladolid,ath madrid,Away,Away,Away
+318,2023-04-30,33.84,19.7,0.8,0.8,villarreal,celta,Home,Home,Home
+319,2023-05-01,32.84,18.7,-1.0,-1.0,sevilla,girona,Away,Draw,Home
+320,2023-05-01,34.84,17.7,2.0,-1.0,mallorca,ath bilbao,Draw,Draw,Away
+321,2023-05-02,33.84,19.25,-1.0,1.55,sociedad,real madrid,Home,Away,Home
+322,2023-05-02,34.46,19.87,0.62,0.62,almeria,elche,Home,Home,Home
+323,2023-05-02,34.6,20.01,0.14,0.14,barcelona,osasuna,Home,Home,Home
+324,2023-05-03,34.89,20.3,0.29,0.29,ath madrid,cadiz,Home,Home,Home
+325,2023-05-03,36.44,21.85,1.55,1.55,getafe,celta,Home,Home,Home
+326,2023-05-03,35.44,20.85,-1.0,-1.0,valencia,villarreal,Draw,Away,Away
+327,2023-05-04,36.17,21.58,0.73,0.73,vallecano,valladolid,Home,Home,Home
+328,2023-05-04,35.17,20.58,-1.0,-1.0,ath bilbao,betis,Away,Home,Home
+329,2023-05-04,36.27,21.68,1.1,1.1,girona,mallorca,Home,Home,Home
+330,2023-05-04,37.1,22.51,0.83,0.83,sevilla,espanol,Home,Home,Home
+331,2023-05-12,38.25,23.66,1.15,1.15,mallorca,cadiz,Home,Home,Home
+332,2023-05-13,39.35,24.76,1.1,1.1,villarreal,ath bilbao,Home,Home,Home
+333,2023-05-13,38.35,23.76,-1.0,-1.0,sociedad,girona,Draw,Home,Home
+334,2023-05-13,39.4,24.81,1.05,1.05,osasuna,almeria,Home,Home,Home
+335,2023-05-13,39.95,25.36,0.55,0.55,real madrid,getafe,Home,Home,Home
+336,2023-05-14,38.95,24.36,-1.0,-1.0,celta,valencia,Away,Home,Home
+337,2023-05-14,37.95,23.36,-1.0,-1.0,elche,ath madrid,Home,Away,Away
+338,2023-05-14,38.6,24.01,0.65,0.65,espanol,barcelona,Away,Away,Away
+339,2023-05-14,37.6,23.01,-1.0,-1.0,valladolid,sevilla,Away,Home,Home
+340,2023-05-15,36.6,23.92,-1.0,0.91,betis,vallecano,Home,Draw,Home
+341,2023-05-19,37.8,25.12,1.2,1.2,cadiz,valladolid,Home,Home,Home
+342,2023-05-20,39.1,26.42,1.3,1.3,girona,villarreal,Away,Away,Away
+343,2023-05-20,38.1,25.42,-1.0,-1.0,barcelona,sociedad,Away,Home,Home
+344,2023-05-20,37.1,24.42,-1.0,-1.0,getafe,elche,Draw,Home,Home
+345,2023-05-20,38.35,25.67,1.25,1.25,almeria,mallorca,Home,Home,Home
+346,2023-05-20,38.97,26.29,0.62,0.62,ath bilbao,celta,Home,Home,Home
+347,2023-05-21,39.33,26.65,0.36,0.36,ath madrid,osasuna,Home,Home,Home
+348,2023-05-21,38.33,25.65,-1.0,-1.0,sevilla,betis,Draw,Home,Home
+349,2023-05-21,37.33,24.65,-1.0,-1.0,valencia,real madrid,Home,Away,Away
+350,2023-05-21,36.33,23.65,-1.0,-1.0,vallecano,espanol,Away,Home,Home
+351,2023-05-23,35.33,22.65,-1.0,-1.0,celta,girona,Draw,Home,Home
+352,2023-05-23,35.69,23.01,0.36,0.36,sociedad,almeria,Home,Home,Home
+353,2023-05-23,34.69,22.01,-1.0,-1.0,valladolid,barcelona,Home,Away,Away
+354,2023-05-24,35.13,22.45,0.44,0.44,villarreal,cadiz,Home,Home,Home
+355,2023-05-24,35.75,23.07,0.62,0.62,real madrid,vallecano,Home,Home,Home
+356,2023-05-24,34.75,22.07,-1.0,-1.0,betis,getafe,Away,Home,Home
+357,2023-05-24,33.75,21.07,-1.0,-1.0,elche,sevilla,Draw,Away,Away
+358,2023-05-24,32.75,20.07,-1.0,-1.0,espanol,ath madrid,Draw,Away,Away
+359,2023-05-25,35.05,19.07,2.3,-1.0,mallorca,valencia,Home,Home,Away
+360,2023-05-25,34.05,18.07,-1.0,-1.0,osasuna,ath bilbao,Home,Away,Away
+361,2023-05-27,33.05,19.47,-1.0,1.4,sevilla,real madrid,Away,Home,Away
+362,2023-05-28,32.05,18.47,-1.0,-1.0,vallecano,villarreal,Home,Away,Away
+363,2023-05-28,31.05,17.47,-1.0,-1.0,valencia,espanol,Draw,Home,Home
+364,2023-05-28,30.05,16.47,-1.0,-1.0,girona,betis,Away,Home,Home
+365,2023-05-28,31.25,17.67,1.2,1.2,getafe,osasuna,Home,Home,Home
+366,2023-05-28,31.58,18.0,0.33,0.33,barcelona,mallorca,Home,Home,Home
+367,2023-05-28,32.58,19.0,1.0,1.0,ath madrid,sociedad,Home,Home,Home
+368,2023-05-28,31.58,18.0,-1.0,-1.0,ath bilbao,elche,Away,Home,Home
+369,2023-05-28,30.58,17.0,-1.0,-1.0,almeria,valladolid,Draw,Home,Home
+370,2023-05-28,32.18,18.6,1.6,1.6,cadiz,celta,Home,Home,Home
+371,2023-06-04,33.23,19.65,1.05,1.05,osasuna,girona,Home,Home,Home
+372,2023-06-04,33.96,20.38,0.73,0.73,sociedad,sevilla,Home,Home,Home
+373,2023-06-04,32.96,19.38,-1.0,-1.0,real madrid,ath bilbao,Draw,Home,Home
+374,2023-06-04,31.96,18.38,-1.0,-1.0,mallorca,vallecano,Home,Away,Away
+375,2023-06-04,30.96,17.38,-1.0,-1.0,valladolid,getafe,Draw,Home,Home
+376,2023-06-04,33.36,16.38,2.4,-1.0,elche,cadiz,Draw,Draw,Home
+377,2023-06-04,34.96,15.38,1.6,-1.0,celta,barcelona,Home,Home,Away
+378,2023-06-04,33.96,14.38,-1.0,-1.0,betis,valencia,Draw,Away,Away
+379,2023-06-04,32.96,13.38,-1.0,-1.0,espanol,almeria,Draw,Away,Away
+380,2023-06-04,31.96,12.38,-1.0,-1.0,villarreal,ath madrid,Draw,Away,Away
