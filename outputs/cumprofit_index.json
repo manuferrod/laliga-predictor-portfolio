@@ -102,9 +102,9 @@
     "test_season": 2019,
     "train_until": 2018,
     "n_matches": 380,
-    "profit_model": 13.03,
+    "profit_model": 16.33,
     "profit_bet365": -15.43,
-    "roi_model": 0.03428947368421052,
+    "roi_model": 0.04297368421052631,
     "roi_bet365": -0.040605263157894735,
     "csv_file": "cumprofit_2019.csv",
     "json_file": "cumprofit_2019.json"
@@ -157,9 +157,9 @@
     "test_season": 2024,
     "train_until": 2023,
     "n_matches": 380,
-    "profit_model": 17.2,
+    "profit_model": 14.1,
     "profit_bet365": -6.79,
-    "roi_model": 0.04526315789473684,
+    "roi_model": 0.03710526315789474,
     "roi_bet365": -0.01786842105263158,
     "csv_file": "cumprofit_2024.csv",
     "json_file": "cumprofit_2024.json"
