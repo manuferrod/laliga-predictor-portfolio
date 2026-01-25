@@ -205,6 +205,6 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 204,2026-01-25,27.42,6.06,0.0,0.0,villarreal,real madrid,Draw,Away,Away
 205,2026-01-25,27.42,6.06,0.0,0.0,barcelona,real oviedo,Draw,Home,Home
 206,2026-01-25,27.42,6.06,0.0,0.0,ath madrid,mallorca,Draw,Home,Home
-207,2026-01-25,27.42,6.06,0.0,0.0,alaves,betis,Draw,Home,Home
+207,2026-01-25,27.42,6.06,0.0,0.0,alaves,betis,Draw,Away,Home
 208,2026-01-25,27.42,6.06,0.0,0.0,levante,elche,Draw,Draw,Home
 209,2026-01-26,27.42,6.06,0.0,0.0,girona,getafe,Draw,Draw,Home
