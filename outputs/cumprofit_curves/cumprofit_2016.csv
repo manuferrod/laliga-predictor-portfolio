@@ -18,7 +18,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 17,2016-08-28,-3.67,-4.17,-1.0,-1.0,alaves,sp gijon,Draw,Home,Home
 18,2016-08-28,-3.17,-3.67,0.5,0.5,ath bilbao,barcelona,Away,Away,Away
 19,2016-08-28,-2.26,-2.76,0.91,0.91,las palmas,granada,Home,Home,Home
-20,2016-08-28,-3.26,-3.76,-1.0,-1.0,villarreal,sevilla,Draw,Home,Home
+20,2016-08-28,-3.26,-3.76,-1.0,-1.0,villarreal,sevilla,Draw,Away,Home
 21,2016-09-09,-4.26,-4.76,-1.0,-1.0,sociedad,espanol,Draw,Home,Home
 22,2016-09-10,-3.76,-4.26,0.5,0.5,sevilla,las palmas,Home,Home,Home
 23,2016-09-10,-3.72,-4.22,0.04,0.04,real madrid,osasuna,Home,Home,Home

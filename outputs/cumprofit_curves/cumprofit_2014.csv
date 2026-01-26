@@ -176,206 +176,206 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 175,2015-01-11,-26.13,-24.05,0.85,0.85,almeria,sevilla,Away,Away,Away
 176,2015-01-11,-27.13,-25.05,-1.0,-1.0,ath bilbao,elche,Away,Home,Home
 177,2015-01-11,-26.56,-24.48,0.57,0.57,barcelona,ath madrid,Home,Home,Home
-178,2015-01-11,-27.56,-25.48,-1.0,-1.0,granada,sociedad,Draw,Away,Away
-179,2015-01-12,-28.56,-26.48,-1.0,-1.0,vallecano,cordoba,Away,Home,Home
-180,2015-01-16,-29.56,-27.48,-1.0,-1.0,cordoba,eibar,Draw,Away,Home
-181,2015-01-17,-29.23,-27.15,0.33,0.33,valencia,almeria,Home,Home,Home
-182,2015-01-17,-30.23,-28.15,-1.0,-1.0,sociedad,vallecano,Away,Home,Home
-183,2015-01-17,-29.56,-27.48,0.67,0.67,villarreal,ath bilbao,Home,Home,Home
-184,2015-01-17,-30.56,-25.78,-1.0,1.7,espanol,celta,Home,Away,Home
-185,2015-01-18,-30.38,-25.6,0.18,0.18,la coruna,barcelona,Away,Away,Away
-186,2015-01-18,-30.16,-25.38,0.22,0.22,getafe,real madrid,Away,Away,Away
-187,2015-01-18,-29.43,-24.65,0.73,0.73,sevilla,malaga,Home,Home,Home
-188,2015-01-18,-29.25,-24.47,0.18,0.18,ath madrid,granada,Home,Home,Home
-189,2015-01-18,-28.05,-23.27,1.2,1.2,elche,levante,Home,Home,Home
-190,2015-01-24,-27.8,-23.02,0.25,0.25,ath madrid,vallecano,Home,Home,Home
-191,2015-01-24,-27.66,-22.88,0.14,0.14,cordoba,real madrid,Away,Away,Away
-192,2015-01-24,-27.49,-22.71,0.17,0.17,elche,barcelona,Away,Away,Away
-193,2015-01-24,-26.74,-21.96,0.75,0.75,sociedad,eibar,Home,Home,Home
-194,2015-01-24,-26.45,-21.67,0.29,0.29,villarreal,levante,Home,Home,Home
-195,2015-01-25,-27.45,-20.47,-1.0,1.2,valencia,sevilla,Home,Draw,Home
-196,2015-01-25,-28.45,-21.47,-1.0,-1.0,ath bilbao,malaga,Draw,Home,Home
-197,2015-01-25,-27.75,-20.77,0.7,0.7,espanol,almeria,Home,Home,Home
-198,2015-01-25,-28.75,-21.77,-1.0,-1.0,la coruna,granada,Draw,Home,Home
-199,2015-01-26,-29.75,-22.77,-1.0,-1.0,getafe,celta,Home,Away,Away
-200,2015-01-30,-30.75,-23.77,-1.0,-1.0,vallecano,la coruna,Away,Home,Home
-201,2015-01-31,-30.31,-23.33,0.44,0.44,celta,cordoba,Home,Home,Home
-202,2015-01-31,-29.74,-22.76,0.57,0.57,eibar,ath madrid,Away,Away,Away
-203,2015-01-31,-28.79,-21.81,0.95,0.95,granada,elche,Home,Home,Home
-204,2015-01-31,-28.61,-21.63,0.18,0.18,real madrid,sociedad,Home,Home,Home
-205,2015-02-01,-29.61,-20.25,-1.0,1.38,almeria,getafe,Home,Draw,Home
-206,2015-02-01,-29.41,-20.05,0.2,0.2,barcelona,villarreal,Home,Home,Home
-207,2015-02-01,-28.03,-18.67,1.38,1.38,levante,ath bilbao,Away,Away,Away
-208,2015-02-01,-27.41,-18.05,0.62,0.62,sevilla,espanol,Home,Home,Home
-209,2015-02-02,-28.41,-16.42,-1.0,1.63,malaga,valencia,Home,Draw,Home
-210,2015-02-04,-28.12,-16.13,0.29,0.29,real madrid,sevilla,Home,Home,Home
-211,2015-02-06,-26.97,-14.98,1.15,1.15,la coruna,eibar,Home,Home,Home
-212,2015-02-07,-26.67,-14.68,0.3,0.3,villarreal,granada,Home,Home,Home
-213,2015-02-07,-27.67,-15.68,-1.0,-1.0,sociedad,celta,Draw,Away,Home
-214,2015-02-07,-28.67,-16.68,-1.0,-1.0,levante,malaga,Home,Away,Away
-215,2015-02-07,-29.67,-17.68,-1.0,-1.0,ath madrid,real madrid,Home,Away,Away
-216,2015-02-08,-29.34,-17.35,0.33,0.33,ath bilbao,barcelona,Away,Away,Away
-217,2015-02-08,-30.34,-18.35,-1.0,-1.0,cordoba,almeria,Away,Home,Home
-218,2015-02-08,-28.71,-16.72,1.63,1.63,espanol,valencia,Away,Away,Away
-219,2015-02-08,-29.71,-17.72,-1.0,-1.0,getafe,sevilla,Home,Away,Away
-220,2015-02-09,-30.71,-16.12,-1.0,1.6,elche,vallecano,Home,Away,Home
-221,2015-02-13,-31.71,-17.12,-1.0,-1.0,almeria,sociedad,Draw,Home,Home
-222,2015-02-14,-32.71,-18.12,-1.0,-1.0,malaga,espanol,Away,Home,Home
-223,2015-02-14,-33.71,-19.12,-1.0,-1.0,granada,ath bilbao,Draw,Away,Away
-224,2015-02-14,-33.63,-19.04,0.08,0.08,real madrid,la coruna,Home,Home,Home
-225,2015-02-14,-33.27,-18.68,0.36,0.36,sevilla,cordoba,Home,Home,Home
-226,2015-02-15,-33.22,-18.63,0.05,0.05,barcelona,levante,Home,Home,Home
-227,2015-02-15,-34.22,-19.63,-1.0,-1.0,celta,ath madrid,Home,Away,Away
-228,2015-02-15,-33.78,-19.19,0.44,0.44,valencia,getafe,Home,Home,Home
-229,2015-02-15,-34.78,-20.19,-1.0,-1.0,vallecano,villarreal,Home,Away,Away
-230,2015-02-16,-35.78,-21.19,-1.0,-1.0,eibar,elche,Away,Draw,Home
-231,2015-02-20,-34.38,-19.79,1.4,1.4,getafe,espanol,Home,Home,Home
-232,2015-02-21,-33.43,-18.84,0.95,0.95,cordoba,valencia,Away,Away,Away
-233,2015-02-21,-32.13,-17.54,1.3,1.3,la coruna,celta,Away,Away,Away
-234,2015-02-21,-31.93,-17.34,0.2,0.2,ath madrid,almeria,Home,Home,Home
-235,2015-02-21,-32.93,-18.34,-1.0,-1.0,barcelona,malaga,Away,Home,Home
-236,2015-02-22,-32.57,-17.98,0.36,0.36,villarreal,eibar,Home,Home,Home
-237,2015-02-22,-33.57,-18.98,-1.0,-1.0,sociedad,sevilla,Home,Away,Away
-238,2015-02-22,-32.66,-18.07,0.91,0.91,ath bilbao,vallecano,Home,Home,Home
-239,2015-02-22,-32.48,-17.89,0.18,0.18,elche,real madrid,Away,Away,Away
-240,2015-02-23,-31.18,-16.59,1.3,1.3,levante,granada,Home,Home,Home
-241,2015-02-27,-30.61,-16.02,0.57,0.57,espanol,cordoba,Home,Home,Home
-242,2015-02-28,-31.61,-17.02,-1.0,-1.0,almeria,la coruna,Draw,Home,Home
-243,2015-02-28,-31.44,-16.85,0.17,0.17,granada,barcelona,Away,Away,Away
-244,2015-02-28,-30.69,-16.1,0.75,0.75,malaga,getafe,Home,Home,Home
-245,2015-02-28,-30.02,-15.43,0.67,0.67,vallecano,levante,Home,Home,Home
-246,2015-03-01,-27.82,-16.43,2.2,-1.0,sevilla,ath madrid,Draw,Draw,Away
-247,2015-03-01,-27.25,-15.86,0.57,0.57,valencia,sociedad,Home,Home,Home
-248,2015-03-01,-28.25,-14.48,-1.0,1.38,eibar,ath bilbao,Away,Draw,Away
-249,2015-03-01,-29.25,-15.48,-1.0,-1.0,real madrid,villarreal,Draw,Home,Home
-250,2015-03-02,-30.25,-16.48,-1.0,-1.0,celta,elche,Draw,Home,Home
-251,2015-03-06,-29.2,-15.43,1.05,1.05,levante,eibar,Home,Home,Home
-252,2015-03-07,-30.2,-16.43,-1.0,-1.0,ath bilbao,real madrid,Home,Away,Away
-253,2015-03-07,-29.15,-15.38,1.05,1.05,elche,almeria,Home,Home,Home
-254,2015-03-07,-30.15,-16.38,-1.0,-1.0,granada,malaga,Home,Away,Away
-255,2015-03-07,-29.1,-15.33,1.05,1.05,la coruna,sevilla,Away,Away,Away
-256,2015-03-08,-27.9,-14.13,1.2,1.2,sociedad,espanol,Home,Home,Home
-257,2015-03-08,-28.9,-15.13,-1.0,-1.0,ath madrid,valencia,Draw,Home,Home
-258,2015-03-08,-28.85,-15.08,0.05,0.05,barcelona,vallecano,Home,Home,Home
-259,2015-03-08,-27.9,-14.13,0.95,0.95,villarreal,celta,Home,Home,Home
-260,2015-03-09,-28.9,-15.13,-1.0,-1.0,cordoba,getafe,Away,Home,Home
-261,2015-03-13,-28.46,-14.69,0.44,0.44,valencia,la coruna,Home,Home,Home
-262,2015-03-14,-29.46,-15.69,-1.0,-1.0,celta,ath bilbao,Away,Home,Home
-263,2015-03-14,-29.32,-15.55,0.14,0.14,eibar,barcelona,Away,Away,Away
-264,2015-03-14,-30.32,-16.55,-1.0,-1.0,espanol,ath madrid,Draw,Away,Away
-265,2015-03-14,-29.32,-15.55,1.0,1.0,vallecano,granada,Home,Home,Home
-266,2015-03-15,-30.32,-16.55,-1.0,-1.0,almeria,villarreal,Draw,Away,Away
-267,2015-03-15,-29.75,-15.98,0.57,0.57,malaga,cordoba,Home,Home,Home
-268,2015-03-15,-29.69,-15.92,0.06,0.06,real madrid,levante,Home,Home,Home
-269,2015-03-15,-29.29,-15.52,0.4,0.4,sevilla,elche,Home,Home,Home
-270,2015-03-16,-30.29,-16.52,-1.0,-1.0,getafe,sociedad,Away,Home,Home
-271,2015-03-20,-29.29,-15.52,1.0,1.0,elche,valencia,Away,Away,Away
-272,2015-03-21,-28.79,-15.02,0.5,0.5,ath bilbao,almeria,Home,Home,Home
-273,2015-03-21,-28.46,-14.69,0.33,0.33,ath madrid,getafe,Home,Home,Home
-274,2015-03-21,-29.46,-15.69,-1.0,-1.0,granada,eibar,Draw,Home,Home
-275,2015-03-21,-28.21,-14.44,1.25,1.25,levante,celta,Away,Away,Away
-276,2015-03-21,-26.71,-12.94,1.5,1.5,vallecano,malaga,Home,Home,Home
-277,2015-03-22,-26.04,-12.27,0.67,0.67,barcelona,real madrid,Home,Home,Home
-278,2015-03-22,-27.04,-13.27,-1.0,-1.0,la coruna,espanol,Draw,Home,Home
-279,2015-03-22,-26.42,-12.65,0.62,0.62,sociedad,cordoba,Home,Home,Home
-280,2015-03-22,-27.42,-13.65,-1.0,-1.0,villarreal,sevilla,Away,Home,Home
-281,2015-04-03,-28.42,-14.65,-1.0,-1.0,eibar,vallecano,Away,Home,Home
-282,2015-04-04,-27.67,-13.9,0.75,0.75,sevilla,ath bilbao,Home,Home,Home
-283,2015-04-04,-28.67,-14.9,-1.0,-1.0,malaga,sociedad,Draw,Home,Home
-284,2015-04-04,-29.67,-15.9,-1.0,-1.0,almeria,levante,Away,Home,Home
-285,2015-04-04,-29.27,-15.5,0.4,0.4,cordoba,ath madrid,Away,Away,Away
-286,2015-04-05,-28.87,-15.1,0.4,0.4,celta,barcelona,Away,Away,Away
-287,2015-04-05,-27.62,-13.85,1.25,1.25,getafe,la coruna,Home,Home,Home
-288,2015-04-05,-27.54,-13.77,0.08,0.08,real madrid,granada,Home,Home,Home
-289,2015-04-05,-28.54,-14.77,-1.0,-1.0,valencia,villarreal,Draw,Home,Home
-290,2015-04-06,-29.54,-15.77,-1.0,-1.0,espanol,elche,Draw,Home,Home
-291,2015-04-07,-29.24,-15.47,0.3,0.3,ath madrid,sociedad,Home,Home,Home
-292,2015-04-07,-30.24,-16.47,-1.0,-1.0,eibar,malaga,Home,Draw,Away
-293,2015-04-07,-29.41,-15.64,0.83,0.83,levante,sevilla,Away,Away,Away
-294,2015-04-08,-29.21,-15.44,0.2,0.2,vallecano,real madrid,Away,Away,Away
-295,2015-04-08,-30.21,-16.44,-1.0,-1.0,la coruna,cordoba,Draw,Home,Home
-296,2015-04-08,-30.16,-16.39,0.05,0.05,barcelona,almeria,Home,Home,Home
-297,2015-04-08,-31.16,-17.39,-1.0,-1.0,granada,celta,Draw,Away,Away
-298,2015-04-09,-32.16,-18.39,-1.0,-1.0,ath bilbao,valencia,Draw,Home,Home
-299,2015-04-09,-33.16,-19.39,-1.0,-1.0,elche,getafe,Away,Home,Home
-300,2015-04-09,-34.16,-20.39,-1.0,-1.0,villarreal,espanol,Away,Home,Home
-301,2015-04-11,-35.16,-21.39,-1.0,-1.0,sevilla,barcelona,Draw,Away,Away
-302,2015-04-11,-33.76,-19.99,1.4,1.4,almeria,granada,Home,Home,Home
-303,2015-04-11,-33.03,-19.26,0.73,0.73,celta,vallecano,Home,Home,Home
-304,2015-04-11,-34.03,-20.26,-1.0,-1.0,malaga,ath madrid,Draw,Away,Away
-305,2015-04-11,-33.97,-20.2,0.06,0.06,real madrid,eibar,Home,Home,Home
-306,2015-04-12,-34.97,-21.2,-1.0,-1.0,sociedad,la coruna,Draw,Home,Home
-307,2015-04-12,-35.97,-22.2,-1.0,-1.0,getafe,villarreal,Draw,Away,Away
-308,2015-04-12,-34.47,-20.7,1.5,1.5,espanol,ath bilbao,Home,Home,Home
-309,2015-04-12,-35.47,-21.7,-1.0,-1.0,cordoba,elche,Away,Home,Home
-310,2015-04-13,-35.14,-21.37,0.33,0.33,valencia,levante,Home,Home,Home
-311,2015-04-17,-36.14,-22.37,-1.0,-1.0,levante,espanol,Draw,Away,Away
-312,2015-04-18,-35.47,-21.7,0.67,0.67,ath bilbao,getafe,Home,Home,Home
-313,2015-04-18,-35.25,-21.48,0.22,0.22,barcelona,valencia,Home,Home,Home
-314,2015-04-18,-34.4,-20.63,0.85,0.85,la coruna,ath madrid,Away,Away,Away
-315,2015-04-18,-34.26,-20.49,0.14,0.14,real madrid,malaga,Home,Home,Home
-316,2015-04-19,-33.46,-19.69,0.8,0.8,vallecano,almeria,Home,Home,Home
-317,2015-04-19,-34.46,-20.69,-1.0,-1.0,villarreal,cordoba,Draw,Home,Home
-318,2015-04-19,-33.26,-19.49,1.2,1.2,eibar,celta,Away,Away,Away
-319,2015-04-19,-34.26,-20.49,-1.0,-1.0,granada,sevilla,Draw,Away,Away
-320,2015-04-20,-35.26,-18.89,-1.0,1.6,elche,sociedad,Home,Draw,Home
-321,2015-04-24,-34.35,-17.98,0.91,0.91,cordoba,ath bilbao,Away,Away,Away
-322,2015-04-25,-34.17,-17.8,0.18,0.18,ath madrid,elche,Home,Home,Home
-323,2015-04-25,-33.92,-17.55,0.25,0.25,espanol,barcelona,Away,Away,Away
-324,2015-04-25,-34.92,-18.55,-1.0,-1.0,getafe,levante,Away,Home,Home
-325,2015-04-25,-35.92,-19.55,-1.0,-1.0,sociedad,villarreal,Draw,Away,Away
-326,2015-04-26,-34.72,-18.35,1.2,1.2,almeria,eibar,Home,Home,Home
-327,2015-04-26,-34.15,-17.78,0.57,0.57,celta,real madrid,Away,Away,Away
-328,2015-04-26,-35.15,-18.78,-1.0,-1.0,malaga,la coruna,Draw,Home,Home
-329,2015-04-26,-34.79,-18.42,0.36,0.36,sevilla,vallecano,Home,Home,Home
-330,2015-04-27,-34.46,-18.09,0.33,0.33,valencia,granada,Home,Home,Home
-331,2015-04-28,-33.61,-17.24,0.85,0.85,levante,cordoba,Home,Home,Home
-332,2015-04-28,-33.57,-17.2,0.04,0.04,barcelona,getafe,Home,Home,Home
-333,2015-04-28,-34.57,-18.2,-1.0,-1.0,ath bilbao,sociedad,Draw,Home,Home
-334,2015-04-29,-33.84,-17.47,0.73,0.73,celta,malaga,Home,Home,Home
-335,2015-04-29,-33.27,-16.9,0.57,0.57,eibar,sevilla,Away,Away,Away
-336,2015-04-29,-32.02,-15.65,1.25,1.25,elche,la coruna,Home,Home,Home
-337,2015-04-29,-31.96,-15.59,0.06,0.06,real madrid,almeria,Home,Home,Home
-338,2015-04-29,-32.96,-14.39,-1.0,1.2,villarreal,ath madrid,Away,Draw,Away
-339,2015-04-30,-30.96,-15.39,2.0,-1.0,granada,espanol,Away,Away,Home
-340,2015-04-30,-31.96,-16.39,-1.0,-1.0,vallecano,valencia,Draw,Away,Away
-341,2015-05-01,-31.11,-15.54,0.85,0.85,sociedad,levante,Home,Home,Home
-342,2015-05-02,-30.06,-14.49,1.05,1.05,sevilla,real madrid,Away,Away,Away
-343,2015-05-02,-31.06,-15.49,-1.0,-1.0,la coruna,villarreal,Draw,Away,Away
-344,2015-05-02,-30.98,-15.41,0.08,0.08,cordoba,barcelona,Away,Away,Away
-345,2015-05-02,-31.98,-16.41,-1.0,-1.0,ath madrid,ath bilbao,Draw,Home,Home
-346,2015-05-03,-32.98,-17.41,-1.0,-1.0,espanol,vallecano,Draw,Home,Home
-347,2015-05-03,-33.98,-18.41,-1.0,-1.0,getafe,granada,Away,Home,Home
-348,2015-05-03,-34.98,-19.41,-1.0,-1.0,malaga,elche,Away,Home,Home
-349,2015-05-03,-34.76,-19.19,0.22,0.22,valencia,eibar,Home,Home,Home
-350,2015-05-04,-35.76,-20.19,-1.0,-1.0,almeria,celta,Draw,Away,Away
-351,2015-05-08,-34.06,-18.49,1.7,1.7,eibar,espanol,Away,Away,Away
-352,2015-05-09,-35.06,-19.49,-1.0,-1.0,real madrid,valencia,Draw,Home,Home
-353,2015-05-09,-34.62,-19.05,0.44,0.44,granada,cordoba,Home,Home,Home
-354,2015-05-09,-34.57,-19.0,0.05,0.05,barcelona,sociedad,Home,Home,Home
-355,2015-05-09,-35.57,-20.0,-1.0,-1.0,ath bilbao,la coruna,Draw,Home,Home
-356,2015-05-10,-35.21,-19.64,0.36,0.36,villarreal,elche,Home,Home,Home
-357,2015-05-10,-36.21,-20.64,-1.0,-1.0,levante,ath madrid,Draw,Away,Away
-358,2015-05-10,-34.41,-21.64,1.8,-1.0,almeria,malaga,Away,Away,Home
-359,2015-05-10,-31.91,-22.64,2.5,-1.0,celta,sevilla,Draw,Draw,Away
-360,2015-05-11,-30.96,-21.69,0.95,0.95,vallecano,getafe,Home,Home,Home
-361,2015-05-17,-31.96,-20.94,-1.0,0.75,ath madrid,barcelona,Away,Draw,Away
-362,2015-05-17,-31.21,-20.19,0.75,0.75,cordoba,vallecano,Away,Away,Away
-363,2015-05-17,-30.11,-19.09,1.1,1.1,elche,ath bilbao,Away,Away,Away
-364,2015-05-17,-29.61,-18.59,0.5,0.5,espanol,real madrid,Away,Away,Away
-365,2015-05-17,-30.61,-19.59,-1.0,-1.0,getafe,eibar,Draw,Home,Home
-366,2015-05-17,-29.86,-18.84,0.75,0.75,la coruna,levante,Home,Home,Home
-367,2015-05-17,-29.61,-18.59,0.25,0.25,sevilla,almeria,Home,Home,Home
-368,2015-05-17,-30.61,-19.59,-1.0,-1.0,sociedad,granada,Away,Home,Home
-369,2015-05-17,-31.61,-20.59,-1.0,-1.0,valencia,celta,Draw,Home,Home
-370,2015-05-17,-30.76,-19.74,0.85,0.85,villarreal,malaga,Home,Home,Home
-371,2015-05-23,-29.26,-20.74,1.5,-1.0,granada,ath madrid,Draw,Draw,Away
-372,2015-05-23,-28.16,-19.64,1.1,1.1,malaga,sevilla,Away,Away,Away
-373,2015-05-23,-29.16,-20.64,-1.0,-1.0,levante,elche,Draw,Home,Home
-374,2015-05-23,-28.83,-20.31,0.33,0.33,eibar,cordoba,Home,Home,Home
-375,2015-05-23,-28.7,-20.18,0.13,0.13,real madrid,getafe,Home,Home,Home
-376,2015-05-23,-29.7,-21.18,-1.0,-1.0,barcelona,la coruna,Draw,Home,Home
-377,2015-05-23,-29.03,-20.51,0.67,0.67,ath bilbao,villarreal,Home,Home,Home
-378,2015-05-23,-28.36,-19.84,0.67,0.67,almeria,valencia,Away,Away,Away
-379,2015-05-23,-27.66,-19.14,0.7,0.7,celta,espanol,Home,Home,Home
-380,2015-05-23,-28.66,-20.14,-1.0,-1.0,vallecano,sociedad,Away,Home,Home
+178,2015-01-11,-24.46,-25.48,2.1,-1.0,granada,sociedad,Draw,Draw,Away
+179,2015-01-12,-25.46,-26.48,-1.0,-1.0,vallecano,cordoba,Away,Home,Home
+180,2015-01-16,-26.46,-27.48,-1.0,-1.0,cordoba,eibar,Draw,Away,Home
+181,2015-01-17,-26.13,-27.15,0.33,0.33,valencia,almeria,Home,Home,Home
+182,2015-01-17,-27.13,-28.15,-1.0,-1.0,sociedad,vallecano,Away,Home,Home
+183,2015-01-17,-26.46,-27.48,0.67,0.67,villarreal,ath bilbao,Home,Home,Home
+184,2015-01-17,-27.46,-25.78,-1.0,1.7,espanol,celta,Home,Away,Home
+185,2015-01-18,-27.28,-25.6,0.18,0.18,la coruna,barcelona,Away,Away,Away
+186,2015-01-18,-27.06,-25.38,0.22,0.22,getafe,real madrid,Away,Away,Away
+187,2015-01-18,-26.33,-24.65,0.73,0.73,sevilla,malaga,Home,Home,Home
+188,2015-01-18,-26.15,-24.47,0.18,0.18,ath madrid,granada,Home,Home,Home
+189,2015-01-18,-24.95,-23.27,1.2,1.2,elche,levante,Home,Home,Home
+190,2015-01-24,-24.7,-23.02,0.25,0.25,ath madrid,vallecano,Home,Home,Home
+191,2015-01-24,-24.56,-22.88,0.14,0.14,cordoba,real madrid,Away,Away,Away
+192,2015-01-24,-24.39,-22.71,0.17,0.17,elche,barcelona,Away,Away,Away
+193,2015-01-24,-23.64,-21.96,0.75,0.75,sociedad,eibar,Home,Home,Home
+194,2015-01-24,-23.35,-21.67,0.29,0.29,villarreal,levante,Home,Home,Home
+195,2015-01-25,-24.35,-20.47,-1.0,1.2,valencia,sevilla,Home,Draw,Home
+196,2015-01-25,-25.35,-21.47,-1.0,-1.0,ath bilbao,malaga,Draw,Home,Home
+197,2015-01-25,-24.65,-20.77,0.7,0.7,espanol,almeria,Home,Home,Home
+198,2015-01-25,-25.65,-21.77,-1.0,-1.0,la coruna,granada,Draw,Home,Home
+199,2015-01-26,-26.65,-22.77,-1.0,-1.0,getafe,celta,Home,Away,Away
+200,2015-01-30,-27.65,-23.77,-1.0,-1.0,vallecano,la coruna,Away,Home,Home
+201,2015-01-31,-27.21,-23.33,0.44,0.44,celta,cordoba,Home,Home,Home
+202,2015-01-31,-26.64,-22.76,0.57,0.57,eibar,ath madrid,Away,Away,Away
+203,2015-01-31,-25.69,-21.81,0.95,0.95,granada,elche,Home,Home,Home
+204,2015-01-31,-25.51,-21.63,0.18,0.18,real madrid,sociedad,Home,Home,Home
+205,2015-02-01,-26.51,-20.25,-1.0,1.38,almeria,getafe,Home,Draw,Home
+206,2015-02-01,-26.31,-20.05,0.2,0.2,barcelona,villarreal,Home,Home,Home
+207,2015-02-01,-24.93,-18.67,1.38,1.38,levante,ath bilbao,Away,Away,Away
+208,2015-02-01,-24.31,-18.05,0.62,0.62,sevilla,espanol,Home,Home,Home
+209,2015-02-02,-25.31,-16.42,-1.0,1.63,malaga,valencia,Home,Draw,Home
+210,2015-02-04,-25.02,-16.13,0.29,0.29,real madrid,sevilla,Home,Home,Home
+211,2015-02-06,-23.87,-14.98,1.15,1.15,la coruna,eibar,Home,Home,Home
+212,2015-02-07,-23.57,-14.68,0.3,0.3,villarreal,granada,Home,Home,Home
+213,2015-02-07,-24.57,-15.68,-1.0,-1.0,sociedad,celta,Draw,Away,Home
+214,2015-02-07,-25.57,-16.68,-1.0,-1.0,levante,malaga,Home,Away,Away
+215,2015-02-07,-26.57,-17.68,-1.0,-1.0,ath madrid,real madrid,Home,Away,Away
+216,2015-02-08,-26.24,-17.35,0.33,0.33,ath bilbao,barcelona,Away,Away,Away
+217,2015-02-08,-27.24,-18.35,-1.0,-1.0,cordoba,almeria,Away,Home,Home
+218,2015-02-08,-25.61,-16.72,1.63,1.63,espanol,valencia,Away,Away,Away
+219,2015-02-08,-26.61,-17.72,-1.0,-1.0,getafe,sevilla,Home,Away,Away
+220,2015-02-09,-27.61,-16.12,-1.0,1.6,elche,vallecano,Home,Away,Home
+221,2015-02-13,-28.61,-17.12,-1.0,-1.0,almeria,sociedad,Draw,Home,Home
+222,2015-02-14,-29.61,-18.12,-1.0,-1.0,malaga,espanol,Away,Home,Home
+223,2015-02-14,-30.61,-19.12,-1.0,-1.0,granada,ath bilbao,Draw,Away,Away
+224,2015-02-14,-30.53,-19.04,0.08,0.08,real madrid,la coruna,Home,Home,Home
+225,2015-02-14,-30.17,-18.68,0.36,0.36,sevilla,cordoba,Home,Home,Home
+226,2015-02-15,-30.12,-18.63,0.05,0.05,barcelona,levante,Home,Home,Home
+227,2015-02-15,-31.12,-19.63,-1.0,-1.0,celta,ath madrid,Home,Away,Away
+228,2015-02-15,-30.68,-19.19,0.44,0.44,valencia,getafe,Home,Home,Home
+229,2015-02-15,-31.68,-20.19,-1.0,-1.0,vallecano,villarreal,Home,Away,Away
+230,2015-02-16,-32.68,-21.19,-1.0,-1.0,eibar,elche,Away,Draw,Home
+231,2015-02-20,-31.28,-19.79,1.4,1.4,getafe,espanol,Home,Home,Home
+232,2015-02-21,-30.33,-18.84,0.95,0.95,cordoba,valencia,Away,Away,Away
+233,2015-02-21,-29.03,-17.54,1.3,1.3,la coruna,celta,Away,Away,Away
+234,2015-02-21,-28.83,-17.34,0.2,0.2,ath madrid,almeria,Home,Home,Home
+235,2015-02-21,-29.83,-18.34,-1.0,-1.0,barcelona,malaga,Away,Home,Home
+236,2015-02-22,-29.47,-17.98,0.36,0.36,villarreal,eibar,Home,Home,Home
+237,2015-02-22,-30.47,-18.98,-1.0,-1.0,sociedad,sevilla,Home,Away,Away
+238,2015-02-22,-29.56,-18.07,0.91,0.91,ath bilbao,vallecano,Home,Home,Home
+239,2015-02-22,-29.38,-17.89,0.18,0.18,elche,real madrid,Away,Away,Away
+240,2015-02-23,-28.08,-16.59,1.3,1.3,levante,granada,Home,Home,Home
+241,2015-02-27,-27.51,-16.02,0.57,0.57,espanol,cordoba,Home,Home,Home
+242,2015-02-28,-28.51,-17.02,-1.0,-1.0,almeria,la coruna,Draw,Home,Home
+243,2015-02-28,-28.34,-16.85,0.17,0.17,granada,barcelona,Away,Away,Away
+244,2015-02-28,-27.59,-16.1,0.75,0.75,malaga,getafe,Home,Home,Home
+245,2015-02-28,-26.92,-15.43,0.67,0.67,vallecano,levante,Home,Home,Home
+246,2015-03-01,-24.72,-16.43,2.2,-1.0,sevilla,ath madrid,Draw,Draw,Away
+247,2015-03-01,-24.15,-15.86,0.57,0.57,valencia,sociedad,Home,Home,Home
+248,2015-03-01,-25.15,-14.48,-1.0,1.38,eibar,ath bilbao,Away,Draw,Away
+249,2015-03-01,-26.15,-15.48,-1.0,-1.0,real madrid,villarreal,Draw,Home,Home
+250,2015-03-02,-27.15,-16.48,-1.0,-1.0,celta,elche,Draw,Home,Home
+251,2015-03-06,-26.1,-15.43,1.05,1.05,levante,eibar,Home,Home,Home
+252,2015-03-07,-27.1,-16.43,-1.0,-1.0,ath bilbao,real madrid,Home,Away,Away
+253,2015-03-07,-26.05,-15.38,1.05,1.05,elche,almeria,Home,Home,Home
+254,2015-03-07,-27.05,-16.38,-1.0,-1.0,granada,malaga,Home,Away,Away
+255,2015-03-07,-26.0,-15.33,1.05,1.05,la coruna,sevilla,Away,Away,Away
+256,2015-03-08,-24.8,-14.13,1.2,1.2,sociedad,espanol,Home,Home,Home
+257,2015-03-08,-25.8,-15.13,-1.0,-1.0,ath madrid,valencia,Draw,Home,Home
+258,2015-03-08,-25.75,-15.08,0.05,0.05,barcelona,vallecano,Home,Home,Home
+259,2015-03-08,-24.8,-14.13,0.95,0.95,villarreal,celta,Home,Home,Home
+260,2015-03-09,-25.8,-15.13,-1.0,-1.0,cordoba,getafe,Away,Home,Home
+261,2015-03-13,-25.36,-14.69,0.44,0.44,valencia,la coruna,Home,Home,Home
+262,2015-03-14,-26.36,-15.69,-1.0,-1.0,celta,ath bilbao,Away,Home,Home
+263,2015-03-14,-26.22,-15.55,0.14,0.14,eibar,barcelona,Away,Away,Away
+264,2015-03-14,-27.22,-16.55,-1.0,-1.0,espanol,ath madrid,Draw,Away,Away
+265,2015-03-14,-26.22,-15.55,1.0,1.0,vallecano,granada,Home,Home,Home
+266,2015-03-15,-27.22,-16.55,-1.0,-1.0,almeria,villarreal,Draw,Away,Away
+267,2015-03-15,-26.65,-15.98,0.57,0.57,malaga,cordoba,Home,Home,Home
+268,2015-03-15,-26.59,-15.92,0.06,0.06,real madrid,levante,Home,Home,Home
+269,2015-03-15,-26.19,-15.52,0.4,0.4,sevilla,elche,Home,Home,Home
+270,2015-03-16,-27.19,-16.52,-1.0,-1.0,getafe,sociedad,Away,Home,Home
+271,2015-03-20,-26.19,-15.52,1.0,1.0,elche,valencia,Away,Away,Away
+272,2015-03-21,-25.69,-15.02,0.5,0.5,ath bilbao,almeria,Home,Home,Home
+273,2015-03-21,-25.36,-14.69,0.33,0.33,ath madrid,getafe,Home,Home,Home
+274,2015-03-21,-26.36,-15.69,-1.0,-1.0,granada,eibar,Draw,Home,Home
+275,2015-03-21,-25.11,-14.44,1.25,1.25,levante,celta,Away,Away,Away
+276,2015-03-21,-23.61,-12.94,1.5,1.5,vallecano,malaga,Home,Home,Home
+277,2015-03-22,-22.94,-12.27,0.67,0.67,barcelona,real madrid,Home,Home,Home
+278,2015-03-22,-23.94,-13.27,-1.0,-1.0,la coruna,espanol,Draw,Home,Home
+279,2015-03-22,-23.32,-12.65,0.62,0.62,sociedad,cordoba,Home,Home,Home
+280,2015-03-22,-24.32,-13.65,-1.0,-1.0,villarreal,sevilla,Away,Home,Home
+281,2015-04-03,-25.32,-14.65,-1.0,-1.0,eibar,vallecano,Away,Home,Home
+282,2015-04-04,-24.57,-13.9,0.75,0.75,sevilla,ath bilbao,Home,Home,Home
+283,2015-04-04,-25.57,-14.9,-1.0,-1.0,malaga,sociedad,Draw,Home,Home
+284,2015-04-04,-26.57,-15.9,-1.0,-1.0,almeria,levante,Away,Home,Home
+285,2015-04-04,-26.17,-15.5,0.4,0.4,cordoba,ath madrid,Away,Away,Away
+286,2015-04-05,-25.77,-15.1,0.4,0.4,celta,barcelona,Away,Away,Away
+287,2015-04-05,-24.52,-13.85,1.25,1.25,getafe,la coruna,Home,Home,Home
+288,2015-04-05,-24.44,-13.77,0.08,0.08,real madrid,granada,Home,Home,Home
+289,2015-04-05,-25.44,-14.77,-1.0,-1.0,valencia,villarreal,Draw,Home,Home
+290,2015-04-06,-26.44,-15.77,-1.0,-1.0,espanol,elche,Draw,Home,Home
+291,2015-04-07,-26.14,-15.47,0.3,0.3,ath madrid,sociedad,Home,Home,Home
+292,2015-04-07,-27.14,-16.47,-1.0,-1.0,eibar,malaga,Home,Draw,Away
+293,2015-04-07,-26.31,-15.64,0.83,0.83,levante,sevilla,Away,Away,Away
+294,2015-04-08,-26.11,-15.44,0.2,0.2,vallecano,real madrid,Away,Away,Away
+295,2015-04-08,-27.11,-16.44,-1.0,-1.0,la coruna,cordoba,Draw,Home,Home
+296,2015-04-08,-27.06,-16.39,0.05,0.05,barcelona,almeria,Home,Home,Home
+297,2015-04-08,-28.06,-17.39,-1.0,-1.0,granada,celta,Draw,Away,Away
+298,2015-04-09,-29.06,-18.39,-1.0,-1.0,ath bilbao,valencia,Draw,Home,Home
+299,2015-04-09,-30.06,-19.39,-1.0,-1.0,elche,getafe,Away,Home,Home
+300,2015-04-09,-31.06,-20.39,-1.0,-1.0,villarreal,espanol,Away,Home,Home
+301,2015-04-11,-32.06,-21.39,-1.0,-1.0,sevilla,barcelona,Draw,Away,Away
+302,2015-04-11,-30.66,-19.99,1.4,1.4,almeria,granada,Home,Home,Home
+303,2015-04-11,-29.93,-19.26,0.73,0.73,celta,vallecano,Home,Home,Home
+304,2015-04-11,-30.93,-20.26,-1.0,-1.0,malaga,ath madrid,Draw,Away,Away
+305,2015-04-11,-30.87,-20.2,0.06,0.06,real madrid,eibar,Home,Home,Home
+306,2015-04-12,-31.87,-21.2,-1.0,-1.0,sociedad,la coruna,Draw,Home,Home
+307,2015-04-12,-32.87,-22.2,-1.0,-1.0,getafe,villarreal,Draw,Away,Away
+308,2015-04-12,-31.37,-20.7,1.5,1.5,espanol,ath bilbao,Home,Home,Home
+309,2015-04-12,-32.37,-21.7,-1.0,-1.0,cordoba,elche,Away,Home,Home
+310,2015-04-13,-32.04,-21.37,0.33,0.33,valencia,levante,Home,Home,Home
+311,2015-04-17,-33.04,-22.37,-1.0,-1.0,levante,espanol,Draw,Away,Away
+312,2015-04-18,-32.37,-21.7,0.67,0.67,ath bilbao,getafe,Home,Home,Home
+313,2015-04-18,-32.15,-21.48,0.22,0.22,barcelona,valencia,Home,Home,Home
+314,2015-04-18,-31.3,-20.63,0.85,0.85,la coruna,ath madrid,Away,Away,Away
+315,2015-04-18,-31.16,-20.49,0.14,0.14,real madrid,malaga,Home,Home,Home
+316,2015-04-19,-30.36,-19.69,0.8,0.8,vallecano,almeria,Home,Home,Home
+317,2015-04-19,-31.36,-20.69,-1.0,-1.0,villarreal,cordoba,Draw,Home,Home
+318,2015-04-19,-30.16,-19.49,1.2,1.2,eibar,celta,Away,Away,Away
+319,2015-04-19,-31.16,-20.49,-1.0,-1.0,granada,sevilla,Draw,Away,Away
+320,2015-04-20,-32.16,-18.89,-1.0,1.6,elche,sociedad,Home,Draw,Home
+321,2015-04-24,-31.25,-17.98,0.91,0.91,cordoba,ath bilbao,Away,Away,Away
+322,2015-04-25,-31.07,-17.8,0.18,0.18,ath madrid,elche,Home,Home,Home
+323,2015-04-25,-30.82,-17.55,0.25,0.25,espanol,barcelona,Away,Away,Away
+324,2015-04-25,-31.82,-18.55,-1.0,-1.0,getafe,levante,Away,Home,Home
+325,2015-04-25,-32.82,-19.55,-1.0,-1.0,sociedad,villarreal,Draw,Away,Away
+326,2015-04-26,-31.62,-18.35,1.2,1.2,almeria,eibar,Home,Home,Home
+327,2015-04-26,-31.05,-17.78,0.57,0.57,celta,real madrid,Away,Away,Away
+328,2015-04-26,-32.05,-18.78,-1.0,-1.0,malaga,la coruna,Draw,Home,Home
+329,2015-04-26,-31.69,-18.42,0.36,0.36,sevilla,vallecano,Home,Home,Home
+330,2015-04-27,-31.36,-18.09,0.33,0.33,valencia,granada,Home,Home,Home
+331,2015-04-28,-30.51,-17.24,0.85,0.85,levante,cordoba,Home,Home,Home
+332,2015-04-28,-30.47,-17.2,0.04,0.04,barcelona,getafe,Home,Home,Home
+333,2015-04-28,-31.47,-18.2,-1.0,-1.0,ath bilbao,sociedad,Draw,Home,Home
+334,2015-04-29,-30.74,-17.47,0.73,0.73,celta,malaga,Home,Home,Home
+335,2015-04-29,-30.17,-16.9,0.57,0.57,eibar,sevilla,Away,Away,Away
+336,2015-04-29,-31.17,-15.65,-1.0,1.25,elche,la coruna,Home,Draw,Home
+337,2015-04-29,-31.11,-15.59,0.06,0.06,real madrid,almeria,Home,Home,Home
+338,2015-04-29,-32.11,-14.39,-1.0,1.2,villarreal,ath madrid,Away,Draw,Away
+339,2015-04-30,-30.11,-15.39,2.0,-1.0,granada,espanol,Away,Away,Home
+340,2015-04-30,-31.11,-16.39,-1.0,-1.0,vallecano,valencia,Draw,Away,Away
+341,2015-05-01,-30.26,-15.54,0.85,0.85,sociedad,levante,Home,Home,Home
+342,2015-05-02,-29.21,-14.49,1.05,1.05,sevilla,real madrid,Away,Away,Away
+343,2015-05-02,-30.21,-15.49,-1.0,-1.0,la coruna,villarreal,Draw,Away,Away
+344,2015-05-02,-30.13,-15.41,0.08,0.08,cordoba,barcelona,Away,Away,Away
+345,2015-05-02,-31.13,-16.41,-1.0,-1.0,ath madrid,ath bilbao,Draw,Home,Home
+346,2015-05-03,-32.13,-17.41,-1.0,-1.0,espanol,vallecano,Draw,Home,Home
+347,2015-05-03,-33.13,-18.41,-1.0,-1.0,getafe,granada,Away,Home,Home
+348,2015-05-03,-34.13,-19.41,-1.0,-1.0,malaga,elche,Away,Home,Home
+349,2015-05-03,-33.91,-19.19,0.22,0.22,valencia,eibar,Home,Home,Home
+350,2015-05-04,-34.91,-20.19,-1.0,-1.0,almeria,celta,Draw,Away,Away
+351,2015-05-08,-33.21,-18.49,1.7,1.7,eibar,espanol,Away,Away,Away
+352,2015-05-09,-34.21,-19.49,-1.0,-1.0,real madrid,valencia,Draw,Home,Home
+353,2015-05-09,-33.77,-19.05,0.44,0.44,granada,cordoba,Home,Home,Home
+354,2015-05-09,-33.72,-19.0,0.05,0.05,barcelona,sociedad,Home,Home,Home
+355,2015-05-09,-34.72,-20.0,-1.0,-1.0,ath bilbao,la coruna,Draw,Home,Home
+356,2015-05-10,-34.36,-19.64,0.36,0.36,villarreal,elche,Home,Home,Home
+357,2015-05-10,-35.36,-20.64,-1.0,-1.0,levante,ath madrid,Draw,Away,Away
+358,2015-05-10,-33.56,-21.64,1.8,-1.0,almeria,malaga,Away,Away,Home
+359,2015-05-10,-31.06,-22.64,2.5,-1.0,celta,sevilla,Draw,Draw,Away
+360,2015-05-11,-30.11,-21.69,0.95,0.95,vallecano,getafe,Home,Home,Home
+361,2015-05-17,-31.11,-20.94,-1.0,0.75,ath madrid,barcelona,Away,Draw,Away
+362,2015-05-17,-30.36,-20.19,0.75,0.75,cordoba,vallecano,Away,Away,Away
+363,2015-05-17,-29.26,-19.09,1.1,1.1,elche,ath bilbao,Away,Away,Away
+364,2015-05-17,-28.76,-18.59,0.5,0.5,espanol,real madrid,Away,Away,Away
+365,2015-05-17,-29.76,-19.59,-1.0,-1.0,getafe,eibar,Draw,Home,Home
+366,2015-05-17,-29.01,-18.84,0.75,0.75,la coruna,levante,Home,Home,Home
+367,2015-05-17,-28.76,-18.59,0.25,0.25,sevilla,almeria,Home,Home,Home
+368,2015-05-17,-29.76,-19.59,-1.0,-1.0,sociedad,granada,Away,Home,Home
+369,2015-05-17,-30.76,-20.59,-1.0,-1.0,valencia,celta,Draw,Home,Home
+370,2015-05-17,-29.91,-19.74,0.85,0.85,villarreal,malaga,Home,Home,Home
+371,2015-05-23,-28.41,-20.74,1.5,-1.0,granada,ath madrid,Draw,Draw,Away
+372,2015-05-23,-27.31,-19.64,1.1,1.1,malaga,sevilla,Away,Away,Away
+373,2015-05-23,-28.31,-20.64,-1.0,-1.0,levante,elche,Draw,Home,Home
+374,2015-05-23,-27.98,-20.31,0.33,0.33,eibar,cordoba,Home,Home,Home
+375,2015-05-23,-27.85,-20.18,0.13,0.13,real madrid,getafe,Home,Home,Home
+376,2015-05-23,-28.85,-21.18,-1.0,-1.0,barcelona,la coruna,Draw,Home,Home
+377,2015-05-23,-28.18,-20.51,0.67,0.67,ath bilbao,villarreal,Home,Home,Home
+378,2015-05-23,-27.51,-19.84,0.67,0.67,almeria,valencia,Away,Away,Away
+379,2015-05-23,-26.81,-19.14,0.7,0.7,celta,espanol,Home,Home,Home
+380,2015-05-23,-27.81,-20.14,-1.0,-1.0,vallecano,sociedad,Away,Home,Home
