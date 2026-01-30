@@ -171,7 +171,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 170,2012-12-22,-12.74,-8.52,-1.0,-1.0,malaga,real madrid,Home,Away,Away
 171,2013-01-04,-13.74,-9.52,-1.0,-1.0,zaragoza,betis,Away,Home,Home
 172,2013-01-05,-14.74,-8.27,-1.0,1.25,granada,valencia,Away,Home,Away
-173,2013-01-05,-15.74,-9.27,-1.0,-1.0,la coruna,malaga,Home,Away,Away
+173,2013-01-05,-15.74,-9.27,-1.0,-1.0,la coruna,malaga,Home,Draw,Away
 174,2013-01-05,-14.49,-8.02,1.25,1.25,levante,ath bilbao,Home,Home,Home
 175,2013-01-05,-13.96,-7.49,0.53,0.53,sevilla,osasuna,Home,Home,Home
 176,2013-01-06,-13.78,-7.31,0.18,0.18,real madrid,sociedad,Home,Home,Home
@@ -358,24 +358,24 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 357,2013-05-19,-31.77,-18.2,0.57,0.57,la coruna,espanol,Home,Home,Home
 358,2013-05-19,-32.77,-19.2,-1.0,-1.0,levante,vallecano,Away,Home,Home
 359,2013-05-19,-33.77,-20.2,-1.0,-1.0,zaragoza,ath bilbao,Away,Home,Home
-360,2013-05-20,-32.27,-18.7,1.5,1.5,mallorca,betis,Home,Home,Home
-361,2013-05-26,-31.7,-18.13,0.57,0.57,espanol,barcelona,Away,Away,Away
-362,2013-05-26,-31.45,-17.88,0.25,0.25,valencia,granada,Home,Home,Home
-363,2013-05-26,-32.45,-18.88,-1.0,-1.0,sociedad,real madrid,Draw,Away,Home
-364,2013-05-26,-31.07,-17.5,1.38,1.38,osasuna,sevilla,Home,Home,Home
-365,2013-05-26,-29.69,-16.12,1.38,1.38,malaga,la coruna,Home,Home,Home
-366,2013-05-26,-28.69,-15.12,1.0,1.0,betis,zaragoza,Home,Home,Home
-367,2013-05-26,-27.39,-13.82,1.3,1.3,valladolid,celta,Away,Away,Away
-368,2013-05-26,-28.39,-14.82,-1.0,-1.0,ath madrid,mallorca,Draw,Home,Home
-369,2013-05-26,-29.39,-15.82,-1.0,-1.0,ath bilbao,levante,Away,Home,Home
-370,2013-05-26,-30.39,-16.82,-1.0,-1.0,getafe,vallecano,Away,Home,Home
-371,2013-06-01,-30.14,-16.57,0.25,0.25,real madrid,osasuna,Home,Home,Home
-372,2013-06-01,-29.64,-16.07,0.5,0.5,mallorca,valladolid,Home,Home,Home
-373,2013-06-01,-30.64,-17.07,-1.0,-1.0,sevilla,valencia,Home,Away,Away
-374,2013-06-01,-31.64,-18.07,-1.0,-1.0,levante,betis,Draw,Away,Away
-375,2013-06-01,-32.64,-19.07,-1.0,-1.0,vallecano,ath bilbao,Draw,Home,Home
-376,2013-06-01,-31.69,-18.12,0.95,0.95,granada,getafe,Home,Home,Home
-377,2013-06-01,-31.25,-17.68,0.44,0.44,celta,espanol,Home,Home,Home
-378,2013-06-01,-31.0,-17.43,0.25,0.25,barcelona,malaga,Home,Home,Home
-379,2013-06-01,-32.0,-18.43,-1.0,-1.0,la coruna,sociedad,Away,Home,Home
-380,2013-06-01,-33.0,-19.43,-1.0,-1.0,zaragoza,ath madrid,Away,Home,Home
+360,2013-05-20,-34.77,-18.7,-1.0,1.5,mallorca,betis,Home,Draw,Home
+361,2013-05-26,-34.2,-18.13,0.57,0.57,espanol,barcelona,Away,Away,Away
+362,2013-05-26,-33.95,-17.88,0.25,0.25,valencia,granada,Home,Home,Home
+363,2013-05-26,-34.95,-18.88,-1.0,-1.0,sociedad,real madrid,Draw,Away,Home
+364,2013-05-26,-33.57,-17.5,1.38,1.38,osasuna,sevilla,Home,Home,Home
+365,2013-05-26,-32.19,-16.12,1.38,1.38,malaga,la coruna,Home,Home,Home
+366,2013-05-26,-31.19,-15.12,1.0,1.0,betis,zaragoza,Home,Home,Home
+367,2013-05-26,-29.89,-13.82,1.3,1.3,valladolid,celta,Away,Away,Away
+368,2013-05-26,-30.89,-14.82,-1.0,-1.0,ath madrid,mallorca,Draw,Home,Home
+369,2013-05-26,-31.89,-15.82,-1.0,-1.0,ath bilbao,levante,Away,Home,Home
+370,2013-05-26,-32.89,-16.82,-1.0,-1.0,getafe,vallecano,Away,Home,Home
+371,2013-06-01,-32.64,-16.57,0.25,0.25,real madrid,osasuna,Home,Home,Home
+372,2013-06-01,-32.14,-16.07,0.5,0.5,mallorca,valladolid,Home,Home,Home
+373,2013-06-01,-33.14,-17.07,-1.0,-1.0,sevilla,valencia,Home,Away,Away
+374,2013-06-01,-34.14,-18.07,-1.0,-1.0,levante,betis,Draw,Away,Away
+375,2013-06-01,-35.14,-19.07,-1.0,-1.0,vallecano,ath bilbao,Draw,Home,Home
+376,2013-06-01,-34.19,-18.12,0.95,0.95,granada,getafe,Home,Home,Home
+377,2013-06-01,-33.75,-17.68,0.44,0.44,celta,espanol,Home,Home,Home
+378,2013-06-01,-33.5,-17.43,0.25,0.25,barcelona,malaga,Home,Home,Home
+379,2013-06-01,-34.5,-18.43,-1.0,-1.0,la coruna,sociedad,Away,Home,Home
+380,2013-06-01,-35.5,-19.43,-1.0,-1.0,zaragoza,ath madrid,Away,Home,Home

@@ -335,47 +335,47 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 334,2022-04-30,17.03,-2.78,0.5,0.5,real madrid,espanol,Home,Home,Home
 335,2022-04-30,16.03,-3.78,-1.0,-1.0,valencia,levante,Draw,Home,Home
 336,2022-05-01,16.33,-3.48,0.3,0.3,barcelona,mallorca,Home,Home,Home
-337,2022-05-01,18.53,-4.48,2.2,-1.0,elche,osasuna,Draw,Draw,Away
-338,2022-05-01,17.53,-5.48,-1.0,-1.0,granada,celta,Draw,Home,Away
-339,2022-05-01,19.63,-6.48,2.1,-1.0,vallecano,sociedad,Draw,Draw,Away
-340,2022-05-02,18.63,-7.48,-1.0,-1.0,getafe,betis,Draw,Away,Away
-341,2022-05-06,17.63,-8.48,-1.0,-1.0,levante,sociedad,Home,Away,Away
-342,2022-05-07,16.63,-9.48,-1.0,-1.0,ath bilbao,valencia,Draw,Home,Home
-343,2022-05-07,17.88,-8.23,1.25,1.25,betis,barcelona,Away,Away,Away
-344,2022-05-07,18.58,-7.53,0.7,0.7,cadiz,elche,Home,Home,Home
-345,2022-05-07,19.48,-6.63,0.9,0.9,celta,alaves,Home,Home,Home
-346,2022-05-07,18.48,-7.63,-1.0,-1.0,mallorca,granada,Away,Home,Home
-347,2022-05-08,19.58,-6.53,1.1,1.1,ath madrid,real madrid,Home,Home,Home
-348,2022-05-08,18.58,-7.53,-1.0,-1.0,espanol,osasuna,Draw,Home,Home
-349,2022-05-08,17.58,-8.53,-1.0,-1.0,getafe,vallecano,Draw,Home,Home
-350,2022-05-08,16.58,-9.53,-1.0,-1.0,villarreal,sevilla,Draw,Home,Home
-351,2022-05-10,17.78,-8.33,1.2,1.2,valencia,betis,Away,Away,Away
-352,2022-05-10,18.22,-7.89,0.44,0.44,barcelona,celta,Home,Home,Home
-353,2022-05-10,17.22,-8.89,-1.0,-1.0,granada,ath bilbao,Home,Away,Away
-354,2022-05-11,18.32,-7.79,1.1,1.1,alaves,espanol,Home,Home,Home
-355,2022-05-11,18.97,-7.14,0.65,0.65,elche,ath madrid,Away,Away,Away
-356,2022-05-11,17.97,-8.14,-1.0,-1.0,osasuna,getafe,Draw,Home,Home
-357,2022-05-11,16.97,-9.14,-1.0,-1.0,sevilla,mallorca,Draw,Home,Home
-358,2022-05-12,17.42,-8.69,0.45,0.45,real madrid,levante,Home,Home,Home
-359,2022-05-12,18.08,-8.03,0.66,0.66,sociedad,cadiz,Home,Home,Home
-360,2022-05-12,18.88,-7.23,0.8,0.8,vallecano,villarreal,Away,Away,Away
-361,2022-05-14,17.88,-8.23,-1.0,-1.0,espanol,valencia,Draw,Home,Home
-362,2022-05-15,16.88,-9.23,-1.0,-1.0,levante,alaves,Home,Draw,Away
-363,2022-05-15,15.88,-10.23,-1.0,-1.0,getafe,barcelona,Draw,Away,Away
-364,2022-05-15,16.53,-9.58,0.65,0.65,celta,elche,Home,Home,Home
-365,2022-05-15,15.53,-10.58,-1.0,-1.0,ath madrid,sevilla,Draw,Home,Home
-366,2022-05-15,16.03,-10.08,0.5,0.5,betis,granada,Home,Home,Home
-367,2022-05-15,16.56,-9.55,0.53,0.53,ath bilbao,osasuna,Home,Home,Home
-368,2022-05-15,17.13,-8.98,0.57,0.57,mallorca,vallecano,Home,Home,Home
-369,2022-05-15,16.13,-9.98,-1.0,-1.0,cadiz,real madrid,Draw,Away,Away
-370,2022-05-15,15.13,-10.98,-1.0,-1.0,villarreal,sociedad,Away,Home,Home
-371,2022-05-20,14.13,-11.98,-1.0,-1.0,vallecano,levante,Away,Home,Home
-372,2022-05-20,13.13,-12.98,-1.0,-1.0,real madrid,betis,Draw,Home,Home
-373,2022-05-21,14.88,-13.98,1.75,-1.0,valencia,celta,Home,Home,Away
-374,2022-05-22,13.88,-12.78,-1.0,1.2,osasuna,mallorca,Away,Home,Away
-375,2022-05-22,12.88,-13.78,-1.0,-1.0,granada,espanol,Draw,Home,Home
-376,2022-05-22,14.38,-12.28,1.5,1.5,sevilla,ath bilbao,Home,Home,Home
-377,2022-05-22,13.38,-13.28,-1.0,-1.0,barcelona,villarreal,Away,Home,Home
-378,2022-05-22,14.21,-12.45,0.83,0.83,alaves,cadiz,Away,Away,Away
-379,2022-05-22,13.21,-13.45,-1.0,-1.0,elche,getafe,Home,Draw,Away
-380,2022-05-22,14.91,-14.45,1.7,-1.0,sociedad,ath madrid,Away,Away,Home
+337,2022-05-01,15.33,-4.48,-1.0,-1.0,elche,osasuna,Draw,Home,Away
+338,2022-05-01,14.33,-5.48,-1.0,-1.0,granada,celta,Draw,Home,Away
+339,2022-05-01,16.43,-6.48,2.1,-1.0,vallecano,sociedad,Draw,Draw,Away
+340,2022-05-02,15.43,-7.48,-1.0,-1.0,getafe,betis,Draw,Away,Away
+341,2022-05-06,14.43,-8.48,-1.0,-1.0,levante,sociedad,Home,Away,Away
+342,2022-05-07,13.43,-9.48,-1.0,-1.0,ath bilbao,valencia,Draw,Home,Home
+343,2022-05-07,14.68,-8.23,1.25,1.25,betis,barcelona,Away,Away,Away
+344,2022-05-07,15.38,-7.53,0.7,0.7,cadiz,elche,Home,Home,Home
+345,2022-05-07,16.28,-6.63,0.9,0.9,celta,alaves,Home,Home,Home
+346,2022-05-07,15.28,-7.63,-1.0,-1.0,mallorca,granada,Away,Home,Home
+347,2022-05-08,16.38,-6.53,1.1,1.1,ath madrid,real madrid,Home,Home,Home
+348,2022-05-08,15.38,-7.53,-1.0,-1.0,espanol,osasuna,Draw,Home,Home
+349,2022-05-08,14.38,-8.53,-1.0,-1.0,getafe,vallecano,Draw,Home,Home
+350,2022-05-08,13.38,-9.53,-1.0,-1.0,villarreal,sevilla,Draw,Home,Home
+351,2022-05-10,14.58,-8.33,1.2,1.2,valencia,betis,Away,Away,Away
+352,2022-05-10,15.02,-7.89,0.44,0.44,barcelona,celta,Home,Home,Home
+353,2022-05-10,14.02,-8.89,-1.0,-1.0,granada,ath bilbao,Home,Away,Away
+354,2022-05-11,15.12,-7.79,1.1,1.1,alaves,espanol,Home,Home,Home
+355,2022-05-11,15.77,-7.14,0.65,0.65,elche,ath madrid,Away,Away,Away
+356,2022-05-11,14.77,-8.14,-1.0,-1.0,osasuna,getafe,Draw,Home,Home
+357,2022-05-11,13.77,-9.14,-1.0,-1.0,sevilla,mallorca,Draw,Home,Home
+358,2022-05-12,14.22,-8.69,0.45,0.45,real madrid,levante,Home,Home,Home
+359,2022-05-12,14.88,-8.03,0.66,0.66,sociedad,cadiz,Home,Home,Home
+360,2022-05-12,15.68,-7.23,0.8,0.8,vallecano,villarreal,Away,Away,Away
+361,2022-05-14,14.68,-8.23,-1.0,-1.0,espanol,valencia,Draw,Home,Home
+362,2022-05-15,13.68,-9.23,-1.0,-1.0,levante,alaves,Home,Draw,Away
+363,2022-05-15,12.68,-10.23,-1.0,-1.0,getafe,barcelona,Draw,Away,Away
+364,2022-05-15,13.33,-9.58,0.65,0.65,celta,elche,Home,Home,Home
+365,2022-05-15,12.33,-10.58,-1.0,-1.0,ath madrid,sevilla,Draw,Home,Home
+366,2022-05-15,12.83,-10.08,0.5,0.5,betis,granada,Home,Home,Home
+367,2022-05-15,13.36,-9.55,0.53,0.53,ath bilbao,osasuna,Home,Home,Home
+368,2022-05-15,13.93,-8.98,0.57,0.57,mallorca,vallecano,Home,Home,Home
+369,2022-05-15,12.93,-9.98,-1.0,-1.0,cadiz,real madrid,Draw,Away,Away
+370,2022-05-15,11.93,-10.98,-1.0,-1.0,villarreal,sociedad,Away,Home,Home
+371,2022-05-20,10.93,-11.98,-1.0,-1.0,vallecano,levante,Away,Home,Home
+372,2022-05-20,9.93,-12.98,-1.0,-1.0,real madrid,betis,Draw,Home,Home
+373,2022-05-21,11.68,-13.98,1.75,-1.0,valencia,celta,Home,Home,Away
+374,2022-05-22,10.68,-12.78,-1.0,1.2,osasuna,mallorca,Away,Home,Away
+375,2022-05-22,9.68,-13.78,-1.0,-1.0,granada,espanol,Draw,Home,Home
+376,2022-05-22,8.68,-12.28,-1.0,1.5,sevilla,ath bilbao,Home,Draw,Home
+377,2022-05-22,7.68,-13.28,-1.0,-1.0,barcelona,villarreal,Away,Home,Home
+378,2022-05-22,8.51,-12.45,0.83,0.83,alaves,cadiz,Away,Away,Away
+379,2022-05-22,7.51,-13.45,-1.0,-1.0,elche,getafe,Home,Draw,Away
+380,2022-05-22,9.21,-14.45,1.7,-1.0,sociedad,ath madrid,Away,Away,Home

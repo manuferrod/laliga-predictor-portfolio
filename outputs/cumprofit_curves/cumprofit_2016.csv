@@ -110,7 +110,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 109,2016-11-06,-6.09,-2.74,-1.0,-1.0,espanol,ath bilbao,Draw,Away,Away
 110,2016-11-06,-6.02,-2.67,0.07,0.07,real madrid,leganes,Home,Home,Home
 111,2016-11-18,-4.67,-1.32,1.35,1.35,betis,las palmas,Home,Home,Home
-112,2016-11-19,-5.67,-2.32,-1.0,-1.0,ath madrid,real madrid,Away,Draw,Home
+112,2016-11-19,-5.67,-2.32,-1.0,-1.0,ath madrid,real madrid,Away,Home,Home
 113,2016-11-19,-6.67,-3.32,-1.0,-1.0,barcelona,malaga,Draw,Home,Home
 114,2016-11-19,-5.29,-1.94,1.38,1.38,eibar,celta,Home,Home,Home
 115,2016-11-19,-4.09,-0.74,1.2,1.2,la coruna,sevilla,Away,Away,Away

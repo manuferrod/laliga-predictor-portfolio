@@ -1,6 +1,6 @@
 {
-  "generated_at": "20260126",
-  "run_code": "451340",
+  "generated_at": "20260130",
+  "run_code": "930486",
   "model": {
     "type": "LogisticRegression(multinomial)",
     "C": 1.0,
@@ -40,9 +40,9 @@
     "season_filter": 2025
   },
   "data": {
-    "n_future_rows_out": 1,
-    "future_min_date": "2026-01-26 00:00:00",
-    "future_max_date": "2026-01-26 00:00:00",
+    "n_future_rows_out": 10,
+    "future_min_date": "2026-01-30 00:00:00",
+    "future_max_date": "2026-02-02 00:00:00",
     "unique_key_report": {
       "collisions_augmented": 0
     },
@@ -51,20 +51,50 @@
         "season": 2025,
         "csv": "outputs/future_predictions_2025.csv",
         "json": "outputs/future_predictions_2025.json",
-        "n_rows": 1
+        "n_rows": 10
       }
     ]
   },
   "by_date": [
     {
-      "Date": "2026-01-26",
+      "Date": "2026-01-30",
       "n_matches": 1,
-      "mean_conf": 0.574670950275165,
-      "mean_entropy": 0.9632832858395303,
-      "mean_margin": 0.3087373684854015,
-      "pct_pick_H": 0.0,
+      "mean_conf": 0.49841715735216263,
+      "mean_entropy": 1.0176894278579125,
+      "mean_margin": 0.17206456889291333,
+      "pct_pick_H": 1.0,
       "pct_pick_D": 0.0,
-      "pct_pick_A": 1.0
+      "pct_pick_A": 0.0
+    },
+    {
+      "Date": "2026-01-31",
+      "n_matches": 4,
+      "mean_conf": 0.5521378806278364,
+      "mean_entropy": 0.9497480161002283,
+      "mean_margin": 0.2815443531716617,
+      "pct_pick_H": 0.0,
+      "pct_pick_D": 0.25,
+      "pct_pick_A": 0.75
+    },
+    {
+      "Date": "2026-02-01",
+      "n_matches": 4,
+      "mean_conf": 0.5727582241627138,
+      "mean_entropy": 0.9119966503582995,
+      "mean_margin": 0.3204328460537301,
+      "pct_pick_H": 0.75,
+      "pct_pick_D": 0.25,
+      "pct_pick_A": 0.0
+    },
+    {
+      "Date": "2026-02-02",
+      "n_matches": 1,
+      "mean_conf": 0.35871903707363034,
+      "mean_entropy": 1.093896110217694,
+      "mean_margin": 0.005658582801873702,
+      "pct_pick_H": 1.0,
+      "pct_pick_D": 0.0,
+      "pct_pick_A": 0.0
     }
   ]
 }
