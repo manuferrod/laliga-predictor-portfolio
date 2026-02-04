@@ -169,9 +169,9 @@
     "train_until": 2024,
     "n_matches": 229,
     "profit_model": 23.84,
-    "profit_bet365": 9.75,
+    "profit_bet365": 9.65,
     "roi_model": 0.10410480349344978,
-    "roi_bet365": 0.0425764192139738,
+    "roi_bet365": 0.04213973799126638,
     "csv_file": "cumprofit_2025.csv",
     "json_file": "cumprofit_2025.json"
   }

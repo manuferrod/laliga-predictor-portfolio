@@ -217,14 +217,14 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 216,2026-02-01,25.01,8.22,1.9,-1.0,getafe,celta,Draw,Draw,Home
 217,2026-02-01,25.84,9.05,0.83,0.83,betis,valencia,Home,Home,Home
 218,2026-02-01,24.84,8.05,-1.0,-1.0,ath bilbao,sociedad,Draw,Home,Home
-219,2026-02-02,23.84,9.75,-1.0,1.7,mallorca,sevilla,Home,Away,Home
-220,2026-02-06,23.84,9.75,0.0,0.0,celta,osasuna,Draw,Home,Home
-221,2026-02-07,23.84,9.75,0.0,0.0,vallecano,real oviedo,Draw,Home,Home
-222,2026-02-07,23.84,9.75,0.0,0.0,barcelona,mallorca,Draw,Home,Home
-223,2026-02-07,23.84,9.75,0.0,0.0,sevilla,girona,Draw,Home,Home
-224,2026-02-07,23.84,9.75,0.0,0.0,sociedad,elche,Draw,Home,Home
-225,2026-02-08,23.84,9.75,0.0,0.0,ath madrid,betis,Draw,Home,Home
-226,2026-02-08,23.84,9.75,0.0,0.0,valencia,real madrid,Draw,Away,Away
-227,2026-02-08,23.84,9.75,0.0,0.0,alaves,getafe,Draw,Draw,Home
-228,2026-02-08,23.84,9.75,0.0,0.0,ath bilbao,levante,Draw,Home,Home
-229,2026-02-09,23.84,9.75,0.0,0.0,villarreal,espanol,Draw,Home,Home
+219,2026-02-02,23.84,9.65,-1.0,1.6,mallorca,sevilla,Home,Away,Home
+220,2026-02-06,23.84,9.65,0.0,0.0,celta,osasuna,Draw,Home,Home
+221,2026-02-07,23.84,9.65,0.0,0.0,vallecano,real oviedo,Draw,Home,Home
+222,2026-02-07,23.84,9.65,0.0,0.0,barcelona,mallorca,Draw,Home,Home
+223,2026-02-07,23.84,9.65,0.0,0.0,sevilla,girona,Draw,Home,Home
+224,2026-02-07,23.84,9.65,0.0,0.0,sociedad,elche,Draw,Home,Home
+225,2026-02-08,23.84,9.65,0.0,0.0,ath madrid,betis,Draw,Home,Home
+226,2026-02-08,23.84,9.65,0.0,0.0,valencia,real madrid,Draw,Away,Away
+227,2026-02-08,23.84,9.65,0.0,0.0,alaves,getafe,Draw,Draw,Home
+228,2026-02-08,23.84,9.65,0.0,0.0,ath bilbao,levante,Draw,Home,Home
+229,2026-02-09,23.84,9.65,0.0,0.0,villarreal,espanol,Draw,Home,Home
