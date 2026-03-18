@@ -31,7 +31,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 30,2019-09-01,-3.66,-3.46,-1.0,-1.0,villarreal,real madrid,Draw,Away,Away
 31,2019-09-13,-4.66,-4.46,-1.0,-1.0,mallorca,ath bilbao,Draw,Away,Away
 32,2019-09-14,-4.22,-4.02,0.44,0.44,barcelona,valencia,Home,Home,Home
-33,2019-09-14,-5.22,-5.02,-1.0,-1.0,leganes,villarreal,Away,Draw,Home
+33,2019-09-14,-5.22,-5.02,-1.0,-1.0,leganes,villarreal,Away,Home,Home
 34,2019-09-14,-5.0,-4.8,0.22,0.22,real madrid,levante,Home,Home,Home
 35,2019-09-14,-6.0,-5.8,-1.0,-1.0,sociedad,ath madrid,Home,Away,Away
 36,2019-09-15,-7.0,-6.8,-1.0,-1.0,valladolid,osasuna,Draw,Home,Home
