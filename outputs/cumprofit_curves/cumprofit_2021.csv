@@ -323,7 +323,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 322,2022-04-19,24.12,-0.44,0.44,0.44,villarreal,valencia,Home,Home,Home
 323,2022-04-20,23.12,-1.44,-1.0,-1.0,ath madrid,granada,Draw,Home,Home
 324,2022-04-20,23.78,-0.78,0.66,0.66,osasuna,real madrid,Away,Away,Away
-325,2022-04-20,22.78,-1.78,-1.0,-1.0,celta,getafe,Away,Home,Home
+325,2022-04-20,22.78,-1.78,-1.0,-1.0,celta,getafe,Away,Draw,Home
 326,2022-04-21,23.88,-0.68,1.1,1.1,sociedad,barcelona,Away,Away,Away
 327,2022-04-21,24.98,0.42,1.1,1.1,levante,sevilla,Away,Away,Away
 328,2022-04-21,23.98,-0.58,-1.0,-1.0,espanol,vallecano,Away,Home,Home

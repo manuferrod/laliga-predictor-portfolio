@@ -296,7 +296,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 295,2015-04-08,-30.21,-16.44,-1.0,-1.0,la coruna,cordoba,Draw,Home,Home
 296,2015-04-08,-30.16,-16.39,0.05,0.05,barcelona,almeria,Home,Home,Home
 297,2015-04-08,-31.16,-17.39,-1.0,-1.0,granada,celta,Draw,Away,Away
-298,2015-04-09,-32.16,-18.39,-1.0,-1.0,ath bilbao,valencia,Draw,Home,Home
+298,2015-04-09,-32.16,-18.39,-1.0,-1.0,ath bilbao,valencia,Draw,Away,Home
 299,2015-04-09,-33.16,-19.39,-1.0,-1.0,elche,getafe,Away,Home,Home
 300,2015-04-09,-34.16,-20.39,-1.0,-1.0,villarreal,espanol,Away,Home,Home
 301,2015-04-11,-35.16,-21.39,-1.0,-1.0,sevilla,barcelona,Draw,Away,Away
