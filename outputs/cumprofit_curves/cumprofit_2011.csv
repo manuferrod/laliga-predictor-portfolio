@@ -65,7 +65,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 64,2011-10-15,-6.44,-6.44,-1.0,-1.0,getafe,villarreal,Draw,Home,Home
 65,2011-10-15,-6.38,-6.38,0.06,0.06,barcelona,santander,Home,Home,Home
 66,2011-10-16,-6.02,-6.02,0.36,0.36,sevilla,sp gijon,Home,Home,Home
-67,2011-10-16,-7.02,-7.02,-1.0,-1.0,levante,malaga,Home,Draw,Away
+67,2011-10-16,-7.02,-7.02,-1.0,-1.0,levante,malaga,Home,Away,Away
 68,2011-10-16,-6.02,-6.02,1.0,1.0,zaragoza,sociedad,Home,Home,Home
 69,2011-10-16,-7.02,-7.02,-1.0,-1.0,vallecano,espanol,Away,Home,Home
 70,2011-10-17,-6.19,-6.19,0.83,0.83,ath bilbao,osasuna,Home,Home,Home
