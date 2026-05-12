@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-05-05 08:32:29",
+  "generated_at": "2026-05-12 14:42:41",
   "model": "market_argmax(pimp1,pimpx,pimp2)",
   "overall": {
-    "n_scored_total": 6040,
-    "n_bets_total": 6040,
-    "accuracy_overall": 0.5455298013245033,
-    "logloss_overall": 1.4552459072706943,
-    "brier_overall": 0.5661109405942184,
-    "roi_overall": -0.028617549668874167,
-    "hit_rate_overall": 0.5455298013245033,
-    "avg_overround_overall": 1.0567269059275466,
-    "avg_conf_overall": 0.5294326131133645,
-    "avg_entropy_overall": 0.9741289031677786,
-    "avg_margin_overall": 0.26912151140022106
+    "n_scored_total": 6050,
+    "n_bets_total": 6050,
+    "accuracy_overall": 0.5451239669421487,
+    "logloss_overall": 1.4547648533784,
+    "brier_overall": 0.566349832686072,
+    "roi_overall": -0.02918181818181818,
+    "hit_rate_overall": 0.5451239669421487,
+    "avg_overround_overall": 1.0567573331099724,
+    "avg_conf_overall": 0.5292742976069786,
+    "avg_entropy_overall": 0.9742841089326271,
+    "avg_margin_overall": 0.2688900311464415
   }
 }
