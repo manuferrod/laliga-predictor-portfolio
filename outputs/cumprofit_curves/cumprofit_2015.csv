@@ -15,7 +15,7 @@ match_num,date,model_cum,bet365_cum,model_ret,bet365_ret,home,away,true_txt,mode
 14,2015-08-29,-0.27,-3.47,0.1,0.1,barcelona,malaga,Home,Home,Home
 15,2015-08-29,0.26,-2.94,0.53,0.53,celta,vallecano,Home,Home,Home
 16,2015-08-30,-0.74,-3.94,-1.0,-1.0,eibar,ath bilbao,Home,Away,Away
-17,2015-08-30,-1.74,-4.94,-1.0,-1.0,getafe,granada,Away,Draw,Home
+17,2015-08-30,-1.74,-4.94,-1.0,-1.0,getafe,granada,Away,Home,Home
 18,2015-08-30,0.56,-5.94,2.3,-1.0,las palmas,levante,Draw,Draw,Home
 19,2015-08-30,-0.44,-4.31,-1.0,1.63,sevilla,ath madrid,Away,Home,Away
 20,2015-08-30,-1.44,-5.31,-1.0,-1.0,valencia,la coruna,Draw,Home,Home
