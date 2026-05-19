@@ -1,6 +1,6 @@
 {
-  "generated_at": "20260515",
-  "run_code": "191950",
+  "generated_at": "20260519",
+  "run_code": "415308",
   "model": {
     "type": "LogisticRegression(multinomial)",
     "C": 1.0,
@@ -41,8 +41,8 @@
   },
   "data": {
     "n_future_rows_out": 10,
-    "future_min_date": "2026-05-17 00:00:00",
-    "future_max_date": "2026-05-17 00:00:00",
+    "future_min_date": "2026-05-23 00:00:00",
+    "future_max_date": "2026-05-24 00:00:00",
     "unique_key_report": {
       "collisions_augmented": 0
     },
@@ -57,14 +57,24 @@
   },
   "by_date": [
     {
-      "Date": "2026-05-17",
-      "n_matches": 10,
-      "mean_conf": 0.5161765378416087,
-      "mean_entropy": 0.9890519046733521,
-      "mean_margin": 0.24049209764924254,
-      "pct_pick_H": 0.8,
+      "Date": "2026-05-23",
+      "n_matches": 9,
+      "mean_conf": 0.5270269827924818,
+      "mean_entropy": 0.9806599904162954,
+      "mean_margin": 0.24794113174522853,
+      "pct_pick_H": 0.6666666666666666,
       "pct_pick_D": 0.0,
-      "pct_pick_A": 0.2
+      "pct_pick_A": 0.3333333333333333
+    },
+    {
+      "Date": "2026-05-24",
+      "n_matches": 1,
+      "mean_conf": 0.4578112545478419,
+      "mean_entropy": 1.0109868507842585,
+      "mean_margin": 0.06734124285025533,
+      "pct_pick_H": 1.0,
+      "pct_pick_D": 0.0,
+      "pct_pick_A": 0.0
     }
   ]
 }
